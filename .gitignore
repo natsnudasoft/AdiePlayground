@@ -1,0 +1,10 @@
+StyleCop.Cache
+/packages
+/.vs
+*.csproj.user
+bin
+obj
+/OpenCover
+/test/unit/TestResult.xml
+/test/unit/coverage
+/test/unit/results.xml

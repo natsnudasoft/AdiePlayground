@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdiePlayground", "src\AdiePlayground\AdiePlayground.csproj", "{5D45E6C3-BEDC-4AD7-A396-A98CFE3A6C5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{BE612CED-F78D-4038-8B4C-01E6E6E18BE7}"
+	ProjectSection(SolutionItems) = preProject
+		_InstructionsCodeAnalysis.docx = _InstructionsCodeAnalysis.docx
+		src\AdiePlayground.ruleset = src\AdiePlayground.ruleset
+		test\AdiePlaygroundTests.ruleset = test\AdiePlaygroundTests.ruleset
+		CustomDictionary.xml = CustomDictionary.xml
+		Menees.Analyzers.Settings.xml = Menees.Analyzers.Settings.xml
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licensing", "Licensing", "{17502A46-6857-4E07-BEFB-90498B29E9FC}"
+	ProjectSection(SolutionItems) = preProject
+		LICENCE.txt = LICENCE.txt
+		NOTICE.txt = NOTICE.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{9A4419EC-92F5-4E23-AB5D-50D4EA7E509F}"
+	ProjectSection(SolutionItems) = preProject
+		test\unit\run-test-reports.bat = test\unit\run-test-reports.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdiePlayground.Data", "src\AdiePlayground.Data\AdiePlayground.Data.csproj", "{9605AE85-512A-4A2A-8D6B-10E480277359}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mehdime.Entity", "src\DbContextScope-master\Mehdime.Entity\Mehdime.Entity.csproj", "{4830BAFD-4163-473E-B00F-65F274AC165F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdiePlayground.Common", "src\AdiePlayground.Common\AdiePlayground.Common.csproj", "{9F889368-3F89-4780-B213-C971E5BFB720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdiePlayground.CommonTests", "test\unit\AdiePlayground.CommonTests\AdiePlayground.CommonTests.csproj", "{C8DE7D1C-1BF0-4F6A-9527-F60782F7F6D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdiePlayground.DataTests", "test\unit\AdiePlayground.DataTests\AdiePlayground.DataTests.csproj", "{9705C7F6-EB1B-4466-88C8-23FF9AE9766C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", "{CCC40DE8-B542-475C-B933-21503584A9B5}"
+	ProjectSection(SolutionItems) = preProject
+		AssemblyInfoCommon.cs = AssemblyInfoCommon.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D45E6C3-BEDC-4AD7-A396-A98CFE3A6C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D45E6C3-BEDC-4AD7-A396-A98CFE3A6C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D45E6C3-BEDC-4AD7-A396-A98CFE3A6C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D45E6C3-BEDC-4AD7-A396-A98CFE3A6C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9605AE85-512A-4A2A-8D6B-10E480277359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9605AE85-512A-4A2A-8D6B-10E480277359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9605AE85-512A-4A2A-8D6B-10E480277359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9605AE85-512A-4A2A-8D6B-10E480277359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4830BAFD-4163-473E-B00F-65F274AC165F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4830BAFD-4163-473E-B00F-65F274AC165F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4830BAFD-4163-473E-B00F-65F274AC165F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4830BAFD-4163-473E-B00F-65F274AC165F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F889368-3F89-4780-B213-C971E5BFB720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F889368-3F89-4780-B213-C971E5BFB720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F889368-3F89-4780-B213-C971E5BFB720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F889368-3F89-4780-B213-C971E5BFB720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8DE7D1C-1BF0-4F6A-9527-F60782F7F6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8DE7D1C-1BF0-4F6A-9527-F60782F7F6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8DE7D1C-1BF0-4F6A-9527-F60782F7F6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8DE7D1C-1BF0-4F6A-9527-F60782F7F6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9705C7F6-EB1B-4466-88C8-23FF9AE9766C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9705C7F6-EB1B-4466-88C8-23FF9AE9766C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9705C7F6-EB1B-4466-88C8-23FF9AE9766C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9705C7F6-EB1B-4466-88C8-23FF9AE9766C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8DE7D1C-1BF0-4F6A-9527-F60782F7F6D1} = {9A4419EC-92F5-4E23-AB5D-50D4EA7E509F}
+		{9705C7F6-EB1B-4466-88C8-23FF9AE9766C} = {9A4419EC-92F5-4E23-AB5D-50D4EA7E509F}
+	EndGlobalSection
+EndGlobal

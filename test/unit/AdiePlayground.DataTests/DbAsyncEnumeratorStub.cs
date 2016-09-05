@@ -1,0 +1,78 @@
+﻿// <copyright file="DbAsyncEnumeratorStub.cs" company="natsnudasoft">
+// Copyright (c) Adrian John Dunstan. All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// </copyright>
+
+namespace AdiePlayground.DataTests
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity.Infrastructure;
+    using System.Linq;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Stub for <see cref="DbAsyncEnumeratorStub{TEntity}"/>.
+    /// </summary>
+    /// <typeparam name="TEntity">Stub.</typeparam>
+    /// <seealso cref="IDbAsyncEnumerator{TEntity}" />
+    internal class DbAsyncEnumeratorStub<TEntity> : IDbAsyncEnumerator<TEntity>
+    {
+        private readonly IEnumerator<TEntity> inner;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DbAsyncEnumeratorStub{TEntity}"/> class.
+        /// </summary>
+        /// <param name="innerEnumerator">The inner enumerator.</param>
+        public DbAsyncEnumeratorStub(IEnumerator<TEntity> innerEnumerator)
+        {
+            this.inner = innerEnumerator;
+        }
+
+        /// <inheritdoc/>
+        public TEntity Current
+        {
+            get { return this.inner.Current; }
+        }
+
+        /// <inheritdoc/>
+        object IDbAsyncEnumerator.Current
+        {
+            get { return this.Current; }
+        }
+
+        /// <inheritdoc/>
+        public Task<bool> MoveNextAsync(CancellationToken cancellationToken)
+        {
+            return Task.FromResult(this.inner.MoveNext());
+        }
+
+        /// <inheritdoc/>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.inner.Dispose();
+            }
+        }
+    }
+}
