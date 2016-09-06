@@ -72,9 +72,6 @@ namespace AdiePlayground.DataTests.Services
         {
             var ex = Assert.Throws<ArgumentNullException>(() => new ContextService(null));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorDbContextScopeFactoryParam));
-            Assert.That(
-                ex.Message,
-                Does.StartWith(Data.Properties.Resources.DbContextScopeFactoryInvalid));
         }
 
         /// <summary>
