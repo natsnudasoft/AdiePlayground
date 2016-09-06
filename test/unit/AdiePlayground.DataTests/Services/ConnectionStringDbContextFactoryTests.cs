@@ -38,9 +38,6 @@ namespace AdiePlayground.DataTests.Services
             var ex = Assert.Throws<ArgumentNullException>(
                 () => new ConnectionStringDbContextFactory(null));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorConnectionStringFactoryParam));
-            Assert.That(
-                ex.Message,
-                Does.StartWith(Data.Properties.Resources.ConnectionStringFactoryInvalid));
         }
     }
 }

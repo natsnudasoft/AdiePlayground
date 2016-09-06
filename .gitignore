@@ -5,6 +5,7 @@ StyleCop.Cache
 bin
 obj
 /OpenCover
-/test/unit/TestResult.xml
-/test/unit/coverage
-/test/unit/results.xml
+/tools/TestResult.xml
+/tools/coverage
+/tools/results.xml
+/tools/coverage.xml

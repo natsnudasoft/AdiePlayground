@@ -29,6 +29,7 @@ namespace AdiePlayground.CommonTests
     public class Iso3166CountryTests
     {
         private const string ConstructorCountryCodeParam = "countryCode";
+        private const string RegionInfoNameParam = "name";
 
         private static readonly IEnumerable<string> InvalidCountryCodes =
             new[] { "Aa", "AA", "aa", string.Empty, "AAAA" };
@@ -36,7 +37,7 @@ namespace AdiePlayground.CommonTests
         private static readonly IEnumerable<KeyValuePair<string, string>> ValidCountries =
             new[]
             {
-                new KeyValuePair<string, string>("GB", "United Kingdom"),
+                new KeyValuePair<string, string>("gB", "United Kingdom"),
                 new KeyValuePair<string, string>("gb", "United Kingdom"),
                 new KeyValuePair<string, string>("Gb", "United Kingdom"),
                 new KeyValuePair<string, string>("PA", "Panama"),
@@ -47,9 +48,6 @@ namespace AdiePlayground.CommonTests
         private static readonly IEnumerable<KeyValuePair<string, string>> ValidCountriesNoRegion =
             new[]
             {
-                new KeyValuePair<string, string>("AX", "Åland Islands"),
-                new KeyValuePair<string, string>("KP", "Korea"),
-                new KeyValuePair<string, string>("MG", "Madagascar"),
                 new KeyValuePair<string, string>("ZZ", "Unknown")
             };
 
@@ -63,9 +61,6 @@ namespace AdiePlayground.CommonTests
         {
             var ex = Assert.Throws<ArgumentException>(() => new Iso3166Country(countryCode));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorCountryCodeParam));
-            Assert.That(
-                ex.Message,
-                Does.StartWith(Common.Properties.Resources.Iso3166CountryCodeInvalid));
         }
 
         /// <summary>
@@ -76,9 +71,6 @@ namespace AdiePlayground.CommonTests
         {
             var ex = Assert.Throws<ArgumentNullException>(() => new Iso3166Country(null));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorCountryCodeParam));
-            Assert.That(
-                ex.Message,
-                Does.StartWith(Common.Properties.Resources.Iso3166CountryCodeInvalid));
         }
 
         /// <summary>
@@ -125,10 +117,7 @@ namespace AdiePlayground.CommonTests
             Assert.That(
                 country.CountryName,
                 Is.EqualTo(countryCode.Value).And.EqualTo(countryName));
-            Assert.That(ex.Message, Is.EqualTo(string.Format(
-                CultureInfo.InvariantCulture,
-                Properties.Resources.UnsupportedRegionInfo,
-                upperCountryCode)));
+            Assert.That(ex.ParamName, Is.EqualTo(RegionInfoNameParam));
         }
     }
 }

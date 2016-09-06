@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfoCommon.cs" company="natsnudasoft">
+// <copyright file="AssemblyInfoCommon.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,6 +20,8 @@ using System.Resources;
 [assembly: NeutralResourcesLanguage("en-GB")]
 [assembly: AssemblyCompany("natsnudasoft")]
 [assembly: AssemblyCopyright("Copyright © Adrian John Dunstan 2016")]
-[assembly: AssemblyVersion("0.1")]
-[assembly: AssemblyFileVersion("0.1.16249.17")]
-[assembly: AssemblyInformationalVersion("0.1-beta")]
+
+// Version is generated on the build server.
+[assembly: AssemblyVersion("0.1.0.0")]
+[assembly: AssemblyFileVersion("0.1.0.0")]
+[assembly: AssemblyInformationalVersion("0.1.0.0")]

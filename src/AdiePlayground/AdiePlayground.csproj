@@ -29,13 +29,6 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <AssemblyVersion>0.1.16249.17</AssemblyVersion>
-    <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
-    <AssemblyInfoFilePath>..\..\AssemblyInfoCommon.cs</AssemblyInfoFilePath>
-    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyFileVersionSettings>None.None.DateStamp.Increment</AssemblyFileVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
