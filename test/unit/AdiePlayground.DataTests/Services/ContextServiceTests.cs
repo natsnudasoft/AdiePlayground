@@ -18,13 +18,9 @@ namespace AdiePlayground.DataTests.Services
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
     using System.Linq;
     using System.Threading.Tasks;
-    using Data;
     using Data.Services;
-    using Mehdime.Entity;
     using Moq;
     using NUnit.Framework;
 
@@ -36,12 +32,7 @@ namespace AdiePlayground.DataTests.Services
     {
         private const string ConstructorDbContextScopeFactoryParam = "dbContextScopeFactoryValue";
 
-        private int batchAffectedCount;
-        private Mock<DbSet<TestEntity>> dbSetMock;
-        private Mock<PlaygroundDbContext> playgroundDbContextMock;
-        private Mock<IDbContextScope> dbContextScopeMock;
-        private Mock<IDbContextReadOnlyScope> dbContextReadOnlyScopeMock;
-        private Mock<IDbContextScopeFactory> dbContextScopeFactoryMock;
+        private DbMockHelper dbMockHelper;
         private IContextService contextService;
 
         /// <summary>
@@ -50,18 +41,9 @@ namespace AdiePlayground.DataTests.Services
         [SetUp]
         public void BeforeTest()
         {
-            this.batchAffectedCount = 0;
-            this.dbSetMock = new Mock<DbSet<TestEntity>>();
-            this.playgroundDbContextMock = new Mock<PlaygroundDbContext>();
-            this.dbContextScopeMock = new Mock<IDbContextScope>();
-            this.dbContextReadOnlyScopeMock = new Mock<IDbContextReadOnlyScope>();
-            this.dbContextScopeFactoryMock = new Mock<IDbContextScopeFactory>();
-
-            this.playgroundDbContextMock
-                .Setup(m => m.Set<TestEntity>())
-                .Returns(this.dbSetMock.Object);
-
-            this.contextService = new ContextService(this.dbContextScopeFactoryMock.Object);
+            this.dbMockHelper = new DbMockHelper();
+            this.contextService = new ContextService(
+                this.dbMockHelper.DbContextScopeFactoryMock.Object);
         }
 
         /// <summary>
@@ -75,14 +57,48 @@ namespace AdiePlayground.DataTests.Services
         }
 
         /// <summary>
+        /// Tests the BeginTransaction method.
+        /// </summary>
+        [Test]
+        public void BeginTransaction_CreateTransactionAndDispose()
+        {
+            this.dbMockHelper.MockDbContextScopeFactory();
+
+            IServiceTransaction transaction;
+            using (transaction = this.contextService.BeginTransaction())
+            {
+                Assert.That(transaction, Is.Not.Null);
+            }
+
+            this.dbMockHelper.DbContextScopeMock.Verify(m => m.Dispose(), Times.Once);
+        }
+
+        /// <summary>
+        /// Tests the BeginReadOnlyTransaction method.
+        /// </summary>
+        [Test]
+        public void BeginReadOnlyTransaction_CreateTransactionAndDispose()
+        {
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+
+            IReadOnlyServiceTransaction transaction;
+            using (transaction = this.contextService.BeginReadOnlyTransaction())
+            {
+                Assert.That(transaction, Is.Not.Null);
+            }
+
+            this.dbMockHelper.DbContextReadOnlyScopeMock.Verify(m => m.Dispose(), Times.Once);
+        }
+
+        /// <summary>
         /// Tests the FindAsync method when given a valid id.
         /// </summary>
         /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_ValidId_ReturnCorrectEntityAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             const int ValidId = 1;
 
             var entity = await this.contextService
@@ -99,8 +115,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_InvalidId_ReturnNullAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             const int InvalidId = int.MinValue;
 
             var entity = await this.contextService
@@ -117,8 +133,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_Criteria_ReturnAllEntitiesAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             var expectedEntities = TestData.DeepCopyTestEntityData();
 
             var entities = await this.contextService
@@ -137,8 +153,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_Criteria_ReturnFoundEntitiesAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             var expectedEntities = new[]
             {
                 TestData.TestEntityData[6],
@@ -164,8 +180,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_CriteriaAndSelector_ReturnFoundEntitiesAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             var expectedEntities = new[]
             {
                 new { Select1 = TestData.TestEntityData[1].Property2 },
@@ -193,8 +209,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_CriteriaAndIndexSelector_ReturnFoundEntitiesAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             var expectedEntities = new[]
             {
                 new { Select1 = TestData.TestEntityData[1].Property2, I = 0 },
@@ -221,8 +237,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_CriteriaPaging_ReturnPagedEntitiesAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
             var expectedEntities = new[]
             {
                 TestData.TestEntityData[4],
@@ -246,8 +262,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task FindAsync_Criteria_ReturnNoEntitiesAsync()
         {
-            this.SetUpReadOnlyContextScopeMock();
-            this.SetUpQueryDataMock();
+            this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
+            this.dbMockHelper.MockDbSetQueryable();
 
             var entities = await this.contextService
                 .FindAsync(
@@ -265,8 +281,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task AddAsync_AddsEntityAndSavesContextAsync()
         {
-            this.SetUpContextScopeMock();
-            this.SetUpSetAddMock();
+            this.dbMockHelper.MockDbContextScopeFactory();
+            this.dbMockHelper.MockDbSetAdd();
             var entityToAdd = new TestEntity();
 
             var affectedCount = await this.contextService
@@ -274,8 +290,8 @@ namespace AdiePlayground.DataTests.Services
                 .ConfigureAwait(false);
 
             Assert.That(affectedCount, Is.EqualTo(1));
-            this.dbSetMock.Verify(m => m.Add(It.IsAny<TestEntity>()), Times.Once);
-            this.dbContextScopeMock
+            this.dbMockHelper.DbSetMock.Verify(m => m.Add(It.IsAny<TestEntity>()), Times.Once);
+            this.dbMockHelper.DbContextScopeMock
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
         }
 
@@ -286,8 +302,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task AddRangeAsync_AddsEntitiesAndSavesContextAsync()
         {
-            this.SetUpContextScopeMock();
-            this.SetUpSetAddRangeMock();
+            this.dbMockHelper.MockDbContextScopeFactory();
+            this.dbMockHelper.MockDbSetAddRange();
             var entitiesToAdd = Enumerable.Repeat(new TestEntity(), 10).ToArray();
 
             var affectedCount = await this.contextService
@@ -295,9 +311,9 @@ namespace AdiePlayground.DataTests.Services
                 .ConfigureAwait(false);
 
             Assert.That(affectedCount, Is.EqualTo(entitiesToAdd.Length));
-            this.dbSetMock
+            this.dbMockHelper.DbSetMock
                 .Verify(m => m.AddRange(It.IsAny<IEnumerable<TestEntity>>()), Times.Once);
-            this.dbContextScopeMock
+            this.dbMockHelper.DbContextScopeMock
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
         }
 
@@ -308,8 +324,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task RemoveAsync_RemovesEntityAndSavesContextAsync()
         {
-            this.SetUpContextScopeMock();
-            this.SetUpSetRemoveMock();
+            this.dbMockHelper.MockDbContextScopeFactory();
+            this.dbMockHelper.MockDbSetRemove();
             var entityToRemove = new TestEntity();
 
             var affectedCount = await this.contextService
@@ -317,8 +333,8 @@ namespace AdiePlayground.DataTests.Services
                 .ConfigureAwait(false);
 
             Assert.That(affectedCount, Is.EqualTo(1));
-            this.dbSetMock.Verify(m => m.Remove(It.IsAny<TestEntity>()), Times.Once);
-            this.dbContextScopeMock
+            this.dbMockHelper.DbSetMock.Verify(m => m.Remove(It.IsAny<TestEntity>()), Times.Once);
+            this.dbMockHelper.DbContextScopeMock
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
         }
 
@@ -329,8 +345,8 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public async Task RemoveRangeAsync_RemovesEntitiesAndSavesContextAsync()
         {
-            this.SetUpContextScopeMock();
-            this.SetUpSetRemoveRangeMock();
+            this.dbMockHelper.MockDbContextScopeFactory();
+            this.dbMockHelper.MockDbSetRemoveRange();
             var entitiesToRemove = Enumerable.Repeat(new TestEntity(), 10).ToArray();
 
             var affectedCount = await this.contextService
@@ -338,100 +354,10 @@ namespace AdiePlayground.DataTests.Services
                 .ConfigureAwait(false);
 
             Assert.That(affectedCount, Is.EqualTo(entitiesToRemove.Length));
-            this.dbSetMock
+            this.dbMockHelper.DbSetMock
                 .Verify(m => m.RemoveRange(It.IsAny<IEnumerable<TestEntity>>()), Times.Once);
-            this.dbContextScopeMock
+            this.dbMockHelper.DbContextScopeMock
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
-        }
-
-        private void SetUpContextScopeMock()
-        {
-            this.dbContextScopeMock
-                .Setup(m => m.DbContexts.Get<PlaygroundDbContext>())
-                .Returns(this.playgroundDbContextMock.Object);
-            this.dbContextScopeMock
-                .Setup(m => m.SaveChangesAsync())
-                .Returns(() => Task.FromResult(this.batchAffectedCount))
-                .Callback(() => this.batchAffectedCount = 0);
-
-            this.dbContextScopeFactoryMock
-                .Setup(m => m.Create(DbContextScopeOption.JoinExisting))
-                .Returns(this.dbContextScopeMock.Object);
-        }
-
-        private void SetUpReadOnlyContextScopeMock()
-        {
-            this.dbContextReadOnlyScopeMock
-                .Setup(m => m.DbContexts.Get<PlaygroundDbContext>())
-                .Returns(this.playgroundDbContextMock.Object);
-
-            this.dbContextScopeFactoryMock
-                .Setup(m => m.CreateReadOnly(DbContextScopeOption.JoinExisting))
-                .Returns(this.dbContextReadOnlyScopeMock.Object);
-        }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage(
-            "Microsoft.Maintainability",
-            "CA1506:AvoidExcessiveClassCoupling",
-            Justification = "Necessary mocking.")]
-        private void SetUpQueryDataMock()
-        {
-            var queryData = TestData.DeepCopyTestEntityData().AsQueryable();
-
-            this.dbSetMock
-                .As<IDbAsyncEnumerable<TestEntity>>()
-                .Setup(m => m.GetAsyncEnumerator())
-                .Returns(() => new DbAsyncEnumeratorStub<TestEntity>(queryData.GetEnumerator()));
-            this.dbSetMock
-                .As<IQueryable<TestEntity>>()
-                .SetupGet(m => m.Provider)
-                .Returns(() => new DbAsyncQueryProviderStub<TestEntity>(queryData.Provider));
-            this.dbSetMock
-                .As<IQueryable<TestEntity>>()
-                .SetupGet(m => m.Expression)
-                .Returns(() => queryData.Expression);
-            this.dbSetMock
-                .As<IQueryable<TestEntity>>()
-                .SetupGet(m => m.ElementType)
-                .Returns(() => queryData.ElementType);
-            this.dbSetMock
-                .As<IQueryable<TestEntity>>()
-                .Setup(m => m.GetEnumerator())
-                .Returns(() => queryData.GetEnumerator());
-            this.dbSetMock
-                .Setup(m => m.FindAsync(It.IsAny<int>()))
-                .Returns<object>(
-                    o => this.dbSetMock.Object
-                        .AsQueryable()
-                        .FirstOrDefaultAsync(e => e.Id == (int)((object[])o)[0]));
-        }
-
-        private void SetUpSetAddMock()
-        {
-            this.dbSetMock
-                .Setup(m => m.Add(It.IsAny<TestEntity>()))
-                .Callback(() => ++this.batchAffectedCount);
-        }
-
-        private void SetUpSetAddRangeMock()
-        {
-            this.dbSetMock
-                .Setup(m => m.AddRange(It.IsAny<IEnumerable<TestEntity>>()))
-                .Callback<IEnumerable<TestEntity>>(e => this.batchAffectedCount += e.Count());
-        }
-
-        private void SetUpSetRemoveMock()
-        {
-            this.dbSetMock
-                .Setup(m => m.Remove(It.IsAny<TestEntity>()))
-                .Callback(() => ++this.batchAffectedCount);
-        }
-
-        private void SetUpSetRemoveRangeMock()
-        {
-            this.dbSetMock
-                .Setup(m => m.RemoveRange(It.IsAny<IEnumerable<TestEntity>>()))
-                .Callback<IEnumerable<TestEntity>>(e => this.batchAffectedCount += e.Count());
         }
     }
 }

@@ -33,11 +33,20 @@ namespace AdiePlayground.DataTests.Services
         /// Tests the constructor with a null connection string factory.
         /// </summary>
         [Test]
-        public void Constructor_NullConnectionStringFactory_CreateContextCalled()
+        public void Constructor_NullConnectionStringFactory_ArgumentNullException()
         {
             var ex = Assert.Throws<ArgumentNullException>(
                 () => new ConnectionStringDbContextFactory(null));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorConnectionStringFactoryParam));
+        }
+
+        /// <summary>
+        /// Tests the constructor with a valid connection string factory.
+        /// </summary>
+        [Test]
+        public void Constructor_ConnectionStringFactory_DoesNotThrow()
+        {
+            Assert.DoesNotThrow(() => new ConnectionStringDbContextFactory(() => string.Empty));
         }
     }
 }

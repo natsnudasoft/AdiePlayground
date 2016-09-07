@@ -53,5 +53,24 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.Not.Null);
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
+
+        /// <summary>
+        /// Tests the search query include.
+        /// </summary>
+        [Test]
+        public void SearchQuery_Include_DoesNotThrow()
+        {
+            // We can not properly test Include in a unit test.
+            var query = TestData.DeepCopyTestEntityData().AsQueryable();
+            var searchQuery = SearchQuery.Create<TestEntity>()
+                .Include(e => e.Property2);
+            foreach (var criterion in searchQuery.SearchCriteria)
+            {
+                query = criterion.Apply(query);
+            }
+
+            var entities = query.ToArray();
+            Assert.That(entities, Is.Not.Null);
+        }
     }
 }

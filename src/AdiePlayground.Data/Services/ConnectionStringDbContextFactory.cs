@@ -49,6 +49,7 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         TDbContext IDbContextFactory.CreateDbContext<TDbContext>()
         {
             return (TDbContext)Activator.CreateInstance(

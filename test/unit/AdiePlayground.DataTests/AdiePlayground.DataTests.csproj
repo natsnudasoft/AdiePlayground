@@ -43,6 +43,10 @@
     <AssemblyOriginatorKeyFile>AdiePlayground.DataTests.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Autofac.4.1.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
@@ -77,13 +81,21 @@
     <Compile Include="..\..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="DbMockHelper.cs" />
     <Compile Include="Services\ConnectionStringDbContextFactoryTests.cs" />
     <Compile Include="Services\ContextServiceTests.cs" />
     <Compile Include="DbAsyncEnumerableStub.cs" />
     <Compile Include="DbAsyncEnumeratorStub.cs" />
     <Compile Include="DbAsyncQueryProviderStub.cs" />
+    <Compile Include="Services\DataServicesModuleTests.cs" />
+    <Compile Include="Services\FilterCriterionTests.cs" />
+    <Compile Include="Services\IncludeCriterionTests.cs" />
+    <Compile Include="Services\PagingCriterionTests.cs" />
+    <Compile Include="Services\ReadOnlyServiceTransactionTests.cs" />
     <Compile Include="Services\SearchQueryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceTransactionTests.cs" />
+    <Compile Include="Services\SortCriterionTests.cs" />
     <Compile Include="TestData.cs" />
     <Compile Include="TestEntity.cs" />
   </ItemGroup>
