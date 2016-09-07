@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licensing", "Licensing", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{9A4419EC-92F5-4E23-AB5D-50D4EA7E509F}"
 	ProjectSection(SolutionItems) = preProject
-		test\unit\run-test-reports.bat = test\unit\run-test-reports.bat
+		tools\run-test-reports.bat = tools\run-test-reports.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdiePlayground.Data", "src\AdiePlayground.Data\AdiePlayground.Data.csproj", "{9605AE85-512A-4A2A-8D6B-10E480277359}"
