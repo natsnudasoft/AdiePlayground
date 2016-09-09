@@ -82,6 +82,7 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="DbMockHelper.cs" />
+    <Compile Include="Migrations\SeedDataTests.cs" />
     <Compile Include="Services\ConnectionStringDbContextFactoryTests.cs" />
     <Compile Include="Services\ContextServiceTests.cs" />
     <Compile Include="DbAsyncEnumerableStub.cs" />

@@ -17,12 +17,9 @@
 namespace AdiePlayground.DataTests.Services
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Autofac;
     using Data.Services;
+    using Mehdime.Entity;
     using Moq;
     using NUnit.Framework;
 
@@ -66,7 +63,15 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_FuncConnectionStringFactory_DoesNotThrow()
         {
-            Assert.DoesNotThrow(() => new DataServicesModule(() => string.Empty));
+            DataServicesModule dataServicesModule = null;
+            Assert.DoesNotThrow(
+                () => dataServicesModule = new DataServicesModule(() => string.Empty));
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(dataServicesModule);
+            var container = builder.Build();
+            var resolved = container.Resolve<IContextService>();
+
+            Assert.That(resolved, Is.Not.Null);
         }
 
         /// <summary>
@@ -76,7 +81,15 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_IConnectionStringFactory_DoesNotThrow()
         {
             var connectionStringFactory = new Mock<IConnectionStringFactory>();
-            Assert.DoesNotThrow(() => new DataServicesModule(connectionStringFactory.Object));
+            DataServicesModule dataServicesModule = null;
+            Assert.DoesNotThrow(
+                () => dataServicesModule = new DataServicesModule(connectionStringFactory.Object));
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(dataServicesModule);
+            var container = builder.Build();
+            var resolved = container.Resolve<IContextService>();
+
+            Assert.That(resolved, Is.Not.Null);
         }
     }
 }

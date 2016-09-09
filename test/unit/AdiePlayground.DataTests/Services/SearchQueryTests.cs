@@ -63,6 +63,7 @@ namespace AdiePlayground.DataTests.Services
             // We can not properly test Include in a unit test.
             var query = TestData.DeepCopyTestEntityData().AsQueryable();
             var searchQuery = SearchQuery.Create<TestEntity>()
+                .Sort(e => e.Id)
                 .Include(e => e.Property2);
             foreach (var criterion in searchQuery.SearchCriteria)
             {

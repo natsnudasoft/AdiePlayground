@@ -1,0 +1,3784 @@
+{
+  "Courses": [
+    {
+      "Title": "Foreign Tactics and Strategy",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Drama",
+      "Credits": 10
+    },
+    {
+      "Title": "Planetary Ecology",
+      "Credits": 10
+    },
+    {
+      "Title": "Planetary History",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Political Sciences",
+      "Credits": 20
+    },
+    {
+      "Title": "Flying",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Biosecurity",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Arts",
+      "Credits": 10
+    },
+    {
+      "Title": "Apparition",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Sports History",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Biotechnology",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Social Studies",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Law and Politics",
+      "Credits": 10
+    },
+    {
+      "Title": "Terraforming",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Criminal Justice",
+      "Credits": 10
+    },
+    {
+      "Title": "Space Travel",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Language Poetry",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Finance",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Medicine",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Biochemisty",
+      "Credits": 10
+    },
+    {
+      "Title": "Curse Casting",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Environmental Development",
+      "Credits": 20
+    },
+    {
+      "Title": "Bioengineering",
+      "Credits": 20
+    },
+    {
+      "Title": "Intergallactic Relations",
+      "Credits": 20
+    },
+    {
+      "Title": "Dead Language Literature",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Criminal Justice",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Ecology",
+      "Credits": 20
+    },
+    {
+      "Title": "Endurance Training",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Crafting",
+      "Credits": 10
+    },
+    {
+      "Title": "Military Competitions",
+      "Credits": 20
+    },
+    {
+      "Title": "Earth Science",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Disaster Management",
+      "Credits": 20
+    },
+    {
+      "Title": "Life Gardening",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Neuroscience",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Survival Techniques",
+      "Credits": 20
+    },
+    {
+      "Title": "Self Defense, Small Weaponry",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Culinary Arts",
+      "Credits": 10
+    },
+    {
+      "Title": "Wilderness Survival",
+      "Credits": 20
+    },
+    {
+      "Title": "Business Technology",
+      "Credits": 10
+    },
+    {
+      "Title": "Animal Care",
+      "Credits": 20
+    },
+    {
+      "Title": "Advanced Mathematics",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Biology",
+      "Credits": 10
+    },
+    {
+      "Title": "Curse Creation",
+      "Credits": 20
+    },
+    {
+      "Title": "Transformation",
+      "Credits": 20
+    },
+    {
+      "Title": "Monster Transformations",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Mechanics",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Planet Science",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Life Physics",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Organic Chemistry",
+      "Credits": 10
+    },
+    {
+      "Title": "Spirituality",
+      "Credits": 20
+    },
+    {
+      "Title": "Forestry",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Psychology",
+      "Credits": 10
+    },
+    {
+      "Title": "Extinct Language History",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Dialects",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Logic",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Economics",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Medical Physics",
+      "Credits": 20
+    },
+    {
+      "Title": "Nutrition",
+      "Credits": 20
+    },
+    {
+      "Title": "Siege Mechanics",
+      "Credits": 10
+    },
+    {
+      "Title": "Supernatural Studies",
+      "Credits": 20
+    },
+    {
+      "Title": "Planetary Terraforming",
+      "Credits": 10
+    },
+    {
+      "Title": "Stealth and Survival",
+      "Credits": 20
+    },
+    {
+      "Title": "Extinct Language",
+      "Credits": 10
+    },
+    {
+      "Title": "Self Defense, Weaponry",
+      "Credits": 20
+    },
+    {
+      "Title": "Handcrafts",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Economics",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Language Poetry",
+      "Credits": 10
+    },
+    {
+      "Title": "First Aid",
+      "Credits": 20
+    },
+    {
+      "Title": "Stealth and Camouflage",
+      "Credits": 10
+    },
+    {
+      "Title": "Mathematics",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Physiology",
+      "Credits": 10
+    },
+    {
+      "Title": "Army Strategy",
+      "Credits": 10
+    },
+    {
+      "Title": "Tactics and Strategy",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign First Aid",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Family Psychology",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Sports",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Civilization Studies",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Archaeology",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Criminology",
+      "Credits": 20
+    },
+    {
+      "Title": "Astronomy",
+      "Credits": 20
+    },
+    {
+      "Title": "Grand Strategy",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Language Culture",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Forensic Science",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Biochemistry",
+      "Credits": 20
+    },
+    {
+      "Title": "Rituals and Rites",
+      "Credits": 10
+    },
+    {
+      "Title": "Leadership",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Martial Arts",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Heritage",
+      "Credits": 20
+    },
+    {
+      "Title": "Telepathy",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Speech",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Linguistics",
+      "Credits": 10
+    },
+    {
+      "Title": "Extinct Language Culture",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Religion",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Medicine",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Dance",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Biotechnology",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Survival Techniques",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Government Studies",
+      "Credits": 20
+    },
+    {
+      "Title": "Foreign Technology Studies",
+      "Credits": 20
+    },
+    {
+      "Title": "Alien Genealogy",
+      "Credits": 20
+    },
+    {
+      "Title": "Galactic History",
+      "Credits": 10
+    },
+    {
+      "Title": "Foreign Nutrition",
+      "Credits": 10
+    },
+    {
+      "Title": "Alien Computer Science",
+      "Credits": 20
+    }
+  ],
+  "Students": [
+    {
+      "FullName": "Dorothy Boone",
+      "DateOfBirth": "1989-10-30",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 974, 5662 Facilisis St.",
+        "City": "Casina",
+        "County": "Emilia-Romagna",
+        "PostalCode": "459490",
+        "IsoCountryCode": "SL"
+      },
+      "HomePhone": "056 4939 1141",
+      "EmailAddress": "feugiat.Lorem.ipsum@ridiculusmusProin.net",
+      "EnrolmentDate": "2012-10-30T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 20,
+          "PercentageGrade": 99
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 56
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Audrey Bass",
+      "DateOfBirth": "1982-10-22",
+      "HomeAddress": {
+        "AddressLine1": "781-9207 Tincidunt Rd.",
+        "City": "Gbongan",
+        "County": "OS",
+        "PostalCode": "672929",
+        "IsoCountryCode": "SM"
+      },
+      "HomePhone": "(01981) 314206",
+      "EmailAddress": "id@molestiepharetra.com",
+      "EnrolmentDate": "2012-10-22T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 45,
+          "PercentageGrade": 66
+        },
+        {
+          "CourseId": 61,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 5,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 99,
+          "PercentageGrade": 72
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Stone Petty",
+      "DateOfBirth": "1974-02-27",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 241, 7856 Mauris Rd.",
+        "City": "Lidingo",
+        "County": "AB",
+        "PostalCode": "60612",
+        "IsoCountryCode": "LC"
+      },
+      "HomePhone": "0854 691 5775",
+      "EmailAddress": "augue@elitpharetra.ca",
+      "EnrolmentDate": "2003-02-27T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 71,
+          "PercentageGrade": 43
+        },
+        {
+          "CourseId": 41,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 42,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 15,
+          "PercentageGrade": 46
+        },
+        {
+          "CourseId": 3,
+          "PercentageGrade": 44
+        },
+        {
+          "CourseId": 102,
+          "PercentageGrade": 85
+        },
+        {
+          "CourseId": 10,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 67,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 5,
+          "PercentageGrade": 41
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Sybill Gibson",
+      "DateOfBirth": "1994-01-28",
+      "HomeAddress": {
+        "AddressLine1": "405-1129 Non Avenue",
+        "City": "Otukpo",
+        "County": "BE",
+        "PostalCode": "58847",
+        "IsoCountryCode": "RS"
+      },
+      "HomePhone": "0500 790178",
+      "EmailAddress": "magna@Namporttitor.ca",
+      "EnrolmentDate": "2027-01-28T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Zia Francis",
+      "DateOfBirth": "1953-08-06",
+      "HomeAddress": {
+        "AddressLine1": "Ap #917-6214 Vestibulum. Av.",
+        "City": "St. Catharines",
+        "County": "ON",
+        "PostalCode": "38805",
+        "IsoCountryCode": "UY"
+      },
+      "HomePhone": "0845 46 42",
+      "EmailAddress": "eu.arcu@eutemporerat.ca",
+      "EnrolmentDate": "1980-08-06T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 74,
+          "PercentageGrade": 65
+        },
+        {
+          "CourseId": 101,
+          "PercentageGrade": 93
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 72
+        },
+        {
+          "CourseId": 36,
+          "PercentageGrade": 50
+        },
+        {
+          "CourseId": 64,
+          "PercentageGrade": 69
+        },
+        {
+          "CourseId": 29,
+          "PercentageGrade": 34
+        },
+        {
+          "CourseId": 58,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 89,
+          "PercentageGrade": 37
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Matthew Buckley",
+      "DateOfBirth": "1999-06-08",
+      "HomeAddress": {
+        "AddressLine1": "Ap #817-7710 Egestas Avenue",
+        "City": "Leamington",
+        "County": "ON",
+        "PostalCode": "31-235",
+        "IsoCountryCode": "VC"
+      },
+      "HomePhone": "056 4065 0800",
+      "EmailAddress": "tortor.nibh.sit@erat.edu",
+      "EnrolmentDate": "2032-06-08T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 55,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 63,
+          "PercentageGrade": 53
+        },
+        {
+          "CourseId": 8,
+          "PercentageGrade": 58
+        },
+        {
+          "CourseId": 52,
+          "PercentageGrade": 40
+        },
+        {
+          "CourseId": 22,
+          "PercentageGrade": 82
+        },
+        {
+          "CourseId": 35,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Raymond Hays",
+      "DateOfBirth": "1972-08-17",
+      "HomeAddress": {
+        "AddressLine1": "960-942 Nunc, Rd.",
+        "City": "Silvan",
+        "County": "Diyarbakır",
+        "PostalCode": "2954",
+        "IsoCountryCode": "ID"
+      },
+      "HomePhone": "056 0400 0663",
+      "EmailAddress": "et.magnis.dis@orci.edu",
+      "EnrolmentDate": "1995-08-17T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 84,
+          "PercentageGrade": 59
+        },
+        {
+          "CourseId": 61,
+          "PercentageGrade": 52
+        },
+        {
+          "CourseId": 2,
+          "PercentageGrade": 56
+        },
+        {
+          "CourseId": 97,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Phoebe Warner",
+      "DateOfBirth": "1957-02-07",
+      "HomeAddress": {
+        "AddressLine1": "9773 Dolor. Road",
+        "City": "Berlin",
+        "County": "BE",
+        "PostalCode": "89388",
+        "IsoCountryCode": "HN"
+      },
+      "HomePhone": "07545 557739",
+      "EmailAddress": "mollis.Phasellus.libero@Namporttitor.ca",
+      "EnrolmentDate": "1987-02-07T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 66,
+          "PercentageGrade": 58
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Merritt Justice",
+      "DateOfBirth": "1998-09-22",
+      "HomeAddress": {
+        "AddressLine1": "322-9047 Donec St.",
+        "City": "Okene",
+        "County": "Kogi",
+        "PostalCode": "60641",
+        "IsoCountryCode": "GD"
+      },
+      "HomePhone": "(020) 3349 4654",
+      "EmailAddress": "lorem.auctor.quis@non.ca",
+      "EnrolmentDate": "2022-09-22T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Kaye Battle",
+      "DateOfBirth": "1960-12-13",
+      "HomeAddress": {
+        "AddressLine1": "Ap #319-9520 Nonummy Rd.",
+        "City": "Tauranga",
+        "County": "North Island",
+        "PostalCode": "53573",
+        "IsoCountryCode": "HT"
+      },
+      "HomePhone": "(01753) 679758",
+      "EmailAddress": "pharetra@liberonecligula.ca",
+      "EnrolmentDate": "1989-12-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 79,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 14,
+          "PercentageGrade": 55
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Sara Pitts",
+      "DateOfBirth": "1950-02-16",
+      "HomeAddress": {
+        "AddressLine1": "602-6850 Proin St.",
+        "City": "Puntarenas",
+        "County": "Puntarenas",
+        "PostalCode": "11308",
+        "IsoCountryCode": "ES"
+      },
+      "HomePhone": "(010228) 48782",
+      "EmailAddress": "tellus@maurisIntegersem.ca",
+      "EnrolmentDate": "1982-02-16T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 16,
+          "PercentageGrade": 50
+        },
+        {
+          "CourseId": 6,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 95,
+          "PercentageGrade": 79
+        },
+        {
+          "CourseId": 22,
+          "PercentageGrade": 55
+        },
+        {
+          "CourseId": 14,
+          "PercentageGrade": 37
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Rana Mcintyre",
+      "DateOfBirth": "1991-03-30",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 983, 6037 Et, St.",
+        "City": "Juiz de Fora",
+        "County": "MG",
+        "PostalCode": "4749",
+        "IsoCountryCode": "SN"
+      },
+      "HomePhone": "(0119) 599 9479",
+      "EmailAddress": "Vivamus.sit.amet@fermentummetus.ca",
+      "EnrolmentDate": "2009-03-30T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 9,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 21,
+          "PercentageGrade": 70
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Ulric Mayer",
+      "DateOfBirth": "1972-02-13",
+      "HomeAddress": {
+        "AddressLine1": "2381 Imperdiet St.",
+        "City": "São Gonçalo",
+        "County": "RJ",
+        "PostalCode": "28986-665",
+        "IsoCountryCode": "GT"
+      },
+      "HomePhone": "076 5291 9351",
+      "EmailAddress": "ad@atiaculis.com",
+      "EnrolmentDate": "2005-02-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 56,
+          "PercentageGrade": 44
+        },
+        {
+          "CourseId": 101,
+          "PercentageGrade": 61
+        },
+        {
+          "CourseId": 4,
+          "PercentageGrade": 45
+        },
+        {
+          "CourseId": 99,
+          "PercentageGrade": 61
+        },
+        {
+          "CourseId": 74,
+          "PercentageGrade": 63
+        },
+        {
+          "CourseId": 79,
+          "PercentageGrade": 92
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Reece Rosales",
+      "DateOfBirth": "1989-05-13",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 310, 9355 In Av.",
+        "City": "Traralgon",
+        "County": "Victoria",
+        "PostalCode": "G3J 9A0",
+        "IsoCountryCode": "RE"
+      },
+      "HomePhone": "0500 026926",
+      "EmailAddress": "euismod.urna@odioa.com",
+      "EnrolmentDate": "2011-05-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 45,
+          "PercentageGrade": 97
+        },
+        {
+          "CourseId": 11,
+          "PercentageGrade": 44
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Charles Underwood",
+      "DateOfBirth": "1993-06-14",
+      "HomeAddress": {
+        "AddressLine1": "798 Suspendisse Rd.",
+        "City": "Hamburg",
+        "County": "Hamburg",
+        "PostalCode": "N1E 3P9",
+        "IsoCountryCode": "AE"
+      },
+      "HomePhone": "076 2165 3345",
+      "EmailAddress": "nunc@sed.co.uk",
+      "EnrolmentDate": "2011-06-14T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 88,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 65,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 71,
+          "PercentageGrade": 56
+        },
+        {
+          "CourseId": 55,
+          "PercentageGrade": 34
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Cedric Griffin",
+      "DateOfBirth": "1977-09-05",
+      "HomeAddress": {
+        "AddressLine1": "822-179 Tempor St.",
+        "City": "Värnamo",
+        "County": "Jönköpings län",
+        "PostalCode": "676280",
+        "IsoCountryCode": "NL"
+      },
+      "HomePhone": "(016977) 6365",
+      "EmailAddress": "dolor@etmagnisdis.net",
+      "EnrolmentDate": "1997-09-05T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 57,
+          "PercentageGrade": 69
+        },
+        {
+          "CourseId": 42,
+          "PercentageGrade": 60
+        },
+        {
+          "CourseId": 22,
+          "PercentageGrade": 75
+        },
+        {
+          "CourseId": 65,
+          "PercentageGrade": 37
+        },
+        {
+          "CourseId": 8,
+          "PercentageGrade": 37
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 37
+        },
+        {
+          "CourseId": 48,
+          "PercentageGrade": 35
+        },
+        {
+          "CourseId": 54,
+          "PercentageGrade": 68
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Aladdin Martinez",
+      "DateOfBirth": "1992-06-19",
+      "HomeAddress": {
+        "AddressLine1": "Ap #910-8526 Vitae, Rd.",
+        "City": "San Francisco",
+        "County": "CA",
+        "PostalCode": "8458",
+        "IsoCountryCode": "AG"
+      },
+      "HomePhone": "(022) 2964 7296",
+      "EmailAddress": "aliquet.diam.Sed@posuere.edu",
+      "EnrolmentDate": "2015-06-19T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 22,
+          "PercentageGrade": 49
+        },
+        {
+          "CourseId": 94,
+          "PercentageGrade": 65
+        },
+        {
+          "CourseId": 98,
+          "PercentageGrade": 50
+        },
+        {
+          "CourseId": 59,
+          "PercentageGrade": 42
+        },
+        {
+          "CourseId": 12,
+          "PercentageGrade": 48
+        },
+        {
+          "CourseId": 5,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 100,
+          "PercentageGrade": 63
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Chiquita Cameron",
+      "DateOfBirth": "1977-02-10",
+      "HomeAddress": {
+        "AddressLine1": "917-8534 In Ave",
+        "City": "Olinda",
+        "County": "PE",
+        "PostalCode": "1179",
+        "IsoCountryCode": "RO"
+      },
+      "HomePhone": "0984 069 2486",
+      "EmailAddress": "lorem.vitae.odio@magnamalesuada.ca",
+      "EnrolmentDate": "2011-02-10T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 47,
+          "PercentageGrade": 36
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Kyla Duncan",
+      "DateOfBirth": "1975-03-11",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 124, 496 Ornare, Rd.",
+        "City": "Sokoto",
+        "County": "Sokoto",
+        "PostalCode": "71360",
+        "IsoCountryCode": "TD"
+      },
+      "HomePhone": "(0161) 534 2414",
+      "EmailAddress": "felis@tristique.org",
+      "EnrolmentDate": "2001-03-11T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 89,
+          "PercentageGrade": 42
+        },
+        {
+          "CourseId": 35,
+          "PercentageGrade": 59
+        },
+        {
+          "CourseId": 72,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 88,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 46,
+          "PercentageGrade": 90
+        },
+        {
+          "CourseId": 45,
+          "PercentageGrade": 54
+        },
+        {
+          "CourseId": 6,
+          "PercentageGrade": 64
+        },
+        {
+          "CourseId": 74,
+          "PercentageGrade": 67
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Kathleen Clark",
+      "DateOfBirth": "1959-07-16",
+      "HomeAddress": {
+        "AddressLine1": "8791 Nunc Avenue",
+        "City": "Nîmes",
+        "County": "LA",
+        "PostalCode": "45029",
+        "IsoCountryCode": "TZ"
+      },
+      "HomePhone": "0845 46 44",
+      "EmailAddress": "porttitor.interdum.Sed@fermentumconvallisligula.co.uk",
+      "EnrolmentDate": "1977-07-16T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 48,
+          "PercentageGrade": 33
+        },
+        {
+          "CourseId": 32,
+          "PercentageGrade": 64
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Yuli Wong",
+      "DateOfBirth": "1963-06-08",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 331, 7347 Et Rd.",
+        "City": "Cañas",
+        "County": "Guanacaste",
+        "PostalCode": "99320",
+        "IsoCountryCode": "TM"
+      },
+      "HomePhone": "(0119) 222 8446",
+      "EmailAddress": "congue.In.scelerisque@natoque.net",
+      "EnrolmentDate": "1988-06-08T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 9,
+          "PercentageGrade": 46
+        },
+        {
+          "CourseId": 98,
+          "PercentageGrade": 45
+        },
+        {
+          "CourseId": 36,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 14,
+          "PercentageGrade": 49
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 31
+        },
+        {
+          "CourseId": 97,
+          "PercentageGrade": 37
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Blake Thomas",
+      "DateOfBirth": "1986-03-01",
+      "HomeAddress": {
+        "AddressLine1": "Ap #980-9458 Diam. Rd.",
+        "City": "Chillán Viejo",
+        "County": "Biobío",
+        "PostalCode": "70-837",
+        "IsoCountryCode": "MP"
+      },
+      "HomePhone": "(0161) 353 2495",
+      "EmailAddress": "urna.nec@anteNuncmauris.edu",
+      "EnrolmentDate": "2010-03-01T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 34,
+          "PercentageGrade": 63
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Xyla Andrews",
+      "DateOfBirth": "1983-06-25",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 526, 8267 Pharetra Rd.",
+        "City": "Słupsk",
+        "County": "PM",
+        "PostalCode": "07934",
+        "IsoCountryCode": "SE"
+      },
+      "HomePhone": "0500 270749",
+      "EmailAddress": "consequat.auctor.nunc@arcuVestibulum.co.uk",
+      "EnrolmentDate": "2003-06-25T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 1,
+          "PercentageGrade": 68
+        },
+        {
+          "CourseId": 3,
+          "PercentageGrade": 68
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Lesley Pugh",
+      "DateOfBirth": "1975-02-21",
+      "HomeAddress": {
+        "AddressLine1": "Ap #125-6615 Porttitor St.",
+        "City": "Cork",
+        "County": "M",
+        "PostalCode": "45863",
+        "IsoCountryCode": "HU"
+      },
+      "HomePhone": "070 3766 9085",
+      "EmailAddress": "nec.ante@ultricesVivamus.org",
+      "EnrolmentDate": "1996-02-21T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 9,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 11,
+          "PercentageGrade": 48
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": 58
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Xander Spencer",
+      "DateOfBirth": "1991-05-12",
+      "HomeAddress": {
+        "AddressLine1": "Ap #170-4393 Consectetuer Rd.",
+        "City": "Falun",
+        "County": "Dalarnas län",
+        "PostalCode": "82186-422",
+        "IsoCountryCode": "MG"
+      },
+      "HomePhone": "055 2494 7370",
+      "EmailAddress": "eget.tincidunt@disparturientmontes.org",
+      "EnrolmentDate": "2021-05-12T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 13,
+          "PercentageGrade": 37
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Malcolm Solis",
+      "DateOfBirth": "1995-08-13",
+      "HomeAddress": {
+        "AddressLine1": "988-1794 Posuere Rd.",
+        "City": "Belfast",
+        "County": "U",
+        "PostalCode": "36680",
+        "IsoCountryCode": "MX"
+      },
+      "HomePhone": "070 9568 0992",
+      "EmailAddress": "risus@condimentumeget.net",
+      "EnrolmentDate": "2016-08-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 52,
+          "PercentageGrade": 54
+        },
+        {
+          "CourseId": 46,
+          "PercentageGrade": 56
+        },
+        {
+          "CourseId": 82,
+          "PercentageGrade": 44
+        },
+        {
+          "CourseId": 71,
+          "PercentageGrade": 37
+        },
+        {
+          "CourseId": 73,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 16,
+          "PercentageGrade": 90
+        },
+        {
+          "CourseId": 64,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 40,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Lucas Rollins",
+      "DateOfBirth": "1988-10-25",
+      "HomeAddress": {
+        "AddressLine1": "8944 Vulputate St.",
+        "City": "Vienna",
+        "County": "Wie",
+        "PostalCode": "0852",
+        "IsoCountryCode": "ST"
+      },
+      "HomePhone": "07920 997276",
+      "EmailAddress": "Mauris@nec.com",
+      "EnrolmentDate": "2021-10-25T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 96,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 2,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Fredericka Sutton",
+      "DateOfBirth": "1953-11-23",
+      "HomeAddress": {
+        "AddressLine1": "Ap #118-5539 Commodo Rd.",
+        "City": "Boise",
+        "County": "ID",
+        "PostalCode": "6834",
+        "IsoCountryCode": "HR"
+      },
+      "HomePhone": "(022) 1256 1323",
+      "EmailAddress": "arcu.Vestibulum.ante@aceleifend.com",
+      "EnrolmentDate": "1980-11-23T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 83,
+          "PercentageGrade": 32
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 93
+        },
+        {
+          "CourseId": 75,
+          "PercentageGrade": 51
+        },
+        {
+          "CourseId": 98,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 69,
+          "PercentageGrade": 50
+        },
+        {
+          "CourseId": 84,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 41,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 26,
+          "PercentageGrade": 45
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 65
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Urielle Owens",
+      "DateOfBirth": "1963-06-07",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 161, 5024 Mauris Ave",
+        "City": "Vienna",
+        "County": "Wie",
+        "PostalCode": "3993",
+        "IsoCountryCode": "JO"
+      },
+      "HomePhone": "0893 621 3749",
+      "EmailAddress": "diam@euismodurna.ca",
+      "EnrolmentDate": "1984-06-07T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 28,
+          "PercentageGrade": 44
+        },
+        {
+          "CourseId": 101,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 61,
+          "PercentageGrade": 93
+        },
+        {
+          "CourseId": 72,
+          "PercentageGrade": 53
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Rhoda Perry",
+      "DateOfBirth": "1962-11-19",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 590, 9879 Dignissim. Avenue",
+        "City": "Paulista",
+        "County": "Pernambuco",
+        "PostalCode": "4281",
+        "IsoCountryCode": "SN"
+      },
+      "HomePhone": "(016977) 7374",
+      "EmailAddress": "dapibus.rutrum.justo@nullavulputate.net",
+      "EnrolmentDate": "1981-11-19T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 71,
+          "PercentageGrade": 36
+        },
+        {
+          "CourseId": 9,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 98,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 7,
+          "PercentageGrade": 39
+        },
+        {
+          "CourseId": 10,
+          "PercentageGrade": 32
+        },
+        {
+          "CourseId": 61,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 64,
+          "PercentageGrade": 79
+        },
+        {
+          "CourseId": 31,
+          "PercentageGrade": 67
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Amber Potts",
+      "DateOfBirth": "1958-09-05",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 210, 1543 Est. Avenue",
+        "City": "Hulst",
+        "County": "Zeeland",
+        "PostalCode": "23220",
+        "IsoCountryCode": "SH"
+      },
+      "HomePhone": "(010680) 57874",
+      "EmailAddress": "Donec.at.arcu@semmollisdui.edu",
+      "EnrolmentDate": "1977-09-05T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 27,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 95,
+          "PercentageGrade": 86
+        },
+        {
+          "CourseId": 66,
+          "PercentageGrade": 39
+        },
+        {
+          "CourseId": 4,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 29,
+          "PercentageGrade": 59
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Zenaida Alston",
+      "DateOfBirth": "1966-01-25",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 802, 8618 Gravida St.",
+        "City": "Hulst",
+        "County": "Zl",
+        "PostalCode": "1784",
+        "IsoCountryCode": "DK"
+      },
+      "HomePhone": "(01775) 89170",
+      "EmailAddress": "nec@libero.co.uk",
+      "EnrolmentDate": "1989-01-25T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 16,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 90,
+          "PercentageGrade": 70
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Keefe Ray",
+      "DateOfBirth": "1986-02-27",
+      "HomeAddress": {
+        "AddressLine1": "Ap #808-7747 Consectetuer Road",
+        "City": "Sotteville-lès-Rouen",
+        "County": "Haute-Normandie",
+        "PostalCode": "77876",
+        "IsoCountryCode": "PY"
+      },
+      "HomePhone": "055 1257 8787",
+      "EmailAddress": "diam@Duiscursus.edu",
+      "EnrolmentDate": "2012-02-27T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Kaden Kline",
+      "DateOfBirth": "1968-10-18",
+      "HomeAddress": {
+        "AddressLine1": "676-3816 Risus. Street",
+        "City": "Taber",
+        "County": "Alberta",
+        "PostalCode": "20513",
+        "IsoCountryCode": "WF"
+      },
+      "HomePhone": "(016977) 1787",
+      "EmailAddress": "cursus@sedorci.com",
+      "EnrolmentDate": "2002-10-18T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Gannon Hanson",
+      "DateOfBirth": "1952-09-14",
+      "HomeAddress": {
+        "AddressLine1": "7336 Amet Ave",
+        "City": "Heredia",
+        "County": "H",
+        "PostalCode": "6208",
+        "IsoCountryCode": "SB"
+      },
+      "HomePhone": "0500 260320",
+      "EmailAddress": "dui@placeratvelitQuisque.com",
+      "EnrolmentDate": "1977-09-14T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 71,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Jesse Humphrey",
+      "DateOfBirth": "1989-10-29",
+      "HomeAddress": {
+        "AddressLine1": "2651 Ut Avenue",
+        "City": "Motala",
+        "County": "E",
+        "PostalCode": "N9T 3Z2",
+        "IsoCountryCode": "MH"
+      },
+      "HomePhone": "(0141) 322 5997",
+      "EmailAddress": "est@luctusvulputate.org",
+      "EnrolmentDate": "2020-10-29T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 19,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 50,
+          "PercentageGrade": 41
+        },
+        {
+          "CourseId": 101,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": 45
+        },
+        {
+          "CourseId": 98,
+          "PercentageGrade": 100
+        },
+        {
+          "CourseId": 26,
+          "PercentageGrade": 77
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": 79
+        },
+        {
+          "CourseId": 32,
+          "PercentageGrade": 50
+        },
+        {
+          "CourseId": 84,
+          "PercentageGrade": 47
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Hyatt Cook",
+      "DateOfBirth": "1973-08-20",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 118, 1738 Cras Road",
+        "City": "Huntsville",
+        "County": "AL",
+        "PostalCode": "5510",
+        "IsoCountryCode": "GE"
+      },
+      "HomePhone": "(0113) 681 0993",
+      "EmailAddress": "accumsan@ipsumleo.co.uk",
+      "EnrolmentDate": "2001-08-20T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 31,
+          "PercentageGrade": 90
+        },
+        {
+          "CourseId": 67,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 47,
+          "PercentageGrade": 71
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "McKenzie Baird",
+      "DateOfBirth": "1963-10-27",
+      "HomeAddress": {
+        "AddressLine1": "Ap #926-3895 Consectetuer Avenue",
+        "City": "Lauro de Freitas",
+        "County": "Bahia",
+        "PostalCode": "8790",
+        "IsoCountryCode": "BO"
+      },
+      "HomePhone": "(018770) 95288",
+      "EmailAddress": "Sed@estNunc.ca",
+      "EnrolmentDate": "1992-10-27T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 63,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 69,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 65,
+          "PercentageGrade": 42
+        },
+        {
+          "CourseId": 83,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 84,
+          "PercentageGrade": 35
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Blair Vargas",
+      "DateOfBirth": "1973-09-15",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 440, 3272 Odio St.",
+        "City": "Koszalin",
+        "County": "ZP",
+        "PostalCode": "EA94 2DL",
+        "IsoCountryCode": "NI"
+      },
+      "HomePhone": "(025) 9287 9971",
+      "EmailAddress": "libero.Morbi@felisadipiscingfringilla.co.uk",
+      "EnrolmentDate": "2004-09-15T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 0,
+          "PercentageGrade": 67
+        },
+        {
+          "CourseId": 85,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 6,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": 41
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Garrett Mccormick",
+      "DateOfBirth": "1977-05-10",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 455, 8609 Nullam Road",
+        "City": "Galway",
+        "County": "C",
+        "PostalCode": "87555",
+        "IsoCountryCode": "TW"
+      },
+      "HomePhone": "0848 796 8695",
+      "EmailAddress": "mi@adipiscing.org",
+      "EnrolmentDate": "2008-05-10T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Jena Fitzgerald",
+      "DateOfBirth": "1997-12-15",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 706, 6056 Nulla Rd.",
+        "City": "Ijebu Ode",
+        "County": "Ogun",
+        "PostalCode": "166256",
+        "IsoCountryCode": "BD"
+      },
+      "HomePhone": "056 0941 7502",
+      "EmailAddress": "augue@porta.net",
+      "EnrolmentDate": "2016-12-15T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Xena Riley",
+      "DateOfBirth": "1974-03-27",
+      "HomeAddress": {
+        "AddressLine1": "444-6473 Et St.",
+        "City": "Nampa",
+        "County": "Idaho",
+        "PostalCode": "506017",
+        "IsoCountryCode": "BO"
+      },
+      "HomePhone": "070 7035 7032",
+      "EmailAddress": "cursus.vestibulum@auguescelerisquemollis.edu",
+      "EnrolmentDate": "2003-03-27T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 63,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 70,
+          "PercentageGrade": 66
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Eugenia Morton",
+      "DateOfBirth": "1960-03-15",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 839, 3348 Tristique Rd.",
+        "City": "Norrköping",
+        "County": "Östergötlands län",
+        "PostalCode": "1279",
+        "IsoCountryCode": "IT"
+      },
+      "HomePhone": "0800 591 1621",
+      "EmailAddress": "eu.ligula.Aenean@ultricesposuerecubilia.com",
+      "EnrolmentDate": "1987-03-15T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 47,
+          "PercentageGrade": 71
+        },
+        {
+          "CourseId": 67,
+          "PercentageGrade": 30
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Quamar Hood",
+      "DateOfBirth": "1990-04-10",
+      "HomeAddress": {
+        "AddressLine1": "443-8439 Et, Rd.",
+        "City": "Baltimore",
+        "County": "Maryland",
+        "PostalCode": "124556",
+        "IsoCountryCode": "GE"
+      },
+      "HomePhone": "0500 380860",
+      "EmailAddress": "accumsan.neque.et@adipiscing.edu",
+      "EnrolmentDate": "2021-04-10T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 88,
+          "PercentageGrade": 93
+        },
+        {
+          "CourseId": 8,
+          "PercentageGrade": 57
+        },
+        {
+          "CourseId": 72,
+          "PercentageGrade": 97
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": 97
+        },
+        {
+          "CourseId": 74,
+          "PercentageGrade": 98
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Justin Payne",
+      "DateOfBirth": "1998-01-03",
+      "HomeAddress": {
+        "AddressLine1": "682-4031 Tempus, Ave",
+        "City": "Belfast",
+        "County": "Ulster",
+        "PostalCode": "84943",
+        "IsoCountryCode": "GB"
+      },
+      "HomePhone": "(01905) 62490",
+      "EmailAddress": "laoreet@cursuspurus.net",
+      "EnrolmentDate": "2024-01-03T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 97,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 93,
+          "PercentageGrade": 96
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": 75
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": 66
+        },
+        {
+          "CourseId": 54,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 29,
+          "PercentageGrade": 40
+        },
+        {
+          "CourseId": 91,
+          "PercentageGrade": 42
+        },
+        {
+          "CourseId": 3,
+          "PercentageGrade": 99
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Naida King",
+      "DateOfBirth": "1956-06-23",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 978, 9519 Maecenas Av.",
+        "City": "Trollhättan",
+        "County": "O",
+        "PostalCode": "221323",
+        "IsoCountryCode": "KH"
+      },
+      "HomePhone": "(016977) 4842",
+      "EmailAddress": "adipiscing@malesuadaaugueut.net",
+      "EnrolmentDate": "1983-06-23T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Hiroko Lowery",
+      "DateOfBirth": "1958-11-10",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 925, 9317 Torquent Rd.",
+        "City": "Daly",
+        "County": "Manitoba",
+        "PostalCode": "006234",
+        "IsoCountryCode": "MF"
+      },
+      "HomePhone": "0500 457407",
+      "EmailAddress": "et@mollisPhaselluslibero.org",
+      "EnrolmentDate": "1981-11-10T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 15,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 83,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 39,
+          "PercentageGrade": 78
+        },
+        {
+          "CourseId": 55,
+          "PercentageGrade": 79
+        },
+        {
+          "CourseId": 30,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 100,
+          "PercentageGrade": 60
+        },
+        {
+          "CourseId": 59,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Carly Weeks",
+      "DateOfBirth": "1987-04-27",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 118, 2988 Quisque Avenue",
+        "City": "Ribeirão Preto",
+        "County": "SP",
+        "PostalCode": "16834-023",
+        "IsoCountryCode": "OM"
+      },
+      "HomePhone": "070 7066 7856",
+      "EmailAddress": "ac.risus.Morbi@musProinvel.co.uk",
+      "EnrolmentDate": "2008-04-27T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 8,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 36,
+          "PercentageGrade": 48
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 84
+        },
+        {
+          "CourseId": 89,
+          "PercentageGrade": 62
+        },
+        {
+          "CourseId": 93,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 82,
+          "PercentageGrade": 75
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Ivy Ellis",
+      "DateOfBirth": "1961-03-19",
+      "HomeAddress": {
+        "AddressLine1": "735-456 Ac St.",
+        "City": "Sierra Gorda",
+        "County": "Antofagasta",
+        "PostalCode": "53-259",
+        "IsoCountryCode": "GM"
+      },
+      "HomePhone": "0800 1111",
+      "EmailAddress": "congue.a@scelerisquemollis.co.uk",
+      "EnrolmentDate": "1989-03-19T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 63,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 90,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 68,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 50,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 53,
+          "PercentageGrade": 67
+        },
+        {
+          "CourseId": 60,
+          "PercentageGrade": 54
+        },
+        {
+          "CourseId": 12,
+          "PercentageGrade": 95
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Ingrid Hughes",
+      "DateOfBirth": "1953-07-28",
+      "HomeAddress": {
+        "AddressLine1": "772-489 Aliquam Av.",
+        "City": "Saltara",
+        "County": "Marche",
+        "PostalCode": "28213",
+        "IsoCountryCode": "SM"
+      },
+      "HomePhone": "(01422) 44790",
+      "EmailAddress": "risus.In.mi@duisemperet.edu",
+      "EnrolmentDate": "1978-07-28T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 86,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 80,
+          "PercentageGrade": 41
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Peter Harris",
+      "DateOfBirth": "1960-08-13",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 998, 7510 Felis St.",
+        "City": "Vienna",
+        "County": "Wie",
+        "PostalCode": "93512",
+        "IsoCountryCode": "PL"
+      },
+      "HomePhone": "(01701) 637262",
+      "EmailAddress": "lobortis.ultrices@Integer.net",
+      "EnrolmentDate": "1993-08-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 5,
+          "PercentageGrade": 35
+        },
+        {
+          "CourseId": 50,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 48,
+          "PercentageGrade": 72
+        },
+        {
+          "CourseId": 12,
+          "PercentageGrade": 75
+        },
+        {
+          "CourseId": 39,
+          "PercentageGrade": 86
+        },
+        {
+          "CourseId": 40,
+          "PercentageGrade": 72
+        },
+        {
+          "CourseId": 21,
+          "PercentageGrade": 50
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Pearl Ashley",
+      "DateOfBirth": "1985-09-29",
+      "HomeAddress": {
+        "AddressLine1": "144 Ornare. Rd.",
+        "City": "Nacimiento",
+        "County": "VII",
+        "PostalCode": "09564",
+        "IsoCountryCode": "CG"
+      },
+      "HomePhone": "070 2367 3628",
+      "EmailAddress": "Vivamus@Morbisit.co.uk",
+      "EnrolmentDate": "2004-09-29T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 87,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 88,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 6,
+          "PercentageGrade": 39
+        },
+        {
+          "CourseId": 3,
+          "PercentageGrade": 68
+        },
+        {
+          "CourseId": 95,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 39,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 58,
+          "PercentageGrade": 74
+        },
+        {
+          "CourseId": 54,
+          "PercentageGrade": 55
+        },
+        {
+          "CourseId": 14,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Isabelle Fischer",
+      "DateOfBirth": "1993-09-06",
+      "HomeAddress": {
+        "AddressLine1": "588-4868 Mauris Avenue",
+        "City": "Kuşadası",
+        "County": "Aydın",
+        "PostalCode": "3323",
+        "IsoCountryCode": "LB"
+      },
+      "HomePhone": "(01687) 05612",
+      "EmailAddress": "orci@ornareelit.org",
+      "EnrolmentDate": "2011-09-06T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 1,
+          "PercentageGrade": 97
+        },
+        {
+          "CourseId": 46,
+          "PercentageGrade": 68
+        },
+        {
+          "CourseId": 102,
+          "PercentageGrade": 46
+        },
+        {
+          "CourseId": 33,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 101,
+          "PercentageGrade": 44
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Fallon Boyer",
+      "DateOfBirth": "1990-12-12",
+      "HomeAddress": {
+        "AddressLine1": "Ap #835-1479 Non, Rd.",
+        "City": "María Pinto",
+        "County": "RM",
+        "PostalCode": "L7K 8N9",
+        "IsoCountryCode": "ES"
+      },
+      "HomePhone": "0800 105 4846",
+      "EmailAddress": "diam.at@duiFusce.edu",
+      "EnrolmentDate": "2022-12-12T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 27,
+          "PercentageGrade": 70
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Colin Sanchez",
+      "DateOfBirth": "1952-06-05",
+      "HomeAddress": {
+        "AddressLine1": "937-5908 Massa. St.",
+        "City": "Dublin",
+        "County": "L",
+        "PostalCode": "88578",
+        "IsoCountryCode": "NG"
+      },
+      "HomePhone": "0800 1111",
+      "EmailAddress": "orci.lacus@velit.com",
+      "EnrolmentDate": "1974-06-05T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 69,
+          "PercentageGrade": 68
+        },
+        {
+          "CourseId": 72,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 37,
+          "PercentageGrade": 59
+        },
+        {
+          "CourseId": 90,
+          "PercentageGrade": 36
+        },
+        {
+          "CourseId": 100,
+          "PercentageGrade": 57
+        },
+        {
+          "CourseId": 63,
+          "PercentageGrade": 41
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Dominic Conrad",
+      "DateOfBirth": "1951-05-31",
+      "HomeAddress": {
+        "AddressLine1": "Ap #694-7228 Quam. Street",
+        "City": "Kingston",
+        "County": "Ontario",
+        "PostalCode": "53980-260",
+        "IsoCountryCode": "PL"
+      },
+      "HomePhone": "056 6497 6616",
+      "EmailAddress": "blandit.congue@diamnunc.com",
+      "EnrolmentDate": "1975-05-31T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 100,
+          "PercentageGrade": 60
+        },
+        {
+          "CourseId": 87,
+          "PercentageGrade": 44
+        },
+        {
+          "CourseId": 68,
+          "PercentageGrade": 56
+        },
+        {
+          "CourseId": 64,
+          "PercentageGrade": 51
+        },
+        {
+          "CourseId": 19,
+          "PercentageGrade": 91
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Cruz Melendez",
+      "DateOfBirth": "1973-07-19",
+      "HomeAddress": {
+        "AddressLine1": "3518 Congue, Street",
+        "City": "Belfast",
+        "County": "Ulster",
+        "PostalCode": "65084",
+        "IsoCountryCode": "GL"
+      },
+      "HomePhone": "(0113) 925 7003",
+      "EmailAddress": "in.sodales.elit@sed.co.uk",
+      "EnrolmentDate": "2007-07-19T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 20,
+          "PercentageGrade": 60
+        },
+        {
+          "CourseId": 24,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 95
+        },
+        {
+          "CourseId": 45,
+          "PercentageGrade": 74
+        },
+        {
+          "CourseId": 22,
+          "PercentageGrade": 46
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Illiana Thomas",
+      "DateOfBirth": "1996-04-24",
+      "HomeAddress": {
+        "AddressLine1": "1672 Lacus. Road",
+        "City": "Bydgoszcz",
+        "County": "KP",
+        "PostalCode": "3126",
+        "IsoCountryCode": "PH"
+      },
+      "HomePhone": "(01456) 62155",
+      "EmailAddress": "ornare@ultricesVivamusrhoncus.net",
+      "EnrolmentDate": "2025-04-24T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 21,
+          "PercentageGrade": 85
+        },
+        {
+          "CourseId": 94,
+          "PercentageGrade": 39
+        },
+        {
+          "CourseId": 4,
+          "PercentageGrade": 40
+        },
+        {
+          "CourseId": 81,
+          "PercentageGrade": 95
+        },
+        {
+          "CourseId": 52,
+          "PercentageGrade": 79
+        },
+        {
+          "CourseId": 66,
+          "PercentageGrade": 74
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 100
+        },
+        {
+          "CourseId": 31,
+          "PercentageGrade": 79
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Claudia Booth",
+      "DateOfBirth": "1954-11-06",
+      "HomeAddress": {
+        "AddressLine1": "508-6557 Sem St.",
+        "City": "Alajuela",
+        "County": "A",
+        "PostalCode": "29754",
+        "IsoCountryCode": "ET"
+      },
+      "HomePhone": "0800 945991",
+      "EmailAddress": "consequat.purus@convallisligula.com",
+      "EnrolmentDate": "1975-11-06T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 78,
+          "PercentageGrade": 90
+        },
+        {
+          "CourseId": 6,
+          "PercentageGrade": 51
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Logan Blackwell",
+      "DateOfBirth": "1962-01-13",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 430, 7960 Etiam Avenue",
+        "City": "Swadlincote",
+        "County": "DB",
+        "PostalCode": "1331AC",
+        "IsoCountryCode": "AL"
+      },
+      "HomePhone": "0845 46 46",
+      "EmailAddress": "penatibus@mus.edu",
+      "EnrolmentDate": "1982-01-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 76,
+          "PercentageGrade": 36
+        },
+        {
+          "CourseId": 30,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Victor Witt",
+      "DateOfBirth": "1975-10-31",
+      "HomeAddress": {
+        "AddressLine1": "5324 Euismod St.",
+        "City": "Mogi das Cruzes",
+        "County": "São Paulo",
+        "PostalCode": "46-077",
+        "IsoCountryCode": "MC"
+      },
+      "HomePhone": "0998 997 8156",
+      "EmailAddress": "Duis.cursus.diam@facilisisfacilisis.com",
+      "EnrolmentDate": "2009-10-31T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 45,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 96,
+          "PercentageGrade": 95
+        },
+        {
+          "CourseId": 59,
+          "PercentageGrade": 73
+        },
+        {
+          "CourseId": 58,
+          "PercentageGrade": 92
+        },
+        {
+          "CourseId": 93,
+          "PercentageGrade": 35
+        },
+        {
+          "CourseId": 65,
+          "PercentageGrade": 90
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Scott Martinez",
+      "DateOfBirth": "1965-03-03",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 114, 9333 Vestibulum Av.",
+        "City": "Warwick",
+        "County": "WA",
+        "PostalCode": "9971",
+        "IsoCountryCode": "ET"
+      },
+      "HomePhone": "(0118) 506 5221",
+      "EmailAddress": "montes.nascetur.ridiculus@magna.net",
+      "EnrolmentDate": "1997-03-03T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 74,
+          "PercentageGrade": 74
+        },
+        {
+          "CourseId": 52,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Caryn Mcguire",
+      "DateOfBirth": "1968-08-28",
+      "HomeAddress": {
+        "AddressLine1": "Ap #497-5182 Mollis Ave",
+        "City": "Stockholm",
+        "County": "AB",
+        "PostalCode": "78165",
+        "IsoCountryCode": "JP"
+      },
+      "HomePhone": "07938 877887",
+      "EmailAddress": "erat.volutpat.Nulla@Duis.net",
+      "EnrolmentDate": "2001-08-28T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 55,
+          "PercentageGrade": 68
+        },
+        {
+          "CourseId": 41,
+          "PercentageGrade": 85
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Lee Clayton",
+      "DateOfBirth": "1993-10-31",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 882, 2320 Lacus. Road",
+        "City": "Bath",
+        "County": "SO",
+        "PostalCode": "FZ9R 5RZ",
+        "IsoCountryCode": "EC"
+      },
+      "HomePhone": "056 9794 1458",
+      "EmailAddress": "pede@necanteMaecenas.org",
+      "EnrolmentDate": "2015-10-31T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 100,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 51,
+          "PercentageGrade": 95
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Yvette Wagner",
+      "DateOfBirth": "1968-03-19",
+      "HomeAddress": {
+        "AddressLine1": "985-3369 Diam Rd.",
+        "City": "Sint-Kwintens-Lennik",
+        "County": "VB",
+        "PostalCode": "84628",
+        "IsoCountryCode": "GP"
+      },
+      "HomePhone": "070 2518 5603",
+      "EmailAddress": "mollis.lectus@turpisnonenim.co.uk",
+      "EnrolmentDate": "1988-03-19T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 100,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 62,
+          "PercentageGrade": 94
+        }
+      ],
+      "DegreeClassification": 0
+    },
+    {
+      "FullName": "Jocelyn Ballard",
+      "DateOfBirth": "1965-07-03",
+      "HomeAddress": {
+        "AddressLine1": "7385 Scelerisque Rd.",
+        "City": "Abolens",
+        "County": "LU",
+        "PostalCode": "87400",
+        "IsoCountryCode": "KN"
+      },
+      "HomePhone": "(027) 8942 8216",
+      "EmailAddress": "faucibus.lectus@aliquetdiam.ca",
+      "EnrolmentDate": "1994-07-03T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 14,
+          "PercentageGrade": 60
+        },
+        {
+          "CourseId": 17,
+          "PercentageGrade": 78
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 75,
+          "PercentageGrade": 63
+        },
+        {
+          "CourseId": 59,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 36,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 90,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 82,
+          "PercentageGrade": 56
+        },
+        {
+          "CourseId": 28,
+          "PercentageGrade": 94
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Molly Schwartz",
+      "DateOfBirth": "1964-11-18",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 808, 2793 Nullam Ave",
+        "City": "Otukpo",
+        "County": "BE",
+        "PostalCode": "61665-113",
+        "IsoCountryCode": "KR"
+      },
+      "HomePhone": "(0115) 325 9115",
+      "EmailAddress": "at.pede@Maurismolestie.net",
+      "EnrolmentDate": "1986-11-18T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 95,
+          "PercentageGrade": 75
+        },
+        {
+          "CourseId": 67,
+          "PercentageGrade": 91
+        },
+        {
+          "CourseId": 11,
+          "PercentageGrade": 91
+        },
+        {
+          "CourseId": 83,
+          "PercentageGrade": 40
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": 43
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Regina Kemp",
+      "DateOfBirth": "1993-06-18",
+      "HomeAddress": {
+        "AddressLine1": "444-5194 Egestas. Street",
+        "City": "Aubervilliers",
+        "County": "Île-de-France",
+        "PostalCode": "0700",
+        "IsoCountryCode": "VU"
+      },
+      "HomePhone": "(022) 7691 4194",
+      "EmailAddress": "Donec.est.mauris@laciniaSedcongue.org",
+      "EnrolmentDate": "2022-06-18T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 48,
+          "PercentageGrade": 51
+        },
+        {
+          "CourseId": 42,
+          "PercentageGrade": 62
+        },
+        {
+          "CourseId": 75,
+          "PercentageGrade": 75
+        },
+        {
+          "CourseId": 78,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 5,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 40
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Jocelyn Hurley",
+      "DateOfBirth": "1951-03-22",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 588, 8117 Ut Road",
+        "City": "Vienna",
+        "County": "Wie",
+        "PostalCode": "61466",
+        "IsoCountryCode": "GH"
+      },
+      "HomePhone": "07148 443124",
+      "EmailAddress": "blandit.congue.In@Duiscursusdiam.ca",
+      "EnrolmentDate": "1981-03-22T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 94,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 46,
+          "PercentageGrade": 34
+        },
+        {
+          "CourseId": 9,
+          "PercentageGrade": 60
+        },
+        {
+          "CourseId": 91,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 32,
+          "PercentageGrade": 48
+        },
+        {
+          "CourseId": 0,
+          "PercentageGrade": 49
+        },
+        {
+          "CourseId": 53,
+          "PercentageGrade": 42
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Phoebe Knapp",
+      "DateOfBirth": "1996-01-06",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 364, 1600 Amet, St.",
+        "City": "Castelló",
+        "County": "CV",
+        "PostalCode": "7586",
+        "IsoCountryCode": "GL"
+      },
+      "HomePhone": "0500 444599",
+      "EmailAddress": "Duis.a@adlitora.edu",
+      "EnrolmentDate": "2027-01-06T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 57,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 84,
+          "PercentageGrade": 91
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 86,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 87,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 50,
+          "PercentageGrade": 91
+        },
+        {
+          "CourseId": 46,
+          "PercentageGrade": 71
+        },
+        {
+          "CourseId": 80,
+          "PercentageGrade": 100
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Kirby Bryan",
+      "DateOfBirth": "1985-08-08",
+      "HomeAddress": {
+        "AddressLine1": "Ap #581-1576 Dapibus Street",
+        "City": "Glendale",
+        "County": "AZ",
+        "PostalCode": "9887MM",
+        "IsoCountryCode": "AF"
+      },
+      "HomePhone": "076 0429 2460",
+      "EmailAddress": "sed.dui@atfringilla.edu",
+      "EnrolmentDate": "2003-08-08T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 64,
+          "PercentageGrade": 71
+        },
+        {
+          "CourseId": 92,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Kylee Pollard",
+      "DateOfBirth": "1989-08-15",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 542, 5822 Cras St.",
+        "City": "Pozantı",
+        "County": "Adana",
+        "PostalCode": "17279",
+        "IsoCountryCode": "IS"
+      },
+      "HomePhone": "0845 46 48",
+      "EmailAddress": "elit.sed@sagittis.ca",
+      "EnrolmentDate": "2013-08-15T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 54,
+          "PercentageGrade": 82
+        },
+        {
+          "CourseId": 15,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 33,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 88,
+          "PercentageGrade": 41
+        },
+        {
+          "CourseId": 29,
+          "PercentageGrade": 61
+        },
+        {
+          "CourseId": 35,
+          "PercentageGrade": 33
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Hayley Villarreal",
+      "DateOfBirth": "1992-10-23",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 220, 1225 Semper Rd.",
+        "City": "Akşehir",
+        "County": "Konya",
+        "PostalCode": "46347",
+        "IsoCountryCode": "DE"
+      },
+      "HomePhone": "07624 542485",
+      "EmailAddress": "augue.eu.tellus@tempor.net",
+      "EnrolmentDate": "2018-10-23T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 2,
+          "PercentageGrade": 69
+        },
+        {
+          "CourseId": 36,
+          "PercentageGrade": 68
+        },
+        {
+          "CourseId": 62,
+          "PercentageGrade": 73
+        },
+        {
+          "CourseId": 97,
+          "PercentageGrade": 61
+        },
+        {
+          "CourseId": 78,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 55,
+          "PercentageGrade": 74
+        },
+        {
+          "CourseId": 74,
+          "PercentageGrade": 36
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Quyn Ramos",
+      "DateOfBirth": "1999-12-24",
+      "HomeAddress": {
+        "AddressLine1": "Ap #132-2645 Risus Ave",
+        "City": "Niort",
+        "County": "Poitou-Charentes",
+        "PostalCode": "6615",
+        "IsoCountryCode": "EG"
+      },
+      "HomePhone": "0500 915423",
+      "EmailAddress": "nisl@lacusEtiam.co.uk",
+      "EnrolmentDate": "2028-12-24T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 46,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 87,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 15,
+          "PercentageGrade": 90
+        },
+        {
+          "CourseId": 83,
+          "PercentageGrade": 72
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Raven Foster",
+      "DateOfBirth": "1998-01-02",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 868, 2101 Sed Rd.",
+        "City": "Hamburg",
+        "County": "HH",
+        "PostalCode": "9923",
+        "IsoCountryCode": "NL"
+      },
+      "HomePhone": "076 4317 1579",
+      "EmailAddress": "quam.vel.sapien@mollis.edu",
+      "EnrolmentDate": "2017-01-02T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 39,
+          "PercentageGrade": 35
+        },
+        {
+          "CourseId": 5,
+          "PercentageGrade": 65
+        },
+        {
+          "CourseId": 94,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 54,
+          "PercentageGrade": 94
+        },
+        {
+          "CourseId": 38,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 34,
+          "PercentageGrade": 57
+        },
+        {
+          "CourseId": 51,
+          "PercentageGrade": 99
+        },
+        {
+          "CourseId": 10,
+          "PercentageGrade": 98
+        },
+        {
+          "CourseId": 71,
+          "PercentageGrade": 44
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Shaeleigh Rodriguez",
+      "DateOfBirth": "1953-10-08",
+      "HomeAddress": {
+        "AddressLine1": "724-5947 Sed St.",
+        "City": "Paine",
+        "County": "Metropolitana de Santiago",
+        "PostalCode": "12095",
+        "IsoCountryCode": "ES"
+      },
+      "HomePhone": "(029) 8790 8849",
+      "EmailAddress": "ridiculus.mus.Aenean@egetdictum.edu",
+      "EnrolmentDate": "1972-10-08T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 52,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 59,
+          "PercentageGrade": 31
+        },
+        {
+          "CourseId": 25,
+          "PercentageGrade": 84
+        },
+        {
+          "CourseId": 3,
+          "PercentageGrade": 41
+        },
+        {
+          "CourseId": 58,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": 48
+        },
+        {
+          "CourseId": 80,
+          "PercentageGrade": 66
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Natalie Lindsey",
+      "DateOfBirth": "1952-06-12",
+      "HomeAddress": {
+        "AddressLine1": "Ap #834-759 Posuere, Rd.",
+        "City": "Motta Camastra",
+        "County": "Sicilia",
+        "PostalCode": "10523",
+        "IsoCountryCode": "GA"
+      },
+      "HomePhone": "0800 421909",
+      "EmailAddress": "Proin.ultrices@diamDuismi.ca",
+      "EnrolmentDate": "1979-06-12T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Imani Freeman",
+      "DateOfBirth": "1968-12-05",
+      "HomeAddress": {
+        "AddressLine1": "Ap #312-2310 Amet, Rd.",
+        "City": "Coelemu",
+        "County": "VII",
+        "PostalCode": "94445",
+        "IsoCountryCode": "GQ"
+      },
+      "HomePhone": "(012151) 06470",
+      "EmailAddress": "Nunc.ac@Duisgravida.edu",
+      "EnrolmentDate": "1987-12-05T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 90,
+          "PercentageGrade": 56
+        },
+        {
+          "CourseId": 64,
+          "PercentageGrade": 77
+        },
+        {
+          "CourseId": 83,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 22,
+          "PercentageGrade": 75
+        },
+        {
+          "CourseId": 46,
+          "PercentageGrade": 95
+        },
+        {
+          "CourseId": 7,
+          "PercentageGrade": 54
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 42,
+          "PercentageGrade": 57
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Dahlia Edwards",
+      "DateOfBirth": "1954-08-16",
+      "HomeAddress": {
+        "AddressLine1": "5484 Massa Rd.",
+        "City": "Fort Worth",
+        "County": "TX",
+        "PostalCode": "CM8R 9GA",
+        "IsoCountryCode": "VC"
+      },
+      "HomePhone": "(019049) 66262",
+      "EmailAddress": "dictum.mi@egestasSed.com",
+      "EnrolmentDate": "1973-08-16T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 44,
+          "PercentageGrade": 71
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Jeanette Lester",
+      "DateOfBirth": "1999-04-17",
+      "HomeAddress": {
+        "AddressLine1": "Ap #868-8783 Nonummy Road",
+        "City": "Hamburg",
+        "County": "Hamburg",
+        "PostalCode": "76575",
+        "IsoCountryCode": "JE"
+      },
+      "HomePhone": "(023) 1841 0512",
+      "EmailAddress": "Donec.felis@aliquam.edu",
+      "EnrolmentDate": "2033-04-17T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Ila Thomas",
+      "DateOfBirth": "1984-05-07",
+      "HomeAddress": {
+        "AddressLine1": "Ap #901-1636 Aliquet Rd.",
+        "City": "Quesada",
+        "County": "Alajuela",
+        "PostalCode": "04942",
+        "IsoCountryCode": "GF"
+      },
+      "HomePhone": "076 2971 8860",
+      "EmailAddress": "velit.dui.semper@vel.org",
+      "EnrolmentDate": "2008-05-07T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 38,
+          "PercentageGrade": 57
+        }
+      ],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Amaya Chen",
+      "DateOfBirth": "1998-10-29",
+      "HomeAddress": {
+        "AddressLine1": "701 Est Street",
+        "City": "Istanbul",
+        "County": "Istanbul",
+        "PostalCode": "55390",
+        "IsoCountryCode": "IS"
+      },
+      "HomePhone": "0385 611 6679",
+      "EmailAddress": "tincidunt@convallisantelectus.co.uk",
+      "EnrolmentDate": "2025-10-29T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 77,
+          "PercentageGrade": 94
+        },
+        {
+          "CourseId": 85,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 44,
+          "PercentageGrade": 61
+        },
+        {
+          "CourseId": 60,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Diana Campbell",
+      "DateOfBirth": "1970-04-21",
+      "HomeAddress": {
+        "AddressLine1": "8375 Dis Street",
+        "City": "Ciudad Real",
+        "County": "CM",
+        "PostalCode": "PH85 3QE",
+        "IsoCountryCode": "TG"
+      },
+      "HomePhone": "0350 939 9313",
+      "EmailAddress": "vel.mauris@acmetus.net",
+      "EnrolmentDate": "1989-04-21T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 25,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 31,
+          "PercentageGrade": 52
+        },
+        {
+          "CourseId": 45,
+          "PercentageGrade": 81
+        },
+        {
+          "CourseId": 26,
+          "PercentageGrade": 53
+        },
+        {
+          "CourseId": 8,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 56,
+          "PercentageGrade": 54
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Zeph Mcclure",
+      "DateOfBirth": "1975-12-27",
+      "HomeAddress": {
+        "AddressLine1": "280-3948 Enim. Ave",
+        "City": "Rotorua",
+        "County": "NI",
+        "PostalCode": "9548",
+        "IsoCountryCode": "US"
+      },
+      "HomePhone": "07624 479609",
+      "EmailAddress": "vitae@euarcu.com",
+      "EnrolmentDate": "2004-12-27T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 67,
+          "PercentageGrade": 63
+        },
+        {
+          "CourseId": 96,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 34,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 55,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 88,
+          "PercentageGrade": 42
+        },
+        {
+          "CourseId": 22,
+          "PercentageGrade": 96
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Audrey Henderson",
+      "DateOfBirth": "1971-11-08",
+      "HomeAddress": {
+        "AddressLine1": "4847 Iaculis Rd.",
+        "City": "Alajuela",
+        "County": "A",
+        "PostalCode": "7490",
+        "IsoCountryCode": "TH"
+      },
+      "HomePhone": "056 9527 6588",
+      "EmailAddress": "ipsum@quisdiam.edu",
+      "EnrolmentDate": "1989-11-08T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Cedric Moody",
+      "DateOfBirth": "1958-10-01",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 554, 8220 Sodales Street",
+        "City": "Abeokuta",
+        "County": "Ogun",
+        "PostalCode": "7825",
+        "IsoCountryCode": "AE"
+      },
+      "HomePhone": "07624 990865",
+      "EmailAddress": "ridiculus.mus@Donec.com",
+      "EnrolmentDate": "1979-10-01T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Warren Glass",
+      "DateOfBirth": "1958-01-24",
+      "HomeAddress": {
+        "AddressLine1": "Ap #939-1818 Netus Rd.",
+        "City": "Recife",
+        "County": "Pernambuco",
+        "PostalCode": "E0 8CA",
+        "IsoCountryCode": "MW"
+      },
+      "HomePhone": "055 8459 8905",
+      "EmailAddress": "Mauris@ligulaelitpretium.edu",
+      "EnrolmentDate": "1986-01-24T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 54,
+          "PercentageGrade": 82
+        },
+        {
+          "CourseId": 25,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": 48
+        },
+        {
+          "CourseId": 24,
+          "PercentageGrade": 32
+        },
+        {
+          "CourseId": 99,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 82,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 2
+    },
+    {
+      "FullName": "Paki Adams",
+      "DateOfBirth": "1964-10-22",
+      "HomeAddress": {
+        "AddressLine1": "211 Justo Road",
+        "City": "Pozantı",
+        "County": "Adana",
+        "PostalCode": "ZX0 7VW",
+        "IsoCountryCode": "BN"
+      },
+      "HomePhone": "(01819) 070591",
+      "EmailAddress": "ligula.Aenean.gravida@duiquisaccumsan.com",
+      "EnrolmentDate": "1987-10-22T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 7,
+          "PercentageGrade": 66
+        },
+        {
+          "CourseId": 13,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 42,
+          "PercentageGrade": 77
+        },
+        {
+          "CourseId": 27,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 43,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 71,
+          "PercentageGrade": 58
+        },
+        {
+          "CourseId": 47,
+          "PercentageGrade": 83
+        },
+        {
+          "CourseId": 41,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 63,
+          "PercentageGrade": 96
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Ferdinand Dawson",
+      "DateOfBirth": "1983-05-28",
+      "HomeAddress": {
+        "AddressLine1": "662 Vivamus Rd.",
+        "City": "Spijkenisse",
+        "County": "Z.",
+        "PostalCode": "424828",
+        "IsoCountryCode": "GS"
+      },
+      "HomePhone": "0897 676 5074",
+      "EmailAddress": "Curae@Quisquefringilla.co.uk",
+      "EnrolmentDate": "2011-05-28T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 89,
+          "PercentageGrade": 92
+        },
+        {
+          "CourseId": 82,
+          "PercentageGrade": 41
+        },
+        {
+          "CourseId": 47,
+          "PercentageGrade": 39
+        },
+        {
+          "CourseId": 41,
+          "PercentageGrade": 52
+        },
+        {
+          "CourseId": 0,
+          "PercentageGrade": 91
+        },
+        {
+          "CourseId": 102,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 78,
+          "PercentageGrade": 49
+        },
+        {
+          "CourseId": 20,
+          "PercentageGrade": 83
+        },
+        {
+          "CourseId": 54,
+          "PercentageGrade": 65
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Amos Blake",
+      "DateOfBirth": "1993-06-15",
+      "HomeAddress": {
+        "AddressLine1": "977-1114 Sed, St.",
+        "City": "Brecon",
+        "County": "Brecknockshire",
+        "PostalCode": "780770",
+        "IsoCountryCode": "AT"
+      },
+      "HomePhone": "(016977) 5575",
+      "EmailAddress": "justo.Praesent.luctus@sollicitudin.net",
+      "EnrolmentDate": "2015-06-15T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 5
+    },
+    {
+      "FullName": "Sloane Melton",
+      "DateOfBirth": "1986-02-21",
+      "HomeAddress": {
+        "AddressLine1": "Ap #941-2968 A, St.",
+        "City": "Spijkenisse",
+        "County": "Zuid Holland",
+        "PostalCode": "31314",
+        "IsoCountryCode": "CC"
+      },
+      "HomePhone": "070 3465 0093",
+      "EmailAddress": "Morbi.sit@Fuscefermentumfermentum.org",
+      "EnrolmentDate": "2008-02-21T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 28,
+          "PercentageGrade": 32
+        },
+        {
+          "CourseId": 39,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 51,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 99,
+          "PercentageGrade": 30
+        },
+        {
+          "CourseId": 96,
+          "PercentageGrade": 83
+        },
+        {
+          "CourseId": 95,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 64,
+          "PercentageGrade": 38
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Riley Burks",
+      "DateOfBirth": "1983-11-13",
+      "HomeAddress": {
+        "AddressLine1": "8041 Placerat, Ave",
+        "City": "Toowoomba",
+        "County": "Queensland",
+        "PostalCode": "67127",
+        "IsoCountryCode": "AZ"
+      },
+      "HomePhone": "056 8350 3020",
+      "EmailAddress": "amet.risus.Donec@Proin.net",
+      "EnrolmentDate": "2013-11-13T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 68,
+          "PercentageGrade": 38
+        },
+        {
+          "CourseId": 27,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 42,
+          "PercentageGrade": 37
+        },
+        {
+          "CourseId": 21,
+          "PercentageGrade": 67
+        },
+        {
+          "CourseId": 74,
+          "PercentageGrade": 88
+        },
+        {
+          "CourseId": 62,
+          "PercentageGrade": null
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Aquila Case",
+      "DateOfBirth": "1951-07-16",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 891, 9072 Consectetuer Av.",
+        "City": "Salon-de-Provence",
+        "County": "PR",
+        "PostalCode": "7668",
+        "IsoCountryCode": "TF"
+      },
+      "HomePhone": "0800 1111",
+      "EmailAddress": "Duis@diam.edu",
+      "EnrolmentDate": "1973-07-16T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 31,
+          "PercentageGrade": 57
+        },
+        {
+          "CourseId": 84,
+          "PercentageGrade": 87
+        }
+      ],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Karly Carson",
+      "DateOfBirth": "1962-07-24",
+      "HomeAddress": {
+        "AddressLine1": "1031 Pretium Road",
+        "City": "Koekelberg",
+        "County": "BU",
+        "PostalCode": "84210-396",
+        "IsoCountryCode": "FM"
+      },
+      "HomePhone": "0500 188330",
+      "EmailAddress": "Phasellus.at.augue@velmauris.org",
+      "EnrolmentDate": "1995-07-24T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 82,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 23,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 59,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 19,
+          "PercentageGrade": 96
+        },
+        {
+          "CourseId": 15,
+          "PercentageGrade": 47
+        },
+        {
+          "CourseId": 51,
+          "PercentageGrade": 86
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Samson Howard",
+      "DateOfBirth": "1980-10-25",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 776, 2251 Consectetuer Rd.",
+        "City": "Champlain",
+        "County": "QC",
+        "PostalCode": "H2G 7G4",
+        "IsoCountryCode": "PH"
+      },
+      "HomePhone": "(016977) 3364",
+      "EmailAddress": "convallis.erat@rutrumurnanec.org",
+      "EnrolmentDate": "2010-10-25T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Cassandra Jackson",
+      "DateOfBirth": "1996-10-02",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 129, 7836 Mauris St.",
+        "City": "Salem",
+        "County": "TN",
+        "PostalCode": "900298",
+        "IsoCountryCode": "DM"
+      },
+      "HomePhone": "(01077) 708421",
+      "EmailAddress": "amet.massa.Quisque@feugiat.co.uk",
+      "EnrolmentDate": "2019-10-02T00:00:00",
+      "CourseEnrolments": [],
+      "DegreeClassification": 6
+    },
+    {
+      "FullName": "Demetria Rios",
+      "DateOfBirth": "1968-01-16",
+      "HomeAddress": {
+        "AddressLine1": "8704 Mollis. Rd.",
+        "City": "Jaén",
+        "County": "AN",
+        "PostalCode": "8536",
+        "IsoCountryCode": "TD"
+      },
+      "HomePhone": "(016977) 4646",
+      "EmailAddress": "eu@Integersemelit.ca",
+      "EnrolmentDate": "1999-01-16T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 45,
+          "PercentageGrade": 40
+        },
+        {
+          "CourseId": 47,
+          "PercentageGrade": 31
+        },
+        {
+          "CourseId": 55,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 51,
+          "PercentageGrade": 51
+        },
+        {
+          "CourseId": 14,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 56,
+          "PercentageGrade": 55
+        }
+      ],
+      "DegreeClassification": 4
+    },
+    {
+      "FullName": "Hop Frye",
+      "DateOfBirth": "1997-06-27",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 186, 4532 Cursus St.",
+        "City": "Livingston",
+        "County": "West Lothian",
+        "PostalCode": "15664",
+        "IsoCountryCode": "BA"
+      },
+      "HomePhone": "055 1941 3091",
+      "EmailAddress": "imperdiet@arcuNuncmauris.com",
+      "EnrolmentDate": "2017-06-27T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 2,
+          "PercentageGrade": 97
+        },
+        {
+          "CourseId": 60,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 50,
+          "PercentageGrade": 53
+        }
+      ],
+      "DegreeClassification": 3
+    },
+    {
+      "FullName": "Jesse Tucker",
+      "DateOfBirth": "1974-05-25",
+      "HomeAddress": {
+        "AddressLine1": "P.O. Box 850, 3086 Consequat Street",
+        "City": "Istanbul",
+        "County": "Istanbul",
+        "PostalCode": "6993",
+        "IsoCountryCode": "SV"
+      },
+      "HomePhone": "(027) 4739 7514",
+      "EmailAddress": "dictum.ultricies.ligula@risusDonec.org",
+      "EnrolmentDate": "1999-05-25T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 19,
+          "PercentageGrade": 82
+        },
+        {
+          "CourseId": 98,
+          "PercentageGrade": 72
+        },
+        {
+          "CourseId": 76,
+          "PercentageGrade": 76
+        },
+        {
+          "CourseId": 26,
+          "PercentageGrade": 78
+        },
+        {
+          "CourseId": 30,
+          "PercentageGrade": 80
+        },
+        {
+          "CourseId": 70,
+          "PercentageGrade": 34
+        }
+      ],
+      "DegreeClassification": 1
+    },
+    {
+      "FullName": "Jayme Washington",
+      "DateOfBirth": "1968-02-08",
+      "HomeAddress": {
+        "AddressLine1": "5084 Risus Av.",
+        "City": "Galway",
+        "County": "Connacht",
+        "PostalCode": "6609",
+        "IsoCountryCode": "NI"
+      },
+      "HomePhone": "070 7866 8878",
+      "EmailAddress": "euismod.in.dolor@nonvestibulum.org",
+      "EnrolmentDate": "1991-02-08T00:00:00",
+      "CourseEnrolments": [
+        {
+          "CourseId": 59,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 89,
+          "PercentageGrade": null
+        },
+        {
+          "CourseId": 55,
+          "PercentageGrade": 83
+        },
+        {
+          "CourseId": 94,
+          "PercentageGrade": 78
+        }
+      ],
+      "DegreeClassification": 4
+    }
+  ]
+}

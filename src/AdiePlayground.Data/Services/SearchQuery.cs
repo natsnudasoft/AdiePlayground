@@ -19,6 +19,7 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
+    using Model;
 
     /// <summary>
     /// Represents a search query with a list of criteria that can be applied to a query.
@@ -26,6 +27,7 @@ namespace AdiePlayground.Data.Services
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     /// <seealso cref="ISearchQuery{TEntity}" />
     internal sealed class SearchQuery<TEntity> : ISearchQuery<TEntity>
+        where TEntity : class, IModelEntity
     {
         private readonly List<ISearchCriterion<TEntity>> searchCriteria =
             new List<ISearchCriterion<TEntity>>();
@@ -50,7 +52,6 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <inheritdoc/>
-        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         ISearchQuery<TEntity> ISearchQuery<TEntity>.Include(
             Expression<Func<TEntity, object>> includePropertySelector)
         {
@@ -59,11 +60,21 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <inheritdoc/>
-        ISearchQuery<TEntity> ISearchQuery<TEntity>.Sort(
-            Expression<Func<TEntity, object>> sortPropertySelector,
+        ISearchQuery<TEntity> ISearchQuery<TEntity>.Sort<TProperty>(
+            Expression<Func<TEntity, TProperty>> sortPropertySelector)
+        {
+            this.searchCriteria.Add(
+                new SortCriterion<TEntity, TProperty>(sortPropertySelector, SortOrder.Ascending));
+            return this;
+        }
+
+        /// <inheritdoc/>
+        ISearchQuery<TEntity> ISearchQuery<TEntity>.Sort<TProperty>(
+            Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder)
         {
-            this.searchCriteria.Add(new SortCriterion<TEntity>(sortPropertySelector, sortOrder));
+            this.searchCriteria.Add(
+                new SortCriterion<TEntity, TProperty>(sortPropertySelector, sortOrder));
             return this;
         }
 

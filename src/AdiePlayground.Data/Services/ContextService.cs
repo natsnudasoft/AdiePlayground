@@ -170,6 +170,7 @@ namespace AdiePlayground.Data.Services
         private static IQueryable<TEntity> BuildSearchQuery<TEntity>(
             IQueryable<TEntity> query,
             ISearchQuery<TEntity> searchQuery)
+            where TEntity : class, IModelEntity
         {
             foreach (var criterion in searchQuery.SearchCriteria)
             {

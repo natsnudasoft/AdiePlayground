@@ -19,12 +19,14 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
+    using Model;
 
     /// <summary>
     /// Provides methods for building up a search query.
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity this search query operates on.</typeparam>
     public interface ISearchQuery<TEntity>
+        where TEntity : class, IModelEntity
     {
         /// <summary>
         /// Gets the search criteria that will be applied to the query when it is evaluated.
@@ -50,13 +52,28 @@ namespace AdiePlayground.Data.Services
 
         /// <summary>
         /// Creates the specified sort criterion that will be applied to the query when it is
+        /// evaluated. Uses default <see cref="SortOrder.Ascending"/>.
+        /// </summary>
+        /// <typeparam name="TProperty">The type the property selector will return.</typeparam>
+        /// <param name="sortPropertySelector">The sort that will be applied to the query.</param>
+        /// <returns>
+        /// The criterion to be applied when the query is evaluated.
+        /// </returns>
+        ISearchQuery<TEntity> Sort<TProperty>(
+            Expression<Func<TEntity, TProperty>> sortPropertySelector);
+
+        /// <summary>
+        /// Creates the specified sort criterion that will be applied to the query when it is
         /// evaluated.
         /// </summary>
+        /// <typeparam name="TProperty">The type the property selector will return.</typeparam>
         /// <param name="sortPropertySelector">The sort that will be applied to the query.</param>
         /// <param name="sortOrder">The sort order that will be applied to the query.</param>
-        /// <returns>The criterion to be applied when the query is evaluated.</returns>
-        ISearchQuery<TEntity> Sort(
-            Expression<Func<TEntity, object>> sortPropertySelector,
+        /// <returns>
+        /// The criterion to be applied when the query is evaluated.
+        /// </returns>
+        ISearchQuery<TEntity> Sort<TProperty>(
+            Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder);
 
         /// <summary>

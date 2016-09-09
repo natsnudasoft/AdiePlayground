@@ -17,12 +17,14 @@
 namespace AdiePlayground.Data.Services
 {
     using System.Linq;
+    using Model;
 
     /// <summary>
     /// Provides an interface for various search criterion which will be applied to a query.
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     public interface ISearchCriterion<TEntity>
+        where TEntity : class, IModelEntity
     {
         /// <summary>
         /// Applies the criterion to the specified query.
