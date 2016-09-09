@@ -64,7 +64,6 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <inheritdoc/>
-        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);

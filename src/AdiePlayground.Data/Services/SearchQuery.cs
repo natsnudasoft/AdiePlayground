@@ -52,7 +52,6 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <inheritdoc/>
-        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         ISearchQuery<TEntity> ISearchQuery<TEntity>.Include(
             Expression<Func<TEntity, object>> includePropertySelector)
         {
