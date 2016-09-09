@@ -25,29 +25,23 @@ namespace AdiePlayground.Data.Model
     /// </summary>
     /// <seealso cref="IModelEntity" />
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    public class UniversityStudentCourseEnrolment : IModelEntity
+    public class UniversityStudentCourseEnrolment
     {
-        /// <inheritdoc/>
-        [Key]
-        public int Id { get; private set; }
-
-        /// <inheritdoc/>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage(
-            "Microsoft.Performance",
-            "CA1819:PropertiesShouldNotReturnArrays",
-            Justification = "Entity Framework requires byte[].")]
-        [Timestamp]
-        public byte[] RowVersion { get; private set; }
-
         /// <summary>
         /// Gets or sets the student id in this enrolment relationship.
         /// </summary>
+        [Key]
+        [Column(Order = 0)]
+        [Index("IX_CourseId_StudentId", 1)]
         [ForeignKey(nameof(Student))]
         public int StudentId { get; set; }
 
         /// <summary>
         /// Gets or sets the course id in this enrolment relationship.
         /// </summary>
+        [Key]
+        [Column(Order = 1)]
+        [Index("IX_CourseId_StudentId", 0)]
         [ForeignKey(nameof(Course))]
         public int CourseId { get; set; }
 

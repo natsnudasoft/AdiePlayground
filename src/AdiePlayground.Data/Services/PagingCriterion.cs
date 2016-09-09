@@ -17,7 +17,9 @@
 namespace AdiePlayground.Data.Services
 {
     using System;
+    using System.Data.Entity;
     using System.Linq;
+    using Model;
     using Properties;
 
     /// <summary>
@@ -26,6 +28,7 @@ namespace AdiePlayground.Data.Services
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     /// <seealso cref="ISearchCriterion{TEntity}" />
     internal sealed class PagingCriterion<TEntity> : ISearchCriterion<TEntity>
+        where TEntity : class, IModelEntity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PagingCriterion{TEntity}" /> class.
@@ -67,7 +70,8 @@ namespace AdiePlayground.Data.Services
         /// <inheritdoc/>
         public IQueryable<TEntity> Apply(IQueryable<TEntity> query)
         {
-            return query.Skip(this.SkipCount).Take(this.PageSize);
+            // Using the lambda versions allows cached queries.
+            return query.Skip(() => this.SkipCount).Take(() => this.PageSize);
         }
     }
 }

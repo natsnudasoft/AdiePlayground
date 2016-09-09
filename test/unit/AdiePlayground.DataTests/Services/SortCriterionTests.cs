@@ -22,7 +22,7 @@ namespace AdiePlayground.DataTests.Services
     using NUnit.Framework;
 
     /// <summary>
-    /// Tests the <see cref="SortCriterion{TEntity}"/> class.
+    /// Tests the <see cref="SortCriterion{TEntity, TProperty}"/> class.
     /// </summary>
     [TestFixture]
     public sealed class SortCriterionTests
@@ -37,7 +37,7 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_NullSortPropertySelector_ArgumentNullException()
         {
             var ex = Assert.Throws<ArgumentNullException>(
-                () => new SortCriterion<TestEntity>(null, SortOrder.Ascending));
+                () => new SortCriterion<TestEntity, object>(null, SortOrder.Ascending));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSortPropertySelectorParam));
         }
 
@@ -48,7 +48,7 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_InvalidSortOrder_ArgumentException()
         {
             var ex = Assert.Throws<ArgumentException>(
-                () => new SortCriterion<TestEntity>(e => e.Id, (SortOrder)int.MinValue));
+                () => new SortCriterion<TestEntity, int>(e => e.Id, (SortOrder)int.MinValue));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSortOrderParam));
         }
 
@@ -60,9 +60,9 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_DoesNotThrow(
             [Values(SortOrder.Ascending, SortOrder.Descending)] SortOrder sortOrder)
         {
-            SortCriterion<TestEntity> criterion = null;
+            SortCriterion<TestEntity, int> criterion = null;
             Assert.DoesNotThrow(
-                () => criterion = new SortCriterion<TestEntity>(e => e.Id, sortOrder));
+                () => criterion = new SortCriterion<TestEntity, int>(e => e.Id, sortOrder));
             Assert.That(criterion.SortPropertySelector, Is.Not.Null);
             Assert.That(criterion.SortOrder, Is.EqualTo(sortOrder));
         }
@@ -76,7 +76,7 @@ namespace AdiePlayground.DataTests.Services
             [Values(SortOrder.Ascending, SortOrder.Descending)] SortOrder sortOrder)
         {
             var queryData = TestData.DeepCopyTestEntityData().AsQueryable();
-            var criterion = new SortCriterion<TestEntity>(e => e.Id, sortOrder);
+            var criterion = new SortCriterion<TestEntity, int>(e => e.Id, sortOrder);
 
             Assert.DoesNotThrow(() => criterion.Apply(queryData));
 

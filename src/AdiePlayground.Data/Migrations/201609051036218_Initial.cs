@@ -38,17 +38,14 @@ namespace AdiePlayground.Data.Migrations
                 "dbo.UniversityStudentCourseEnrolment",
                 c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
-                    RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                     StudentId = c.Int(nullable: false),
                     CourseId = c.Int(nullable: false),
                     PercentageGrade = c.Int(),
                 })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => new { t.StudentId, t.CourseId })
                 .ForeignKey("dbo.UniversityCourse", t => t.CourseId, cascadeDelete: true)
                 .ForeignKey("dbo.UniversityStudent", t => t.StudentId, cascadeDelete: true)
-                .Index(t => t.StudentId)
-                .Index(t => t.CourseId);
+                .Index(t => new { t.CourseId, t.StudentId });
 
             CreateTable(
                 "dbo.UniversityStudent",
@@ -122,20 +119,19 @@ namespace AdiePlayground.Data.Migrations
         /// <inheritdoc/>
         public override void Down()
         {
-            DropForeignKey("dbo.UniversityStudent", "DegreeClassification", "dbo.DegreeClassification");
-            DropTable("dbo.DegreeClassification");
-            DropForeignKey("dbo.UniversityStudentAddress", "Id", "dbo.UniversityStudent");
             DropForeignKey("dbo.UniversityStudentCourseEnrolment", "StudentId", "dbo.UniversityStudent");
             DropForeignKey("dbo.UniversityStudentCourseEnrolment", "CourseId", "dbo.UniversityCourse");
-            DropIndex("dbo.UniversityStudentCourseEnrolment", new[] { "CourseId" });
-            DropIndex("dbo.UniversityStudentCourseEnrolment", new[] { "StudentId" });
-            DropIndex("dbo.UniversityStudentAddress", new[] { "Id" });
-            DropTable("dbo.UniversityCourse");
-            DropTable("dbo.UniversityStudentCourseEnrolment");
-            DropTable("dbo.UniversityStudent");
+            DropForeignKey("dbo.UniversityStudentAddress", "Id", "dbo.UniversityStudent");
+            DropForeignKey("dbo.UniversityStudent", "DegreeClassification", "dbo.DegreeClassification");
             DropForeignKey("dbo.UniversityStudentAddress", "IsoCountryCode", "dbo.IsoCountryCode");
-            DropTable("dbo.IsoCountryCode");
+            DropIndex("dbo.UniversityStudentAddress", new[] { "Id" });
+            DropIndex("dbo.UniversityStudentCourseEnrolment", new[] { "CourseId", "StudentId" });
             DropTable("dbo.UniversityStudentAddress");
+            DropTable("dbo.UniversityStudent");
+            DropTable("dbo.UniversityStudentCourseEnrolment");
+            DropTable("dbo.UniversityCourse");
+            DropTable("dbo.DegreeClassification");
+            DropTable("dbo.IsoCountryCode");
         }
     }
 }

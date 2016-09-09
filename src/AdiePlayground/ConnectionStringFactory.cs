@@ -16,12 +16,7 @@
 
 namespace AdiePlayground
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using AdiePlayground.Data.Services;
+    using Data.Services;
 
     /// <summary>
     /// Provides a connection string factory that gets a connection string from the application

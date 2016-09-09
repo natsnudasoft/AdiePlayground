@@ -19,17 +19,21 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Linq;
     using System.Linq.Expressions;
+    using Model;
     using Properties;
 
     /// <summary>
     /// Provides a sorting criterion to be applied to a query.
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TProperty">The type the property selector will return.</typeparam>
     /// <seealso cref="ISearchCriterion{TEntity}" />
-    internal sealed class SortCriterion<TEntity> : ISearchCriterion<TEntity>
+    internal sealed class SortCriterion<TEntity, TProperty> : ISearchCriterion<TEntity>
+        where TEntity : class, IModelEntity
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SortCriterion{TEntity}" /> class.
+        /// Initializes a new instance of the <see cref="SortCriterion{TEntity, TProperty}" />
+        /// class.
         /// </summary>
         /// <param name="sortPropertySelector">The selector to choose the property to sort on.
         /// </param>
@@ -38,7 +42,7 @@ namespace AdiePlayground.Data.Services
         /// </exception>
         /// <exception cref="ArgumentException">Thrown when sortOrder is invalid.</exception>
         public SortCriterion(
-            Expression<Func<TEntity, object>> sortPropertySelector,
+            Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder)
         {
             if (sortPropertySelector == null)
@@ -62,7 +66,7 @@ namespace AdiePlayground.Data.Services
         /// <summary>
         /// Gets the sort property selector that selects the property this criterion will search on.
         /// </summary>
-        public Expression<Func<TEntity, object>> SortPropertySelector { get; }
+        public Expression<Func<TEntity, TProperty>> SortPropertySelector { get; }
 
         /// <summary>
         /// Gets the sort order of this criterion.

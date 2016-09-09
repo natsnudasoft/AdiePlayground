@@ -11,6 +11,7 @@
     <Rule Id="CA1006" Action="None" />
     <Rule Id="CA1020" Action="None" />
     <Rule Id="CA1811" Action="None" />
+    <Rule Id="CA2202" Action="None" />
     <Rule Id="CA2243" Action="None" />
   </Rules>
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Features" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Features">

@@ -16,8 +16,9 @@
 
 namespace AdiePlayground.Data.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
-    using Model;
+    using System.Linq;
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
@@ -37,22 +38,15 @@ namespace AdiePlayground.Data.Migrations
         /// <inheritdoc/>
         protected override void Seed(PlaygroundDbContext context)
         {
-            if (context != null)
+            if (context == null)
             {
-                // context.UniversityStudents.AddOrUpdate(s => s.FullName, GenerateStudents());
+                throw new ArgumentNullException(nameof(context));
             }
-        }
 
-        private static UniversityStudent[] GenerateStudents()
-        {
-            return new[]
-            {
-                new UniversityStudent
-                {
-                    Title = "Mr",
-                    FullName = "Bob Bobertson"
-                }
-            };
+            var seedData = new SeedData();
+            context.UniversityCourses.AddOrUpdate(seedData.Courses.ToArray());
+            context.UniversityStudents.AddOrUpdate(seedData.Students.ToArray());
+            context.SaveChanges();
         }
     }
 }
