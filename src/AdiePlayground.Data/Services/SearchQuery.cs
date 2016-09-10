@@ -32,13 +32,6 @@ namespace AdiePlayground.Data.Services
         private readonly List<ISearchCriterion<TEntity>> searchCriteria =
             new List<ISearchCriterion<TEntity>>();
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchQuery{TEntity}"/> class.
-        /// </summary>
-        internal SearchQuery()
-        {
-        }
-
         /// <inheritdoc/>
         IEnumerable<ISearchCriterion<TEntity>> ISearchQuery<TEntity>.SearchCriteria =>
             this.searchCriteria;

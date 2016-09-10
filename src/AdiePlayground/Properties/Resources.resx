@@ -120,4 +120,7 @@
   <data name="ConsolePressEnterToContinue" xml:space="preserve">
     <value>Press &lt;Enter&gt; to continue...</value>
   </data>
+  <data name="CurrentDomainUnhandledException" xml:space="preserve">
+    <value>A fatal unhandled error occurred.</value>
+  </data>
 </root>

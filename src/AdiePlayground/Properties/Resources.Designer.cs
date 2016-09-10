@@ -68,5 +68,14 @@ namespace AdiePlayground.Properties {
                 return ResourceManager.GetString("ConsolePressEnterToContinue", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A fatal unhandled error occurred..
+        /// </summary>
+        internal static string CurrentDomainUnhandledException {
+            get {
+                return ResourceManager.GetString("CurrentDomainUnhandledException", resourceCulture);
+            }
+        }
     }
 }
