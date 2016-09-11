@@ -17,7 +17,10 @@
 namespace AdiePlayground
 {
     using Autofac;
+    using Common.Model;
+    using Common.Variance;
     using Data.Services;
+    using Example;
 
     /// <summary>
     /// Provides configuration for the IoC container.
@@ -32,7 +35,19 @@ namespace AdiePlayground
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule(new DataServicesModule(new ConnectionStringFactory()));
+            builder.RegisterModule(new VarianceModule());
+            RegisterVariance(builder);
             return builder.Build();
+        }
+
+        private static void RegisterVariance(ContainerBuilder builder)
+        {
+            builder
+                .Register(c => new VarianceExample(
+                    c.Resolve<IInvariant<Orange>>(),
+                    c.Resolve<ICovariant<Banana>>(),
+                    c.Resolve<IContravariant<Fruit>>()))
+                .AsSelf();
         }
     }
 }

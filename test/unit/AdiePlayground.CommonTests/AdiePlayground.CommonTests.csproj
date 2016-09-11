@@ -42,6 +42,10 @@
     <AssemblyOriginatorKeyFile>AdiePlayground.CommonTests.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Autofac.4.1.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
@@ -68,12 +72,23 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="Iso3166CountryTests.cs" />
+    <Compile Include="Model\AppleTests.cs" />
+    <Compile Include="Model\BananaTests.cs" />
+    <Compile Include="Model\FruitStub.cs" />
+    <Compile Include="Model\FruitTests.cs" />
+    <Compile Include="Model\LemonTests.cs" />
+    <Compile Include="Model\LimeTests.cs" />
+    <Compile Include="Model\OrangeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Variance\BananaCovariantTests.cs" />
+    <Compile Include="Variance\FruitContravarianceTests.cs" />
+    <Compile Include="Variance\OrangeInvariantTests.cs" />
+    <Compile Include="Variance\VarianceModuleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\..\stylecop.json">
