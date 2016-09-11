@@ -59,6 +59,15 @@
     <Compile Include="..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="Model\AppleColor.cs" />
+    <Compile Include="Model\Lime.cs" />
+    <Compile Include="Model\Orange.cs" />
+    <Compile Include="Model\Lemon.cs" />
+    <Compile Include="Variance\FruitContravariant.cs" />
+    <Compile Include="Variance\BananaCovariant.cs" />
+    <Compile Include="Variance\Covariant.cs" />
+    <Compile Include="Variance\OrangeInvariant.cs" />
+    <Compile Include="Variance\ICovariant.cs" />
     <Compile Include="Iso3166Country.cs" />
     <Compile Include="Iso3166Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +76,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Apple.cs" />
+    <Compile Include="Model\Banana.cs" />
+    <Compile Include="Variance\Contravariant.cs" />
+    <Compile Include="Model\Fruit.cs" />
+    <Compile Include="Variance\IContravariant.cs" />
+    <Compile Include="Variance\IInvariant.cs" />
+    <Compile Include="Variance\Invariant.cs" />
+    <Compile Include="Variance\VarianceModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json">

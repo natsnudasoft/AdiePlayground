@@ -61,11 +61,47 @@ namespace AdiePlayground.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided apple colour was invalid..
+        /// </summary>
+        internal static string AppleAppleColorInvalid {
+            get {
+                return ResourceManager.GetString("AppleAppleColorInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The input value was invalid..
+        /// </summary>
+        internal static string FruitContravariantGetValueInputNull {
+            get {
+                return ResourceManager.GetString("FruitContravariantGetValueInputNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided quality was invalid. Must be between {0} and {1}..
+        /// </summary>
+        internal static string FruitInvalidQuality {
+            get {
+                return ResourceManager.GetString("FruitInvalidQuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The value provided was not a valid ISO 3166-1 alpha-2 country code..
         /// </summary>
         internal static string Iso3166CountryCodeInvalid {
             get {
                 return ResourceManager.GetString("Iso3166CountryCodeInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The input value was invalid..
+        /// </summary>
+        internal static string OrangeInvariantGetValueInputNull {
+            get {
+                return ResourceManager.GetString("OrangeInvariantGetValueInputNull", resourceCulture);
             }
         }
     }

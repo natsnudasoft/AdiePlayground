@@ -22,7 +22,8 @@ namespace AdiePlayground.Data.Services
     using Properties;
 
     /// <summary>
-    /// Provides Dependency Injection registration module for <see cref="AdiePlayground.Data"/>.
+    /// Provides Dependency Injection registration module for
+    /// <see cref="AdiePlayground.Data.Services"/>.
     /// </summary>
     /// <seealso cref="Module" />
     public sealed class DataServicesModule : Module

@@ -19,6 +19,7 @@ namespace AdiePlayground
     using System;
     using Autofac;
     using Data.Services;
+    using Example;
     using NLog;
     using Properties;
 
@@ -38,6 +39,9 @@ namespace AdiePlayground
             var container = ContainerConfiguration.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
+                var varianceExample = scope.Resolve<VarianceExample>();
+                varianceExample.RunExample();
+
                 var contextService = scope.Resolve<IContextService>();
                 Console.WriteLine(contextService.GetType().Name);
                 Console.WriteLine(Resources.ConsolePressEnterToContinue);
