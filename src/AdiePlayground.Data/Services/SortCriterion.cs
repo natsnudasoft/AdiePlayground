@@ -52,15 +52,20 @@ namespace AdiePlayground.Data.Services
                     Resources.SortCriterionPropertySelectorInvalid);
             }
 
-            if (sortOrder != SortOrder.Ascending && sortOrder != SortOrder.Descending)
+            switch (sortOrder)
             {
-                throw new ArgumentException(
-                    Resources.SortCriterionSortOrderInvalid,
-                    nameof(sortOrder));
+                case SortOrder.Ascending:
+                case SortOrder.Descending:
+                    this.SortOrder = sortOrder;
+                    break;
+
+                default:
+                    throw new ArgumentException(
+                        Resources.SortCriterionSortOrderInvalid,
+                        nameof(sortOrder));
             }
 
             this.SortPropertySelector = sortPropertySelector;
-            this.SortOrder = sortOrder;
         }
 
         /// <summary>

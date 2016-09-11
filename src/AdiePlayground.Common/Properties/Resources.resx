@@ -117,8 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppleAppleColorInvalid" xml:space="preserve">
+    <value>The provided apple colour was invalid.</value>
+  </data>
+  <data name="FruitContravariantGetValueInputNull" xml:space="preserve">
+    <value>The input value was invalid.</value>
+  </data>
+  <data name="FruitInvalidQuality" xml:space="preserve">
+    <value>The provided quality was invalid. Must be between {0} and {1}.</value>
+    <comment>{0}: MinQuality, {1}: MaxQuality</comment>
+  </data>
   <data name="Iso3166CountryCodeInvalid" xml:space="preserve">
     <value>The value provided was not a valid ISO 3166-1 alpha-2 country code.</value>
     <comment>https://en.wikipedia.org/wiki/ISO_3166-1</comment>
+  </data>
+  <data name="OrangeInvariantGetValueInputNull" xml:space="preserve">
+    <value>The input value was invalid.</value>
   </data>
 </root>

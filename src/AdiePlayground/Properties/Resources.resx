@@ -120,4 +120,46 @@
   <data name="ConsolePressEnterToContinue" xml:space="preserve">
     <value>Press &lt;Enter&gt; to continue...</value>
   </data>
+  <data name="ContravarianceExampleAppleValue" xml:space="preserve">
+    <value>{0} is {1}.</value>
+    <comment>{0}: nameof(appleValue), {1}: appleValue</comment>
+  </data>
+  <data name="ContravarianceExampleOrangeValue" xml:space="preserve">
+    <value>{0} is {1}.</value>
+    <comment>{0}: nameof(orangeValue), {1}: orangeValue</comment>
+  </data>
+  <data name="ContravarianceExampleRunning" xml:space="preserve">
+    <value>Running contravariance example.</value>
+  </data>
+  <data name="CovarianceExampleFruitColor" xml:space="preserve">
+    <value>This {0} is {1}.</value>
+    <comment>{0}: fruit.Name, {1}: fruit.Color</comment>
+  </data>
+  <data name="CovarianceExampleObjString" xml:space="preserve">
+    <value>{0}.ToString() = {1}.</value>
+    <comment>{0}: nameof(obj), {1}: obj.ToString()</comment>
+  </data>
+  <data name="CovarianceExampleRunning" xml:space="preserve">
+    <value>Running covariance example.</value>
+  </data>
+  <data name="InvarianceExampleFruitValue" xml:space="preserve">
+    <value>{0} is {1}.</value>
+    <comment>{0}: nameof(fruitValue), {1}: fruitValue</comment>
+  </data>
+  <data name="InvarianceExampleOrangeValue" xml:space="preserve">
+    <value>{0} is {1}.</value>
+    <comment>{0}: nameof(orangeValue), {1}: orangeValue</comment>
+  </data>
+  <data name="InvarianceExampleRunning" xml:space="preserve">
+    <value>Running invariance example.</value>
+  </data>
+  <data name="VarianceExampleBananaCovariantInvalid" xml:space="preserve">
+    <value>Invalid fruit covariant interface.</value>
+  </data>
+  <data name="VarianceExampleFruitContravariantInvalid" xml:space="preserve">
+    <value>Invalid fruit contravariant interface.</value>
+  </data>
+  <data name="VarianceExampleOrangeInvariantInvalid" xml:space="preserve">
+    <value>Invalid fruit invariant interface.</value>
+  </data>
 </root>

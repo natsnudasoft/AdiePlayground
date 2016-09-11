@@ -68,5 +68,113 @@ namespace AdiePlayground.Properties {
                 return ResourceManager.GetString("ConsolePressEnterToContinue", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is {1}..
+        /// </summary>
+        internal static string ContravarianceExampleAppleValue {
+            get {
+                return ResourceManager.GetString("ContravarianceExampleAppleValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is {1}..
+        /// </summary>
+        internal static string ContravarianceExampleOrangeValue {
+            get {
+                return ResourceManager.GetString("ContravarianceExampleOrangeValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running contravariance example..
+        /// </summary>
+        internal static string ContravarianceExampleRunning {
+            get {
+                return ResourceManager.GetString("ContravarianceExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This {0} is {1}..
+        /// </summary>
+        internal static string CovarianceExampleFruitColor {
+            get {
+                return ResourceManager.GetString("CovarianceExampleFruitColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}.ToString() = {1}..
+        /// </summary>
+        internal static string CovarianceExampleObjString {
+            get {
+                return ResourceManager.GetString("CovarianceExampleObjString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running covariance example..
+        /// </summary>
+        internal static string CovarianceExampleRunning {
+            get {
+                return ResourceManager.GetString("CovarianceExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is {1}..
+        /// </summary>
+        internal static string InvarianceExampleFruitValue {
+            get {
+                return ResourceManager.GetString("InvarianceExampleFruitValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is {1}..
+        /// </summary>
+        internal static string InvarianceExampleOrangeValue {
+            get {
+                return ResourceManager.GetString("InvarianceExampleOrangeValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running invariance example..
+        /// </summary>
+        internal static string InvarianceExampleRunning {
+            get {
+                return ResourceManager.GetString("InvarianceExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid fruit covariant interface..
+        /// </summary>
+        internal static string VarianceExampleBananaCovariantInvalid {
+            get {
+                return ResourceManager.GetString("VarianceExampleBananaCovariantInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid fruit contravariant interface..
+        /// </summary>
+        internal static string VarianceExampleFruitContravariantInvalid {
+            get {
+                return ResourceManager.GetString("VarianceExampleFruitContravariantInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid fruit invariant interface..
+        /// </summary>
+        internal static string VarianceExampleOrangeInvariantInvalid {
+            get {
+                return ResourceManager.GetString("VarianceExampleOrangeInvariantInvalid", resourceCulture);
+            }
+        }
     }
 }
