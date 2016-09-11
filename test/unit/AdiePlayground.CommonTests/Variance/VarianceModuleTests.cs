@@ -33,14 +33,27 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_DoesNotThrow()
         {
-            VarianceModule varianceModule = null;
-            Assert.DoesNotThrow(() => varianceModule = new VarianceModule());
+            Assert.DoesNotThrow(() => new VarianceModule());
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_ServicesRegistered()
+        {
+            var varianceModule = new VarianceModule();
             var builder = new ContainerBuilder();
             builder.RegisterModule(varianceModule);
             var container = builder.Build();
-            var resolved = container.Resolve<IInvariant<Orange>>();
 
-            Assert.That(resolved, Is.Not.Null);
+            var orangeInvariant = container.Resolve<IInvariant<Orange>>();
+            var bananaCovariant = container.Resolve<ICovariant<Banana>>();
+            var fruitContravariant = container.Resolve<IContravariant<Fruit>>();
+
+            Assert.That(orangeInvariant, Is.Not.Null);
+            Assert.That(bananaCovariant, Is.Not.Null);
+            Assert.That(fruitContravariant, Is.Not.Null);
         }
     }
 }

@@ -63,15 +63,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_FuncConnectionStringFactory_DoesNotThrow()
         {
-            DataServicesModule dataServicesModule = null;
-            Assert.DoesNotThrow(
-                () => dataServicesModule = new DataServicesModule(() => string.Empty));
-            var builder = new ContainerBuilder();
-            builder.RegisterModule(dataServicesModule);
-            var container = builder.Build();
-            var resolved = container.Resolve<IContextService>();
-
-            Assert.That(resolved, Is.Not.Null);
+            Assert.DoesNotThrow(() => new DataServicesModule(() => string.Empty));
         }
 
         /// <summary>
@@ -81,15 +73,25 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_IConnectionStringFactory_DoesNotThrow()
         {
             var connectionStringFactory = new Mock<IConnectionStringFactory>();
-            DataServicesModule dataServicesModule = null;
-            Assert.DoesNotThrow(
-                () => dataServicesModule = new DataServicesModule(connectionStringFactory.Object));
+            Assert.DoesNotThrow(() => new DataServicesModule(connectionStringFactory.Object));
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_ServicesRegistered()
+        {
+            var dataServicesModule = new DataServicesModule(() => string.Empty);
             var builder = new ContainerBuilder();
             builder.RegisterModule(dataServicesModule);
             var container = builder.Build();
-            var resolved = container.Resolve<IContextService>();
 
-            Assert.That(resolved, Is.Not.Null);
+            var contextService = container.Resolve<IContextService>();
+            var ambientDbContextLocator = container.Resolve<IAmbientDbContextLocator>();
+
+            Assert.That(contextService, Is.Not.Null);
+            Assert.That(ambientDbContextLocator, Is.Not.Null);
         }
     }
 }
