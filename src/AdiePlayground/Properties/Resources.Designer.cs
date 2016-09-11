@@ -70,6 +70,15 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A fatal unhandled error occurred..
+        /// </summary>
+        internal static string CurrentDomainUnhandledException {
+            get {
+                return ResourceManager.GetString("CurrentDomainUnhandledException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} is {1}..
         /// </summary>
         internal static string ContravarianceExampleAppleValue {

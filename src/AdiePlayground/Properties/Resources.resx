@@ -120,6 +120,9 @@
   <data name="ConsolePressEnterToContinue" xml:space="preserve">
     <value>Press &lt;Enter&gt; to continue...</value>
   </data>
+  <data name="CurrentDomainUnhandledException" xml:space="preserve">
+    <value>A fatal unhandled error occurred.</value>
+  </data>
   <data name="ContravarianceExampleAppleValue" xml:space="preserve">
     <value>{0} is {1}.</value>
     <comment>{0}: nameof(appleValue), {1}: appleValue</comment>

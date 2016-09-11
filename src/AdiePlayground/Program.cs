@@ -20,6 +20,7 @@ namespace AdiePlayground
     using Autofac;
     using Data.Services;
     using Example;
+    using NLog;
     using Properties;
 
     /// <summary>
@@ -27,11 +28,14 @@ namespace AdiePlayground
     /// </summary>
     public static class Program
     {
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         /// <summary>
         /// The entry point of <see cref="Program"/>.
         /// </summary>
         public static void Main()
         {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainUnhandledException;
             var container = ContainerConfiguration.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
@@ -42,6 +46,21 @@ namespace AdiePlayground
                 Console.WriteLine(contextService.GetType().Name);
                 Console.WriteLine(Resources.ConsolePressEnterToContinue);
                 Console.ReadLine();
+            }
+        }
+
+        private static void CurrentDomainUnhandledException(
+            object sender,
+            UnhandledExceptionEventArgs e)
+        {
+            var ex = e.ExceptionObject as Exception;
+            if (ex != null)
+            {
+                Logger.Fatal(ex);
+            }
+            else
+            {
+                Logger.Fatal(Resources.CurrentDomainUnhandledException);
             }
         }
     }
