@@ -17,9 +17,10 @@
 namespace AdiePlayground
 {
     using Autofac;
+    using Common;
     using Common.Model;
     using Common.Variance;
-    using Data.Services;
+    using Data;
     using Example;
 
     /// <summary>
@@ -34,8 +35,8 @@ namespace AdiePlayground
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterModule(new DataServicesModule(new ConnectionStringFactory()));
-            builder.RegisterModule(new VarianceModule());
+            builder.RegisterModule(new DataModule(new ConnectionStringFactory()));
+            builder.RegisterModule(new CommonModule());
             RegisterVariance(builder);
             return builder.Build();
         }

@@ -1,4 +1,4 @@
-﻿// <copyright file="VarianceModuleTests.cs" company="natsnudasoft">
+﻿// <copyright file="CommonModuleTests.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,15 +17,16 @@
 namespace AdiePlayground.DataTests.Services
 {
     using Autofac;
+    using Common;
     using Common.Model;
     using Common.Variance;
     using NUnit.Framework;
 
     /// <summary>
-    /// Tests the <see cref="VarianceModule"/> class.
+    /// Tests the <see cref="CommonModule"/> class.
     /// </summary>
     [TestFixture]
-    public sealed class VarianceModuleTests
+    public sealed class CommonModuleTests
     {
         /// <summary>
         /// Tests the constructor with a valid connection string factory.
@@ -33,7 +34,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_DoesNotThrow()
         {
-            Assert.DoesNotThrow(() => new VarianceModule());
+            Assert.DoesNotThrow(() => new CommonModule());
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void ModuleRegistered_ServicesRegistered()
         {
-            var varianceModule = new VarianceModule();
+            var varianceModule = new CommonModule();
             var builder = new ContainerBuilder();
             builder.RegisterModule(varianceModule);
             var container = builder.Build();

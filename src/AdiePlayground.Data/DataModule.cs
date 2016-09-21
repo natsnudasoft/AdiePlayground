@@ -1,4 +1,4 @@
-﻿// <copyright file="DataServicesModule.cs" company="natsnudasoft">
+﻿// <copyright file="DataModule.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,28 +14,29 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.Data.Services
+namespace AdiePlayground.Data
 {
     using System;
     using Autofac;
     using Mehdime.Entity;
     using Properties;
+    using Services;
 
     /// <summary>
     /// Provides Dependency Injection registration module for
-    /// <see cref="AdiePlayground.Data.Services"/>.
+    /// <see cref="AdiePlayground.Data"/>.
     /// </summary>
     /// <seealso cref="Module" />
-    public sealed class DataServicesModule : Module
+    public sealed class DataModule : Module
     {
         private readonly Func<string> connectionStringFactory;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataServicesModule"/> class which will use
+        /// Initializes a new instance of the <see cref="DataModule"/> class which will use
         /// the specified connection string factory.
         /// </summary>
         /// <param name="connectionStringFactoryValue">The connection string factory.</param>
-        public DataServicesModule(Func<string> connectionStringFactoryValue)
+        public DataModule(Func<string> connectionStringFactoryValue)
         {
             if (connectionStringFactoryValue == null)
             {
@@ -48,11 +49,11 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataServicesModule"/> class which will use
+        /// Initializes a new instance of the <see cref="DataModule"/> class which will use
         /// the specified connection string factory.
         /// </summary>
         /// <param name="connectionStringFactoryValue">The connection string factory.</param>
-        public DataServicesModule(IConnectionStringFactory connectionStringFactoryValue)
+        public DataModule(IConnectionStringFactory connectionStringFactoryValue)
         {
             if (connectionStringFactoryValue == null)
             {

@@ -1,4 +1,4 @@
-﻿// <copyright file="DataServicesModuleTests.cs" company="natsnudasoft">
+﻿// <copyright file="DataModuleTests.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,16 +18,17 @@ namespace AdiePlayground.DataTests.Services
 {
     using System;
     using Autofac;
+    using Data;
     using Data.Services;
     using Mehdime.Entity;
     using Moq;
     using NUnit.Framework;
 
     /// <summary>
-    /// Tests the <see cref="DataServicesModule"/> class.
+    /// Tests the <see cref="DataModule"/> class.
     /// </summary>
     [TestFixture]
-    public sealed class DataServicesModuleTests
+    public sealed class DataModuleTests
     {
         private const string ConstructorFuncConnectionStringFactoryParam =
             "connectionStringFactoryValue";
@@ -42,7 +43,7 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_NullFuncConnectionStringFactory_ArgumentNullException()
         {
             var ex = Assert.Throws<ArgumentNullException>(
-                () => new DataServicesModule((Func<string>)null));
+                () => new DataModule((Func<string>)null));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorFuncConnectionStringFactoryParam));
         }
 
@@ -53,7 +54,7 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_NullIConnectionStringFactory_ArgumentNullException()
         {
             var ex = Assert.Throws<ArgumentNullException>(
-                () => new DataServicesModule((IConnectionStringFactory)null));
+                () => new DataModule((IConnectionStringFactory)null));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorIConnectionStringFactoryParam));
         }
 
@@ -63,7 +64,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_FuncConnectionStringFactory_DoesNotThrow()
         {
-            Assert.DoesNotThrow(() => new DataServicesModule(() => string.Empty));
+            Assert.DoesNotThrow(() => new DataModule(() => string.Empty));
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace AdiePlayground.DataTests.Services
         public void Constructor_IConnectionStringFactory_DoesNotThrow()
         {
             var connectionStringFactory = new Mock<IConnectionStringFactory>();
-            Assert.DoesNotThrow(() => new DataServicesModule(connectionStringFactory.Object));
+            Assert.DoesNotThrow(() => new DataModule(connectionStringFactory.Object));
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void ModuleRegistered_ServicesRegistered()
         {
-            var dataServicesModule = new DataServicesModule(() => string.Empty);
+            var dataServicesModule = new DataModule(() => string.Empty);
             var builder = new ContainerBuilder();
             builder.RegisterModule(dataServicesModule);
             var container = builder.Build();

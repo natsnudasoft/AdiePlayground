@@ -73,6 +73,7 @@
     <Compile Include="..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="DataModule.cs" />
     <Compile Include="DataTypeAttributeConvention.cs" />
     <Compile Include="Migrations\201609051036218_Initial.cs" />
     <Compile Include="Migrations\201609051036218_Initial.Designer.cs">
@@ -82,7 +83,6 @@
     <Compile Include="Model\UniversityCourse.cs" />
     <Compile Include="Model\UniversityStudentAddress.cs" />
     <Compile Include="Model\UniversityStudentCourseEnrolment.cs" />
-    <Compile Include="Services\DataServicesModule.cs" />
     <Compile Include="Services\FilterCriterion.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Services\IConnectionStringFactory.cs" />
