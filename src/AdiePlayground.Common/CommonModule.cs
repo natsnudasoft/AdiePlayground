@@ -1,4 +1,4 @@
-﻿// <copyright file="VarianceModule.cs" company="natsnudasoft">
+﻿// <copyright file="CommonModule.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,18 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.Common.Variance
+namespace AdiePlayground.Common
 {
     using Autofac;
     using Model;
+    using Variance;
 
     /// <summary>
     /// Provides Dependency Injection registration module for
-    /// <see cref="AdiePlayground.Common.Variance"/>.
+    /// <see cref="AdiePlayground.Common"/>.
     /// </summary>
     /// <seealso cref="Module" />
-    public sealed class VarianceModule : Module
+    public sealed class CommonModule : Module
     {
         /// <inheritdoc/>
         protected override void Load(ContainerBuilder builder)

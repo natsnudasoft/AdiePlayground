@@ -71,6 +71,7 @@
     <Compile Include="..\..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="CommonModuleTests.cs" />
     <Compile Include="Iso3166CountryTests.cs" />
     <Compile Include="Model\AppleTests.cs" />
     <Compile Include="Model\BananaTests.cs" />
@@ -88,7 +89,6 @@
     <Compile Include="Variance\BananaCovariantTests.cs" />
     <Compile Include="Variance\FruitContravarianceTests.cs" />
     <Compile Include="Variance\OrangeInvariantTests.cs" />
-    <Compile Include="Variance\VarianceModuleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\..\stylecop.json">

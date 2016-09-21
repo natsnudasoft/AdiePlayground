@@ -81,6 +81,7 @@
     <Compile Include="..\..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="DataModuleTests.cs" />
     <Compile Include="DbMockHelper.cs" />
     <Compile Include="Migrations\SeedDataTests.cs" />
     <Compile Include="Services\ConnectionStringDbContextFactoryTests.cs" />
@@ -88,7 +89,6 @@
     <Compile Include="DbAsyncEnumerableStub.cs" />
     <Compile Include="DbAsyncEnumeratorStub.cs" />
     <Compile Include="DbAsyncQueryProviderStub.cs" />
-    <Compile Include="Services\DataServicesModuleTests.cs" />
     <Compile Include="Services\FilterCriterionTests.cs" />
     <Compile Include="Services\IncludeCriterionTests.cs" />
     <Compile Include="Services\PagingCriterionTests.cs" />
