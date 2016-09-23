@@ -2,6 +2,8 @@
 <RuleSet Name="Rules for AdiePlaygroundTests" Description=" Code analysis rules for AdiePlaygroundTests." ToolsVersion="14.0">
   <IncludeAll Action="Warning" />
   <Rules AnalyzerId="CodeCracker.CSharp" RuleNamespace="CodeCracker.CSharp">
+    <Rule Id="CC0013" Action="None" />
+    <Rule Id="CC0014" Action="None" />
     <Rule Id="CC0070" Action="Info" />
     <Rule Id="CC0091" Action="None" />
   </Rules>

@@ -70,15 +70,6 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A fatal unhandled error occurred..
-        /// </summary>
-        internal static string CurrentDomainUnhandledException {
-            get {
-                return ResourceManager.GetString("CurrentDomainUnhandledException", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {0} is {1}..
         /// </summary>
         internal static string ContravarianceExampleAppleValue {
@@ -129,6 +120,42 @@ namespace AdiePlayground.Properties {
         internal static string CovarianceExampleRunning {
             get {
                 return ResourceManager.GetString("CovarianceExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A fatal unhandled error occurred..
+        /// </summary>
+        internal static string CurrentDomainUnhandledException {
+            get {
+                return ResourceManager.GetString("CurrentDomainUnhandledException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running interception example..
+        /// </summary>
+        internal static string InterceptionExampleRunning {
+            get {
+                return ResourceManager.GetString("InterceptionExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided ConsoleInstrumentationReporter was invalid..
+        /// </summary>
+        internal static string InterceptorExampleConsoleInstrumentationReporterNull {
+            get {
+                return ResourceManager.GetString("InterceptorExampleConsoleInstrumentationReporterNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided InstrumentationExample was invalid..
+        /// </summary>
+        internal static string InterceptorExampleInstrumentationExampleNull {
+            get {
+                return ResourceManager.GetString("InterceptorExampleInstrumentationExampleNull", resourceCulture);
             }
         }
         

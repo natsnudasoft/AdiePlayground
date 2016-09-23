@@ -17,7 +17,9 @@
 namespace AdiePlayground
 {
     using Autofac;
+    using Autofac.Extras.DynamicProxy;
     using Common;
+    using Common.Interceptor;
     using Common.Model;
     using Common.Variance;
     using Data;
@@ -38,6 +40,7 @@ namespace AdiePlayground
             builder.RegisterModule(new DataModule(new ConnectionStringFactory()));
             builder.RegisterModule(new CommonModule());
             RegisterVariance(builder);
+            RegisterInterceptor(builder);
             return builder.Build();
         }
 
@@ -48,6 +51,19 @@ namespace AdiePlayground
                     c.Resolve<IInvariant<Orange>>(),
                     c.Resolve<ICovariant<Banana>>(),
                     c.Resolve<IContravariant<Fruit>>()))
+                .AsSelf();
+        }
+
+        private static void RegisterInterceptor(ContainerBuilder builder)
+        {
+            builder
+                .Register(c => new InstrumentationExample())
+                .As<IInstrumentationExample>()
+                .EnableInterfaceInterceptors();
+            builder
+                .Register(c => new InterceptorExample(
+                    c.Resolve<IInstrumentationExample>(),
+                    c.Resolve<ConsoleInstrumentationReporter>()))
                 .AsSelf();
         }
     }
