@@ -16,13 +16,15 @@
 
 namespace AdiePlayground.Common
 {
+    using System.Collections.Generic;
     using Autofac;
+    using Interceptor;
     using Model;
     using Variance;
 
     /// <summary>
     /// Provides Dependency Injection registration module for
-    /// <see cref="AdiePlayground.Common"/>.
+    /// <see cref="Common"/>.
     /// </summary>
     /// <seealso cref="Module" />
     public sealed class CommonModule : Module
@@ -31,10 +33,49 @@ namespace AdiePlayground.Common
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
+            LoadVarianceNamespace(builder);
+            LoadInterceptorNamespace(builder);
+        }
 
+        private static void LoadVarianceNamespace(ContainerBuilder builder)
+        {
             builder.Register(c => new OrangeInvariant()).As<IInvariant<Orange>>();
             builder.Register(c => new BananaCovariant()).As<ICovariant<Banana>>();
             builder.Register(c => new FruitContravariant()).As<IContravariant<Fruit>>();
+        }
+
+        private static void LoadInterceptorNamespace(ContainerBuilder builder)
+        {
+            builder
+                .Register(c => new SystemDateTimeProvider())
+                .As<IDateTimeProvider>();
+            builder
+                .Register(c => new SystemGuidProvider())
+                .As<IGuidProvider>();
+            builder
+                .Register(c => new MethodInvocationCounter())
+                .AsSelf()
+                .SingleInstance();
+            builder
+                .Register(c => new MethodInvocationTimer())
+                .AsSelf()
+                .SingleInstance();
+            builder
+                .Register(c => new ConsoleRegistrar(c.Resolve<IDateTimeProvider>()))
+                .As<IRegistrar>();
+            builder
+                .Register(c => new ConsoleInstrumentationReporter(
+                    c.Resolve<MethodInvocationCounter>(),
+                    c.Resolve<MethodInvocationTimer>(),
+                    c.Resolve<IDateTimeProvider>(),
+                    c.Resolve<IGuidProvider>()))
+                .AsSelf();
+            builder
+                .Register(c => new InstrumentationInterceptor(
+                    c.Resolve<MethodInvocationCounter>(),
+                    c.Resolve<MethodInvocationTimer>(),
+                    c.Resolve<IEnumerable<IRegistrar>>(),
+                    c.Resolve<IGuidProvider>()));
         }
     }
 }

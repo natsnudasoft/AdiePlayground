@@ -43,9 +43,9 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void ModuleRegistered_ServicesRegistered()
         {
-            var varianceModule = new CommonModule();
+            var commonModule = new CommonModule();
             var builder = new ContainerBuilder();
-            builder.RegisterModule(varianceModule);
+            builder.RegisterModule(commonModule);
             var container = builder.Build();
 
             var orangeInvariant = container.Resolve<IInvariant<Orange>>();

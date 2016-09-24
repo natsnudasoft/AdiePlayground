@@ -17,6 +17,7 @@
 namespace AdiePlayground.Example
 {
     using System;
+    using Common;
     using Common.Model;
     using Common.Variance;
     using Properties;
@@ -87,16 +88,10 @@ namespace AdiePlayground.Example
             this.ContravarianceExample();
         }
 
-        private static void WriteColoredLine(string value, ConsoleColor color)
-        {
-            Console.ForegroundColor = color;
-            Console.WriteLine(value);
-            Console.ResetColor();
-        }
-
         private void InvarianceExample()
         {
-            WriteColoredLine(Resources.InvarianceExampleRunning, ConsoleColor.Cyan);
+            ConsoleExtensions
+                .WriteColoredLine(Resources.InvarianceExampleRunning, ConsoleColor.Cyan);
 
             // An invariant type in an interface cannot be converted to either something more
             // general or something more specific. e.g. The following lines do not compile:
@@ -124,7 +119,8 @@ namespace AdiePlayground.Example
 
         private void CovarianceExample()
         {
-            WriteColoredLine(Resources.CovarianceExampleRunning, ConsoleColor.Cyan);
+            ConsoleExtensions
+                .WriteColoredLine(Resources.CovarianceExampleRunning, ConsoleColor.Cyan);
 
             // A covariant type in an interface or delegate can be converted to a more GENERAL type.
 
@@ -145,7 +141,8 @@ namespace AdiePlayground.Example
 
         private void ContravarianceExample()
         {
-            WriteColoredLine(Resources.ContravarianceExampleRunning, ConsoleColor.Cyan);
+            ConsoleExtensions
+                .WriteColoredLine(Resources.ContravarianceExampleRunning, ConsoleColor.Cyan);
 
             // A contravariant type in an interface or delegate can be converted to a more SPECIFIC
             // type.

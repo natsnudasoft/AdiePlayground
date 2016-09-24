@@ -83,9 +83,9 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void ModuleRegistered_ServicesRegistered()
         {
-            var dataServicesModule = new DataModule(() => string.Empty);
+            var dataModule = new DataModule(() => string.Empty);
             var builder = new ContainerBuilder();
-            builder.RegisterModule(dataServicesModule);
+            builder.RegisterModule(dataModule);
             var container = builder.Build();
 
             var contextService = container.Resolve<IContextService>();

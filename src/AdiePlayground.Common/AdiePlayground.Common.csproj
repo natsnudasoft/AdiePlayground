@@ -46,6 +46,14 @@
       <HintPath>..\..\packages\Autofac.4.1.0\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Extras.DynamicProxy.4.1.0\lib\net45\Autofac.Extras.DynamicProxy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,10 +68,23 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="CommonModule.cs" />
+    <Compile Include="ConsoleExtensions.cs" />
+    <Compile Include="IDateTimeProvider.cs" />
+    <Compile Include="IGuidProvider.cs" />
+    <Compile Include="Interceptor\ConsoleRegistrar.cs" />
+    <Compile Include="Interceptor\ConsoleInstrumentationReporter.cs" />
+    <Compile Include="Interceptor\InstrumentationInterceptAttribute.cs" />
+    <Compile Include="Interceptor\InterceptionExtensions.cs" />
+    <Compile Include="Interceptor\InstrumentationInterceptor.cs" />
+    <Compile Include="Interceptor\MethodInvocationCounter.cs" />
+    <Compile Include="Interceptor\IRegistrar.cs" />
+    <Compile Include="Interceptor\MethodInvocationTimer.cs" />
     <Compile Include="Model\AppleColor.cs" />
     <Compile Include="Model\Lime.cs" />
     <Compile Include="Model\Orange.cs" />
     <Compile Include="Model\Lemon.cs" />
+    <Compile Include="SystemDateTimeProvider.cs" />
+    <Compile Include="SystemGuidProvider.cs" />
     <Compile Include="Variance\FruitContravariant.cs" />
     <Compile Include="Variance\BananaCovariant.cs" />
     <Compile Include="Variance\Covariant.cs" />

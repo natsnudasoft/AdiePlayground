@@ -165,4 +165,13 @@
   <data name="VarianceExampleOrangeInvariantInvalid" xml:space="preserve">
     <value>Invalid fruit invariant interface.</value>
   </data>
+  <data name="InterceptorExampleInstrumentationExampleNull" xml:space="preserve">
+    <value>The provided InstrumentationExample was invalid.</value>
+  </data>
+  <data name="InterceptorExampleConsoleInstrumentationReporterNull" xml:space="preserve">
+    <value>The provided ConsoleInstrumentationReporter was invalid.</value>
+  </data>
+  <data name="InterceptionExampleRunning" xml:space="preserve">
+    <value>Running interception example.</value>
+  </data>
 </root>

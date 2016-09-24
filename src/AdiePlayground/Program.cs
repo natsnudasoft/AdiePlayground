@@ -35,12 +35,20 @@ namespace AdiePlayground
         /// </summary>
         public static void Main()
         {
+            const int WindowWidth = 155;
+            const int WindowHeight = 45;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainUnhandledException;
+            Console.SetWindowSize(
+                Math.Min(Console.LargestWindowWidth, WindowWidth),
+                Math.Min(Console.LargestWindowHeight, WindowHeight));
             var container = ContainerConfiguration.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
                 var varianceExample = scope.Resolve<VarianceExample>();
                 varianceExample.RunExample();
+
+                var interceptorExample = scope.Resolve<InterceptorExample>();
+                interceptorExample.RunExample();
 
                 var contextService = scope.Resolve<IContextService>();
                 Console.WriteLine(contextService.GetType().Name);
