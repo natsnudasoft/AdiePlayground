@@ -17,6 +17,7 @@
 namespace AdiePlayground.Common.Interceptor
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using Autofac.Extras.DynamicProxy;
 
     /// <summary>
@@ -25,6 +26,7 @@ namespace AdiePlayground.Common.Interceptor
     /// </summary>
     /// <seealso cref="InterceptAttribute" />
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false)]
+    [ExcludeFromCodeCoverage]
     public sealed class InstrumentationInterceptAttribute : InterceptAttribute
     {
         /// <summary>
