@@ -16,8 +16,11 @@
 
 namespace AdiePlayground.DataTests.Services
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Autofac;
     using Common;
+    using Common.Interceptor;
     using Common.Model;
     using Common.Variance;
     using NUnit.Framework;
@@ -38,10 +41,10 @@ namespace AdiePlayground.DataTests.Services
         }
 
         /// <summary>
-        /// Tests the Load method registers all services.
+        /// Tests the Load method registers all services in the Variance namespace.
         /// </summary>
         [Test]
-        public void ModuleRegistered_ServicesRegistered()
+        public void ModuleRegistered_VarianceServicesRegistered()
         {
             var commonModule = new CommonModule();
             var builder = new ContainerBuilder();
@@ -55,6 +58,38 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(orangeInvariant, Is.Not.Null);
             Assert.That(bananaCovariant, Is.Not.Null);
             Assert.That(fruitContravariant, Is.Not.Null);
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services in the Interceptor namespace.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_InterceptorServicesRegistered()
+        {
+            var commonModule = new CommonModule();
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(commonModule);
+            var container = builder.Build();
+
+            var dateTimeProvider = container.Resolve<IDateTimeProvider>();
+            var guidProvider = container.Resolve<IGuidProvider>();
+            var methodInvocationCounter = container.Resolve<MethodInvocationCounter>();
+            var methodInvocationTimer = container.Resolve<MethodInvocationTimer>();
+            var registrars = container.Resolve<IEnumerable<IRegistrar>>();
+            var consoleInstrumentationReporter =
+                container.Resolve<ConsoleInstrumentationReporter>();
+            var instrumentationInterceptor = container.Resolve<InstrumentationInterceptor>();
+
+            Assert.That(dateTimeProvider, Is.Not.Null);
+            Assert.That(guidProvider, Is.Not.Null);
+            Assert.That(methodInvocationCounter, Is.Not.Null);
+            Assert.That(methodInvocationTimer, Is.Not.Null);
+            Assert.That(registrars, Is.Not.Null);
+            var registrarsList = registrars.ToList();
+            Assert.That(registrarsList, Has.Count.EqualTo(1));
+            Assert.That(registrarsList, Is.All.Not.Null);
+            Assert.That(consoleInstrumentationReporter, Is.Not.Null);
+            Assert.That(instrumentationInterceptor, Is.Not.Null);
         }
     }
 }
