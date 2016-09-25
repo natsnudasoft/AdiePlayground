@@ -32,8 +32,8 @@ namespace AdiePlayground.Common.Interceptor
         /// </summary>
         /// <param name="dateTimeProvider">The <see cref="DateTime"/> provider to use to
         /// provide the time of an event registration.</param>
-        /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
-        /// but a value was expected.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="dateTimeProvider"/> is
+        /// <c>null</c>.</exception>
         public ConsoleRegistrar(IDateTimeProvider dateTimeProvider)
         {
             if (dateTimeProvider == null)

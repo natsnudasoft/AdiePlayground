@@ -38,9 +38,10 @@ namespace AdiePlayground.Data.Services
         /// <param name="sortPropertySelector">The selector to choose the property to sort on.
         /// </param>
         /// <param name="sortOrder">The sort order.</param>
-        /// <exception cref="ArgumentNullException">Thrown when sortPropertySelector is null.
-        /// </exception>
-        /// <exception cref="ArgumentException">Thrown when sortOrder is invalid.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="sortPropertySelector"/> is
+        /// <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="sortOrder"/> specified an
+        /// invalid value.</exception>
         public SortCriterion(
             Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder)
@@ -60,9 +61,9 @@ namespace AdiePlayground.Data.Services
                     break;
 
                 default:
-                    throw new ArgumentException(
-                        Resources.SortCriterionSortOrderInvalid,
-                        nameof(sortOrder));
+                    throw new ArgumentOutOfRangeException(
+                        nameof(sortOrder),
+                        Resources.SortCriterionSortOrderInvalid);
             }
 
             this.SortPropertySelector = sortPropertySelector;
