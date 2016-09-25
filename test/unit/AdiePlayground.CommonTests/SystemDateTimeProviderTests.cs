@@ -28,6 +28,11 @@ namespace AdiePlayground.CommonTests
         /// <summary>
         /// Tests the Now method.
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Performance",
+            "CA1804:RemoveUnusedLocals",
+            MessageId = "dateTime",
+            Justification = "We need to assign the property to test for exception.")]
         [Test]
         public void Now_DoesNotThrow()
         {
