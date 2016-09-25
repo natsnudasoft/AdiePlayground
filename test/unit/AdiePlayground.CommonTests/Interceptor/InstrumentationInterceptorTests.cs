@@ -32,10 +32,12 @@ namespace AdiePlayground.CommonTests.Interceptor
     {
         private const int ReturnValue = 6;
         private const int AsyncReturnValue = 12;
-        private const string ConstructorInvocationCounterParam = "invocationCounterValue";
-        private const string ConstructorInvocationTimerParam = "invocationTimerValue";
-        private const string ConstructorRegistrarsParam = "registrarValues";
-        private const string ConstructorGuidProviderParam = "guidProviderValue";
+#pragma warning disable CC0021 // Use nameof
+        private const string ConstructorInvocationCounterParam = "invocationCounter";
+        private const string ConstructorInvocationTimerParam = "invocationTimer";
+        private const string ConstructorRegistrarsParam = "registrars";
+        private const string ConstructorGuidProviderParam = "guidProvider";
+#pragma warning restore CC0021 // Use nameof
         private static readonly Guid Guid = new Guid("{75DB5BE4-366D-4425-8086-F25F8E175475}");
 
         private MethodInvocationCounter invocationCounter;

@@ -30,7 +30,7 @@ namespace AdiePlayground.CommonTests.Interceptor
     [TestFixture]
     public sealed class ConsoleRegistrarTests
     {
-        private const string ConstructorDateTimeProviderParam = "dateTimeProviderValue";
+        private const string ConstructorDateTimeProviderParam = "dateTimeProvider";
         private const long DateTimeTicks = 636102623587144700;
         private static readonly Guid Guid = new Guid("{0863A11F-A1E2-4C06-816F-3AC5CBBBAE39}");
 

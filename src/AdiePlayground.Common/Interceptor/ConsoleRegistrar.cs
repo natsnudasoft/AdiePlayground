@@ -30,20 +30,20 @@ namespace AdiePlayground.Common.Interceptor
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleRegistrar"/> class.
         /// </summary>
-        /// <param name="dateTimeProviderValue">The <see cref="DateTime"/> provider to use to
+        /// <param name="dateTimeProvider">The <see cref="DateTime"/> provider to use to
         /// provide the time of an event registration.</param>
         /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
         /// but a value was expected.</exception>
-        public ConsoleRegistrar(IDateTimeProvider dateTimeProviderValue)
+        public ConsoleRegistrar(IDateTimeProvider dateTimeProvider)
         {
-            if (dateTimeProviderValue == null)
+            if (dateTimeProvider == null)
             {
                 throw new ArgumentNullException(
-                    nameof(dateTimeProviderValue),
+                    nameof(dateTimeProvider),
                     Resources.ConsoleRegistrarDateTimeProviderNull);
             }
 
-            this.dateTimeProvider = dateTimeProviderValue;
+            this.dateTimeProvider = dateTimeProvider;
         }
 
         /// <inheritdoc/>

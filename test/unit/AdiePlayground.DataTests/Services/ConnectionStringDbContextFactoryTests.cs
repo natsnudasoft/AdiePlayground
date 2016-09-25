@@ -27,7 +27,7 @@ namespace AdiePlayground.DataTests.Services
     public sealed class ConnectionStringDbContextFactoryTests
     {
         private const string ConstructorConnectionStringFactoryParam =
-            "connectionStringFactoryValue";
+            "connectionStringFactory";
 
         /// <summary>
         /// Tests the constructor with a null connection string factory.

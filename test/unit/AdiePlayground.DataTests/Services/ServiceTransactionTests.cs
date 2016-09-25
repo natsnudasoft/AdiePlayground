@@ -29,7 +29,7 @@ namespace AdiePlayground.DataTests.Services
     [TestFixture]
     public sealed class ServiceTransactionTests
     {
-        private const string ConstructorDbContextScopeFactoryParam = "dbContextScopeFactoryValue";
+        private const string ConstructorDbContextScopeFactoryParam = "dbContextScopeFactory";
 
         private DbMockHelper dbMockHelper;
         private IContextService contextService;

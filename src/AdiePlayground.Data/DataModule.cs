@@ -35,34 +35,34 @@ namespace AdiePlayground.Data
         /// Initializes a new instance of the <see cref="DataModule"/> class which will use
         /// the specified connection string factory.
         /// </summary>
-        /// <param name="connectionStringFactoryValue">The connection string factory.</param>
-        public DataModule(Func<string> connectionStringFactoryValue)
+        /// <param name="connectionStringFactory">The connection string factory.</param>
+        public DataModule(Func<string> connectionStringFactory)
         {
-            if (connectionStringFactoryValue == null)
+            if (connectionStringFactory == null)
             {
                 throw new ArgumentNullException(
-                    nameof(connectionStringFactoryValue),
+                    nameof(connectionStringFactory),
                     Resources.ConnectionStringFactoryInvalid);
             }
 
-            this.connectionStringFactory = connectionStringFactoryValue;
+            this.connectionStringFactory = connectionStringFactory;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataModule"/> class which will use
         /// the specified connection string factory.
         /// </summary>
-        /// <param name="connectionStringFactoryValue">The connection string factory.</param>
-        public DataModule(IConnectionStringFactory connectionStringFactoryValue)
+        /// <param name="connectionStringFactory">The connection string factory.</param>
+        public DataModule(IConnectionStringFactory connectionStringFactory)
         {
-            if (connectionStringFactoryValue == null)
+            if (connectionStringFactory == null)
             {
                 throw new ArgumentNullException(
-                    nameof(connectionStringFactoryValue),
+                    nameof(connectionStringFactory),
                     Resources.ConnectionStringFactoryInvalid);
             }
 
-            this.connectionStringFactory = connectionStringFactoryValue.CreateConnectionString;
+            this.connectionStringFactory = connectionStringFactory.CreateConnectionString;
         }
 
         /// <inheritdoc/>

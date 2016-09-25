@@ -29,7 +29,7 @@ namespace AdiePlayground.DataTests
     /// <seealso cref="System.Data.Entity.Infrastructure.IDbAsyncQueryProvider" />
     internal class DbAsyncQueryProviderStub<TEntity> : IDbAsyncQueryProvider
     {
-        private readonly IQueryProvider inner;
+        private readonly IQueryProvider innerProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DbAsyncQueryProviderStub{TEntity}"/> class.
@@ -37,7 +37,7 @@ namespace AdiePlayground.DataTests
         /// <param name="innerProvider">The inner provider.</param>
         internal DbAsyncQueryProviderStub(IQueryProvider innerProvider)
         {
-            this.inner = innerProvider;
+            this.innerProvider = innerProvider;
         }
 
         /// <inheritdoc/>
@@ -55,13 +55,13 @@ namespace AdiePlayground.DataTests
         /// <inheritdoc/>
         public object Execute(Expression expression)
         {
-            return this.inner.Execute(expression);
+            return this.innerProvider.Execute(expression);
         }
 
         /// <inheritdoc/>
         public TResult Execute<TResult>(Expression expression)
         {
-            return this.inner.Execute<TResult>(expression);
+            return this.innerProvider.Execute<TResult>(expression);
         }
 
         /// <inheritdoc/>

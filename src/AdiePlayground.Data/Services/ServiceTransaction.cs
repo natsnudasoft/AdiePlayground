@@ -34,18 +34,18 @@ namespace AdiePlayground.Data.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceTransaction"/> class.
         /// </summary>
-        /// <param name="dbContextScopeFactoryValue">A factory to create a database context scope.
+        /// <param name="dbContextScopeFactory">A factory to create a database context scope.
         /// </param>
-        public ServiceTransaction(IDbContextScopeFactory dbContextScopeFactoryValue)
+        public ServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
         {
-            if (dbContextScopeFactoryValue == null)
+            if (dbContextScopeFactory == null)
             {
                 throw new ArgumentNullException(
-                    nameof(dbContextScopeFactoryValue),
+                    nameof(dbContextScopeFactory),
                     Resources.DbContextScopeFactoryInvalid);
             }
 
-            this.dbContextScope = dbContextScopeFactoryValue.Create();
+            this.dbContextScope = dbContextScopeFactory.Create();
         }
 
         /// <inheritdoc/>
