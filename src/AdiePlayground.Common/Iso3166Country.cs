@@ -32,9 +32,10 @@ namespace AdiePlayground.Common
         /// specified ISO 3166-1 alpha-2 country code.
         /// </summary>
         /// <param name="countryCode">The ISO 3166-1 alpha-2 country code.</param>
-        /// <exception cref="ArgumentNullException">A <code>null</code> country code was supplied.
+        /// <exception cref="ArgumentNullException"><paramref name="countryCode"/> is <c>null</c>.
         /// </exception>
-        /// <exception cref="ArgumentException">An invalid ISO 3166-1 alpha-2 country code was
+        /// <exception cref="ArgumentException"><paramref name="countryCode"/> is an invalid ISO
+        /// 3166-1 alpha-2 country code.
         /// supplied.</exception>
         public Iso3166Country(string countryCode)
         {

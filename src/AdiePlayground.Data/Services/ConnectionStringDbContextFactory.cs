@@ -34,8 +34,8 @@ namespace AdiePlayground.Data.Services
         /// which will use the specified connection string factory.
         /// </summary>
         /// <param name="connectionStringFactory">The connection string factory.</param>
-        /// <exception cref="ArgumentNullException">A <code>null</code> connection string factory
-        /// was supplied.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="connectionStringFactory"/> is
+        /// <c>null</c>.</exception>
         public ConnectionStringDbContextFactory(Func<string> connectionStringFactory)
         {
             if (connectionStringFactory == null)

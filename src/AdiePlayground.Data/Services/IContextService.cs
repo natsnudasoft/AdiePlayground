@@ -48,7 +48,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="id">The id.</param>
         /// <returns>
         /// An entity of type <typeparamref name="TEntity" /> if the specified id is found;
-        /// otherwise, <code>null</code>.
+        /// otherwise, <c>null</c>.
         /// </returns>
         Task<TEntity> FindAsync<TEntity>(int id)
             where TEntity : class, IModelEntity;

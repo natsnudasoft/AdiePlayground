@@ -32,7 +32,9 @@ namespace AdiePlayground.Common.Model
         /// Initializes a new instance of the <see cref="Fruit"/> class with the specified quality.
         /// </summary>
         /// <param name="quality">The quality of this instance of fruit.</param>
-        /// <exception cref="ArgumentException">Thrown when quality is invalid.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><para><paramref name="quality"/> is less
+        /// than 0.</para><para>-or-</para><para><paramref name="quality"/> is greater than 100.
+        /// </para></exception>
         protected Fruit(int quality)
         {
             if (quality < MinQuality || quality > MaxQuality)
@@ -42,9 +44,9 @@ namespace AdiePlayground.Common.Model
                     Resources.FruitInvalidQuality,
                     MinQuality,
                     MaxQuality);
-                throw new ArgumentException(
-                    exceptionMessage,
-                    nameof(quality));
+                throw new ArgumentOutOfRangeException(
+                    nameof(quality),
+                    exceptionMessage);
             }
 
             this.Quality = quality;

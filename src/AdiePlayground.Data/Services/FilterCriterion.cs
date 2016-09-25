@@ -34,7 +34,8 @@ namespace AdiePlayground.Data.Services
         /// Initializes a new instance of the <see cref="FilterCriterion{TEntity}" /> class.
         /// </summary>
         /// <param name="filterPredicate">The predicate that will be applied to a query.</param>
-        /// <exception cref="ArgumentNullException">Thrown when filterPredicate is null.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="filterPredicate"/> is
+        /// <c>null</c>.</exception>
         public FilterCriterion(Expression<Func<TEntity, bool>> filterPredicate)
         {
             if (filterPredicate == null)

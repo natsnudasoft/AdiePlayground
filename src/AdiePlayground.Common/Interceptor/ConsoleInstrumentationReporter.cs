@@ -43,8 +43,9 @@ namespace AdiePlayground.Common.Interceptor
         /// provide the report time.</param>
         /// <param name="guidProvider">The <see cref="Guid"/> provider to use to generate a
         /// report id.</param>
-        /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
-        /// but a value was expected.</exception>
+        /// <exception cref="ArgumentNullException">Either <paramref name="invocationCounter"/>,
+        /// <paramref name="invocationTimer"/>, <paramref name="dateTimeProvider"/>, or
+        /// <paramref name="guidProvider"/> is <c>null</c>.</exception>
         public ConsoleInstrumentationReporter(
             MethodInvocationCounter invocationCounter,
             MethodInvocationTimer invocationTimer,

@@ -45,8 +45,9 @@ namespace AdiePlayground.Common.Interceptor
         /// <param name="registrars">The registrars any interceptions will register to.</param>
         /// <param name="guidProvider">The <see cref="Guid"/> provider to use to generate
         /// an interception id.</param>
-        /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
-        /// but a value was expected.</exception>
+        /// <exception cref="ArgumentNullException">Either <paramref name="invocationCounter"/>,
+        /// <paramref name="invocationTimer"/>, <paramref name="registrars"/>, or
+        /// <paramref name="guidProvider"/> is <c>null</c>.</exception>
         public InstrumentationInterceptor(
             MethodInvocationCounter invocationCounter,
             MethodInvocationTimer invocationTimer,

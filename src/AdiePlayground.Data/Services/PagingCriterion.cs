@@ -35,7 +35,8 @@ namespace AdiePlayground.Data.Services
         /// </summary>
         /// <param name="skipCount">The number of entities to skip.</param>
         /// <param name="pageSize">Number of entities on the page.</param>
-        /// <exception cref="ArgumentException">Thrown when skipCount or pageSize is invalid.
+        /// <exception cref="ArgumentException"><para><paramref name="skipCount"/> is less then 0.
+        /// </para><para>-or-</para><para><paramref name="pageSize"/> is less than 1.</para>
         /// </exception>
         public PagingCriterion(int skipCount, int pageSize)
         {

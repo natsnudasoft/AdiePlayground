@@ -27,15 +27,15 @@ namespace AdiePlayground.Common.Interceptor
     public static class InterceptionExtensions
     {
         /// <summary>
-        /// Attempts to retrieve a <see cref="Task"/> from the <code>ReturnValue</code> of the
+        /// Attempts to retrieve a <see cref="Task"/> from the <c>ReturnValue</c> of the
         /// <see cref="IInvocation"/>, a <see cref="Task"/> will only be retrieved if the method is
         /// async.
         /// </summary>
         /// <param name="invocation">The invocation object.</param>
         /// <param name="task">When this method returns, contains the <see cref="Task"/> if the
-        /// retrieval was successful, or <code>null</code> if the retrieval failed.</param>
-        /// <returns><code>true</code> if <paramref name="task"/> was retrieved successfully;
-        /// otherwise, false.</returns>
+        /// retrieval was successful, or <c>null</c> if the retrieval failed.</param>
+        /// <returns><c>true</c> if <paramref name="task"/> was retrieved successfully;
+        /// otherwise, <c>false</c>.</returns>
         public static bool TryGetAsyncTask(this IInvocation invocation, out Task task)
         {
             if (invocation != null && invocation.MethodInvocationTarget.ReturnType != typeof(void))
@@ -62,10 +62,10 @@ namespace AdiePlayground.Common.Interceptor
         /// <param name="task">The task.</param>
         /// <param name="taskType">The declared <see cref="Type"/> of the task.</param>
         /// <param name="result">When this method returns, contains the result of this
-        /// <see cref="Task"/> if the retrieval was successful, or <code>null</code> if the
+        /// <see cref="Task"/> if the retrieval was successful, or <c>null</c> if the
         /// retrieval failed.</param>
-        /// <returns><code>true</code> if <paramref name="result"/> was retrieved successfully;
-        /// otherwise, false.</returns>
+        /// <returns><c>true</c> if <paramref name="result"/> was retrieved successfully;
+        /// otherwise, <c>false</c>.</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Design",
             "CA1007:UseGenericsWhereAppropriate",

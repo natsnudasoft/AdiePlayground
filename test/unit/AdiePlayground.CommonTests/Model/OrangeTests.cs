@@ -36,7 +36,7 @@ namespace AdiePlayground.CommonTests.Model
         public void Constructor_InvalidQuality_ArgumentException(
             [Values(int.MinValue, int.MaxValue)] int fruitQuality)
         {
-            var ex = Assert.Throws<ArgumentException>(() => new Orange(fruitQuality));
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => new Orange(fruitQuality));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorQualityParam));
         }
 

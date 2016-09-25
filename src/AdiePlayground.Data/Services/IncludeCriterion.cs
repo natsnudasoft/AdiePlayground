@@ -36,8 +36,8 @@ namespace AdiePlayground.Data.Services
         /// </summary>
         /// <param name="includePropertySelector">The property selector that selects the property
         /// to eager load.</param>
-        /// <exception cref="ArgumentNullException">Thrown when includePropertySelector is null.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="includePropertySelector"/> is
+        /// <c>null</c>.</exception>
         public IncludeCriterion(Expression<Func<TEntity, object>> includePropertySelector)
         {
             if (includePropertySelector == null)
