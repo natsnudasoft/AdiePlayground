@@ -31,10 +31,12 @@ namespace AdiePlayground.CommonTests.Interceptor
     [TestFixture]
     public sealed class ConsoleInstrumentationReporterTests
     {
-        private const string ConstructorInvocationCounterParam = "invocationCounterValue";
-        private const string ConstructorInvocationTimerParam = "invocationTimerValue";
-        private const string ConstructorDateTimeProviderParam = "dateTimeProviderValue";
-        private const string ConstructorGuidProviderParam = "guidProviderValue";
+#pragma warning disable CC0021 // Use nameof
+        private const string ConstructorInvocationCounterParam = "invocationCounter";
+        private const string ConstructorInvocationTimerParam = "invocationTimer";
+        private const string ConstructorDateTimeProviderParam = "dateTimeProvider";
+        private const string ConstructorGuidProviderParam = "guidProvider";
+#pragma warning restore CC0021 // Use nameof
         private const long InvocationTime = 501234;
         private const long DateTimeTicks = 636102623587151400;
         private static readonly Guid Guid = new Guid("{310EE18B-38E8-4451-8C55-E5C9102FDC4A}");

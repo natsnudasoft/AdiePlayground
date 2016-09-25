@@ -37,17 +37,17 @@ namespace AdiePlayground.Data.Services
         /// Initializes a new instance of the <see cref="ContextService"/> class using the
         /// specified database context scope factory.
         /// </summary>
-        /// <param name="dbContextScopeFactoryValue">The database context scope factory.</param>
-        public ContextService(IDbContextScopeFactory dbContextScopeFactoryValue)
+        /// <param name="dbContextScopeFactory">The database context scope factory.</param>
+        public ContextService(IDbContextScopeFactory dbContextScopeFactory)
         {
-            if (dbContextScopeFactoryValue == null)
+            if (dbContextScopeFactory == null)
             {
                 throw new ArgumentNullException(
-                    nameof(dbContextScopeFactoryValue),
+                    nameof(dbContextScopeFactory),
                     Resources.DbContextScopeFactoryInvalid);
             }
 
-            this.DbContextScopeFactory = dbContextScopeFactoryValue;
+            this.DbContextScopeFactory = dbContextScopeFactory;
         }
 
         /// <summary>

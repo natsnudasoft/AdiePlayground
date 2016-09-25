@@ -37,52 +37,52 @@ namespace AdiePlayground.Common.Interceptor
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleInstrumentationReporter"/> class.
         /// </summary>
-        /// <param name="invocationCounterValue">The method invocation counter to report on.</param>
-        /// <param name="invocationTimerValue">The method invocation timer to report on.</param>
-        /// <param name="dateTimeProviderValue">The <see cref="DateTime"/> provider to use to
+        /// <param name="invocationCounter">The method invocation counter to report on.</param>
+        /// <param name="invocationTimer">The method invocation timer to report on.</param>
+        /// <param name="dateTimeProvider">The <see cref="DateTime"/> provider to use to
         /// provide the report time.</param>
-        /// <param name="guidProviderValue">The <see cref="Guid"/> provider to use to generate a
+        /// <param name="guidProvider">The <see cref="Guid"/> provider to use to generate a
         /// report id.</param>
         /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
         /// but a value was expected.</exception>
         public ConsoleInstrumentationReporter(
-            MethodInvocationCounter invocationCounterValue,
-            MethodInvocationTimer invocationTimerValue,
-            IDateTimeProvider dateTimeProviderValue,
-            IGuidProvider guidProviderValue)
+            MethodInvocationCounter invocationCounter,
+            MethodInvocationTimer invocationTimer,
+            IDateTimeProvider dateTimeProvider,
+            IGuidProvider guidProvider)
         {
-            if (invocationCounterValue == null)
+            if (invocationCounter == null)
             {
                 throw new ArgumentNullException(
-                    nameof(invocationCounterValue),
+                    nameof(invocationCounter),
                     Resources.ConsoleInstrumentationReporterMethodInvocationCounterNull);
             }
 
-            if (invocationTimerValue == null)
+            if (invocationTimer == null)
             {
                 throw new ArgumentNullException(
-                    nameof(invocationTimerValue),
+                    nameof(invocationTimer),
                     Resources.ConsoleInstrumentationReporterMethodInvocationTimerNull);
             }
 
-            if (dateTimeProviderValue == null)
+            if (dateTimeProvider == null)
             {
                 throw new ArgumentNullException(
-                    nameof(dateTimeProviderValue),
+                    nameof(dateTimeProvider),
                     Resources.ConsoleInstrumentationReporterDateTimeProviderNull);
             }
 
-            if (guidProviderValue == null)
+            if (guidProvider == null)
             {
                 throw new ArgumentNullException(
-                    nameof(guidProviderValue),
+                    nameof(guidProvider),
                     Resources.ConsoleInstrumentationReporterGuidProviderNull);
             }
 
-            this.invocationCounter = invocationCounterValue;
-            this.invocationTimer = invocationTimerValue;
-            this.dateTimeProvider = dateTimeProviderValue;
-            this.guidProvider = guidProviderValue;
+            this.invocationCounter = invocationCounter;
+            this.invocationTimer = invocationTimer;
+            this.dateTimeProvider = dateTimeProvider;
+            this.guidProvider = guidProvider;
         }
 
         /// <summary>

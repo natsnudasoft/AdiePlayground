@@ -33,32 +33,32 @@ namespace AdiePlayground.Example
         /// <summary>
         /// Initializes a new instance of the <see cref="InterceptorExample" /> class.
         /// </summary>
-        /// <param name="instrumentationExampleValue">The instrumentation example that will be
+        /// <param name="instrumentationExample">The instrumentation example that will be
         /// intercepted.</param>
-        /// <param name="consoleInstrumentationReporterValue">The console instrumentation
+        /// <param name="consoleInstrumentationReporter">The console instrumentation
         /// reporter.</param>
         /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
         /// but a value was expected.</exception>
         public InterceptorExample(
-            IInstrumentationExample instrumentationExampleValue,
-            ConsoleInstrumentationReporter consoleInstrumentationReporterValue)
+            IInstrumentationExample instrumentationExample,
+            ConsoleInstrumentationReporter consoleInstrumentationReporter)
         {
-            if (instrumentationExampleValue == null)
+            if (instrumentationExample == null)
             {
                 throw new ArgumentNullException(
-                    nameof(instrumentationExampleValue),
+                    nameof(instrumentationExample),
                     Resources.InterceptorExampleInstrumentationExampleNull);
             }
 
-            if (consoleInstrumentationReporterValue == null)
+            if (consoleInstrumentationReporter == null)
             {
                 throw new ArgumentNullException(
-                    nameof(consoleInstrumentationReporterValue),
+                    nameof(consoleInstrumentationReporter),
                     Resources.InterceptorExampleConsoleInstrumentationReporterNull);
             }
 
-            this.instrumentationExample = instrumentationExampleValue;
-            this.consoleInstrumentationReporter = consoleInstrumentationReporterValue;
+            this.instrumentationExample = instrumentationExample;
+            this.consoleInstrumentationReporter = consoleInstrumentationReporter;
         }
 
         /// <summary>

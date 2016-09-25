@@ -38,53 +38,53 @@ namespace AdiePlayground.Common.Interceptor
         /// <summary>
         /// Initializes a new instance of the <see cref="InstrumentationInterceptor" /> class.
         /// </summary>
-        /// <param name="invocationCounterValue">The method invocation counter to use to count any
+        /// <param name="invocationCounter">The method invocation counter to use to count any
         /// interceptions.</param>
-        /// <param name="invocationTimerValue">The method invocation timer to use to time any
+        /// <param name="invocationTimer">The method invocation timer to use to time any
         /// interceptions.</param>
-        /// <param name="registrarValues">The registrars any interceptions will register to.</param>
-        /// <param name="guidProviderValue">The <see cref="Guid"/> provider to use to generate
+        /// <param name="registrars">The registrars any interceptions will register to.</param>
+        /// <param name="guidProvider">The <see cref="Guid"/> provider to use to generate
         /// an interception id.</param>
         /// <exception cref="ArgumentNullException">Thrown when an argument is <code>null</code>
         /// but a value was expected.</exception>
         public InstrumentationInterceptor(
-            MethodInvocationCounter invocationCounterValue,
-            MethodInvocationTimer invocationTimerValue,
-            IEnumerable<IRegistrar> registrarValues,
-            IGuidProvider guidProviderValue)
+            MethodInvocationCounter invocationCounter,
+            MethodInvocationTimer invocationTimer,
+            IEnumerable<IRegistrar> registrars,
+            IGuidProvider guidProvider)
         {
-            if (invocationCounterValue == null)
+            if (invocationCounter == null)
             {
                 throw new ArgumentNullException(
-                    nameof(invocationCounterValue),
+                    nameof(invocationCounter),
                     Resources.InstrumentationInterceptorMethodInvocationCounterNull);
             }
 
-            if (invocationTimerValue == null)
+            if (invocationTimer == null)
             {
                 throw new ArgumentNullException(
-                    nameof(invocationTimerValue),
+                    nameof(invocationTimer),
                     Resources.InstrumentationInterceptorMethodInvocationTimerNull);
             }
 
-            if (registrarValues == null)
+            if (registrars == null)
             {
                 throw new ArgumentNullException(
-                    nameof(registrarValues),
+                    nameof(registrars),
                     Resources.InstrumentationInterceptorRegistrarsNull);
             }
 
-            if (guidProviderValue == null)
+            if (guidProvider == null)
             {
                 throw new ArgumentNullException(
-                    nameof(guidProviderValue),
+                    nameof(guidProvider),
                     Resources.InstrumentationInterceptorGuidProviderNull);
             }
 
-            this.invocationCounter = invocationCounterValue;
-            this.invocationTimer = invocationTimerValue;
-            this.registrars = registrarValues;
-            this.guidProvider = guidProviderValue;
+            this.invocationCounter = invocationCounter;
+            this.invocationTimer = invocationTimer;
+            this.registrars = registrars;
+            this.guidProvider = guidProvider;
         }
 
         /// <summary>

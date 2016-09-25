@@ -29,7 +29,7 @@ namespace AdiePlayground.DataTests
     /// <seealso cref="IDbAsyncEnumerator{TEntity}" />
     internal class DbAsyncEnumeratorStub<TEntity> : IDbAsyncEnumerator<TEntity>
     {
-        private readonly IEnumerator<TEntity> inner;
+        private readonly IEnumerator<TEntity> innerEnumerator;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DbAsyncEnumeratorStub{TEntity}"/> class.
@@ -37,13 +37,13 @@ namespace AdiePlayground.DataTests
         /// <param name="innerEnumerator">The inner enumerator.</param>
         public DbAsyncEnumeratorStub(IEnumerator<TEntity> innerEnumerator)
         {
-            this.inner = innerEnumerator;
+            this.innerEnumerator = innerEnumerator;
         }
 
         /// <inheritdoc/>
         public TEntity Current
         {
-            get { return this.inner.Current; }
+            get { return this.innerEnumerator.Current; }
         }
 
         /// <inheritdoc/>
@@ -55,7 +55,7 @@ namespace AdiePlayground.DataTests
         /// <inheritdoc/>
         public Task<bool> MoveNextAsync(CancellationToken cancellationToken)
         {
-            return Task.FromResult(this.inner.MoveNext());
+            return Task.FromResult(this.innerEnumerator.MoveNext());
         }
 
         /// <inheritdoc/>
@@ -69,7 +69,7 @@ namespace AdiePlayground.DataTests
         {
             if (disposing)
             {
-                this.inner.Dispose();
+                this.innerEnumerator.Dispose();
             }
         }
     }

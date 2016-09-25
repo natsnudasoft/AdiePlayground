@@ -31,10 +31,10 @@ namespace AdiePlayground.DataTests.Services
     public sealed class DataModuleTests
     {
         private const string ConstructorFuncConnectionStringFactoryParam =
-            "connectionStringFactoryValue";
+            "connectionStringFactory";
 
         private const string ConstructorIConnectionStringFactoryParam =
-            "connectionStringFactoryValue";
+            "connectionStringFactory";
 
         /// <summary>
         /// Tests the constructor with a null connection string factory.
