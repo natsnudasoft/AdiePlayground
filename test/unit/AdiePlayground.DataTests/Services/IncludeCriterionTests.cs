@@ -33,7 +33,7 @@ namespace AdiePlayground.DataTests.Services
         /// Tests the constructor with an invalid include property selector.
         /// </summary>
         [Test]
-        public void Constructor_NullIncludePropertySelector_ArgumentException()
+        public void Constructor_NullIncludePropertySelector_ArgumentNullException()
         {
             var ex = Assert.Throws<ArgumentNullException>(
                 () => new IncludeCriterion<TestEntity>(null));
