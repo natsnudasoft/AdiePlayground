@@ -17,6 +17,7 @@
 namespace AdiePlayground.Common.Interceptor
 {
     using System;
+    using Extensions;
     using Properties;
 
     /// <summary>

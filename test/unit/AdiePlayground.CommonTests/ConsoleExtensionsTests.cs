@@ -19,7 +19,7 @@ namespace AdiePlayground.CommonTests
     using System;
     using System.Globalization;
     using System.IO;
-    using Common;
+    using Common.Extensions;
     using NUnit.Framework;
 
     /// <summary>

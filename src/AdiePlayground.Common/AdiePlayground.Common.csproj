@@ -68,13 +68,13 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="CommonModule.cs" />
-    <Compile Include="ConsoleExtensions.cs" />
+    <Compile Include="Extensions\ConsoleExtensions.cs" />
     <Compile Include="IDateTimeProvider.cs" />
     <Compile Include="IGuidProvider.cs" />
     <Compile Include="Interceptor\ConsoleRegistrar.cs" />
     <Compile Include="Interceptor\ConsoleInstrumentationReporter.cs" />
     <Compile Include="Interceptor\InstrumentationInterceptAttribute.cs" />
-    <Compile Include="Interceptor\InterceptionExtensions.cs" />
+    <Compile Include="Extensions\InterceptionExtensions.cs" />
     <Compile Include="Interceptor\InstrumentationInterceptor.cs" />
     <Compile Include="Interceptor\MethodInvocationCounter.cs" />
     <Compile Include="Interceptor\IRegistrar.cs" />

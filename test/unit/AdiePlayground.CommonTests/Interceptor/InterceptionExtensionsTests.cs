@@ -17,7 +17,7 @@
 namespace AdiePlayground.CommonTests.Interceptor
 {
     using System.Threading.Tasks;
-    using Common.Interceptor;
+    using Common.Extensions;
     using NUnit.Framework;
 
     /// <summary>

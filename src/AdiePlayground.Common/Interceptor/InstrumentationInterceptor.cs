@@ -22,6 +22,7 @@ namespace AdiePlayground.Common.Interceptor
     using System.Globalization;
     using System.Threading.Tasks;
     using Castle.DynamicProxy;
+    using Extensions;
     using Properties;
 
     /// <summary>

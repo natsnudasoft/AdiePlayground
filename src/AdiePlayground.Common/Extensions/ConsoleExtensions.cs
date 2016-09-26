@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.Common
+namespace AdiePlayground.Common.Extensions
 {
     using System;
 

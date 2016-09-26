@@ -17,7 +17,7 @@
 namespace AdiePlayground.Example
 {
     using System;
-    using Common;
+    using Common.Extensions;
     using Common.Model;
     using Common.Variance;
     using Properties;
