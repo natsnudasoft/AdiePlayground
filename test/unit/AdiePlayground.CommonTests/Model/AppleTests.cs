@@ -57,7 +57,7 @@ namespace AdiePlayground.CommonTests.Model
         public void Constructor_InvalidColor_ArgumentException()
         {
             const int FruitQuality = 20;
-            var ex = Assert.Throws<ArgumentException>(
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(
                 () => new Apple((AppleColor)int.MinValue, FruitQuality));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorColorParam));
         }

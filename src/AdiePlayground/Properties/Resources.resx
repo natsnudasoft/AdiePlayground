@@ -120,9 +120,6 @@
   <data name="ConsolePressEnterToContinue" xml:space="preserve">
     <value>Press &lt;Enter&gt; to continue...</value>
   </data>
-  <data name="CurrentDomainUnhandledException" xml:space="preserve">
-    <value>A fatal unhandled error occurred.</value>
-  </data>
   <data name="ContravarianceExampleAppleValue" xml:space="preserve">
     <value>{0} is {1}.</value>
     <comment>{0}: nameof(appleValue), {1}: appleValue</comment>
@@ -155,21 +152,6 @@
   </data>
   <data name="InvarianceExampleRunning" xml:space="preserve">
     <value>Running invariance example.</value>
-  </data>
-  <data name="VarianceExampleBananaCovariantInvalid" xml:space="preserve">
-    <value>Invalid fruit covariant interface.</value>
-  </data>
-  <data name="VarianceExampleFruitContravariantInvalid" xml:space="preserve">
-    <value>Invalid fruit contravariant interface.</value>
-  </data>
-  <data name="VarianceExampleOrangeInvariantInvalid" xml:space="preserve">
-    <value>Invalid fruit invariant interface.</value>
-  </data>
-  <data name="InterceptorExampleInstrumentationExampleNull" xml:space="preserve">
-    <value>The provided InstrumentationExample was invalid.</value>
-  </data>
-  <data name="InterceptorExampleConsoleInstrumentationReporterNull" xml:space="preserve">
-    <value>The provided ConsoleInstrumentationReporter was invalid.</value>
   </data>
   <data name="InterceptionExampleRunning" xml:space="preserve">
     <value>Running interception example.</value>

@@ -22,7 +22,6 @@ namespace AdiePlayground.Common.Interceptor
     using System.Globalization;
     using System.Threading.Tasks;
     using Castle.DynamicProxy;
-    using Properties;
 
     /// <summary>
     /// Provides an interceptor for instrumentation of methods.
@@ -56,30 +55,22 @@ namespace AdiePlayground.Common.Interceptor
         {
             if (invocationCounter == null)
             {
-                throw new ArgumentNullException(
-                    nameof(invocationCounter),
-                    Resources.InstrumentationInterceptorMethodInvocationCounterNull);
+                throw new ArgumentNullException(nameof(invocationCounter));
             }
 
             if (invocationTimer == null)
             {
-                throw new ArgumentNullException(
-                    nameof(invocationTimer),
-                    Resources.InstrumentationInterceptorMethodInvocationTimerNull);
+                throw new ArgumentNullException(nameof(invocationTimer));
             }
 
             if (registrars == null)
             {
-                throw new ArgumentNullException(
-                    nameof(registrars),
-                    Resources.InstrumentationInterceptorRegistrarsNull);
+                throw new ArgumentNullException(nameof(registrars));
             }
 
             if (guidProvider == null)
             {
-                throw new ArgumentNullException(
-                    nameof(guidProvider),
-                    Resources.InstrumentationInterceptorGuidProviderNull);
+                throw new ArgumentNullException(nameof(guidProvider));
             }
 
             this.invocationCounter = invocationCounter;

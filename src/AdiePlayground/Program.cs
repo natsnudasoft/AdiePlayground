@@ -68,7 +68,7 @@ namespace AdiePlayground
             }
             else
             {
-                Logger.Fatal(Resources.CurrentDomainUnhandledException);
+                Logger.Fatal("A fatal unhandled error occurred.");
             }
         }
     }

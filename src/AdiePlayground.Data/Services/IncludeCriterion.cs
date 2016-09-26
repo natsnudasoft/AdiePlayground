@@ -21,7 +21,6 @@ namespace AdiePlayground.Data.Services
     using System.Linq;
     using System.Linq.Expressions;
     using Model;
-    using Properties;
 
     /// <summary>
     /// Provides an eager loading criterion to be applied to a query.
@@ -42,9 +41,7 @@ namespace AdiePlayground.Data.Services
         {
             if (includePropertySelector == null)
             {
-                throw new ArgumentNullException(
-                    nameof(includePropertySelector),
-                    Resources.FilterCriterionPredicateInvalid);
+                throw new ArgumentNullException(nameof(includePropertySelector));
             }
 
             this.IncludePropertySelector = includePropertySelector;
