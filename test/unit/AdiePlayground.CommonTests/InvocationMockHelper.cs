@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.CommonTests.Interceptor
+namespace AdiePlayground.CommonTests
 {
     using System;
     using System.Reflection;
@@ -141,7 +141,7 @@ namespace AdiePlayground.CommonTests.Interceptor
                 .Returns(method);
             invocationMock
                 .SetupGet(i => i.TargetType)
-                .Returns(typeof(InstrumentationInterceptorTests));
+                .Returns(typeof(InvocationMockHelper));
             return invocationMock;
         }
     }
