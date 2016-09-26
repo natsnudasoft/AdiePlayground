@@ -18,7 +18,7 @@ namespace AdiePlayground.Example
 {
     using System;
     using System.Threading.Tasks;
-    using Common;
+    using Common.Extensions;
     using Common.Interceptor;
     using Properties;
 

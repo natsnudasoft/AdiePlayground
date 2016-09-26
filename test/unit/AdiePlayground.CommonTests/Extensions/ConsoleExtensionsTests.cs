@@ -14,12 +14,12 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.CommonTests
+namespace AdiePlayground.CommonTests.Extensions
 {
     using System;
     using System.Globalization;
     using System.IO;
-    using Common;
+    using Common.Extensions;
     using NUnit.Framework;
 
     /// <summary>
