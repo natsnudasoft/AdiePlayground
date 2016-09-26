@@ -20,7 +20,6 @@ namespace AdiePlayground.Data.Services
     using System.Data.Entity;
     using System.Linq;
     using Model;
-    using Properties;
 
     /// <summary>
     /// Provides a paging criterion to be applied to a query.
@@ -42,16 +41,18 @@ namespace AdiePlayground.Data.Services
         {
             if (skipCount < 0)
             {
-                throw new ArgumentException(
-                    Resources.PagingCriterionSkipCountInvalid,
-                    nameof(skipCount));
+                throw new ArgumentOutOfRangeException(
+                    nameof(skipCount),
+                    skipCount,
+                    "Value must be greater than or equal to 0.");
             }
 
             if (pageSize < 1)
             {
-                throw new ArgumentException(
-                    Resources.PagingCriterionPageSizeInvalid,
-                    nameof(pageSize));
+                throw new ArgumentOutOfRangeException(
+                    nameof(pageSize),
+                    pageSize,
+                    "Value must be greater than 0.");
             }
 
             this.SkipCount = skipCount;

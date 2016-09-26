@@ -17,8 +17,7 @@
 namespace AdiePlayground.Common.Model
 {
     using System;
-    using System.Globalization;
-    using Properties;
+    using static System.FormattableString;
 
     /// <summary>
     /// Provides an abstract base class for fruit.
@@ -39,14 +38,10 @@ namespace AdiePlayground.Common.Model
         {
             if (quality < MinQuality || quality > MaxQuality)
             {
-                var exceptionMessage = string.Format(
-                    CultureInfo.InvariantCulture,
-                    Resources.FruitInvalidQuality,
-                    MinQuality,
-                    MaxQuality);
                 throw new ArgumentOutOfRangeException(
                     nameof(quality),
-                    exceptionMessage);
+                    quality,
+                    Invariant($"Value must be between {MinQuality} and {MaxQuality}."));
             }
 
             this.Quality = quality;

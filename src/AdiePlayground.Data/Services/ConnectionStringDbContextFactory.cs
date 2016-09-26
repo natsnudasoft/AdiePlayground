@@ -40,9 +40,7 @@ namespace AdiePlayground.Data.Services
         {
             if (connectionStringFactory == null)
             {
-                throw new ArgumentNullException(
-                    nameof(connectionStringFactory),
-                    Properties.Resources.ConnectionStringFactoryInvalid);
+                throw new ArgumentNullException(nameof(connectionStringFactory));
             }
 
             this.connectionStringFactory = connectionStringFactory;

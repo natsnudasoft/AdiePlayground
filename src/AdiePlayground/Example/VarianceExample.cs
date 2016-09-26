@@ -54,23 +54,17 @@ namespace AdiePlayground.Example
         {
             if (orangeInvariant == null)
             {
-                throw new ArgumentNullException(
-                    nameof(orangeInvariant),
-                    Resources.VarianceExampleOrangeInvariantInvalid);
+                throw new ArgumentNullException(nameof(orangeInvariant));
             }
 
             if (bananaCovariant == null)
             {
-                throw new ArgumentNullException(
-                    nameof(bananaCovariant),
-                    Resources.VarianceExampleBananaCovariantInvalid);
+                throw new ArgumentNullException(nameof(bananaCovariant));
             }
 
             if (fruitContravariant == null)
             {
-                throw new ArgumentNullException(
-                    nameof(fruitContravariant),
-                    Resources.VarianceExampleFruitContravariantInvalid);
+                throw new ArgumentNullException(nameof(fruitContravariant));
             }
 
             this.orangeInvariantInterface = orangeInvariant;

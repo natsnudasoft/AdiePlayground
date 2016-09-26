@@ -19,7 +19,6 @@ namespace AdiePlayground.Data
     using System;
     using Autofac;
     using Mehdime.Entity;
-    using Properties;
     using Services;
 
     /// <summary>
@@ -40,9 +39,7 @@ namespace AdiePlayground.Data
         {
             if (connectionStringFactory == null)
             {
-                throw new ArgumentNullException(
-                    nameof(connectionStringFactory),
-                    Resources.ConnectionStringFactoryInvalid);
+                throw new ArgumentNullException(nameof(connectionStringFactory));
             }
 
             this.connectionStringFactory = connectionStringFactory;
@@ -57,9 +54,7 @@ namespace AdiePlayground.Data
         {
             if (connectionStringFactory == null)
             {
-                throw new ArgumentNullException(
-                    nameof(connectionStringFactory),
-                    Resources.ConnectionStringFactoryInvalid);
+                throw new ArgumentNullException(nameof(connectionStringFactory));
             }
 
             this.connectionStringFactory = connectionStringFactory.CreateConnectionString;

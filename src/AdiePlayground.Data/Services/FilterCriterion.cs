@@ -20,7 +20,6 @@ namespace AdiePlayground.Data.Services
     using System.Linq;
     using System.Linq.Expressions;
     using Model;
-    using Properties;
 
     /// <summary>
     /// Provides a filtering criterion to be applied to a query.
@@ -40,9 +39,7 @@ namespace AdiePlayground.Data.Services
         {
             if (filterPredicate == null)
             {
-                throw new ArgumentNullException(
-                    nameof(filterPredicate),
-                    Resources.FilterCriterionPredicateInvalid);
+                throw new ArgumentNullException(nameof(filterPredicate));
             }
 
             this.FilterPredicate = filterPredicate;

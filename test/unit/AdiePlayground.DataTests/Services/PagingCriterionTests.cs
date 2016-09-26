@@ -36,7 +36,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_InvalidSkipCount_ArgumentException()
         {
-            var ex = Assert.Throws<ArgumentException>(
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(
                 () => new PagingCriterion<TestEntity>(int.MinValue, 10));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSkipCountParam));
         }
@@ -47,7 +47,7 @@ namespace AdiePlayground.DataTests.Services
         [Test]
         public void Constructor_InvalidPageSize_ArgumentException()
         {
-            var ex = Assert.Throws<ArgumentException>(
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(
                 () => new PagingCriterion<TestEntity>(0, int.MinValue));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorPageSizeParam));
         }

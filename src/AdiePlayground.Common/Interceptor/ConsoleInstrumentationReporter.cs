@@ -21,7 +21,6 @@ namespace AdiePlayground.Common.Interceptor
     using System.Globalization;
     using System.Linq;
     using System.Text;
-    using Properties;
 
     /// <summary>
     /// Provides a class to report on the current state of instrumentation to the
@@ -54,30 +53,22 @@ namespace AdiePlayground.Common.Interceptor
         {
             if (invocationCounter == null)
             {
-                throw new ArgumentNullException(
-                    nameof(invocationCounter),
-                    Resources.ConsoleInstrumentationReporterMethodInvocationCounterNull);
+                throw new ArgumentNullException(nameof(invocationCounter));
             }
 
             if (invocationTimer == null)
             {
-                throw new ArgumentNullException(
-                    nameof(invocationTimer),
-                    Resources.ConsoleInstrumentationReporterMethodInvocationTimerNull);
+                throw new ArgumentNullException(nameof(invocationTimer));
             }
 
             if (dateTimeProvider == null)
             {
-                throw new ArgumentNullException(
-                    nameof(dateTimeProvider),
-                    Resources.ConsoleInstrumentationReporterDateTimeProviderNull);
+                throw new ArgumentNullException(nameof(dateTimeProvider));
             }
 
             if (guidProvider == null)
             {
-                throw new ArgumentNullException(
-                    nameof(guidProvider),
-                    Resources.ConsoleInstrumentationReporterGuidProviderNull);
+                throw new ArgumentNullException(nameof(guidProvider));
             }
 
             this.invocationCounter = invocationCounter;

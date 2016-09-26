@@ -20,7 +20,6 @@ namespace AdiePlayground.Data.Services
     using System.Linq;
     using System.Linq.Expressions;
     using Model;
-    using Properties;
 
     /// <summary>
     /// Provides a sorting criterion to be applied to a query.
@@ -48,9 +47,7 @@ namespace AdiePlayground.Data.Services
         {
             if (sortPropertySelector == null)
             {
-                throw new ArgumentNullException(
-                    nameof(sortPropertySelector),
-                    Resources.SortCriterionPropertySelectorInvalid);
+                throw new ArgumentNullException(nameof(sortPropertySelector));
             }
 
             switch (sortOrder)
@@ -61,9 +58,7 @@ namespace AdiePlayground.Data.Services
                     break;
 
                 default:
-                    throw new ArgumentOutOfRangeException(
-                        nameof(sortOrder),
-                        Resources.SortCriterionSortOrderInvalid);
+                    throw new ArgumentOutOfRangeException(nameof(sortOrder));
             }
 
             this.SortPropertySelector = sortPropertySelector;

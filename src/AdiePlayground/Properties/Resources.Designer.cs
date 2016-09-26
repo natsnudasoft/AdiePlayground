@@ -124,38 +124,11 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A fatal unhandled error occurred..
-        /// </summary>
-        internal static string CurrentDomainUnhandledException {
-            get {
-                return ResourceManager.GetString("CurrentDomainUnhandledException", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Running interception example..
         /// </summary>
         internal static string InterceptionExampleRunning {
             get {
                 return ResourceManager.GetString("InterceptionExampleRunning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The provided ConsoleInstrumentationReporter was invalid..
-        /// </summary>
-        internal static string InterceptorExampleConsoleInstrumentationReporterNull {
-            get {
-                return ResourceManager.GetString("InterceptorExampleConsoleInstrumentationReporterNull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The provided InstrumentationExample was invalid..
-        /// </summary>
-        internal static string InterceptorExampleInstrumentationExampleNull {
-            get {
-                return ResourceManager.GetString("InterceptorExampleInstrumentationExampleNull", resourceCulture);
             }
         }
         
@@ -183,33 +156,6 @@ namespace AdiePlayground.Properties {
         internal static string InvarianceExampleRunning {
             get {
                 return ResourceManager.GetString("InvarianceExampleRunning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid fruit covariant interface..
-        /// </summary>
-        internal static string VarianceExampleBananaCovariantInvalid {
-            get {
-                return ResourceManager.GetString("VarianceExampleBananaCovariantInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid fruit contravariant interface..
-        /// </summary>
-        internal static string VarianceExampleFruitContravariantInvalid {
-            get {
-                return ResourceManager.GetString("VarianceExampleFruitContravariantInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid fruit invariant interface..
-        /// </summary>
-        internal static string VarianceExampleOrangeInvariantInvalid {
-            get {
-                return ResourceManager.GetString("VarianceExampleOrangeInvariantInvalid", resourceCulture);
             }
         }
     }

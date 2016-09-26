@@ -19,7 +19,6 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Threading.Tasks;
     using Mehdime.Entity;
-    using Properties;
 
     /// <summary>
     /// Represents a transaction for the context and underlying store. Any service operations
@@ -40,9 +39,7 @@ namespace AdiePlayground.Data.Services
         {
             if (dbContextScopeFactory == null)
             {
-                throw new ArgumentNullException(
-                    nameof(dbContextScopeFactory),
-                    Resources.DbContextScopeFactoryInvalid);
+                throw new ArgumentNullException(nameof(dbContextScopeFactory));
             }
 
             this.dbContextScope = dbContextScopeFactory.Create();

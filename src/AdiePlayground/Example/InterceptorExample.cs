@@ -46,16 +46,12 @@ namespace AdiePlayground.Example
         {
             if (instrumentationExample == null)
             {
-                throw new ArgumentNullException(
-                    nameof(instrumentationExample),
-                    Resources.InterceptorExampleInstrumentationExampleNull);
+                throw new ArgumentNullException(nameof(instrumentationExample));
             }
 
             if (consoleInstrumentationReporter == null)
             {
-                throw new ArgumentNullException(
-                    nameof(consoleInstrumentationReporter),
-                    Resources.InterceptorExampleConsoleInstrumentationReporterNull);
+                throw new ArgumentNullException(nameof(consoleInstrumentationReporter));
             }
 
             this.instrumentationExample = instrumentationExample;

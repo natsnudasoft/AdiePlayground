@@ -18,7 +18,6 @@ namespace AdiePlayground.Common
 {
     using System;
     using System.Globalization;
-    using Properties;
 
     /// <summary>
     /// Represents a country in ISO 3166-1 Alpha-2 country code form.
@@ -41,25 +40,16 @@ namespace AdiePlayground.Common
         {
             if (countryCode == null)
             {
-                throw new ArgumentNullException(
-                    nameof(countryCode),
-                    Resources.Iso3166CountryCodeInvalid);
-            }
-
-            if (countryCode.Length != 2)
-            {
-                throw new ArgumentException(
-                    Resources.Iso3166CountryCodeInvalid,
-                    nameof(countryCode));
+                throw new ArgumentNullException(nameof(countryCode));
             }
 
             this.CountryCode = countryCode.ToUpperInvariant();
             string countryName;
-            if (!Iso3166Helper.CountryCodeMappingsInternal
+            if (countryCode.Length != 2 || !Iso3166Helper.CountryCodeMappingsInternal
                 .TryGetValue(this.CountryCode, out countryName))
             {
                 throw new ArgumentException(
-                    Resources.Iso3166CountryCodeInvalid,
+                    "Value must be a valid ISO 3166-1 alpha-2 country code.",
                     nameof(countryCode));
             }
 

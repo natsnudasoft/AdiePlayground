@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ConnectionStringFactoryInvalid" xml:space="preserve">
-    <value>Invalid connection string factory.</value>
-  </data>
-  <data name="DbContextScopeFactoryInvalid" xml:space="preserve">
-    <value>Invalid database context scope factory.</value>
-  </data>
-  <data name="FilterCriterionPredicateInvalid" xml:space="preserve">
-    <value>Invalid filter predicate.</value>
-  </data>
-  <data name="PagingCriterionPageSizeInvalid" xml:space="preserve">
-    <value>Invalid page size count. Must be 1 or more.</value>
-  </data>
-  <data name="PagingCriterionSkipCountInvalid" xml:space="preserve">
-    <value>Invalid skip count. Must be 0 or more.</value>
-  </data>
-  <data name="SortCriterionPropertySelectorInvalid" xml:space="preserve">
-    <value>Invalid property selector.</value>
-  </data>
-  <data name="SortCriterionSortOrderInvalid" xml:space="preserve">
-    <value>Invalid sort order.</value>
-  </data>
 </root>
