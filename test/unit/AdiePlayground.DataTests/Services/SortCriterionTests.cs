@@ -45,7 +45,7 @@ namespace AdiePlayground.DataTests.Services
         /// Tests the constructor with an invalid sort order.
         /// </summary>
         [Test]
-        public void Constructor_InvalidSortOrder_ArgumentException()
+        public void Constructor_InvalidSortOrder_ArgumentOutOfRangeException()
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(
                 () => new SortCriterion<TestEntity, int>(e => e.Id, (SortOrder)int.MinValue));
