@@ -18,7 +18,6 @@ namespace AdiePlayground.Data.Services
 {
     using System;
     using Mehdime.Entity;
-    using Properties;
 
     /// <summary>
     /// Represents a read-only transaction for the context and underlying store. Any service
@@ -39,9 +38,7 @@ namespace AdiePlayground.Data.Services
         {
             if (dbContextScopeFactory == null)
             {
-                throw new ArgumentNullException(
-                    nameof(dbContextScopeFactory),
-                    Resources.DbContextScopeFactoryInvalid);
+                throw new ArgumentNullException(nameof(dbContextScopeFactory));
             }
 
             this.dbContextReadOnlyScope = dbContextScopeFactory.CreateReadOnly();

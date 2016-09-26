@@ -33,7 +33,7 @@ namespace AdiePlayground.CommonTests.Model
         /// </summary>
         /// <param name="fruitQuality">The fruit quality.</param>
         [Test]
-        public void Constructor_InvalidQuality_ArgumentException(
+        public void Constructor_InvalidQuality_ArgumentOutOfRangeException(
             [Values(int.MinValue, int.MaxValue)] int fruitQuality)
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(() => new Orange(fruitQuality));

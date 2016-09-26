@@ -18,7 +18,6 @@ namespace AdiePlayground.Common.Variance
 {
     using System;
     using Model;
-    using Properties;
 
     /// <summary>
     /// Example implementation of an invariant interface.
@@ -31,9 +30,7 @@ namespace AdiePlayground.Common.Variance
         {
             if (input == null)
             {
-                throw new ArgumentNullException(
-                    nameof(input),
-                    Resources.OrangeInvariantGetValueInputNull);
+                throw new ArgumentNullException(nameof(input));
             }
 
             return input.Quality;

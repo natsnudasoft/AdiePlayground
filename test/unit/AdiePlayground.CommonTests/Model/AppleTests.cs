@@ -42,7 +42,7 @@ namespace AdiePlayground.CommonTests.Model
         /// </summary>
         /// <param name="fruitQuality">The fruit quality.</param>
         [Test]
-        public void Constructor_InvalidQuality_ArgumentException(
+        public void Constructor_InvalidQuality_ArgumentOutOfRangeException(
             [Values(int.MinValue, int.MaxValue)] int fruitQuality)
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(
@@ -54,10 +54,10 @@ namespace AdiePlayground.CommonTests.Model
         /// Tests the constructor with an invalid apple colour.
         /// </summary>
         [Test]
-        public void Constructor_InvalidColor_ArgumentException()
+        public void Constructor_InvalidColor_ArgumentOutOfRangeException()
         {
             const int FruitQuality = 20;
-            var ex = Assert.Throws<ArgumentException>(
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(
                 () => new Apple((AppleColor)int.MinValue, FruitQuality));
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorColorParam));
         }

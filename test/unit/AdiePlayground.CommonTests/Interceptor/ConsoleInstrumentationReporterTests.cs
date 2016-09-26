@@ -24,6 +24,7 @@ namespace AdiePlayground.CommonTests.Interceptor
     using Common.Interceptor;
     using Moq;
     using NUnit.Framework;
+    using static System.FormattableString;
 
     /// <summary>
     /// Tests the <see cref="ConsoleInstrumentationReporter"/> class.
@@ -160,7 +161,7 @@ namespace AdiePlayground.CommonTests.Interceptor
             this.dateTimeProviderMock.VerifyGet(d => d.Now, Times.Once());
             this.guidProviderMock.Verify(g => g.NewGuid(), Times.Once());
             Assert.That(outputString, Does.StartWith(
-                FormattableString.Invariant($"Console Registrar Report    {Guid}")));
+                Invariant($"Console Registrar Report    {Guid}")));
             Assert.That(outputString, Does.Contain("(Generated in "));
         }
 

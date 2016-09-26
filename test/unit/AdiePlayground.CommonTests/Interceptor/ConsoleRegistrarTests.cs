@@ -23,6 +23,7 @@ namespace AdiePlayground.CommonTests.Interceptor
     using Common.Interceptor;
     using Moq;
     using NUnit.Framework;
+    using static System.FormattableString;
 
     /// <summary>
     /// Tests the <see cref="ConsoleRegistrar"/> class.
@@ -87,7 +88,7 @@ namespace AdiePlayground.CommonTests.Interceptor
                 outputString = newOut.ToString();
             }
 
-            Assert.That(outputString, Does.StartWith(FormattableString.Invariant($"{Guid}")));
+            Assert.That(outputString, Does.StartWith(Invariant($"{Guid}")));
             Assert.That(outputString, Does.EndWith(RegistrationItem + Environment.NewLine));
         }
     }

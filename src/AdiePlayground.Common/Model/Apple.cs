@@ -17,7 +17,6 @@
 namespace AdiePlayground.Common.Model
 {
     using System;
-    using Properties;
 
     /// <summary>
     /// Represents an instance of an apple.
@@ -44,9 +43,7 @@ namespace AdiePlayground.Common.Model
                     break;
 
                 default:
-                    throw new ArgumentException(
-                        Resources.AppleAppleColorInvalid,
-                        nameof(color));
+                    throw new ArgumentOutOfRangeException(nameof(color));
             }
         }
 

@@ -18,7 +18,7 @@ namespace AdiePlayground.Common.Interceptor
 {
     using System;
     using Extensions;
-    using Properties;
+    using static System.FormattableString;
 
     /// <summary>
     /// Provides functionality to register events to the <see cref="Console"/>.
@@ -39,9 +39,7 @@ namespace AdiePlayground.Common.Interceptor
         {
             if (dateTimeProvider == null)
             {
-                throw new ArgumentNullException(
-                    nameof(dateTimeProvider),
-                    Resources.ConsoleRegistrarDateTimeProviderNull);
+                throw new ArgumentNullException(nameof(dateTimeProvider));
             }
 
             this.dateTimeProvider = dateTimeProvider;
@@ -52,8 +50,7 @@ namespace AdiePlayground.Common.Interceptor
         {
             var registerTime = this.dateTimeProvider.Now;
             ConsoleExtensions.WriteColoredLine(
-                FormattableString.Invariant(
-                    $"{id}    {registerTime:yyyy-MM-dd HH:mm:ss.fff}    {text}"),
+                Invariant($"{id}    {registerTime:yyyy-MM-dd HH:mm:ss.fff}    {text}"),
                 ConsoleColor.DarkYellow);
         }
     }

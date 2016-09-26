@@ -117,48 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppleAppleColorInvalid" xml:space="preserve">
-    <value>The provided apple colour was invalid.</value>
-  </data>
-  <data name="ConsoleInstrumentationReporterDateTimeProviderNull" xml:space="preserve">
-    <value>The provided ITimeProvider was invalid.</value>
-  </data>
-  <data name="ConsoleInstrumentationReporterGuidProviderNull" xml:space="preserve">
-    <value>The provided GuidProvider was invalid.</value>
-  </data>
-  <data name="ConsoleInstrumentationReporterMethodInvocationCounterNull" xml:space="preserve">
-    <value>The provided MethodInvocationCounter was invalid.</value>
-  </data>
-  <data name="ConsoleInstrumentationReporterMethodInvocationTimerNull" xml:space="preserve">
-    <value>The provided MethodInvocationTimer was invalid.</value>
-  </data>
-  <data name="ConsoleRegistrarDateTimeProviderNull" xml:space="preserve">
-    <value>The provided ITimeProvider was invalid.</value>
-  </data>
-  <data name="FruitContravariantGetValueInputNull" xml:space="preserve">
-    <value>The input value was invalid.</value>
-  </data>
-  <data name="FruitInvalidQuality" xml:space="preserve">
-    <value>The provided quality was invalid. Must be between {0} and {1}.</value>
-    <comment>{0}: MinQuality, {1}: MaxQuality</comment>
-  </data>
-  <data name="InstrumentationInterceptorGuidProviderNull" xml:space="preserve">
-    <value>The provided IGuidProvider was invalid.</value>
-  </data>
-  <data name="InstrumentationInterceptorMethodInvocationCounterNull" xml:space="preserve">
-    <value>The provided MethodInvocationCounter was invalid.</value>
-  </data>
-  <data name="InstrumentationInterceptorMethodInvocationTimerNull" xml:space="preserve">
-    <value>The provided MethodInvocationTimer was invalid.</value>
-  </data>
-  <data name="InstrumentationInterceptorRegistrarsNull" xml:space="preserve">
-    <value>The provided IRegistrar collection was invalid.</value>
-  </data>
-  <data name="Iso3166CountryCodeInvalid" xml:space="preserve">
-    <value>The value provided was not a valid ISO 3166-1 alpha-2 country code.</value>
-    <comment>https://en.wikipedia.org/wiki/ISO_3166-1</comment>
-  </data>
-  <data name="OrangeInvariantGetValueInputNull" xml:space="preserve">
-    <value>The input value was invalid.</value>
-  </data>
 </root>

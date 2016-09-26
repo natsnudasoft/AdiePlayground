@@ -24,7 +24,6 @@ namespace AdiePlayground.Data.Services
     using System.Threading.Tasks;
     using Mehdime.Entity;
     using Model;
-    using Properties;
 
     /// <summary>
     /// Provides a base for default actions on a database entity. This class can be overridden to
@@ -42,9 +41,7 @@ namespace AdiePlayground.Data.Services
         {
             if (dbContextScopeFactory == null)
             {
-                throw new ArgumentNullException(
-                    nameof(dbContextScopeFactory),
-                    Resources.DbContextScopeFactoryInvalid);
+                throw new ArgumentNullException(nameof(dbContextScopeFactory));
             }
 
             this.DbContextScopeFactory = dbContextScopeFactory;
