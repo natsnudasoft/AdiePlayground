@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.CommonTests.Interceptor
+namespace AdiePlayground.CommonTests.Extensions
 {
     using System.Threading.Tasks;
     using Common.Extensions;

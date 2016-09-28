@@ -78,9 +78,9 @@
     <Compile Include="CommonModuleTests.cs" />
     <Compile Include="Extensions\ConsoleExtensionsTests.cs" />
     <Compile Include="Interceptor\ConsoleInstrumentationReporterTests.cs" />
-    <Compile Include="Extensions\ConsoleRegistrarTests.cs" />
+    <Compile Include="Interceptor\ConsoleRegistrarTests.cs" />
     <Compile Include="Interceptor\InstrumentationInterceptorTests.cs" />
-    <Compile Include="Interceptor\InterceptionExtensionsTests.cs" />
+    <Compile Include="Extensions\InterceptionExtensionsTests.cs" />
     <Compile Include="InvocationMockHelper.cs" />
     <Compile Include="Interceptor\MethodInvocationCounterTests.cs" />
     <Compile Include="Interceptor\MethodInvocationTimerTests.cs" />

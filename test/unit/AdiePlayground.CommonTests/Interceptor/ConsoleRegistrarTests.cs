@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.CommonTests.Extensions
+namespace AdiePlayground.CommonTests.Interceptor
 {
     using System;
     using System.Globalization;
