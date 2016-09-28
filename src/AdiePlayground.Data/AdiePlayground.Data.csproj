@@ -87,11 +87,8 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Services\IConnectionStringFactory.cs" />
     <Compile Include="Services\IncludeCriterion.cs" />
-    <Compile Include="Services\IReadOnlyServiceTransaction.cs" />
-    <Compile Include="Services\IServiceTransaction.cs" />
     <Compile Include="Services\PagingCriterion.cs" />
     <Compile Include="Services\ISearchCriterion.cs" />
-    <Compile Include="Services\ISearchQuery.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\IModelEntity.cs" />
     <Compile Include="PlaygroundDbContext.cs" />
@@ -106,9 +103,7 @@
     <Compile Include="Model\UniversityStudent.cs" />
     <Compile Include="Services\ReadOnlyServiceTransaction.cs" />
     <Compile Include="Services\SearchQuery.cs" />
-    <Compile Include="Services\SearchQueryHelper.cs" />
     <Compile Include="Services\ContextService.cs" />
-    <Compile Include="Services\IContextService.cs" />
     <Compile Include="Services\SortCriterion.cs" />
     <Compile Include="Services\SortOrder.cs" />
     <Compile Include="Services\ServiceTransaction.cs" />

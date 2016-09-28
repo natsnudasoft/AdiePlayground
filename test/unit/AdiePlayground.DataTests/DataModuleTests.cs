@@ -88,7 +88,7 @@ namespace AdiePlayground.DataTests.Services
             builder.RegisterModule(dataModule);
             var container = builder.Build();
 
-            var contextService = container.Resolve<IContextService>();
+            var contextService = container.Resolve<ContextService>();
             var ambientDbContextLocator = container.Resolve<IAmbientDbContextLocator>();
 
             Assert.That(contextService, Is.Not.Null);

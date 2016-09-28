@@ -29,8 +29,7 @@ namespace AdiePlayground.Data.Services
     /// Provides a base for a set of common actions to be performed on the underlying store. This
     /// class can be overridden to provide more specific operations for a context.
     /// </summary>
-    /// <seealso cref="IContextService" />
-    internal class ContextService : IContextService
+    public class ContextService
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContextService"/> class.
@@ -54,19 +53,36 @@ namespace AdiePlayground.Data.Services
         /// </summary>
         protected IDbContextScopeFactory DbContextScopeFactory { get; }
 
-        /// <inheritdoc/>
-        public IServiceTransaction BeginTransaction()
+        /// <summary>
+        /// Creates a new transaction for the underlying store. This instance should be disposed to
+        /// correctly end the transaction.
+        /// </summary>
+        /// <returns>A new <see cref="ServiceTransaction"/>.</returns>
+        public ServiceTransaction BeginTransaction()
         {
             return new ServiceTransaction(this.DbContextScopeFactory);
         }
 
-        /// <inheritdoc/>
-        public IReadOnlyServiceTransaction BeginReadOnlyTransaction()
+        /// <summary>
+        /// Creates a new read-only transaction for the underlying store. This instance should be
+        /// disposed to correctly end the transaction.
+        /// </summary>
+        /// <returns>A new <see cref="ReadOnlyServiceTransaction"/>.</returns>
+        public ReadOnlyServiceTransaction BeginReadOnlyTransaction()
         {
             return new ReadOnlyServiceTransaction(this.DbContextScopeFactory);
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Retrieves the entity with the specified id from the underlying store.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <param name="id">The id to find on an entity.</param>
+        /// <returns>
+        /// An entity of type <typeparamref name="TEntity" /> if an entity with the specified id is
+        /// found; otherwise, <c>null</c>.
+        /// </returns>
         public async Task<TEntity> FindAsync<TEntity>(int id)
             where TEntity : class, IModelEntity
         {
@@ -77,9 +93,17 @@ namespace AdiePlayground.Data.Services
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Retrieves the entities that match the specified search criteria from the underlying
+        /// store.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <param name="searchQuery">The search criteria to apply.</param>
+        /// <returns>All entities of type <typeparamref name="TEntity"/> that match the specified
+        /// search criteria.</returns>
         public async Task<IEnumerable<TEntity>> FindAsync<TEntity>(
-            ISearchQuery<TEntity> searchQuery)
+            SearchQuery<TEntity> searchQuery)
             where TEntity : class, IModelEntity
         {
             using (var scope = this.DbContextScopeFactory.CreateReadOnly())
@@ -90,23 +114,21 @@ namespace AdiePlayground.Data.Services
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Retrieves the entities that match the specified search criteria from the underlying
+        /// store and projects them into the form of the specified selector.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <typeparam name="TResult">The type of the new form the entities are projected to.
+        /// </typeparam>
+        /// <param name="searchQuery">The search criteria to apply.</param>
+        /// <param name="selector">The selector to specify the new form to project entities to.
+        /// </param>
+        /// <returns>All entities of type <typeparamref name="TEntity"/> that match the specified
+        /// search criteria, projected into the specified form.</returns>
         public async Task<IEnumerable<TResult>> FindAsync<TEntity, TResult>(
-            ISearchQuery<TEntity> searchQuery,
-            Expression<Func<TEntity, int, TResult>> selector)
-            where TEntity : class, IModelEntity
-        {
-            using (var scope = this.DbContextScopeFactory.CreateReadOnly())
-            {
-                var context = scope.DbContexts.Get<PlaygroundDbContext>();
-                var query = BuildSearchQuery(context.Set<TEntity>(), searchQuery);
-                return await query.Select(selector).ToListAsync().ConfigureAwait(false);
-            }
-        }
-
-        /// <inheritdoc/>
-        public async Task<IEnumerable<TResult>> FindAsync<TEntity, TResult>(
-            ISearchQuery<TEntity> searchQuery,
+            SearchQuery<TEntity> searchQuery,
             Expression<Func<TEntity, TResult>> selector)
             where TEntity : class, IModelEntity
         {
@@ -118,7 +140,41 @@ namespace AdiePlayground.Data.Services
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Retrieves the entities that match the specified search criteria from the underlying
+        /// store and projects them into the form of the specified selector incorporating the
+        /// current index.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <typeparam name="TResult">The type of the new form the entities are projected to.
+        /// </typeparam>
+        /// <param name="searchQuery">The search criteria to apply.</param>
+        /// <param name="selector">The selector to specify the new form to project entities to.
+        /// Incorporates the current index.
+        /// </param>
+        /// <returns>All entities of type <typeparamref name="TEntity"/> that match the specified
+        /// search criteria, projected into the specified form.</returns>
+        public async Task<IEnumerable<TResult>> FindAsync<TEntity, TResult>(
+            SearchQuery<TEntity> searchQuery,
+            Expression<Func<TEntity, int, TResult>> selector)
+            where TEntity : class, IModelEntity
+        {
+            using (var scope = this.DbContextScopeFactory.CreateReadOnly())
+            {
+                var context = scope.DbContexts.Get<PlaygroundDbContext>();
+                var query = BuildSearchQuery(context.Set<TEntity>(), searchQuery);
+                return await query.Select(selector).ToListAsync().ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
+        /// Adds the specified entity to a context in the underlying store.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <param name="entity">The entity to add.</param>
+        /// <returns>The number of state entries modified in the underlying store.</returns>
         public async Task<int> AddAsync<TEntity>(TEntity entity)
             where TEntity : class, IModelEntity
         {
@@ -130,7 +186,13 @@ namespace AdiePlayground.Data.Services
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Adds the specified entities to a context in the underlying store.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <param name="entities">The entities to add.</param>
+        /// <returns>The number of state entries modified in the underlying store.</returns>
         public async Task<int> AddRangeAsync<TEntity>(IEnumerable<TEntity> entities)
             where TEntity : class, IModelEntity
         {
@@ -142,7 +204,13 @@ namespace AdiePlayground.Data.Services
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Removes the specified entity from a context in the underlying store.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <param name="entity">The entity to remove.</param>
+        /// <returns>The number of state entries modified in the underlying store.</returns>
         public async Task<int> RemoveAsync<TEntity>(TEntity entity)
             where TEntity : class, IModelEntity
         {
@@ -154,7 +222,13 @@ namespace AdiePlayground.Data.Services
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Removes the specified entities from a context in the underlying store.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type of the context to perform this operation on.
+        /// </typeparam>
+        /// <param name="entities">The entities to remove.</param>
+        /// <returns>The number of state entries modified in the underlying store.</returns>
         public async Task<int> RemoveRangeAsync<TEntity>(IEnumerable<TEntity> entities)
             where TEntity : class, IModelEntity
         {
@@ -168,7 +242,7 @@ namespace AdiePlayground.Data.Services
 
         private static IQueryable<TEntity> BuildSearchQuery<TEntity>(
             IQueryable<TEntity> query,
-            ISearchQuery<TEntity> searchQuery)
+            SearchQuery<TEntity> searchQuery)
             where TEntity : class, IModelEntity
         {
             foreach (var criterion in searchQuery.SearchCriteria)

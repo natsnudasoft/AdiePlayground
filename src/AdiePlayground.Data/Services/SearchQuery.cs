@@ -22,38 +22,69 @@ namespace AdiePlayground.Data.Services
     using Model;
 
     /// <summary>
-    /// Represents a search query that can be built up and applied upon evaluation.
+    /// Represents a search query that can be built up and applied to operations that work on a
+    /// context in the underlying store.
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity this search query operates on.</typeparam>
-    /// <seealso cref="ISearchQuery{TEntity}" />
-    internal sealed class SearchQuery<TEntity> : ISearchQuery<TEntity>
+    public sealed class SearchQuery<TEntity>
         where TEntity : class, IModelEntity
     {
         private readonly List<ISearchCriterion<TEntity>> searchCriteria =
             new List<ISearchCriterion<TEntity>>();
 
-        /// <inheritdoc/>
-        IEnumerable<ISearchCriterion<TEntity>> ISearchQuery<TEntity>.SearchCriteria =>
-            this.searchCriteria;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchQuery{TEntity}"/> class which can be
+        /// used to build up a search query.
+        /// </summary>
+        public SearchQuery()
+        {
+        }
 
-        /// <inheritdoc/>
-        ISearchQuery<TEntity> ISearchQuery<TEntity>.Filter(
-            Expression<Func<TEntity, bool>> filterPredicate)
+        /// <summary>
+        /// Gets the criteria that will be evaluated when this <see cref="SearchQuery{TEntity}"/>
+        /// is applied.
+        /// </summary>
+        internal IEnumerable<ISearchCriterion<TEntity>> SearchCriteria => this.searchCriteria;
+
+        /// <summary>
+        /// Adds the specified filter criterion to this <see cref="SearchQuery{TEntity}"/>.
+        /// </summary>
+        /// <param name="filterPredicate">The predicate to use when this filter criterion is
+        /// applied.
+        /// </param>
+        /// <returns>This <see cref="SearchQuery{TEntity}"/> with the specified filter criterion
+        /// added.</returns>
+        public SearchQuery<TEntity> Filter(Expression<Func<TEntity, bool>> filterPredicate)
         {
             this.searchCriteria.Add(new FilterCriterion<TEntity>(filterPredicate));
             return this;
         }
 
-        /// <inheritdoc/>
-        ISearchQuery<TEntity> ISearchQuery<TEntity>.Include(
+        /// <summary>
+        /// Adds the specified eager loading criterion to this <see cref="SearchQuery{TEntity}"/>.
+        /// </summary>
+        /// <param name="includePropertySelector">The property selector to use when this eager
+        /// loading criterion is applied.</param>
+        /// <returns>This <see cref="SearchQuery{TEntity}"/> with the specified eager loading
+        /// criterion added.</returns>
+        public SearchQuery<TEntity> Include(
             Expression<Func<TEntity, object>> includePropertySelector)
         {
             this.searchCriteria.Add(new IncludeCriterion<TEntity>(includePropertySelector));
             return this;
         }
 
-        /// <inheritdoc/>
-        ISearchQuery<TEntity> ISearchQuery<TEntity>.Sort<TProperty>(
+        /// <summary>
+        /// Adds the specified sort criterion to this <see cref="SearchQuery{TEntity}"/> with the
+        /// default sort order of <see cref="SortOrder.Ascending"/>.
+        /// </summary>
+        /// <typeparam name="TProperty">The type of the property returned by
+        /// <paramref name="sortPropertySelector"/>.</typeparam>
+        /// <param name="sortPropertySelector">The property selector to use when this sort criterion
+        /// is applied.</param>
+        /// <returns>This <see cref="SearchQuery{TEntity}"/> with the specified sort criterion
+        /// added.</returns>
+        public SearchQuery<TEntity> Sort<TProperty>(
             Expression<Func<TEntity, TProperty>> sortPropertySelector)
         {
             this.searchCriteria.Add(
@@ -61,8 +92,19 @@ namespace AdiePlayground.Data.Services
             return this;
         }
 
-        /// <inheritdoc/>
-        ISearchQuery<TEntity> ISearchQuery<TEntity>.Sort<TProperty>(
+        /// <summary>
+        /// Adds the specified sort criterion to this <see cref="SearchQuery{TEntity}"/> with the
+        /// specified sort order.
+        /// </summary>
+        /// <typeparam name="TProperty">The type of the property returned by
+        /// <paramref name="sortPropertySelector"/>.</typeparam>
+        /// <param name="sortPropertySelector">The property selector to use when this sort criterion
+        /// is applied.</param>
+        /// <param name="sortOrder">The sort order to use when this sort criterion is applied.
+        /// </param>
+        /// <returns>This <see cref="SearchQuery{TEntity}"/> with the specified sort criterion
+        /// added.</returns>
+        public SearchQuery<TEntity> Sort<TProperty>(
             Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder)
         {
@@ -71,8 +113,16 @@ namespace AdiePlayground.Data.Services
             return this;
         }
 
-        /// <inheritdoc/>
-        ISearchQuery<TEntity> ISearchQuery<TEntity>.Page(int skipCount, int pageSize)
+        /// <summary>
+        /// Adds the specified paging criterion to this <see cref="SearchQuery{TEntity}"/>.
+        /// </summary>
+        /// <param name="skipCount">The number of entities to skip when this paging criterion is
+        /// applied.</param>
+        /// <param name="pageSize">The number of entities to take when this paging criterion is
+        /// applied.</param>
+        /// <returns>This <see cref="SearchQuery{TEntity}"/> with the specified paging criterion
+        /// added.</returns>
+        public SearchQuery<TEntity> Page(int skipCount, int pageSize)
         {
             this.searchCriteria.Add(new PagingCriterion<TEntity>(skipCount, pageSize));
             return this;

@@ -50,7 +50,7 @@ namespace AdiePlayground
                 var interceptorExample = scope.Resolve<InterceptorExample>();
                 interceptorExample.RunExample();
 
-                var contextService = scope.Resolve<IContextService>();
+                var contextService = scope.Resolve<ContextService>();
                 Console.WriteLine(contextService.GetType().Name);
                 Console.WriteLine(Resources.ConsolePressEnterToContinue);
                 Console.ReadLine();

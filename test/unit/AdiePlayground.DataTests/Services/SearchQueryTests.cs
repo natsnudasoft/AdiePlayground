@@ -21,7 +21,7 @@ namespace AdiePlayground.DataTests.Services
     using NUnit.Framework;
 
     /// <summary>
-    /// Tests the <see cref="SearchQuery"/> class.
+    /// Tests the <see cref="SearchQuery{TEntity}"/> class.
     /// </summary>
     [TestFixture]
     public sealed class SearchQueryTests
@@ -39,7 +39,7 @@ namespace AdiePlayground.DataTests.Services
                 TestData.TestEntityData[2]
             };
 
-            var searchQuery = SearchQuery.Create<TestEntity>()
+            var searchQuery = new SearchQuery<TestEntity>()
                 .Filter(e => e.Property1.EndsWith("one."))
                 .Sort(e => e.Property2, SortOrder.Descending)
                 .Page(1, 2);
@@ -62,7 +62,7 @@ namespace AdiePlayground.DataTests.Services
         {
             // We can not properly test Include in a unit test.
             var query = TestData.DeepCopyTestEntityData().AsQueryable();
-            var searchQuery = SearchQuery.Create<TestEntity>()
+            var searchQuery = new SearchQuery<TestEntity>()
                 .Sort(e => e.Id)
                 .Include(e => e.Property2);
             foreach (var criterion in searchQuery.SearchCriteria)
