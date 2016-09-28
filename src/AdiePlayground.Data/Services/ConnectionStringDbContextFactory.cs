@@ -33,7 +33,8 @@ namespace AdiePlayground.Data.Services
         /// Initializes a new instance of the <see cref="ConnectionStringDbContextFactory" /> class
         /// which will use the specified connection string factory.
         /// </summary>
-        /// <param name="connectionStringFactory">The connection string factory.</param>
+        /// <param name="connectionStringFactory">The factory to create a connection string from.
+        /// </param>
         /// <exception cref="ArgumentNullException"><paramref name="connectionStringFactory"/> is
         /// <c>null</c>.</exception>
         public ConnectionStringDbContextFactory(Func<string> connectionStringFactory)

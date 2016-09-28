@@ -22,9 +22,9 @@ namespace AdiePlayground.Data.Services
     using Model;
 
     /// <summary>
-    /// Represents a search query with a list of criteria that can be applied to a query.
+    /// Represents a search query that can be built up and applied upon evaluation.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TEntity">The type of the entity this search query operates on.</typeparam>
     /// <seealso cref="ISearchQuery{TEntity}" />
     internal sealed class SearchQuery<TEntity> : ISearchQuery<TEntity>
         where TEntity : class, IModelEntity

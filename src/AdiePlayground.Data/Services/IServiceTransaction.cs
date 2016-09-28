@@ -31,7 +31,7 @@ namespace AdiePlayground.Data.Services
         /// Completes this transaction and commits any changes made in it.
         /// </summary>
         /// <returns>A task representing the asynchronous operation. The task result contains the
-        /// number of state entries written to the underlying store.</returns>
+        /// number of state entries modified in the underlying store.</returns>
         Task<int> CompleteAsync();
     }
 }

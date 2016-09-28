@@ -23,8 +23,7 @@ namespace AdiePlayground.Common
     using Variance;
 
     /// <summary>
-    /// Provides Dependency Injection registration module for
-    /// <see cref="Common"/>.
+    /// Provides Dependency Injection registration module for the <see cref="Common"/> namespace.
     /// </summary>
     /// <seealso cref="Module" />
     public sealed class CommonModule : Module

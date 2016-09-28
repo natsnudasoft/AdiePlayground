@@ -17,7 +17,7 @@
 namespace AdiePlayground.Common.Model
 {
     /// <summary>
-    /// Represents an instance of an lemon.
+    /// Represents an instance of a lime.
     /// </summary>
     /// <seealso cref="Fruit" />
     public sealed class Lime : Fruit

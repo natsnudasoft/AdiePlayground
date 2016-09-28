@@ -22,15 +22,16 @@ namespace AdiePlayground.Data.Services
     /// <summary>
     /// Provides an interface for various search criterion which will be applied to a query.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TEntity">The type of the entity the query this filter will be applied to
+    /// works on.</typeparam>
     public interface ISearchCriterion<TEntity>
         where TEntity : class, IModelEntity
     {
         /// <summary>
-        /// Applies the criterion to the specified query.
+        /// Applies this criterion to the specified query.
         /// </summary>
         /// <param name="query">The query to apply this criterion to.</param>
-        /// <returns>The query with this criterion applied.</returns>
+        /// <returns>The specified query with this criterion applied.</returns>
         IQueryable<TEntity> Apply(IQueryable<TEntity> query);
     }
 }

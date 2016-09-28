@@ -23,9 +23,11 @@ namespace AdiePlayground.Data.Services
     using Model;
 
     /// <summary>
-    /// Provides an eager loading criterion to be applied to a query.
+    /// Provides a criterion to be applied to a query which will specify which elements to eagerly
+    /// load.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TEntity">The type of the entity the query this filter will be applied to
+    /// works on.</typeparam>
     /// <seealso cref="ISearchCriterion{TEntity}" />
     internal sealed class IncludeCriterion<TEntity> : ISearchCriterion<TEntity>
         where TEntity : class, IModelEntity
@@ -33,8 +35,8 @@ namespace AdiePlayground.Data.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="IncludeCriterion{TEntity}"/> class.
         /// </summary>
-        /// <param name="includePropertySelector">The property selector that selects the property
-        /// to eager load.</param>
+        /// <param name="includePropertySelector">The property selector to use when this
+        /// <see cref="IncludeCriterion{TEntity}"/> is applied.</param>
         /// <exception cref="ArgumentNullException"><paramref name="includePropertySelector"/> is
         /// <c>null</c>.</exception>
         public IncludeCriterion(Expression<Func<TEntity, object>> includePropertySelector)
@@ -48,7 +50,7 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <summary>
-        /// Gets the property selector that selects the property to eager load.
+        /// Gets the property selector used by this <see cref="IncludeCriterion{TEntity}"/>.
         /// </summary>
         public Expression<Func<TEntity, object>> IncludePropertySelector { get; }
 

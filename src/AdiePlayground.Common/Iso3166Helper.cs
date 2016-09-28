@@ -19,7 +19,6 @@ namespace AdiePlayground.Common
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Provides a helper class for ISO 3166-1 alpha-2 country codes.
@@ -27,8 +26,8 @@ namespace AdiePlayground.Common
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public static class Iso3166Helper
     {
-#pragma warning disable CC0021 // Country names are hard-coded.
-#pragma warning disable SA1124 // We will allow a region for this long list.
+#pragma warning disable CC0021 // Use nameof (Justification = Country names are hard-coded.)
+#pragma warning disable SA1124 // Do not use regions (Justification = Reviewed.)
         #region Country code mappings
 
         /// <summary>

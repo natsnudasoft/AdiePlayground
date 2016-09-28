@@ -22,10 +22,13 @@ namespace AdiePlayground.Data.Services
     using Model;
 
     /// <summary>
-    /// Provides a sorting criterion to be applied to a query.
+    /// Provides a criterion to be applied to a query which will sort entities by a specified
+    /// property in a specified order.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <typeparam name="TProperty">The type the property selector will return.</typeparam>
+    /// <typeparam name="TEntity">The type of the entity the query this filter will be applied to
+    /// works on.</typeparam>
+    /// <typeparam name="TProperty">The type of the property returned by the specified property
+    /// selector.</typeparam>
     /// <seealso cref="ISearchCriterion{TEntity}" />
     internal sealed class SortCriterion<TEntity, TProperty> : ISearchCriterion<TEntity>
         where TEntity : class, IModelEntity
@@ -34,9 +37,11 @@ namespace AdiePlayground.Data.Services
         /// Initializes a new instance of the <see cref="SortCriterion{TEntity, TProperty}" />
         /// class.
         /// </summary>
-        /// <param name="sortPropertySelector">The selector to choose the property to sort on.
+        /// <param name="sortPropertySelector">The property selector to use when this
+        /// <see cref="SortCriterion{TEntity, TProperty}"/> is applied.</param>
+        /// <param name="sortOrder">The sort order to use when this
+        /// <see cref="SortCriterion{TEntity, TProperty}"/> is applied.
         /// </param>
-        /// <param name="sortOrder">The sort order.</param>
         /// <exception cref="ArgumentNullException"><paramref name="sortPropertySelector"/> is
         /// <c>null</c>.</exception>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="sortOrder"/> specified an
@@ -65,12 +70,12 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <summary>
-        /// Gets the sort property selector that selects the property this criterion will search on.
+        /// Gets the property selector used by this <see cref="SortCriterion{TEntity, TProperty}"/>.
         /// </summary>
         public Expression<Func<TEntity, TProperty>> SortPropertySelector { get; }
 
         /// <summary>
-        /// Gets the sort order of this criterion.
+        /// Gets the sort order used by this <see cref="SortCriterion{TEntity, TProperty}"/>.
         /// </summary>
         public SortOrder SortOrder { get; }
 

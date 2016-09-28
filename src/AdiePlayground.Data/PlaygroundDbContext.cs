@@ -33,7 +33,8 @@ namespace AdiePlayground.Data
     internal class PlaygroundDbContext : DbContext
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PlaygroundDbContext"/> class.
+        /// Initializes a new instance of the <see cref="PlaygroundDbContext"/> class using the
+        /// default connection.
         /// </summary>
         public PlaygroundDbContext()
             : base("DefaultConnection")
@@ -52,29 +53,33 @@ namespace AdiePlayground.Data
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="DbSet{UniversityStudent}"/>.
+        /// Gets or sets the collection of all entities of a <see cref="UniversityStudent"/> type in
+        /// the underlying context.
         /// </summary>
         public DbSet<UniversityStudent> UniversityStudents { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="DbSet{UniversityStudentAddress}"/>.
+        /// Gets or sets the collection of all entities of a <see cref="UniversityStudentAddress"/>
+        /// type in the underlying context.
         /// </summary>
         public DbSet<UniversityStudentAddress> UniversityStudentAddresses { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="DbSet{UniversityCourse}"/>.
+        /// Gets or sets the collection of all entities of a <see cref="UniversityCourse"/> type in
+        /// the underlying context.
         /// </summary>
         public DbSet<UniversityCourse> UniversityCourses { get; set; }
 
         /// <summary>
-        /// This method does nothing and shouldn't be called but exists to so that a reference to
-        /// a type in EntityFramework.SqlServer.dll is used so that the dll will be copied to any
+        /// This method does nothing and shouldn't be called but exists so that a reference to a
+        /// type in EntityFramework.SqlServer.dll is used so that the dll will be copied to any
         /// projects referencing this one.
         /// </summary>
         /// <remarks>This is just a workaround to EntityFramework having an external reference on
         /// EntityFramework.SqlServer but visual studio won't copy the dll to the output unless
-        /// something in EntityFramework.SqlServer is actually used.</remarks>
+        /// it thinks something in EntityFramework.SqlServer is actually used.</remarks>
         /// <returns>An empty string.</returns>
+        [Obsolete("This method should not be called.", true)]
         public static string FixEntityFrameworkSqlProviderServices()
         {
             var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;

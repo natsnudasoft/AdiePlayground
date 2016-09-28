@@ -17,7 +17,7 @@
 namespace AdiePlayground.Data.Model
 {
     /// <summary>
-    /// Provides an interface for entities in a database.
+    /// Provides a standard interface for entities in a database.
     /// </summary>
     public interface IModelEntity
     {

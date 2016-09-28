@@ -32,8 +32,9 @@ namespace AdiePlayground.Data.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="ReadOnlyServiceTransaction"/> class.
         /// </summary>
-        /// <param name="dbContextScopeFactory">A factory to create a database context scope.
-        /// </param>
+        /// <param name="dbContextScopeFactory">The <see cref="IDbContextScopeFactory"/> used to
+        /// create instances of <see cref="IDbContextScope"/> as they are needed by context
+        /// operations.</param>
         public ReadOnlyServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
         {
             if (dbContextScopeFactory == null)

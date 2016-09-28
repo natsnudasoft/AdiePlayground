@@ -17,7 +17,7 @@
 namespace AdiePlayground.Data.Services
 {
     /// <summary>
-    /// Describes the order for a query sort criterion.
+    /// Describes the order of sorting in a sort criterion.
     /// </summary>
     public enum SortOrder
     {

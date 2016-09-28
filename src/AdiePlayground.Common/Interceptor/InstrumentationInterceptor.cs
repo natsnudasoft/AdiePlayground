@@ -25,7 +25,7 @@ namespace AdiePlayground.Common.Interceptor
     using Extensions;
 
     /// <summary>
-    /// Provides an interceptor for instrumentation of methods.
+    /// Provides an <see cref="IInterceptor"/> for instrumentation of methods.
     /// </summary>
     /// <seealso cref="IInterceptor" />
     internal sealed class InstrumentationInterceptor : IInterceptor
@@ -38,12 +38,13 @@ namespace AdiePlayground.Common.Interceptor
         /// <summary>
         /// Initializes a new instance of the <see cref="InstrumentationInterceptor" /> class.
         /// </summary>
-        /// <param name="invocationCounter">The method invocation counter to use to count any
+        /// <param name="invocationCounter">The <see cref="MethodInvocationCounter"/> to use to
+        /// count any interceptions.</param>
+        /// <param name="invocationTimer">The <see cref="MethodInvocationTimer"/> to use to time any
         /// interceptions.</param>
-        /// <param name="invocationTimer">The method invocation timer to use to time any
-        /// interceptions.</param>
-        /// <param name="registrars">The registrars any interceptions will register to.</param>
-        /// <param name="guidProvider">The <see cref="Guid"/> provider to use to generate
+        /// <param name="registrars">The <see cref="IRegistrar"/> any interceptions will register
+        /// to.</param>
+        /// <param name="guidProvider">The <see cref="IGuidProvider"/> to use to generate
         /// an interception id.</param>
         /// <exception cref="ArgumentNullException">Either <paramref name="invocationCounter"/>,
         /// <paramref name="invocationTimer"/>, <paramref name="registrars"/>, or
