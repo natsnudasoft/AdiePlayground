@@ -32,7 +32,6 @@ namespace AdiePlayground.DataTests.Services
         private const string ConstructorDbContextScopeFactoryParam = "dbContextScopeFactory";
 
         private DbMockHelper dbMockHelper;
-        private IContextService contextService;
 
         /// <summary>
         /// Sets up mocks before each test.
@@ -41,8 +40,6 @@ namespace AdiePlayground.DataTests.Services
         public void BeforeTest()
         {
             this.dbMockHelper = new DbMockHelper();
-            this.contextService = new ContextService(
-                this.dbMockHelper.DbContextScopeFactoryMock.Object);
         }
 
         /// <summary>

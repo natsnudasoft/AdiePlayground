@@ -21,12 +21,16 @@ namespace AdiePlayground.Data.Services
     using Mehdime.Entity;
 
     /// <summary>
-    /// Represents a transaction for the context and underlying store. Any service operations
-    /// performed within this transaction will be applied together in a single operation.
+    /// Represents a transaction for the underlying store.
     /// </summary>
-    /// <seealso cref="IServiceTransaction" />
+    /// <remarks>
+    /// Any service operations performed within this transaction will be applied together in a
+    /// single operation. This means any failed operations will roll back the entire transaction.
+    /// A <see cref="ServiceTransaction"/> cannot be created within a
+    /// <see cref="ReadOnlyServiceTransaction"/>.
+    /// </remarks>
     /// <seealso cref="IDisposable" />
-    internal sealed class ServiceTransaction : IServiceTransaction, IDisposable
+    public sealed class ServiceTransaction : IDisposable
     {
         private readonly IDbContextScope dbContextScope;
 
@@ -36,7 +40,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="dbContextScopeFactory">The <see cref="IDbContextScopeFactory"/> used to
         /// create instances of <see cref="IDbContextScope"/> as they are needed by context
         /// operations.</param>
-        public ServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
+        internal ServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
         {
             if (dbContextScopeFactory == null)
             {
@@ -46,7 +50,11 @@ namespace AdiePlayground.Data.Services
             this.dbContextScope = dbContextScopeFactory.Create();
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Completes this transaction and commits any changes made as part of it.
+        /// </summary>
+        /// <returns>A task representing the asynchronous operation. The task result contains the
+        /// number of state entries modified in the underlying store.</returns>
         public async Task<int> CompleteAsync()
         {
             return await this.dbContextScope.SaveChangesAsync().ConfigureAwait(false);

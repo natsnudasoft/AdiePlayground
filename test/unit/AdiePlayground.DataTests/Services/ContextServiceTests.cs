@@ -33,7 +33,7 @@ namespace AdiePlayground.DataTests.Services
         private const string ConstructorDbContextScopeFactoryParam = "dbContextScopeFactory";
 
         private DbMockHelper dbMockHelper;
-        private IContextService contextService;
+        private ContextService contextService;
 
         /// <summary>
         /// Sets up mocks before each test.
@@ -64,8 +64,7 @@ namespace AdiePlayground.DataTests.Services
         {
             this.dbMockHelper.MockDbContextScopeFactory();
 
-            IServiceTransaction transaction;
-            using (transaction = this.contextService.BeginTransaction())
+            using (var transaction = this.contextService.BeginTransaction())
             {
                 Assert.That(transaction, Is.Not.Null);
             }
@@ -81,8 +80,7 @@ namespace AdiePlayground.DataTests.Services
         {
             this.dbMockHelper.MockDbContextScopeFactoryReadOnly();
 
-            IReadOnlyServiceTransaction transaction;
-            using (transaction = this.contextService.BeginReadOnlyTransaction())
+            using (var transaction = this.contextService.BeginReadOnlyTransaction())
             {
                 Assert.That(transaction, Is.Not.Null);
             }
@@ -138,7 +136,7 @@ namespace AdiePlayground.DataTests.Services
             var expectedEntities = TestData.DeepCopyTestEntityData();
 
             var entities = await this.contextService
-                .FindAsync(SearchQuery.Create<TestEntity>()
+                .FindAsync(new SearchQuery<TestEntity>()
                     .Sort(e => e.Id, SortOrder.Ascending))
                 .ConfigureAwait(false);
 
@@ -163,7 +161,7 @@ namespace AdiePlayground.DataTests.Services
             };
 
             var entities = await this.contextService
-                .FindAsync(SearchQuery.Create<TestEntity>()
+                .FindAsync(new SearchQuery<TestEntity>()
                     .Filter(e => e.Property1.StartsWith("Giraffe"))
                     .Sort(e => e.Property2, SortOrder.Ascending))
                 .ConfigureAwait(false);
@@ -191,7 +189,7 @@ namespace AdiePlayground.DataTests.Services
 
             var entities = await this.contextService
                 .FindAsync(
-                    SearchQuery.Create<TestEntity>()
+                    new SearchQuery<TestEntity>()
                         .Filter(e => e.Property1.StartsWith("Elephant"))
                         .Sort(e => e.Property2, SortOrder.Ascending),
                     e => new { Select1 = e.Property2 })
@@ -220,7 +218,7 @@ namespace AdiePlayground.DataTests.Services
 
             var entities = await this.contextService
                 .FindAsync(
-                    SearchQuery.Create<TestEntity>()
+                    new SearchQuery<TestEntity>()
                         .Filter(e => e.Property1.StartsWith("Elephant"))
                         .Sort(e => e.Property2, SortOrder.Ascending),
                     (e, i) => new { Select1 = e.Property2, I = i })
@@ -247,7 +245,7 @@ namespace AdiePlayground.DataTests.Services
             };
 
             var entities = await this.contextService
-                .FindAsync(SearchQuery.Create<TestEntity>()
+                .FindAsync(new SearchQuery<TestEntity>()
                     .Page(4, 3))
                 .ConfigureAwait(false);
 
@@ -267,7 +265,7 @@ namespace AdiePlayground.DataTests.Services
 
             var entities = await this.contextService
                 .FindAsync(
-                    SearchQuery.Create<TestEntity>().Filter(e => e.Id == int.MaxValue))
+                    new SearchQuery<TestEntity>().Filter(e => e.Id == int.MaxValue))
                 .ConfigureAwait(false);
 
             Assert.That(entities, Is.Not.Null);

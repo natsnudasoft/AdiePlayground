@@ -78,7 +78,7 @@ namespace AdiePlayground.Data
             // Register context services
             builder
                 .Register(c => new ContextService(c.Resolve<IDbContextScopeFactory>()))
-                .As<IContextService>();
+                .AsSelf();
         }
     }
 }

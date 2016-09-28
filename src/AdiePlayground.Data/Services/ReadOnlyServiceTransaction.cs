@@ -20,12 +20,16 @@ namespace AdiePlayground.Data.Services
     using Mehdime.Entity;
 
     /// <summary>
-    /// Represents a read-only transaction for the context and underlying store. Any service
-    /// operations performed within this transaction will be applied together in a single operation.
+    /// Represents a read-only transaction on the underlying store.
     /// </summary>
-    /// <seealso cref="IReadOnlyServiceTransaction" />
+    /// <remarks>
+    /// Any service operations performed within this transaction will be applied together in a
+    /// single operation. This means any failed operations will roll back the entire transaction.
+    /// Read-only transactions will not track changes to entities unless they are created within
+    /// a regular <see cref="ServiceTransaction"/>.
+    /// </remarks>
     /// <seealso cref="IDisposable" />
-    internal sealed class ReadOnlyServiceTransaction : IReadOnlyServiceTransaction, IDisposable
+    public sealed class ReadOnlyServiceTransaction : IDisposable
     {
         private readonly IDbContextReadOnlyScope dbContextReadOnlyScope;
 
@@ -35,7 +39,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="dbContextScopeFactory">The <see cref="IDbContextScopeFactory"/> used to
         /// create instances of <see cref="IDbContextScope"/> as they are needed by context
         /// operations.</param>
-        public ReadOnlyServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
+        internal ReadOnlyServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
         {
             if (dbContextScopeFactory == null)
             {
