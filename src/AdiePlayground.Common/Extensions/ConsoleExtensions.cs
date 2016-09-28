@@ -26,7 +26,8 @@ namespace AdiePlayground.Common.Extensions
         private static readonly object ConsoleColorLock = new object();
 
         /// <summary>
-        /// Writes a single coloured line to the <see cref="Console"/>. The colour is reset after.
+        /// Writes a single coloured line to the <see cref="Console"/>. The colour is reset after
+        /// the operation.
         /// </summary>
         /// <param name="value">The value to write.</param>
         /// <param name="color">The colour of the text.</param>

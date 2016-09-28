@@ -31,8 +31,8 @@ namespace AdiePlayground.Common.Interceptor
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleRegistrar"/> class.
         /// </summary>
-        /// <param name="dateTimeProvider">The <see cref="DateTime"/> provider to use to
-        /// provide the time of an event registration.</param>
+        /// <param name="dateTimeProvider">The <see cref="IDateTimeProvider"/> to use to provide the
+        /// time of an event registration.</param>
         /// <exception cref="ArgumentNullException"><paramref name="dateTimeProvider"/> is
         /// <c>null</c>.</exception>
         public ConsoleRegistrar(IDateTimeProvider dateTimeProvider)

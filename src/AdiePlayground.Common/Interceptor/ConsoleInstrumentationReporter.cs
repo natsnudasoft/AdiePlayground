@@ -36,11 +36,13 @@ namespace AdiePlayground.Common.Interceptor
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleInstrumentationReporter"/> class.
         /// </summary>
-        /// <param name="invocationCounter">The method invocation counter to report on.</param>
-        /// <param name="invocationTimer">The method invocation timer to report on.</param>
-        /// <param name="dateTimeProvider">The <see cref="DateTime"/> provider to use to
+        /// <param name="invocationCounter">The <see cref="MethodInvocationCounter"/> to report on.
+        /// </param>
+        /// <param name="invocationTimer">The <see cref="MethodInvocationTimer"/> to report on.
+        /// </param>
+        /// <param name="dateTimeProvider">The <see cref="IDateTimeProvider"/> to use to
         /// provide the report time.</param>
-        /// <param name="guidProvider">The <see cref="Guid"/> provider to use to generate a
+        /// <param name="guidProvider">The <see cref="IGuidProvider"/> to use to generate a
         /// report id.</param>
         /// <exception cref="ArgumentNullException">Either <paramref name="invocationCounter"/>,
         /// <paramref name="invocationTimer"/>, <paramref name="dateTimeProvider"/>, or

@@ -19,7 +19,7 @@ namespace AdiePlayground.Common
     using System;
 
     /// <summary>
-    /// Provides a service to get an instance of a <see cref="DateTime"/>.
+    /// Provides members able to retrieve instances of <see cref="DateTime"/>.
     /// </summary>
     public interface IDateTimeProvider
     {

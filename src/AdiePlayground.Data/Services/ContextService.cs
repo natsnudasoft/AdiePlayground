@@ -26,17 +26,18 @@ namespace AdiePlayground.Data.Services
     using Model;
 
     /// <summary>
-    /// Provides a base for default actions on a database entity. This class can be overridden to
-    /// provide more advanced or specific common operations for entities.
+    /// Provides a base for a set of common actions to be performed on the underlying store. This
+    /// class can be overridden to provide more specific operations for a context.
     /// </summary>
     /// <seealso cref="IContextService" />
     internal class ContextService : IContextService
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContextService"/> class using the
-        /// specified database context scope factory.
+        /// Initializes a new instance of the <see cref="ContextService"/> class.
         /// </summary>
-        /// <param name="dbContextScopeFactory">The database context scope factory.</param>
+        /// <param name="dbContextScopeFactory">The <see cref="IDbContextScopeFactory"/> used to
+        /// create instances of <see cref="IDbContextScope"/> as they are needed by context
+        /// operations.</param>
         public ContextService(IDbContextScopeFactory dbContextScopeFactory)
         {
             if (dbContextScopeFactory == null)
@@ -48,7 +49,8 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <summary>
-        /// Gets the database context scope factory.
+        /// Gets the <see cref="IDbContextScopeFactory"/> used to create instances of
+        /// <see cref="IDbContextScope"/> as they are needed by context operations.
         /// </summary>
         protected IDbContextScopeFactory DbContextScopeFactory { get; }
 

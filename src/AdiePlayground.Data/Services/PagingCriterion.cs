@@ -22,9 +22,11 @@ namespace AdiePlayground.Data.Services
     using Model;
 
     /// <summary>
-    /// Provides a paging criterion to be applied to a query.
+    /// Provides a criterion to be applied to a query which will select only those entities that
+    /// match a paging specification.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TEntity">The type of the entity the query this filter will be applied to
+    /// works on.</typeparam>
     /// <seealso cref="ISearchCriterion{TEntity}" />
     internal sealed class PagingCriterion<TEntity> : ISearchCriterion<TEntity>
         where TEntity : class, IModelEntity
@@ -32,8 +34,10 @@ namespace AdiePlayground.Data.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="PagingCriterion{TEntity}" /> class.
         /// </summary>
-        /// <param name="skipCount">The number of entities to skip.</param>
-        /// <param name="pageSize">Number of entities on the page.</param>
+        /// <param name="skipCount">The number of entities to skip when this
+        /// <see cref="PagingCriterion{TEntity}"/> is applied.</param>
+        /// <param name="pageSize">The number of entities to take when this
+        /// <see cref="PagingCriterion{TEntity}"/> is applied.</param>
         /// <exception cref="ArgumentException"><para><paramref name="skipCount"/> is less then 0.
         /// </para><para>-or-</para><para><paramref name="pageSize"/> is less than 1.</para>
         /// </exception>
@@ -60,12 +64,12 @@ namespace AdiePlayground.Data.Services
         }
 
         /// <summary>
-        /// Gets the number of entities to skip.
+        /// Gets the number of entities to skip to reach this page.
         /// </summary>
         public int SkipCount { get; }
 
         /// <summary>
-        /// Gets the number of entities to retrieve for the page.
+        /// Gets the number of entities to take for this page.
         /// </summary>
         public int PageSize { get; }
 

@@ -27,11 +27,12 @@ namespace AdiePlayground.Common.Extensions
     public static class InterceptionExtensions
     {
         /// <summary>
-        /// Attempts to retrieve a <see cref="Task"/> from the <c>ReturnValue</c> of the
-        /// <see cref="IInvocation"/>, a <see cref="Task"/> will only be retrieved if the method is
+        /// Attempts to retrieve a <see cref="Task"/> from the <c>ReturnValue</c> of an
+        /// <see cref="IInvocation"/>; a <see cref="Task"/> will only be retrieved if the method is
         /// async.
         /// </summary>
-        /// <param name="invocation">The invocation object.</param>
+        /// <param name="invocation">The invocation object to attempt a <see cref="Task"/> retrieval
+        /// from.</param>
         /// <param name="task">When this method returns, contains the <see cref="Task"/> if the
         /// retrieval was successful, or <c>null</c> if the retrieval failed.</param>
         /// <returns><c>true</c> if <paramref name="task"/> was retrieved successfully;
@@ -57,10 +58,10 @@ namespace AdiePlayground.Common.Extensions
         }
 
         /// <summary>
-        /// Attempts to retrieve a result from the <see cref="Task"/> via reflection.
+        /// Attempts to retrieve a result from a <see cref="Task"/> via reflection.
         /// </summary>
-        /// <param name="task">The task.</param>
-        /// <param name="taskType">The declared <see cref="Type"/> of the task.</param>
+        /// <param name="task">The <see cref="Task"/> to attempt to get a result from.</param>
+        /// <param name="declaredTaskType">The declared <see cref="Type"/> of the task.</param>
         /// <param name="result">When this method returns, contains the result of this
         /// <see cref="Task"/> if the retrieval was successful, or <c>null</c> if the
         /// retrieval failed.</param>
@@ -72,12 +73,13 @@ namespace AdiePlayground.Common.Extensions
             Justification = "We are using reflection and do not know the type beforehand.")]
         public static bool TryGetResult(
             this Task task,
-            Type taskType,
+            Type declaredTaskType,
             out object result)
         {
-            if (task != null && taskType != null)
+            if (task != null && declaredTaskType != null)
             {
-                if (taskType.IsGenericType && taskType.GetGenericTypeDefinition() == typeof(Task<>))
+                if (declaredTaskType.IsGenericType &&
+                    declaredTaskType.GetGenericTypeDefinition() == typeof(Task<>))
                 {
                     result = task.GetType().GetProperty("Result").GetValue(task, null);
                 }

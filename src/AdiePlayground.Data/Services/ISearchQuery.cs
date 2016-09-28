@@ -29,61 +29,68 @@ namespace AdiePlayground.Data.Services
         where TEntity : class, IModelEntity
     {
         /// <summary>
-        /// Gets the search criteria that will be applied to the query when it is evaluated.
+        /// Gets the criteria that will be evaluated when this <see cref="ISearchQuery{TEntity}"/>
+        /// is applied.
         /// </summary>
         IEnumerable<ISearchCriterion<TEntity>> SearchCriteria { get; }
 
         /// <summary>
-        /// Creates the specified filter criterion that will be applied to the query when it is
-        /// evaluated.
+        /// Adds the specified filter criterion to this <see cref="ISearchQuery{TEntity}"/>.
         /// </summary>
-        /// <param name="filterPredicate">The filter that will be applied to the query.</param>
-        /// <returns>The criterion to be applied when the query is evaluated.</returns>
+        /// <param name="filterPredicate">The predicate to use when this filter criterion is
+        /// applied.
+        /// </param>
+        /// <returns>The original <see cref="ISearchQuery{TEntity}"/> with this filter criterion
+        /// added.</returns>
         ISearchQuery<TEntity> Filter(Expression<Func<TEntity, bool>> filterPredicate);
 
         /// <summary>
-        /// Creates the specified eager loading criterion that will be applied to the query when it
-        /// is evaluated.
+        /// Adds the specified eager loading criterion to this <see cref="ISearchQuery{TEntity}"/>.
         /// </summary>
-        /// <param name="includePropertySelector">The property selector that selects the property
-        /// that will be eagerly loaded in the query.</param>
-        /// <returns>The criterion to be applied when the query is evaluated.</returns>
+        /// <param name="includePropertySelector">The property selector to use when this eager
+        /// loading criterion is applied.</param>
+        /// <returns>The original <see cref="ISearchQuery{TEntity}"/> with this eager loading
+        /// criterion added.</returns>
         ISearchQuery<TEntity> Include(Expression<Func<TEntity, object>> includePropertySelector);
 
         /// <summary>
-        /// Creates the specified sort criterion that will be applied to the query when it is
-        /// evaluated. Uses default <see cref="SortOrder.Ascending"/>.
+        /// Adds the specified sort criterion to this <see cref="ISearchQuery{TEntity}"/> with the
+        /// default sort order of <see cref="SortOrder.Ascending"/>.
         /// </summary>
-        /// <typeparam name="TProperty">The type the property selector will return.</typeparam>
-        /// <param name="sortPropertySelector">The sort that will be applied to the query.</param>
-        /// <returns>
-        /// The criterion to be applied when the query is evaluated.
-        /// </returns>
+        /// <typeparam name="TProperty">The type of the property returned by
+        /// <paramref name="sortPropertySelector"/>.</typeparam>
+        /// <param name="sortPropertySelector">The property selector to use when this sort criterion
+        /// is applied.</param>
+        /// <returns>The original <see cref="ISearchQuery{TEntity}"/> with this sort criterion
+        /// added.</returns>
         ISearchQuery<TEntity> Sort<TProperty>(
             Expression<Func<TEntity, TProperty>> sortPropertySelector);
 
         /// <summary>
-        /// Creates the specified sort criterion that will be applied to the query when it is
-        /// evaluated.
+        /// Adds the specified sort criterion to this <see cref="ISearchQuery{TEntity}"/> with the
+        /// specified sort order.
         /// </summary>
-        /// <typeparam name="TProperty">The type the property selector will return.</typeparam>
-        /// <param name="sortPropertySelector">The sort that will be applied to the query.</param>
-        /// <param name="sortOrder">The sort order that will be applied to the query.</param>
-        /// <returns>
-        /// The criterion to be applied when the query is evaluated.
-        /// </returns>
+        /// <typeparam name="TProperty">The type of the property returned by
+        /// <paramref name="sortPropertySelector"/>.</typeparam>
+        /// <param name="sortPropertySelector">The property selector to use when this sort criterion
+        /// is applied.</param>
+        /// <param name="sortOrder">The sort order to use when this sort criterion is applied.
+        /// </param>
+        /// <returns>The original <see cref="ISearchQuery{TEntity}"/> with this sort criterion
+        /// added.</returns>
         ISearchQuery<TEntity> Sort<TProperty>(
             Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder);
 
         /// <summary>
-        /// Creates the specified paging criterion that will be applied to the query when it is
-        /// evaluated.
+        /// Adds the specified paging criterion to this <see cref="ISearchQuery{TEntity}"/>.
         /// </summary>
-        /// <param name="skipCount">The number of entities to skip when the criterion is applied to
-        /// the query.</param>
-        /// <param name="pageSize">The size of the page that will be applied to the query.</param>
-        /// <returns>The criterion to be applied when the query is evaluated.</returns>
+        /// <param name="skipCount">The number of entities to skip when this paging criterion is
+        /// applied.</param>
+        /// <param name="pageSize">The number of entities to take when this paging criterion is
+        /// applied.</param>
+        /// <returns>The original <see cref="ISearchQuery{TEntity}"/> with this paging criterion
+        /// added.</returns>
         ISearchQuery<TEntity> Page(int skipCount, int pageSize);
     }
 }

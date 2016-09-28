@@ -19,14 +19,14 @@ namespace AdiePlayground.Common
     using System;
 
     /// <summary>
-    /// Provides a service to get an instance of a <see cref="Guid"/>.
+    /// Provides members able to retrieve instances of <see cref="Guid"/>.
     /// </summary>
     public interface IGuidProvider
     {
         /// <summary>
         /// Creates a new <see cref="Guid" />.
         /// </summary>
-        /// <returns>A new <see cref="Guid"/>.</returns>
+        /// <returns>The created <see cref="Guid"/>.</returns>
         Guid NewGuid();
     }
 }
