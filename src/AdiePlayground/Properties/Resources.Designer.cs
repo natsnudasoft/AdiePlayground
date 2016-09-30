@@ -158,5 +158,41 @@ namespace AdiePlayground.Properties {
                 return ResourceManager.GetString("InvarianceExampleRunning", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roommate wanted..
+        /// </summary>
+        internal static string ObserverExampleMessage1 {
+            get {
+                return ResourceManager.GetString("ObserverExampleMessage1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desk for sale. £35 o.n.o..
+        /// </summary>
+        internal static string ObserverExampleMessage2 {
+            get {
+                return ResourceManager.GetString("ObserverExampleMessage2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bassist wanted for classical psychedelic electronic punk rock band!.
+        /// </summary>
+        internal static string ObserverExampleMessage3 {
+            get {
+                return ResourceManager.GetString("ObserverExampleMessage3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running observer example..
+        /// </summary>
+        internal static string ObserverExampleRunning {
+            get {
+                return ResourceManager.GetString("ObserverExampleRunning", resourceCulture);
+            }
+        }
     }
 }

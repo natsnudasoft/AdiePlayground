@@ -83,6 +83,9 @@
     <Compile Include="Model\Lime.cs" />
     <Compile Include="Model\Orange.cs" />
     <Compile Include="Model\Lemon.cs" />
+    <Compile Include="Observer\ConsoleMessageBoardObserver.cs" />
+    <Compile Include="Observer\IMessageBoardObserver.cs" />
+    <Compile Include="Observer\MessageBoard.cs" />
     <Compile Include="SystemDateTimeProvider.cs" />
     <Compile Include="SystemGuidProvider.cs" />
     <Compile Include="Variance\FruitContravariant.cs" />
@@ -111,6 +114,7 @@
       <Link>stylecop.json</Link>
     </AdditionalFiles>
     <None Include="AdiePlayground.Common.snk" />
+    <None Include="Observer\README.md" />
     <None Include="packages.config" />
     <None Include="Variance\README.md" />
   </ItemGroup>
