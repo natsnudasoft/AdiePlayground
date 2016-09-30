@@ -22,6 +22,7 @@ namespace AdiePlayground.DataTests.Services
     using Common;
     using Common.Interceptor;
     using Common.Model;
+    using Common.Observer;
     using Common.Variance;
     using NUnit.Framework;
 
@@ -79,6 +80,8 @@ namespace AdiePlayground.DataTests.Services
             var consoleInstrumentationReporter =
                 container.Resolve<ConsoleInstrumentationReporter>();
             var instrumentationInterceptor = container.Resolve<InstrumentationInterceptor>();
+            var messageBoard = container.Resolve<MessageBoard>();
+            var messageBoardObserver = container.Resolve<IMessageBoardObserver>();
 
             Assert.That(dateTimeProvider, Is.Not.Null);
             Assert.That(guidProvider, Is.Not.Null);
@@ -90,6 +93,8 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(registrarsList, Is.All.Not.Null);
             Assert.That(consoleInstrumentationReporter, Is.Not.Null);
             Assert.That(instrumentationInterceptor, Is.Not.Null);
+            Assert.That(messageBoard, Is.Not.Null);
+            Assert.That(messageBoardObserver, Is.Not.Null);
         }
     }
 }
