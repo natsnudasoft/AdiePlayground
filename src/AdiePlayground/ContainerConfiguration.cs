@@ -16,11 +16,13 @@
 
 namespace AdiePlayground
 {
+    using System;
     using Autofac;
     using Autofac.Extras.DynamicProxy;
     using Common;
     using Common.Interceptor;
     using Common.Model;
+    using Common.Observer;
     using Common.Variance;
     using Data;
     using Example;
@@ -41,6 +43,7 @@ namespace AdiePlayground
             builder.RegisterModule(new CommonModule());
             RegisterVariance(builder);
             RegisterInterceptor(builder);
+            RegisterObserver(builder);
             return builder.Build();
         }
 
@@ -64,6 +67,15 @@ namespace AdiePlayground
                 .Register(c => new InterceptorExample(
                     c.Resolve<IInstrumentationExample>(),
                     c.Resolve<ConsoleInstrumentationReporter>()))
+                .AsSelf();
+        }
+
+        private static void RegisterObserver(ContainerBuilder builder)
+        {
+            builder
+                .Register(c => new ObserverExample(
+                    c.Resolve<MessageBoard>(),
+                    c.Resolve<Func<IMessageBoardObserver>>()))
                 .AsSelf();
         }
     }

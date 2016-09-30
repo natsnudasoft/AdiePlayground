@@ -20,6 +20,7 @@ namespace AdiePlayground.Common
     using Autofac;
     using Interceptor;
     using Model;
+    using Observer;
     using Variance;
 
     /// <summary>
@@ -34,6 +35,7 @@ namespace AdiePlayground.Common
             base.Load(builder);
             LoadVarianceNamespace(builder);
             LoadInterceptorNamespace(builder);
+            LoadObserverNamespace(builder);
         }
 
         private static void LoadVarianceNamespace(ContainerBuilder builder)
@@ -45,20 +47,10 @@ namespace AdiePlayground.Common
 
         private static void LoadInterceptorNamespace(ContainerBuilder builder)
         {
-            builder
-                .Register(c => new SystemDateTimeProvider())
-                .As<IDateTimeProvider>();
-            builder
-                .Register(c => new SystemGuidProvider())
-                .As<IGuidProvider>();
-            builder
-                .Register(c => new MethodInvocationCounter())
-                .AsSelf()
-                .SingleInstance();
-            builder
-                .Register(c => new MethodInvocationTimer())
-                .AsSelf()
-                .SingleInstance();
+            builder.Register(c => new SystemDateTimeProvider()).As<IDateTimeProvider>();
+            builder.Register(c => new SystemGuidProvider()).As<IGuidProvider>();
+            builder.Register(c => new MethodInvocationCounter()).AsSelf().SingleInstance();
+            builder.Register(c => new MethodInvocationTimer()).AsSelf().SingleInstance();
             builder
                 .Register(c => new ConsoleRegistrar(c.Resolve<IDateTimeProvider>()))
                 .As<IRegistrar>();
@@ -75,6 +67,15 @@ namespace AdiePlayground.Common
                     c.Resolve<MethodInvocationTimer>(),
                     c.Resolve<IEnumerable<IRegistrar>>(),
                     c.Resolve<IGuidProvider>()));
+        }
+
+        private static void LoadObserverNamespace(ContainerBuilder builder)
+        {
+            builder.Register(c => new MessageBoard()).AsSelf();
+            builder
+                .Register(c => new ConsoleMessageBoardObserver(
+                    c.Resolve<IGuidProvider>()))
+                .As<IMessageBoardObserver>();
         }
     }
 }

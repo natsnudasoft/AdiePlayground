@@ -156,4 +156,16 @@
   <data name="InterceptionExampleRunning" xml:space="preserve">
     <value>Running interception example.</value>
   </data>
+  <data name="ObserverExampleMessage1" xml:space="preserve">
+    <value>Roommate wanted.</value>
+  </data>
+  <data name="ObserverExampleMessage2" xml:space="preserve">
+    <value>Desk for sale. £35 o.n.o.</value>
+  </data>
+  <data name="ObserverExampleMessage3" xml:space="preserve">
+    <value>Bassist wanted for classical psychedelic electronic punk rock band!</value>
+  </data>
+  <data name="ObserverExampleRunning" xml:space="preserve">
+    <value>Running observer example.</value>
+  </data>
 </root>
