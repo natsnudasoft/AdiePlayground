@@ -194,5 +194,41 @@ namespace AdiePlayground.Properties {
                 return ResourceManager.GetString("ObserverExampleRunning", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Applying bubble sort to a copy of the list:.
+        /// </summary>
+        internal static string StrategyExampleApplyingBubbleSort {
+            get {
+                return ResourceManager.GetString("StrategyExampleApplyingBubbleSort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Applying quicksort to a copy of the list:.
+        /// </summary>
+        internal static string StrategyExampleApplyingQuicksort {
+            get {
+                return ResourceManager.GetString("StrategyExampleApplyingQuicksort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original list:.
+        /// </summary>
+        internal static string StrategyExampleOriginalList {
+            get {
+                return ResourceManager.GetString("StrategyExampleOriginalList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running strategy example..
+        /// </summary>
+        internal static string StrategyExampleRunning {
+            get {
+                return ResourceManager.GetString("StrategyExampleRunning", resourceCulture);
+            }
+        }
     }
 }
