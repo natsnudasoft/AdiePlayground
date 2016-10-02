@@ -23,6 +23,7 @@ namespace AdiePlayground
     using Common.Interceptor;
     using Common.Model;
     using Common.Observer;
+    using Common.Strategy;
     using Common.Variance;
     using Data;
     using Example;
@@ -44,6 +45,7 @@ namespace AdiePlayground
             RegisterVariance(builder);
             RegisterInterceptor(builder);
             RegisterObserver(builder);
+            RegisterStrategy(builder);
             return builder.Build();
         }
 
@@ -76,6 +78,13 @@ namespace AdiePlayground
                 .Register(c => new ObserverExample(
                     c.Resolve<MessageBoard>(),
                     c.Resolve<Func<IMessageBoardObserver>>()))
+                .AsSelf();
+        }
+
+        private static void RegisterStrategy(ContainerBuilder builder)
+        {
+            builder
+                .Register(c => new StrategyExample(c.Resolve<SortStrategyResolver<string>>()))
                 .AsSelf();
         }
     }

@@ -21,6 +21,7 @@ namespace AdiePlayground.Common
     using Interceptor;
     using Model;
     using Observer;
+    using Strategy;
     using Variance;
 
     /// <summary>
@@ -36,6 +37,7 @@ namespace AdiePlayground.Common
             LoadVarianceNamespace(builder);
             LoadInterceptorNamespace(builder);
             LoadObserverNamespace(builder);
+            LoadStrategyNamespace(builder);
         }
 
         private static void LoadVarianceNamespace(ContainerBuilder builder)
@@ -76,6 +78,13 @@ namespace AdiePlayground.Common
                 .Register(c => new ConsoleMessageBoardObserver(
                     c.Resolve<IGuidProvider>()))
                 .As<IMessageBoardObserver>();
+        }
+
+        private static void LoadStrategyNamespace(ContainerBuilder builder)
+        {
+            builder.RegisterGeneric(typeof(BubbleSortStrategy<>)).As(typeof(ISortStrategy<>));
+            builder.RegisterGeneric(typeof(QuicksortStrategy<>)).As(typeof(ISortStrategy<>));
+            builder.RegisterGeneric(typeof(SortStrategyResolver<>)).AsSelf();
         }
     }
 }

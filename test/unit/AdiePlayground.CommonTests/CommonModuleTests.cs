@@ -23,6 +23,7 @@ namespace AdiePlayground.DataTests.Services
     using Common.Interceptor;
     using Common.Model;
     using Common.Observer;
+    using Common.Strategy;
     using Common.Variance;
     using NUnit.Framework;
 
@@ -82,6 +83,8 @@ namespace AdiePlayground.DataTests.Services
             var instrumentationInterceptor = container.Resolve<InstrumentationInterceptor>();
             var messageBoard = container.Resolve<MessageBoard>();
             var messageBoardObserver = container.Resolve<IMessageBoardObserver>();
+            var sortStrategies = container.Resolve<IEnumerable<ISortStrategy<int>>>();
+            var sortStrategyResolver = container.Resolve<SortStrategyResolver<int>>();
 
             Assert.That(dateTimeProvider, Is.Not.Null);
             Assert.That(guidProvider, Is.Not.Null);
@@ -95,6 +98,9 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(instrumentationInterceptor, Is.Not.Null);
             Assert.That(messageBoard, Is.Not.Null);
             Assert.That(messageBoardObserver, Is.Not.Null);
+            Assert.That(sortStrategies, Is.Not.Null);
+            var sortStrategiesList = sortStrategies.ToList();
+            Assert.That(sortStrategiesList, Has.Count.EqualTo(2));
         }
     }
 }

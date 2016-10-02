@@ -168,4 +168,16 @@
   <data name="ObserverExampleRunning" xml:space="preserve">
     <value>Running observer example.</value>
   </data>
+  <data name="StrategyExampleRunning" xml:space="preserve">
+    <value>Running strategy example.</value>
+  </data>
+  <data name="StrategyExampleApplyingBubbleSort" xml:space="preserve">
+    <value>Applying bubble sort to a copy of the list:</value>
+  </data>
+  <data name="StrategyExampleApplyingQuicksort" xml:space="preserve">
+    <value>Applying quicksort to a copy of the list:</value>
+  </data>
+  <data name="StrategyExampleOriginalList" xml:space="preserve">
+    <value>Original list:</value>
+  </data>
 </root>

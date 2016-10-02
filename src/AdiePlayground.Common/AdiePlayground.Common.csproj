@@ -86,6 +86,12 @@
     <Compile Include="Observer\ConsoleMessageBoardObserver.cs" />
     <Compile Include="Observer\IMessageBoardObserver.cs" />
     <Compile Include="Observer\MessageBoard.cs" />
+    <Compile Include="Strategy\BubbleSortStrategy.cs" />
+    <Compile Include="Strategy\ISortStrategy.cs" />
+    <Compile Include="Strategy\QuicksortStrategy.cs" />
+    <Compile Include="Strategy\SortStrategy.cs" />
+    <Compile Include="Strategy\SortStrategyResolver.cs" />
+    <Compile Include="Strategy\SortType.cs" />
     <Compile Include="SystemDateTimeProvider.cs" />
     <Compile Include="SystemGuidProvider.cs" />
     <Compile Include="Variance\FruitContravariant.cs" />
@@ -116,6 +122,7 @@
     <None Include="AdiePlayground.Common.snk" />
     <None Include="Observer\README.md" />
     <None Include="packages.config" />
+    <None Include="Strategy\README.md" />
     <None Include="Variance\README.md" />
   </ItemGroup>
   <ItemGroup>
