@@ -56,6 +56,9 @@ namespace AdiePlayground
                 var strategyExample = scope.Resolve<StrategyExample>();
                 strategyExample.RunExample();
 
+                var commandExample = scope.Resolve<CommandExample>();
+                commandExample.RunExample();
+
                 var contextService = scope.Resolve<ContextService>();
                 Console.WriteLine(contextService.GetType().Name);
                 Console.WriteLine(Resources.ConsolePressEnterToContinue);

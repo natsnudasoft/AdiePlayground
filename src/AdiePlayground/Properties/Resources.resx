@@ -180,4 +180,22 @@
   <data name="StrategyExampleOriginalList" xml:space="preserve">
     <value>Original list:</value>
   </data>
+  <data name="CommandExampleRedo" xml:space="preserve">
+    <value>Performing redo:</value>
+  </data>
+  <data name="CommandExampleRobotDrillOn" xml:space="preserve">
+    <value>Turning robot drill on:</value>
+  </data>
+  <data name="CommandExampleRobotMove" xml:space="preserve">
+    <value>Moving robot {0:0.00} metres:</value>
+  </data>
+  <data name="CommandExampleRobotTurn" xml:space="preserve">
+    <value>Turning robot {0:0.00} radians:</value>
+  </data>
+  <data name="CommandExampleRunning" xml:space="preserve">
+    <value>Running command example.</value>
+  </data>
+  <data name="CommandExampleUndo" xml:space="preserve">
+    <value>Performing undo:</value>
+  </data>
 </root>

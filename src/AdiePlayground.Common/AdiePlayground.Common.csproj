@@ -67,6 +67,16 @@
     <Compile Include="..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="Command\CommandExecutionManager.cs" />
+    <Compile Include="Command\CommandFactory.cs" />
+    <Compile Include="Command\ConsoleRobot.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\MoveCommand.cs" />
+    <Compile Include="Command\IRobot.cs" />
+    <Compile Include="Command\RobotCommand.cs" />
+    <Compile Include="Command\TurnDrillOffCommand.cs" />
+    <Compile Include="Command\TurnDrillOnCommand.cs" />
+    <Compile Include="Command\TurnCommand.cs" />
     <Compile Include="CommonModule.cs" />
     <Compile Include="Extensions\ConsoleExtensions.cs" />
     <Compile Include="IDateTimeProvider.cs" />

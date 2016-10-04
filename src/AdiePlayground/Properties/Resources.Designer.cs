@@ -61,6 +61,60 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Performing redo:.
+        /// </summary>
+        internal static string CommandExampleRedo {
+            get {
+                return ResourceManager.GetString("CommandExampleRedo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turning robot drill on:.
+        /// </summary>
+        internal static string CommandExampleRobotDrillOn {
+            get {
+                return ResourceManager.GetString("CommandExampleRobotDrillOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moving robot {0:0.00} metres:.
+        /// </summary>
+        internal static string CommandExampleRobotMove {
+            get {
+                return ResourceManager.GetString("CommandExampleRobotMove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turning robot {0:0.00} radians:.
+        /// </summary>
+        internal static string CommandExampleRobotTurn {
+            get {
+                return ResourceManager.GetString("CommandExampleRobotTurn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running command example..
+        /// </summary>
+        internal static string CommandExampleRunning {
+            get {
+                return ResourceManager.GetString("CommandExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performing undo:.
+        /// </summary>
+        internal static string CommandExampleUndo {
+            get {
+                return ResourceManager.GetString("CommandExampleUndo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press &lt;Enter&gt; to continue....
         /// </summary>
         internal static string ConsolePressEnterToContinue {

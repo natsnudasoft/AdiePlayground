@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="ConnectionStringFactory.cs" />
     <Compile Include="ContainerConfiguration.cs" />
+    <Compile Include="Example\CommandExample.cs" />
     <Compile Include="Example\IInstrumentationExample.cs" />
     <Compile Include="Example\InstrumentationExample.cs" />
     <Compile Include="Example\InterceptorExample.cs" />
