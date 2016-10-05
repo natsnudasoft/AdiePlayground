@@ -25,6 +25,7 @@ namespace AdiePlayground.DataTests.Services
     using Common.Observer;
     using Common.Strategy;
     using Common.Variance;
+    using Moq;
     using NUnit.Framework;
 
     /// <summary>
@@ -33,13 +34,83 @@ namespace AdiePlayground.DataTests.Services
     [TestFixture]
     public sealed class CommonModuleTests
     {
+        private static IContainer container;
+
         /// <summary>
-        /// Tests the constructor with a valid connection string factory.
+        /// Builds the <see cref="IContainer"/> for all tests to use.
+        /// </summary>
+        [OneTimeSetUp]
+        public static void BeforeAllTests()
+        {
+            var commonModule = new CommonModule();
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(commonModule);
+            container = builder.Build();
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services in the Common namespace.
         /// </summary>
         [Test]
-        public void Constructor_DoesNotThrow()
+        public void ModuleRegistered_CommonServicesRegistered()
         {
-            Assert.DoesNotThrow(() => new CommonModule());
+            var dateTimeProvider = container.Resolve<IDateTimeProvider>();
+            var guidProvider = container.Resolve<IGuidProvider>();
+
+            Assert.That(dateTimeProvider, Is.Not.Null);
+            Assert.That(guidProvider, Is.Not.Null);
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services in the Interceptor namespace.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_InterceptorServicesRegistered()
+        {
+            var methodInvocationCounter = container.Resolve<MethodInvocationCounter>();
+            var methodInvocationTimer = container.Resolve<MethodInvocationTimer>();
+            var registrars = container.Resolve<IEnumerable<IRegistrar>>();
+            var consoleInstrumentationReporter =
+                container.Resolve<ConsoleInstrumentationReporter>();
+            var instrumentationInterceptor = container.Resolve<InstrumentationInterceptor>();
+
+            Assert.That(methodInvocationCounter, Is.Not.Null);
+            Assert.That(methodInvocationTimer, Is.Not.Null);
+            Assert.That(registrars, Is.Not.Null);
+            var registrarsList = registrars.ToList();
+            Assert.That(registrarsList, Has.Count.EqualTo(1));
+            Assert.That(registrarsList, Is.All.Not.Null);
+            Assert.That(consoleInstrumentationReporter, Is.Not.Null);
+            Assert.That(instrumentationInterceptor, Is.Not.Null);
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services in the Observer namespace.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_ObserverServicesRegistered()
+        {
+            var messageBoard = container.Resolve<MessageBoard>();
+            var messageBoardObserver = container.Resolve<IMessageBoardObserver>();
+
+            Assert.That(messageBoard, Is.Not.Null);
+            Assert.That(messageBoardObserver, Is.Not.Null);
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services in the Strategy namespace.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_StrategyServicesRegistered()
+        {
+            var sortStrategies = container.Resolve<IEnumerable<ISortStrategy<int>>>();
+            var sortStrategyResolver = container.Resolve<SortStrategyResolver<int>>();
+
+            Assert.That(sortStrategies, Is.Not.Null);
+            var sortStrategiesList = sortStrategies.ToList();
+            Assert.That(sortStrategiesList, Has.Count.EqualTo(2));
+            Assert.That(sortStrategiesList, Is.All.Not.Null);
+            Assert.That(sortStrategyResolver, Is.Not.Null);
         }
 
         /// <summary>
@@ -60,47 +131,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(orangeInvariant, Is.Not.Null);
             Assert.That(bananaCovariant, Is.Not.Null);
             Assert.That(fruitContravariant, Is.Not.Null);
-        }
-
-        /// <summary>
-        /// Tests the Load method registers all services in the Interceptor namespace.
-        /// </summary>
-        [Test]
-        public void ModuleRegistered_InterceptorServicesRegistered()
-        {
-            var commonModule = new CommonModule();
-            var builder = new ContainerBuilder();
-            builder.RegisterModule(commonModule);
-            var container = builder.Build();
-
-            var dateTimeProvider = container.Resolve<IDateTimeProvider>();
-            var guidProvider = container.Resolve<IGuidProvider>();
-            var methodInvocationCounter = container.Resolve<MethodInvocationCounter>();
-            var methodInvocationTimer = container.Resolve<MethodInvocationTimer>();
-            var registrars = container.Resolve<IEnumerable<IRegistrar>>();
-            var consoleInstrumentationReporter =
-                container.Resolve<ConsoleInstrumentationReporter>();
-            var instrumentationInterceptor = container.Resolve<InstrumentationInterceptor>();
-            var messageBoard = container.Resolve<MessageBoard>();
-            var messageBoardObserver = container.Resolve<IMessageBoardObserver>();
-            var sortStrategies = container.Resolve<IEnumerable<ISortStrategy<int>>>();
-            var sortStrategyResolver = container.Resolve<SortStrategyResolver<int>>();
-
-            Assert.That(dateTimeProvider, Is.Not.Null);
-            Assert.That(guidProvider, Is.Not.Null);
-            Assert.That(methodInvocationCounter, Is.Not.Null);
-            Assert.That(methodInvocationTimer, Is.Not.Null);
-            Assert.That(registrars, Is.Not.Null);
-            var registrarsList = registrars.ToList();
-            Assert.That(registrarsList, Has.Count.EqualTo(1));
-            Assert.That(registrarsList, Is.All.Not.Null);
-            Assert.That(consoleInstrumentationReporter, Is.Not.Null);
-            Assert.That(instrumentationInterceptor, Is.Not.Null);
-            Assert.That(messageBoard, Is.Not.Null);
-            Assert.That(messageBoardObserver, Is.Not.Null);
-            Assert.That(sortStrategies, Is.Not.Null);
-            var sortStrategiesList = sortStrategies.ToList();
-            Assert.That(sortStrategiesList, Has.Count.EqualTo(2));
         }
     }
 }
