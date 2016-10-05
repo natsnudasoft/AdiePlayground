@@ -20,6 +20,7 @@ namespace AdiePlayground.DataTests.Services
     using System.Linq;
     using Autofac;
     using Common;
+    using Common.Command;
     using Common.Interceptor;
     using Common.Model;
     using Common.Observer;
@@ -59,6 +60,40 @@ namespace AdiePlayground.DataTests.Services
 
             Assert.That(dateTimeProvider, Is.Not.Null);
             Assert.That(guidProvider, Is.Not.Null);
+        }
+
+        /// <summary>
+        /// Tests the Load method registers all services in the Command namespace.
+        /// </summary>
+        [Test]
+        public void ModuleRegistered_CommandServicesRegistered()
+        {
+            var commandExecutionManager = container.Resolve<CommandExecutionManager>();
+            var robot = container.Resolve<IRobot>();
+            var robotMock = new Mock<IRobot>();
+            var moveCommand = container.ResolveNamed<ICommand>(
+                "robot move",
+                new PositionalParameter(0, robotMock.Object),
+                new PositionalParameter(1, 0D));
+            var turnCommand = container.ResolveNamed<ICommand>(
+                "robot turn",
+                new PositionalParameter(0, robotMock.Object),
+                new PositionalParameter(1, 0D));
+            var drillOnCommand = container.ResolveNamed<ICommand>(
+                "robot drill on",
+                new PositionalParameter(0, robotMock.Object));
+            var drillOffCommand = container.ResolveNamed<ICommand>(
+                "robot drill off",
+                new PositionalParameter(0, robotMock.Object));
+            var commandFactory = container.Resolve<CommandFactory>();
+
+            Assert.That(commandExecutionManager, Is.Not.Null);
+            Assert.That(robot, Is.Not.Null);
+            Assert.That(moveCommand, Is.Not.Null);
+            Assert.That(turnCommand, Is.Not.Null);
+            Assert.That(drillOnCommand, Is.Not.Null);
+            Assert.That(drillOffCommand, Is.Not.Null);
+            Assert.That(commandFactory, Is.Not.Null);
         }
 
         /// <summary>
