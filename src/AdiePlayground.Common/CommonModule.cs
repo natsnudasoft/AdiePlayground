@@ -17,7 +17,9 @@
 namespace AdiePlayground.Common
 {
     using System.Collections.Generic;
+    using System.Linq;
     using Autofac;
+    using Command;
     using Interceptor;
     using Model;
     using Observer;
@@ -35,6 +37,7 @@ namespace AdiePlayground.Common
         {
             base.Load(builder);
             LoadCommonNamespace(builder);
+            LoadCommandNamespace(builder);
             LoadInterceptorNamespace(builder);
             LoadObserverNamespace(builder);
             LoadStrategyNamespace(builder);
@@ -45,6 +48,37 @@ namespace AdiePlayground.Common
         {
             builder.Register(c => new SystemDateTimeProvider()).As<IDateTimeProvider>();
             builder.Register(c => new SystemGuidProvider()).As<IGuidProvider>();
+        }
+
+        private static void LoadCommandNamespace(ContainerBuilder builder)
+        {
+            builder.Register(c => new CommandExecutionManager()).AsSelf();
+            builder.Register(c => new ConsoleRobot()).As<IRobot>();
+            builder
+               .Register((c, p) => new MoveCommand(
+                   p.Positional<IRobot>(0),
+                   p.Positional<double>(1)))
+               .Named<ICommand>("robot move");
+            builder
+               .Register((c, p) => new TurnCommand(
+                   p.Positional<IRobot>(0),
+                   p.Positional<double>(1)))
+               .Named<ICommand>("robot turn");
+            builder
+               .Register((c, p) => new TurnDrillOnCommand(p.Positional<IRobot>(0)))
+               .Named<ICommand>("robot drill on");
+            builder
+               .Register((c, p) => new TurnDrillOffCommand(p.Positional<IRobot>(0)))
+               .Named<ICommand>("robot drill off");
+            builder
+                .Register<CommandFactory>(c =>
+                {
+                    var injectedContext = c.Resolve<IComponentContext>();
+                    return (name, parameters) => injectedContext.ResolveNamed<ICommand>(
+                        name,
+                        parameters.Select((p, i) => new PositionalParameter(i, p)));
+                })
+                .AsSelf();
         }
 
         private static void LoadInterceptorNamespace(ContainerBuilder builder)

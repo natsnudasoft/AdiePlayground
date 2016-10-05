@@ -20,6 +20,7 @@ namespace AdiePlayground
     using Autofac;
     using Autofac.Extras.DynamicProxy;
     using Common;
+    using Common.Command;
     using Common.Interceptor;
     using Common.Model;
     using Common.Observer;
@@ -46,6 +47,7 @@ namespace AdiePlayground
             RegisterInterceptor(builder);
             RegisterObserver(builder);
             RegisterStrategy(builder);
+            RegisterCommand(builder);
             return builder.Build();
         }
 
@@ -85,6 +87,16 @@ namespace AdiePlayground
         {
             builder
                 .Register(c => new StrategyExample(c.Resolve<SortStrategyResolver<string>>()))
+                .AsSelf();
+        }
+
+        private static void RegisterCommand(ContainerBuilder builder)
+        {
+            builder
+                .Register(c => new CommandExample(
+                    c.Resolve<IRobot>(),
+                    c.Resolve<CommandFactory>(),
+                    c.Resolve<CommandExecutionManager>()))
                 .AsSelf();
         }
     }

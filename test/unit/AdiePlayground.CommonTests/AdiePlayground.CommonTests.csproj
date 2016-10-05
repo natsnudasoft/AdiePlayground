@@ -75,6 +75,14 @@
     <Compile Include="..\..\..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="Command\CommandExecutionManagerTests.cs" />
+    <Compile Include="Command\ConsoleRobotTests.cs" />
+    <Compile Include="Command\MoveCommandTests.cs" />
+    <Compile Include="Command\RobotCommandStub.cs" />
+    <Compile Include="Command\RobotCommandTests.cs" />
+    <Compile Include="Command\TurnCommandTests.cs" />
+    <Compile Include="Command\TurnDrillOffCommandTests.cs" />
+    <Compile Include="Command\TurnDrillOnCommandTests.cs" />
     <Compile Include="CommonModuleTests.cs" />
     <Compile Include="Extensions\ConsoleExtensionsTests.cs" />
     <Compile Include="Interceptor\ConsoleInstrumentationReporterTests.cs" />
