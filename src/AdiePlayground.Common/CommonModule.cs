@@ -114,8 +114,14 @@ namespace AdiePlayground.Common
 
         private static void LoadStrategyNamespace(ContainerBuilder builder)
         {
-            builder.RegisterGeneric(typeof(BubbleSortStrategy<>)).As(typeof(ISortStrategy<>));
-            builder.RegisterGeneric(typeof(QuicksortStrategy<>)).As(typeof(ISortStrategy<>));
+            builder
+                .RegisterGeneric(typeof(BubbleSortStrategy<>))
+                .Keyed(SortType.BubbleSort, typeof(ISortStrategy<>))
+                .As(typeof(ISortStrategy<>));
+            builder
+                .RegisterGeneric(typeof(QuicksortStrategy<>))
+                .Keyed(SortType.Quicksort, typeof(ISortStrategy<>))
+                .As(typeof(ISortStrategy<>));
             builder.RegisterGeneric(typeof(SortStrategyResolver<>)).AsSelf();
         }
 

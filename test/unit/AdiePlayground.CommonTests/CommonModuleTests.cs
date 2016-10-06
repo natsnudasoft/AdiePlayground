@@ -19,6 +19,7 @@ namespace AdiePlayground.DataTests.Services
     using System.Collections.Generic;
     using System.Linq;
     using Autofac;
+    using Autofac.Features.Indexed;
     using Common;
     using Common.Command;
     using Common.Interceptor;
@@ -139,12 +140,15 @@ namespace AdiePlayground.DataTests.Services
         public void ModuleRegistered_StrategyServicesRegistered()
         {
             var sortStrategies = container.Resolve<IEnumerable<ISortStrategy<int>>>();
+            var sortStrategiesKeyed = container.Resolve<IIndex<SortType, ISortStrategy<int>>>();
             var sortStrategyResolver = container.Resolve<SortStrategyResolver<int>>();
 
             Assert.That(sortStrategies, Is.Not.Null);
             var sortStrategiesList = sortStrategies.ToList();
             Assert.That(sortStrategiesList, Has.Count.EqualTo(2));
             Assert.That(sortStrategiesList, Is.All.Not.Null);
+            Assert.That(sortStrategiesKeyed, Is.Not.Null);
+            Assert.That(sortStrategiesKeyed[SortType.Quicksort], Is.Not.Null);
             Assert.That(sortStrategyResolver, Is.Not.Null);
         }
 
