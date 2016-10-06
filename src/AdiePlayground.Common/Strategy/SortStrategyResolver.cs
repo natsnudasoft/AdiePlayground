@@ -18,7 +18,7 @@ namespace AdiePlayground.Common.Strategy
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
+    using Autofac.Features.Indexed;
     using static System.FormattableString;
 
     /// <summary>
@@ -29,16 +29,16 @@ namespace AdiePlayground.Common.Strategy
     /// <see cref="ISortStrategy{T}"/> will sort.</typeparam>
     public sealed class SortStrategyResolver<T>
     {
-        private readonly IEnumerable<ISortStrategy<T>> sortStrategies;
+        private readonly IIndex<SortType, ISortStrategy<T>> sortStrategies;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SortStrategyResolver{T}"/> class.
         /// </summary>
-        /// <param name="sortStrategies">The collection of available <see cref="ISortStrategy{T}"/>
-        /// types.</param>
+        /// <param name="sortStrategies">The keyed collection of available
+        /// <see cref="ISortStrategy{T}"/> types.</param>
         /// <exception cref="ArgumentNullException"><paramref name="sortStrategies"/> is
         /// <c>null</c>.</exception>
-        public SortStrategyResolver(IEnumerable<ISortStrategy<T>> sortStrategies)
+        public SortStrategyResolver(IIndex<SortType, ISortStrategy<T>> sortStrategies)
         {
             if (sortStrategies == null)
             {
@@ -54,19 +54,12 @@ namespace AdiePlayground.Common.Strategy
         /// </summary>
         /// <param name="sortType">The <see cref="SortType"/> of the instance to resolve.</param>
         /// <returns>The resolved <see cref="ISortStrategy{T}"/>.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="sortType"/> specified an
-        /// invalid value.</exception>
         /// <exception cref="ArgumentException"><paramref name="sortType"/> could not resolve a
         /// valid <see cref="ISortStrategy{T}"/>.</exception>
         public ISortStrategy<T> Resolve(SortType sortType)
         {
-            if (!Enum.IsDefined(typeof(SortType), sortType))
-            {
-                throw new ArgumentOutOfRangeException(nameof(sortType));
-            }
-
-            var sortStrategy = this.sortStrategies.SingleOrDefault(s => s.SortType == sortType);
-            if (sortStrategy == null)
+            ISortStrategy<T> sortStrategy;
+            if (!this.sortStrategies.TryGetValue(sortType, out sortStrategy))
             {
                 throw new ArgumentException(
                     Invariant($"Sorting strategy not found."),

@@ -17,6 +17,7 @@
 namespace AdiePlayground.CommonTests.Strategy
 {
     using System;
+    using Autofac.Features.Indexed;
     using Common.Strategy;
     using Moq;
     using NUnit.Framework;
@@ -30,7 +31,7 @@ namespace AdiePlayground.CommonTests.Strategy
         private const string ConstructorSortStrategiesParam = "sortStrategies";
         private const string ResolveSortTypeParam = "sortType";
 
-        private Mock<ISortStrategy<int>> sortStrategyMock;
+        private Mock<IIndex<SortType, ISortStrategy<int>>> sortStrategiesMock;
 
         /// <summary>
         /// Sets up mocks before each test.
@@ -38,8 +39,13 @@ namespace AdiePlayground.CommonTests.Strategy
         [SetUp]
         public void BeforeTest()
         {
-            this.sortStrategyMock = new Mock<ISortStrategy<int>>();
-            this.sortStrategyMock.SetupGet(s => s.SortType).Returns(SortType.Quicksort);
+            this.sortStrategiesMock = new Mock<IIndex<SortType, ISortStrategy<int>>>();
+            var sortStrategyMock = new Mock<ISortStrategy<int>>();
+            sortStrategyMock.SetupGet(s => s.SortType).Returns(SortType.Quicksort);
+            var sortStrategy = sortStrategyMock.Object;
+            this.sortStrategiesMock
+                .Setup(s => s.TryGetValue(SortType.Quicksort, out sortStrategy))
+                .Returns(true);
         }
 
         /// <summary>
@@ -66,11 +72,11 @@ namespace AdiePlayground.CommonTests.Strategy
         /// Tests the Resolve method with an invalid sort type.
         /// </summary>
         [Test]
-        public void Resolve_InvalidSortType_ArgumentOutOfRangeException()
+        public void Resolve_InvalidSortType_ArgumentException()
         {
             var sortStrategyResolver = this.CreateSortStrategyResolver();
 
-            var ex = Assert.Throws<ArgumentOutOfRangeException>(
+            var ex = Assert.Throws<ArgumentException>(
                 () => sortStrategyResolver.Resolve((SortType)int.MinValue));
             Assert.That(ex.ParamName, Is.EqualTo(ResolveSortTypeParam));
         }
@@ -104,7 +110,7 @@ namespace AdiePlayground.CommonTests.Strategy
 
         private SortStrategyResolver<int> CreateSortStrategyResolver()
         {
-            return new SortStrategyResolver<int>(new[] { this.sortStrategyMock.Object });
+            return new SortStrategyResolver<int>(this.sortStrategiesMock.Object);
         }
     }
 }
