@@ -85,6 +85,8 @@
     <Compile Include="Command\TurnDrillOnCommandTests.cs" />
     <Compile Include="CommonModuleTests.cs" />
     <Compile Include="Extensions\ConsoleExtensionsTests.cs" />
+    <Compile Include="Extensions\ImplicitOperatorStub.cs" />
+    <Compile Include="Extensions\TypeExtensionsTests.cs" />
     <Compile Include="Interceptor\ConsoleInstrumentationReporterTests.cs" />
     <Compile Include="Interceptor\ConsoleRegistrarTests.cs" />
     <Compile Include="Interceptor\InstrumentationInterceptorTests.cs" />
@@ -103,6 +105,12 @@
     <Compile Include="Observer\ConsoleMessageBoardObserverTests.cs" />
     <Compile Include="Observer\MessageBoardTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceTypeResolverTests.cs" />
     <Compile Include="Strategy\BubbleSortStrategyTests.cs" />
     <Compile Include="Strategy\QuicksortStrategyTests.cs" />
     <Compile Include="Strategy\SortStrategyResolverTests.cs" />
@@ -152,6 +160,12 @@
     <AdditionalFiles Include="..\..\..\Menees.Analyzers.Settings.xml">
       <Link>Menees.Analyzers.Settings.xml</Link>
     </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

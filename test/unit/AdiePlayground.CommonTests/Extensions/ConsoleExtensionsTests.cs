@@ -49,5 +49,27 @@ namespace AdiePlayground.CommonTests.Extensions
 
             Assert.That(outputString, Is.EqualTo(LineToWrite + Environment.NewLine));
         }
+
+        /// <summary>
+        /// Tests the WriteColored method.
+        /// </summary>
+        [Test]
+        public void WriteColored_WritesLine()
+        {
+            const string TextToWrite = "This is a test.";
+            string outputString;
+            using (var newOut = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                var previousOut = Console.Out;
+                Console.SetOut(newOut);
+
+                ConsoleExtensions.WriteColored(TextToWrite, ConsoleColor.Red);
+
+                Console.SetOut(previousOut);
+                outputString = newOut.ToString();
+            }
+
+            Assert.That(outputString, Is.EqualTo(TextToWrite));
+        }
     }
 }

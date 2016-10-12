@@ -18,6 +18,7 @@ namespace AdiePlayground.Example
 {
     using System;
     using System.Globalization;
+    using System.Threading;
     using Common.Command;
     using Common.Extensions;
     using Properties;
@@ -25,7 +26,12 @@ namespace AdiePlayground.Example
     /// <summary>
     /// Provides examples of using the Command pattern.
     /// </summary>
-    public sealed class CommandExample
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by IoC container.")]
+    [Example("command")]
+    internal sealed class CommandExample : IExample
     {
         private readonly IRobot robot;
         private readonly CommandFactory commandFactory;
@@ -67,10 +73,8 @@ namespace AdiePlayground.Example
             this.commandExecutionManager = commandExecutionManager;
         }
 
-        /// <summary>
-        /// Runs the example.
-        /// </summary>
-        public void RunExample()
+        /// <inheritdoc/>
+        public void Run(CancellationToken cancellationToken)
         {
             const int CommandPad = 35;
             const double MoveRobot1 = 5D;

@@ -1,4 +1,4 @@
-﻿// <copyright file="ConnectionStringFactory.cs" company="natsnudasoft">
+﻿// <copyright file="DefaultArgumentConverter.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,19 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground
+namespace AdiePlayground.Cli.Convert
 {
-    using Data.Services;
-
     /// <summary>
-    /// Provides a connection string factory that gets a connection string from the application
-    /// settings.
+    /// Describes an <see cref="IArgumentConverter"/> which returns the original argument without
+    /// further processing.
     /// </summary>
-    /// <seealso cref="IConnectionStringFactory" />
-    internal sealed class ConnectionStringFactory : IConnectionStringFactory
+    /// <seealso cref="IArgumentConverter" />
+    internal sealed class DefaultArgumentConverter : IArgumentConverter
     {
         /// <inheritdoc/>
-        public string CreateConnectionString()
+        public object Convert(string argument)
         {
-            return Properties.Settings.Default.ConnectionString;
+            return argument;
         }
     }
 }

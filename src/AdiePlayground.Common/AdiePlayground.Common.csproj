@@ -79,6 +79,7 @@
     <Compile Include="Command\TurnCommand.cs" />
     <Compile Include="CommonModule.cs" />
     <Compile Include="Extensions\ConsoleExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="IDateTimeProvider.cs" />
     <Compile Include="IGuidProvider.cs" />
     <Compile Include="Interceptor\ConsoleRegistrar.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Observer\ConsoleMessageBoardObserver.cs" />
     <Compile Include="Observer\IMessageBoardObserver.cs" />
     <Compile Include="Observer\MessageBoard.cs" />
+    <Compile Include="ResourceTypeResolver.cs" />
     <Compile Include="Strategy\BubbleSortStrategy.cs" />
     <Compile Include="Strategy\ISortStrategy.cs" />
     <Compile Include="Strategy\QuicksortStrategy.cs" />

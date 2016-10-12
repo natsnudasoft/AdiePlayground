@@ -1,4 +1,4 @@
-﻿// <copyright file="ConnectionStringFactory.cs" company="natsnudasoft">
+﻿// <copyright file="IArgumentConverter.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,21 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground
+namespace AdiePlayground.Cli.Convert
 {
-    using Data.Services;
+    using System;
 
     /// <summary>
-    /// Provides a connection string factory that gets a connection string from the application
-    /// settings.
+    /// Provides an interface which contains members capable of converting a <c>string</c> argument
+    /// to a specified <see cref="Type"/>.
     /// </summary>
-    /// <seealso cref="IConnectionStringFactory" />
-    internal sealed class ConnectionStringFactory : IConnectionStringFactory
+    internal interface IArgumentConverter
     {
-        /// <inheritdoc/>
-        public string CreateConnectionString()
-        {
-            return Properties.Settings.Default.ConnectionString;
-        }
+        /// <summary>
+        /// Converts the specified argument to the specified <see cref="Type"/>.
+        /// </summary>
+        /// <param name="argument">The argument to be converted.</param>
+        /// <returns>The result of the argument conversion.</returns>
+        object Convert(string argument);
     }
 }

@@ -1,4 +1,4 @@
-﻿// <copyright file="ConnectionStringFactory.cs" company="natsnudasoft">
+﻿// <copyright file="ExampleMetadata.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,21 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground
+namespace AdiePlayground.Example
 {
-    using Data.Services;
-
     /// <summary>
-    /// Provides a connection string factory that gets a connection string from the application
-    /// settings.
+    /// Describes the details of an <see cref="IExample"/>.
     /// </summary>
-    /// <seealso cref="IConnectionStringFactory" />
-    internal sealed class ConnectionStringFactory : IConnectionStringFactory
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by IoC container.")]
+    internal sealed class ExampleMetadata
     {
-        /// <inheritdoc/>
-        public string CreateConnectionString()
-        {
-            return Properties.Settings.Default.ConnectionString;
-        }
+        /// <summary>
+        /// Gets or sets the name of an <see cref="IExample"/> described by this
+        /// <see cref="ExampleMetadata"/>.
+        /// </summary>
+        public string Name { get; set; }
     }
 }

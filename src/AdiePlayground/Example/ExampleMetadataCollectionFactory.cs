@@ -1,4 +1,4 @@
-﻿// <copyright file="ConnectionStringFactory.cs" company="natsnudasoft">
+﻿// <copyright file="ExampleMetadataCollectionFactory.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,13 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground
+namespace AdiePlayground.Example
 {
-    using Data.Services;
+    using System.Collections.Generic;
 
     /// <summary>
-    /// Provides a connection string factory that gets a connection string from the application
-    /// settings.
+    /// Encapsulates a method that will retrieve all instances of <see cref="ExampleMetadata"/>.
     /// </summary>
-    /// <seealso cref="IConnectionStringFactory" />
-    internal sealed class ConnectionStringFactory : IConnectionStringFactory
-    {
-        /// <inheritdoc/>
-        public string CreateConnectionString()
-        {
-            return Properties.Settings.Default.ConnectionString;
-        }
-    }
+    /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="ExampleMetadata"/>.</returns>
+    internal delegate IEnumerable<ExampleMetadata> ExampleMetadataCollectionFactory();
 }

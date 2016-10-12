@@ -17,6 +17,7 @@
 namespace AdiePlayground.Example
 {
     using System;
+    using System.Threading;
     using Common.Extensions;
     using Common.Observer;
     using Properties;
@@ -24,7 +25,12 @@ namespace AdiePlayground.Example
     /// <summary>
     /// Provides examples of using the Observer pattern.
     /// </summary>
-    public sealed class ObserverExample
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by IoC container.")]
+    [Example("observer")]
+    internal sealed class ObserverExample : IExample
     {
         private readonly MessageBoard messageBoard;
         private readonly Func<IMessageBoardObserver> observerFactory;
@@ -56,10 +62,8 @@ namespace AdiePlayground.Example
             this.observerFactory = observerFactory;
         }
 
-        /// <summary>
-        /// Runs the example.
-        /// </summary>
-        public void RunExample()
+        /// <inheritdoc/>
+        public void Run(CancellationToken cancellationToken)
         {
             ConsoleExtensions.WriteColoredLine(Resources.ObserverExampleRunning, ConsoleColor.Cyan);
             var observer1 = this.observerFactory();
