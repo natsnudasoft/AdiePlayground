@@ -18,10 +18,8 @@ namespace AdiePlayground
 {
     using System;
     using Autofac;
-    using Data.Services;
-    using Example;
+    using Cli;
     using NLog;
-    using Properties;
 
     /// <summary>
     /// <see cref="Program"/> contains the entry point for the application.
@@ -44,25 +42,8 @@ namespace AdiePlayground
             var container = ContainerConfiguration.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
-                var varianceExample = scope.Resolve<VarianceExample>();
-                varianceExample.RunExample();
-
-                var interceptorExample = scope.Resolve<InterceptorExample>();
-                interceptorExample.RunExample();
-
-                var observerExample = scope.Resolve<ObserverExample>();
-                observerExample.RunExample();
-
-                var strategyExample = scope.Resolve<StrategyExample>();
-                strategyExample.RunExample();
-
-                var commandExample = scope.Resolve<CommandExample>();
-                commandExample.RunExample();
-
-                var contextService = scope.Resolve<ContextService>();
-                Console.WriteLine(contextService.GetType().Name);
-                Console.WriteLine(Resources.ConsolePressEnterToContinue);
-                Console.ReadLine();
+                var commandLoop = scope.Resolve<CommandLoop>();
+                commandLoop.Run();
             }
         }
 

@@ -1,4 +1,4 @@
-﻿// <copyright file="ConnectionStringFactory.cs" company="natsnudasoft">
+﻿// <copyright file="ICommand.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,20 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground
+namespace AdiePlayground.Cli
 {
-    using Data.Services;
+    using System.Threading;
 
     /// <summary>
-    /// Provides a connection string factory that gets a connection string from the application
-    /// settings.
+    /// Provides an interface for encapsulating an executable command.
     /// </summary>
-    /// <seealso cref="IConnectionStringFactory" />
-    internal sealed class ConnectionStringFactory : IConnectionStringFactory
+    public interface ICommand
     {
-        /// <inheritdoc/>
-        public string CreateConnectionString()
-        {
-            return Properties.Settings.Default.ConnectionString;
-        }
+        /// <summary>
+        /// Executes this <see cref="ICommand"/>.
+        /// </summary>
+        /// <param name="cancellationToken">A cancellation token that can be used to cancel the
+        /// <see cref="ICommand"/>.</param>
+        void Execute(CancellationToken cancellationToken);
     }
 }

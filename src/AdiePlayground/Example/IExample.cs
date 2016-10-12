@@ -1,4 +1,4 @@
-﻿// <copyright file="ConnectionStringFactory.cs" company="natsnudasoft">
+﻿// <copyright file="IExample.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,20 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground
+namespace AdiePlayground.Example
 {
-    using Data.Services;
+    using System.Threading;
 
     /// <summary>
-    /// Provides a connection string factory that gets a connection string from the application
-    /// settings.
+    /// Provides an interface for a runnable example.
     /// </summary>
-    /// <seealso cref="IConnectionStringFactory" />
-    internal sealed class ConnectionStringFactory : IConnectionStringFactory
+    public interface IExample
     {
-        /// <inheritdoc/>
-        public string CreateConnectionString()
-        {
-            return Properties.Settings.Default.ConnectionString;
-        }
+        /// <summary>
+        /// Runs the example.
+        /// </summary>
+        /// <param name="cancellationToken">A cancellation token that can be used to cancel the
+        /// <see cref="IExample"/>.</param>
+        void Run(CancellationToken cancellationToken);
     }
 }

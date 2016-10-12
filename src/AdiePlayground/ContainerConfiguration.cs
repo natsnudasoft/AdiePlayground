@@ -17,22 +17,23 @@
 namespace AdiePlayground
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
     using Autofac;
+    using Autofac.Extras.AttributeMetadata;
     using Autofac.Extras.DynamicProxy;
+    using Autofac.Features.Metadata;
+    using Cli;
+    using Cli.Metadata;
     using Common;
-    using Common.Command;
-    using Common.Interceptor;
-    using Common.Model;
-    using Common.Observer;
-    using Common.Strategy;
-    using Common.Variance;
     using Data;
     using Example;
 
     /// <summary>
     /// Provides configuration for the IoC container.
     /// </summary>
-    public static class ContainerConfiguration
+    internal static class ContainerConfiguration
     {
         /// <summary>
         /// Configures the IoC container.
@@ -41,63 +42,78 @@ namespace AdiePlayground
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterModule<AttributedMetadataModule>();
             builder.RegisterModule(new DataModule(new ConnectionStringFactory()));
             builder.RegisterModule(new CommonModule());
-            RegisterVariance(builder);
-            RegisterInterceptor(builder);
-            RegisterObserver(builder);
-            RegisterStrategy(builder);
-            RegisterCommand(builder);
+            RegisterCli(builder);
+            RegisterExample(builder);
             return builder.Build();
         }
 
-        private static void RegisterVariance(ContainerBuilder builder)
+        private static void RegisterCli(ContainerBuilder builder)
         {
             builder
-                .Register(c => new VarianceExample(
-                    c.Resolve<IInvariant<Orange>>(),
-                    c.Resolve<ICovariant<Banana>>(),
-                    c.Resolve<IContravariant<Fruit>>()))
+                .RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .AssignableTo<ICommand>()
+                .Where(t => t.IsDefined(typeof(CommandAttribute), false))
+                .Named<ICommand>(t =>
+                {
+                    return t.GetCustomAttribute<CommandAttribute>(false).Group;
+                })
+                .Named<ICommand>(t =>
+                {
+                    var commandAttribute = t.GetCustomAttribute<CommandAttribute>(false);
+                    return commandAttribute.Group + commandAttribute.Name;
+                });
+            builder
+                .Register<CommandGroupMetadataFactory>(c =>
+                {
+                    var injectedContext = c.Resolve<IComponentContext>();
+                    return groupName => injectedContext
+                        .ResolveNamed<IEnumerable<Lazy<ICommand, CommandMetadata>>>(groupName)
+                        .Select(l => l.Metadata)
+                        .ToArray();
+                })
                 .AsSelf();
+            builder
+                .Register<CommandFactory>(c =>
+                {
+                    var injectedContext = c.Resolve<IComponentContext>();
+                    return (groupName, commandName) => injectedContext
+                        .ResolveNamed<Meta<ICommand, CommandMetadata>>(groupName + commandName);
+                })
+                .AsSelf();
+            builder
+                .Register(c => new CommandResolver(c.Resolve<CommandFactory>()))
+                .AsSelf();
+            builder
+                .Register(c => new CommandLoop(
+                    c.Resolve<CommandResolver>(),
+                    c.Resolve<CommandGroupMetadataFactory>()))
+                .AsSelf()
+                .SingleInstance();
         }
 
-        private static void RegisterInterceptor(ContainerBuilder builder)
+        private static void RegisterExample(ContainerBuilder builder)
         {
+            builder
+                .RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .AssignableTo<IExample>()
+                .Where(t => t.IsDefined(typeof(ExampleAttribute)))
+                .Named<IExample>(t => t.GetCustomAttribute<ExampleAttribute>().Name)
+                .AsImplementedInterfaces();
+            builder
+                .Register<ExampleMetadataCollectionFactory>(c =>
+                {
+                    var injectedContext = c.Resolve<IComponentContext>();
+                    return () => injectedContext
+                        .Resolve<IEnumerable<Lazy<IExample, ExampleMetadata>>>()
+                        .Select(m => m.Metadata);
+                });
             builder
                 .Register(c => new InstrumentationExample())
                 .As<IInstrumentationExample>()
                 .EnableInterfaceInterceptors();
-            builder
-                .Register(c => new InterceptorExample(
-                    c.Resolve<IInstrumentationExample>(),
-                    c.Resolve<ConsoleInstrumentationReporter>()))
-                .AsSelf();
-        }
-
-        private static void RegisterObserver(ContainerBuilder builder)
-        {
-            builder
-                .Register(c => new ObserverExample(
-                    c.Resolve<MessageBoard>(),
-                    c.Resolve<Func<IMessageBoardObserver>>()))
-                .AsSelf();
-        }
-
-        private static void RegisterStrategy(ContainerBuilder builder)
-        {
-            builder
-                .Register(c => new StrategyExample(c.Resolve<SortStrategyResolver<string>>()))
-                .AsSelf();
-        }
-
-        private static void RegisterCommand(ContainerBuilder builder)
-        {
-            builder
-                .Register(c => new CommandExample(
-                    c.Resolve<IRobot>(),
-                    c.Resolve<CommandFactory>(),
-                    c.Resolve<CommandExecutionManager>()))
-                .AsSelf();
         }
     }
 }

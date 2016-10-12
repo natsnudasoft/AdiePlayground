@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ConsolePressEnterToContinue" xml:space="preserve">
-    <value>Press &lt;Enter&gt; to continue...</value>
-  </data>
   <data name="ContravarianceExampleAppleValue" xml:space="preserve">
     <value>{0} is {1}.</value>
     <comment>{0}: nameof(appleValue), {1}: appleValue</comment>
@@ -197,5 +194,45 @@
   </data>
   <data name="CommandExampleUndo" xml:space="preserve">
     <value>Performing undo:</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome to AdiePlayground. Type 'help' to get started.</value>
+  </data>
+  <data name="CommandResolveFailed" xml:space="preserve">
+    <value>Invalid arguments on command '{0}'.</value>
+  </data>
+  <data name="CommandUsage" xml:space="preserve">
+    <value>usage: {0} {1}</value>
+  </data>
+  <data name="CommandHelpText" xml:space="preserve">
+    <value>{0}{1}</value>
+  </data>
+  <data name="CommandNotFound" xml:space="preserve">
+    <value>Invalid command '{0}'.</value>
+  </data>
+  <data name="ExampleNotFound" xml:space="preserve">
+    <value>Could not find example named '{0}'.</value>
+  </data>
+  <data name="ExampleCommandExampleNameHelp" xml:space="preserve">
+    <value>The name of the example to run.</value>
+  </data>
+  <data name="ExampleCommandHelp" xml:space="preserve">
+    <value>Runs the example with the specified name.</value>
+  </data>
+  <data name="ExampleListCommandHelp" xml:space="preserve">
+    <value>Lists the names of all the examples which can be run.</value>
+  </data>
+  <data name="ExitCommandHelp" xml:space="preserve">
+    <value>Exits the program.</value>
+  </data>
+  <data name="HelpCommandCommandNameHelp" xml:space="preserve">
+    <value>The command to display help for; leave empty to show all commands.</value>
+  </data>
+  <data name="HelpCommandHelp" xml:space="preserve">
+    <value>Displays help for commands.</value>
+  </data>
+  <data name="CommandPrompt" xml:space="preserve">
+    <value>&gt; </value>
+    <comment>Contains trailing space.</comment>
   </data>
 </root>

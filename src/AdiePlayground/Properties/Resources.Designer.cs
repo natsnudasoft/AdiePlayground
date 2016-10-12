@@ -115,11 +115,47 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Press &lt;Enter&gt; to continue....
+        ///   Looks up a localized string similar to {0}{1}.
         /// </summary>
-        internal static string ConsolePressEnterToContinue {
+        internal static string CommandHelpText {
             get {
-                return ResourceManager.GetString("ConsolePressEnterToContinue", resourceCulture);
+                return ResourceManager.GetString("CommandHelpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid command &apos;{0}&apos;..
+        /// </summary>
+        internal static string CommandNotFound {
+            get {
+                return ResourceManager.GetString("CommandNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &gt; .
+        /// </summary>
+        internal static string CommandPrompt {
+            get {
+                return ResourceManager.GetString("CommandPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid arguments on command &apos;{0}&apos;..
+        /// </summary>
+        internal static string CommandResolveFailed {
+            get {
+                return ResourceManager.GetString("CommandResolveFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to usage: {0} {1}.
+        /// </summary>
+        internal static string CommandUsage {
+            get {
+                return ResourceManager.GetString("CommandUsage", resourceCulture);
             }
         }
         
@@ -174,6 +210,69 @@ namespace AdiePlayground.Properties {
         internal static string CovarianceExampleRunning {
             get {
                 return ResourceManager.GetString("CovarianceExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name of the example to run..
+        /// </summary>
+        internal static string ExampleCommandExampleNameHelp {
+            get {
+                return ResourceManager.GetString("ExampleCommandExampleNameHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Runs the example with the specified name..
+        /// </summary>
+        internal static string ExampleCommandHelp {
+            get {
+                return ResourceManager.GetString("ExampleCommandHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lists the names of all the examples which can be run..
+        /// </summary>
+        internal static string ExampleListCommandHelp {
+            get {
+                return ResourceManager.GetString("ExampleListCommandHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not find example named &apos;{0}&apos;..
+        /// </summary>
+        internal static string ExampleNotFound {
+            get {
+                return ResourceManager.GetString("ExampleNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exits the program..
+        /// </summary>
+        internal static string ExitCommandHelp {
+            get {
+                return ResourceManager.GetString("ExitCommandHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The command to display help for; leave empty to show all commands..
+        /// </summary>
+        internal static string HelpCommandCommandNameHelp {
+            get {
+                return ResourceManager.GetString("HelpCommandCommandNameHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displays help for commands..
+        /// </summary>
+        internal static string HelpCommandHelp {
+            get {
+                return ResourceManager.GetString("HelpCommandHelp", resourceCulture);
             }
         }
         
@@ -282,6 +381,15 @@ namespace AdiePlayground.Properties {
         internal static string StrategyExampleRunning {
             get {
                 return ResourceManager.GetString("StrategyExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to AdiePlayground. Type &apos;help&apos; to get started..
+        /// </summary>
+        internal static string WelcomeMessage {
+            get {
+                return ResourceManager.GetString("WelcomeMessage", resourceCulture);
             }
         }
     }

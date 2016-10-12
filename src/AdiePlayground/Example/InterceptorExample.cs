@@ -17,6 +17,7 @@
 namespace AdiePlayground.Example
 {
     using System;
+    using System.Threading;
     using System.Threading.Tasks;
     using Common.Extensions;
     using Common.Interceptor;
@@ -25,7 +26,12 @@ namespace AdiePlayground.Example
     /// <summary>
     /// Provides an example of interception.
     /// </summary>
-    public sealed class InterceptorExample
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by IoC container.")]
+    [Example("interceptor")]
+    internal sealed class InterceptorExample : IExample
     {
         private readonly IInstrumentationExample instrumentationExample;
         private readonly ConsoleInstrumentationReporter consoleInstrumentationReporter;
@@ -58,10 +64,8 @@ namespace AdiePlayground.Example
             this.consoleInstrumentationReporter = consoleInstrumentationReporter;
         }
 
-        /// <summary>
-        /// Runs the example.
-        /// </summary>
-        public void RunExample()
+        /// <inheritdoc/>
+        public void Run(CancellationToken cancellationToken)
         {
             const int IncrementCount = 5;
             const int RegisterDelay = 50;

@@ -18,6 +18,7 @@ namespace AdiePlayground.Example
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading;
     using Common.Extensions;
     using Common.Strategy;
     using Properties;
@@ -25,7 +26,12 @@ namespace AdiePlayground.Example
     /// <summary>
     /// Provides examples of using the Strategy pattern.
     /// </summary>
-    public sealed class StrategyExample
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by IoC container.")]
+    [Example("strategy")]
+    internal sealed class StrategyExample : IExample
     {
         private readonly SortStrategyResolver<string> strategyResolver;
 
@@ -46,10 +52,8 @@ namespace AdiePlayground.Example
             this.strategyResolver = strategyResolver;
         }
 
-        /// <summary>
-        /// Runs the example.
-        /// </summary>
-        public void RunExample()
+        /// <inheritdoc/>
+        public void Run(CancellationToken cancellationToken)
         {
             ConsoleExtensions.WriteColoredLine(Resources.StrategyExampleRunning, ConsoleColor.Cyan);
             var list = new List<string>

@@ -40,5 +40,21 @@ namespace AdiePlayground.Common.Extensions
                 Console.ResetColor();
             }
         }
+
+        /// <summary>
+        /// Writes a single coloured value to the <see cref="Console"/>. The colour is reset after
+        /// the operation.
+        /// </summary>
+        /// <param name="value">The value to write.</param>
+        /// <param name="color">The colour of the text.</param>
+        public static void WriteColored(string value, ConsoleColor color)
+        {
+            lock (ConsoleColorLock)
+            {
+                Console.ForegroundColor = color;
+                Console.Write(value);
+                Console.ResetColor();
+            }
+        }
     }
 }

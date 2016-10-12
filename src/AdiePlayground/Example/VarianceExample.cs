@@ -17,6 +17,7 @@
 namespace AdiePlayground.Example
 {
     using System;
+    using System.Threading;
     using Common.Extensions;
     using Common.Model;
     using Common.Variance;
@@ -25,7 +26,12 @@ namespace AdiePlayground.Example
     /// <summary>
     /// Provides examples of type variance in delegates and interfaces.
     /// </summary>
-    public sealed class VarianceExample
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by IoC container.")]
+    [Example("variance")]
+    internal sealed class VarianceExample : IExample
     {
         private const int LemonQuality = 90;
 
@@ -72,10 +78,8 @@ namespace AdiePlayground.Example
             this.fruitContravariantInterface = fruitContravariant;
         }
 
-        /// <summary>
-        /// Runs the example.
-        /// </summary>
-        public void RunExample()
+        /// <inheritdoc/>
+        public void Run(CancellationToken cancellationToken)
         {
             this.InvarianceExample();
             this.CovarianceExample();

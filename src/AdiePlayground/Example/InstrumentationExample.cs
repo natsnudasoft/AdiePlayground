@@ -22,7 +22,7 @@ namespace AdiePlayground.Example
     /// Provides an example of intercepting methods with instrumentation.
     /// </summary>
     /// <seealso cref="IInstrumentationExample" />
-    public sealed class InstrumentationExample : IInstrumentationExample
+    internal sealed class InstrumentationExample : IInstrumentationExample
     {
         /// <inheritdoc/>
         public int Value { get; set; }
