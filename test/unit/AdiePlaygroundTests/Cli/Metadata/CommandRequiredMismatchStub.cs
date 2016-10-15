@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfo.cs" company="natsnudasoft">
+﻿// <copyright file="CommandRequiredMismatchStub.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,17 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
+namespace AdiePlaygroundTests.Cli.Metadata
+{
+    using AdiePlayground.Cli.Metadata;
+    using Properties;
 
-[assembly: CLSCompliant(true)]
+    public sealed class CommandRequiredMismatchStub
+    {
+        [CommandParameter(0, "valid", typeof(Resources), "TestResource", Required = false)]
+        public string ValidProperty { get; set; }
 
-[assembly: AssemblyTitle("AdiePlayground.CommonTests")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlayground.CommonTests")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: Guid("c8de7d1c-1bf0-4f6a-9527-f60782f7f6d1")]
+        [CommandParameter(1, "invalid", typeof(Resources), "TestResource", Required = true)]
+        public string InvalidRequiredProperty { get; set; }
+    }
+}

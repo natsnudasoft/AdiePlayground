@@ -105,11 +105,6 @@ namespace AdiePlayground.Cli.Convert
         private ArgumentConverterResolveException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            if (info == null)
-            {
-                throw new ArgumentNullException(nameof(info));
-            }
-
             this.ArgumentName = info.GetString(nameof(this.ArgumentName));
             var argumentTypeName = info.GetString(nameof(this.ArgumentType));
             this.ArgumentType = Type.GetType(argumentTypeName);
@@ -131,11 +126,6 @@ namespace AdiePlayground.Cli.Convert
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            if (info == null)
-            {
-                throw new ArgumentNullException(nameof(info));
-            }
-
             base.GetObjectData(info, context);
             info.AddValue(nameof(this.ArgumentName), this.ArgumentName);
             info.AddValue(nameof(this.ArgumentType), this.ArgumentType.AssemblyQualifiedName);

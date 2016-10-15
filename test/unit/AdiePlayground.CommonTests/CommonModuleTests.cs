@@ -87,6 +87,7 @@ namespace AdiePlayground.DataTests.Services
                 "robot drill off",
                 new PositionalParameter(0, robotMock.Object));
             var commandFactory = container.Resolve<CommandFactory>();
+            var commandFromFactory = commandFactory?.Invoke("robot move", robotMock.Object, 0D);
 
             Assert.That(commandExecutionManager, Is.Not.Null);
             Assert.That(robot, Is.Not.Null);
@@ -95,6 +96,7 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(drillOnCommand, Is.Not.Null);
             Assert.That(drillOffCommand, Is.Not.Null);
             Assert.That(commandFactory, Is.Not.Null);
+            Assert.That(commandFromFactory, Is.Not.Null);
         }
 
         /// <summary>

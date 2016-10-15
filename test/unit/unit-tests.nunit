@@ -1,10 +1,12 @@
 <NUnitProject>
   <Settings activeconfig="Release"/>
   <Config name="Debug">
+    <assembly path="AdiePlaygroundTests\bin\Debug\AdiePlaygroundTests.dll"/>
     <assembly path="AdiePlayground.CommonTests\bin\Debug\AdiePlayground.CommonTests.dll"/>
     <assembly path="AdiePlayground.DataTests\bin\Debug\AdiePlayground.DataTests.dll"/>
   </Config>
   <Config name="Release">
+    <assembly path="AdiePlaygroundTests\bin\Release\AdiePlaygroundTests.dll"/>
     <assembly path="AdiePlayground.CommonTests\bin\Release\AdiePlayground.CommonTests.dll"/>
     <assembly path="AdiePlayground.DataTests\bin\Release\AdiePlayground.DataTests.dll"/>
   </Config>

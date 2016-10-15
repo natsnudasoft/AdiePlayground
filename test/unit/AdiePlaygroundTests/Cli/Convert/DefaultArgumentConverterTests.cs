@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfo.cs" company="natsnudasoft">
+﻿// <copyright file="DefaultArgumentConverterTests.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,21 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
+namespace AdiePlaygroundTests.Cli.Convert
+{
+    using AdiePlayground.Cli.Convert;
+    using NUnit.Framework;
 
-[assembly: CLSCompliant(true)]
-
-[assembly: AssemblyTitle("AdiePlayground.CommonTests")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlayground.CommonTests")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: Guid("c8de7d1c-1bf0-4f6a-9527-f60782f7f6d1")]
+    [TestFixture]
+    public sealed class DefaultArgumentConverterTests
+    {
+        [Test]
+        public void Convert_ReturnsOriginalValue()
+        {
+            const string inputValue = "Hello";
+            var defaultArgumentConverter = new DefaultArgumentConverter();
+            var outputValue = defaultArgumentConverter.Convert(inputValue);
+            Assert.That(outputValue, Is.EqualTo(inputValue));
+        }
+    }
+}
