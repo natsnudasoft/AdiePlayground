@@ -108,11 +108,6 @@ namespace AdiePlayground.Cli
         private CommandResolveException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            if (info == null)
-            {
-                throw new ArgumentNullException(nameof(info));
-            }
-
             this.CommandName = info.GetString(nameof(this.CommandName));
             var commandArgs = (string[])info.GetValue(nameof(this.CommandArgs), typeof(string[]));
             this.CommandArgs = new ReadOnlyCollection<string>(commandArgs);
@@ -132,11 +127,6 @@ namespace AdiePlayground.Cli
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            if (info == null)
-            {
-                throw new ArgumentNullException(nameof(info));
-            }
-
             base.GetObjectData(info, context);
             info.AddValue(nameof(this.CommandName), this.CommandName);
             info.AddValue(nameof(this.CommandArgs), this.CommandArgs.ToArray());

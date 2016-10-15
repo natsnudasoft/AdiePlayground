@@ -70,7 +70,7 @@ namespace AdiePlayground.CommonTests
         [Test]
         public void ResolveResource_ResourceNotFound()
         {
-            var ex = Assert.Throws<InvalidOperationException>(() =>
+            Assert.Throws<InvalidOperationException>(() =>
                 ResourceTypeResolver.ResolveResource<string>(typeof(Resources), "InvalidResource"));
         }
 
