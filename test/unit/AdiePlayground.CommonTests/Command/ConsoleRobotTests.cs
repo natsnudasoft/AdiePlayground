@@ -44,7 +44,7 @@ namespace AdiePlayground.CommonTests.Command
         public void Move_WritesMessage()
         {
             const double MoveDistance = 20.75D;
-            const string expectedString = "Moved forwards 20.75 metres.\r\n";
+            var expectedString = "Moved forwards 20.75 metres." + Environment.NewLine;
             var robot = new ConsoleRobot();
 
             string outputString;
@@ -69,7 +69,7 @@ namespace AdiePlayground.CommonTests.Command
         public void Turn_WritesMessage()
         {
             const double TurnAngle = -0.25D;
-            const string expectedPattern = @"^Turned left \d+\.\d{2} degrees.\r\n$";
+            var expectedPattern = @"^Turned left \d+\.\d{2} degrees." + Environment.NewLine + "$";
             var robot = new ConsoleRobot();
 
             string outputString;
@@ -93,7 +93,7 @@ namespace AdiePlayground.CommonTests.Command
         [Test]
         public void TurnDrillOn_WritesMessage()
         {
-            const string expectedString = "Turned drill on.\r\n";
+            var expectedString = "Turned drill on." + Environment.NewLine;
             var robot = new ConsoleRobot();
 
             string outputString;
@@ -117,7 +117,7 @@ namespace AdiePlayground.CommonTests.Command
         [Test]
         public void TurnDrillOff_WritesMessage()
         {
-            const string expectedString = "Turned drill off.\r\n";
+            var expectedString = "Turned drill off." + Environment.NewLine;
             var robot = new ConsoleRobot();
 
             string outputString;
