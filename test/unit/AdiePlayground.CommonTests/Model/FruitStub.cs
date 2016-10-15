@@ -18,25 +18,15 @@ namespace AdiePlayground.CommonTests.Model
 {
     using Common.Model;
 
-    /// <summary>
-    /// Provides a stub for the <see cref="Fruit"/> class.
-    /// </summary>
-    /// <seealso cref="Fruit" />
     public sealed class FruitStub : Fruit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FruitStub"/> class.
-        /// </summary>
-        /// <param name="quality">The quality of this instance of fruit.</param>
         public FruitStub(int quality)
             : base(quality)
         {
         }
 
-        /// <inheritdoc/>
         public override string Name => nameof(FruitStub);
 
-        /// <inheritdoc/>
         public override string Color => "Red";
     }
 }

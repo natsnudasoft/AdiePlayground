@@ -23,26 +23,14 @@ namespace AdiePlayground.CommonTests
     using Castle.DynamicProxy;
     using Moq;
 
-    /// <summary>
-    /// Provides a set of standard <see cref="IInvocation"/> mocks.
-    /// </summary>
     public static class InvocationMockHelper
     {
-        /// <summary>
-        /// Creates a mock invocation which encapsulates a method with a void return value.
-        /// </summary>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockVoidReturnInvocation()
         {
             Action action = () => { };
             return MockInvocation(action.Method);
         }
 
-        /// <summary>
-        /// Creates a mock invocation which encapsulates a method with an int return value.
-        /// </summary>
-        /// <param name="returnValue">The ReturnValue of the mock invocation.</param>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockIntReturnInvocation(int returnValue)
         {
             Func<int> func = () => returnValue;
@@ -53,10 +41,6 @@ namespace AdiePlayground.CommonTests
             return invocationMock;
         }
 
-        /// <summary>
-        /// Creates a mock invocation which encapsulates a method with a Task return value.
-        /// </summary>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockTaskReturnInvocation()
         {
             Func<Task> func = () => Task.CompletedTask;
@@ -67,10 +51,6 @@ namespace AdiePlayground.CommonTests
             return invocationMock;
         }
 
-        /// <summary>
-        /// Creates a mock invocation which encapsulates an async method with a void return value.
-        /// </summary>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockAsyncVoidReturnInvocation()
         {
             Func<Task> func = async () => { await Task.CompletedTask.ConfigureAwait(false); };
@@ -81,10 +61,6 @@ namespace AdiePlayground.CommonTests
             return invocationMock;
         }
 
-        /// <summary>
-        /// Creates a mock invocation which encapsulates an async method with a cancelled status.
-        /// </summary>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockAsyncVoidReturnCanceledInvocation()
         {
             Func<Task> func = async () =>
@@ -98,10 +74,6 @@ namespace AdiePlayground.CommonTests
             return invocationMock;
         }
 
-        /// <summary>
-        /// Creates a mock invocation which encapsulates an async method with a faulted status.
-        /// </summary>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockAsyncVoidReturnFaultedInvocation()
         {
             Func<Task> func = async () =>
@@ -115,11 +87,6 @@ namespace AdiePlayground.CommonTests
             return invocationMock;
         }
 
-        /// <summary>
-        /// Creates a mock invocation which encapsulates an async method with an int return value.
-        /// </summary>
-        /// <param name="returnValue">The return value of the encapsulated async method.</param>
-        /// <returns>The created invocation mock.</returns>
         public static Mock<IInvocation> MockAsyncIntReturnInvocation(int returnValue)
         {
             Func<Task<int>> func = async () =>

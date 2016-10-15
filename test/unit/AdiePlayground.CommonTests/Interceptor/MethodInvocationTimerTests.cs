@@ -22,17 +22,11 @@ namespace AdiePlayground.CommonTests.Interceptor
     using Common.Interceptor;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="MethodInvocationTimer"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class MethodInvocationTimerTests
     {
         private static readonly int[] InvocationTimes = new[] { 502468, 851234, 455555 };
 
-        /// <summary>
-        /// Tests the AddInvocationTime method.
-        /// </summary>
         [Test]
         public void AddInvocationTime_MethodTimesAdded()
         {

@@ -20,15 +20,9 @@ namespace AdiePlayground.CommonTests.Command
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="MoveCommand"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class MoveCommandTests
     {
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -36,9 +30,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.DoesNotThrow(() => new MoveCommand(robotMock.Object, 0D));
         }
 
-        /// <summary>
-        /// Tests the Execute method.
-        /// </summary>
         [Test]
         public void Execute_CallsCorrectMethod()
         {
@@ -51,9 +42,6 @@ namespace AdiePlayground.CommonTests.Command
             robotMock.Verify(c => c.Move(It.Is<double>(d => d == MoveDistance)), Times.Once());
         }
 
-        /// <summary>
-        /// Tests the Undo method.
-        /// </summary>
         [Test]
         public void Undo_CallsCorrectMethod()
         {

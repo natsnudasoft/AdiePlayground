@@ -21,17 +21,11 @@ namespace AdiePlayground.DataTests.Services
     using Data.Services;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="FilterCriterion{TEntity}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class FilterCriterionTests
     {
         private const string ConstructorFilterPredicateParam = "filterPredicate";
 
-        /// <summary>
-        /// Tests the constructor with a null filter predicate.
-        /// </summary>
         [Test]
         public void Constructor_NullFilterPredicate_ArgumentNullException()
         {
@@ -40,9 +34,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorFilterPredicateParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a valid filter predicate.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -51,9 +42,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(criterion.FilterPredicate, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the apply method.
-        /// </summary>
         [Test]
         public void Apply_DoesNotThrow()
         {

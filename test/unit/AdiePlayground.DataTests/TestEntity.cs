@@ -19,43 +19,29 @@ namespace AdiePlayground.DataTests
     using System;
     using Data.Model;
 
-    /// <summary>
-    /// Provides a test entity.
-    /// </summary>
-    /// <seealso cref="IModelEntity" />
     public sealed class TestEntity : IModelEntity, IEquatable<TestEntity>
     {
         private static readonly byte[] EmptyRowVersion = new byte[] { };
 
-        /// <inheritdoc/>
         public int Id { get; set; }
 
-        /// <summary>
-        /// Gets or sets the test property1.
-        /// </summary>
         public string Property1 { get; set; }
 
-        /// <summary>
-        /// Gets or sets the test property2.
-        /// </summary>
         public DateTime Property2 { get; set; }
 
-        /// <inheritdoc/>
         public byte[] RowVersion => EmptyRowVersion;
 
-        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             return this.Equals(obj as TestEntity);
         }
 
-        /// <inheritdoc/>
         public override int GetHashCode()
         {
             return this.Id.GetHashCode();
         }
 
-        /// <inheritdoc/>
+#pragma warning disable MEN007 // Use a single return
         public bool Equals(TestEntity other)
         {
             if (other == null)
@@ -68,5 +54,6 @@ namespace AdiePlayground.DataTests
                 this.Property2 == other.Property2 &&
                 this.RowVersion == other.RowVersion;
         }
+#pragma warning restore MEN007 // Use a single return
     }
 }

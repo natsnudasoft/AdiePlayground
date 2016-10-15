@@ -22,9 +22,6 @@ namespace AdiePlayground.DataTests.Services
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ReadOnlyServiceTransaction"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ReadOnlyServiceTransactionTests
     {
@@ -32,18 +29,12 @@ namespace AdiePlayground.DataTests.Services
 
         private DbMockHelper dbMockHelper;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
             this.dbMockHelper = new DbMockHelper();
         }
 
-        /// <summary>
-        /// Tests the constructor with a null db context scope factory.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Reliability",
             "CA2000:Dispose objects before losing scope",
@@ -58,9 +49,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorDbContextScopeFactoryParam));
         }
 
-        /// <summary>
-        /// Tests proper disposal.
-        /// </summary>
         [Test]
         public void Disposal_ObjectsCorrectlyDisposed()
         {

@@ -19,15 +19,9 @@ namespace AdiePlayground.CommonTests.Variance
     using Common.Variance;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="BananaCovariant"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class BananaCovariantTests
     {
-        /// <summary>
-        /// Tests the create method with valid input.
-        /// </summary>
         [Test]
         public void Create_CreatesValidInstance()
         {

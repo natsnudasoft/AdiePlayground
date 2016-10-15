@@ -23,9 +23,6 @@ namespace AdiePlayground.CommonTests.Observer
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="MessageBoard"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class MessageBoardTests
     {
@@ -34,9 +31,6 @@ namespace AdiePlayground.CommonTests.Observer
         private const string AttachObserverParam = "observer";
         private const string DetachObserverParam = "observer";
 
-        /// <summary>
-        /// Tests the AddMessage method with a null message.
-        /// </summary>
         [Test]
         public void AddMessage_NullMessage_ArgumentNullException()
         {
@@ -45,9 +39,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(AddMessageMessageParam));
         }
 
-        /// <summary>
-        /// Tests the AddMessage method with an empty message.
-        /// </summary>
         [Test]
         public void AddMessage_EmptyMessage_ArgumentException()
         {
@@ -56,9 +47,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(AddMessageMessageParam));
         }
 
-        /// <summary>
-        /// Tests the AddMessage method to see if observers are notified.
-        /// </summary>
         [Test]
         public void AddMessage_ObserversNotified()
         {
@@ -73,9 +61,6 @@ namespace AdiePlayground.CommonTests.Observer
                 o => o.Update(It.Is<IEnumerable<string>>(e => e.Single() == message)), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the AddMessage method with a message that already exists.
-        /// </summary>
         [Test]
         public void AddMessage_Duplicate_ObserversNotNotified()
         {
@@ -91,9 +76,6 @@ namespace AdiePlayground.CommonTests.Observer
                 o => o.Update(It.IsAny<IEnumerable<string>>()), Times.Never);
         }
 
-        /// <summary>
-        /// Tests the RemoveMessage method with a null message.
-        /// </summary>
         [Test]
         public void RemoveMessage_NullMessage_ArgumentNullException()
         {
@@ -102,9 +84,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(RemoveMessageMessageParam));
         }
 
-        /// <summary>
-        /// Tests the RemoveMessage method with an empty message.
-        /// </summary>
         [Test]
         public void RemoveMessage_EmptyMessage_ArgumentException()
         {
@@ -114,9 +93,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(RemoveMessageMessageParam));
         }
 
-        /// <summary>
-        /// Tests the RemoveMessage method to see if observers are notified.
-        /// </summary>
         [Test]
         public void RemoveMessage_ObserversNotified()
         {
@@ -134,9 +110,6 @@ namespace AdiePlayground.CommonTests.Observer
                 o => o.Update(It.Is<IEnumerable<string>>(e => e.Single() == message2)), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the RemoveMessage method with a message that does not exist.
-        /// </summary>
         [Test]
         public void RemoveMessage_Nonexistent_ObserversNotNotified()
         {
@@ -151,9 +124,6 @@ namespace AdiePlayground.CommonTests.Observer
                 o => o.Update(It.IsAny<IEnumerable<string>>()), Times.Never);
         }
 
-        /// <summary>
-        /// Tests the Attach method with a null observer.
-        /// </summary>
         [Test]
         public void Attach_NullObserver_ArgumentNullException()
         {
@@ -162,9 +132,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(AttachObserverParam));
         }
 
-        /// <summary>
-        /// Tests the Attach method.
-        /// </summary>
         [Test]
         public void Attach_DoesNotThrow()
         {
@@ -173,9 +140,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.DoesNotThrow(() => messageBoard.Attach(observerMock.Object));
         }
 
-        /// <summary>
-        /// Tests the Detach method with a null observer.
-        /// </summary>
         [Test]
         public void Detach_NullObserver_ArgumentNullException()
         {
@@ -184,9 +148,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(DetachObserverParam));
         }
 
-        /// <summary>
-        /// Tests the Detach method.
-        /// </summary>
         [Test]
         public void Detach_DoesNotThrow()
         {

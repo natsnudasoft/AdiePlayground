@@ -22,24 +22,15 @@ namespace AdiePlayground.CommonTests.Command
     using Common.Command;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ConsoleRobot"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConsoleRobotTests
     {
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => new ConsoleRobot());
         }
 
-        /// <summary>
-        /// Tests the Move method.
-        /// </summary>
         [Test]
         public void Move_WritesMessage()
         {
@@ -62,9 +53,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(outputString, Is.EqualTo(expectedString));
         }
 
-        /// <summary>
-        /// Tests the Turn method.
-        /// </summary>
         [Test]
         public void Turn_WritesMessage()
         {
@@ -87,9 +75,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(outputString, Does.Match(expectedPattern));
         }
 
-        /// <summary>
-        /// Tests the TurnDrillOn method.
-        /// </summary>
         [Test]
         public void TurnDrillOn_WritesMessage()
         {
@@ -111,9 +96,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(outputString, Is.EqualTo(expectedString));
         }
 
-        /// <summary>
-        /// Tests the TurnDrillOff method.
-        /// </summary>
         [Test]
         public void TurnDrillOff_WritesMessage()
         {

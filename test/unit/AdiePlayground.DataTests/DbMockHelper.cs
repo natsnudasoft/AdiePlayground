@@ -25,16 +25,10 @@ namespace AdiePlayground.DataTests
     using Mehdime.Entity;
     using Moq;
 
-    /// <summary>
-    /// Provides helper methods for setting up mocks relating to DbContext etc.
-    /// </summary>
     internal sealed class DbMockHelper
     {
         private int batchAffectedCount;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DbMockHelper"/> class.
-        /// </summary>
         public DbMockHelper()
         {
             this.batchAffectedCount = 0;
@@ -49,36 +43,16 @@ namespace AdiePlayground.DataTests
                 .Returns(this.DbSetMock.Object);
         }
 
-        /// <summary>
-        /// Gets the database set mock.
-        /// </summary>
         public Mock<DbSet<TestEntity>> DbSetMock { get; private set; }
 
-        /// <summary>
-        /// Gets the playground database context mock.
-        /// </summary>
         public Mock<PlaygroundDbContext> PlaygroundDbContextMock { get; private set; }
 
-        /// <summary>
-        /// Gets the database context scope mock.
-        /// </summary>
         public Mock<IDbContextScope> DbContextScopeMock { get; private set; }
 
-        /// <summary>
-        /// Gets the database context read only scope mock.
-        /// </summary>
         public Mock<IDbContextReadOnlyScope> DbContextReadOnlyScopeMock { get; private set; }
 
-        /// <summary>
-        /// Gets the database context scope factory mock.
-        /// </summary>
         public Mock<IDbContextScopeFactory> DbContextScopeFactoryMock { get; private set; }
 
-        /// <summary>
-        /// Wraps a given mock around the given query data.
-        /// </summary>
-        /// <param name="queryMock">The query mock.</param>
-        /// <param name="queryData">The query data.</param>
         public static void MockIQueryable(
             Mock<IQueryable<TestEntity>> queryMock,
             IQueryable<TestEntity> queryData)
@@ -97,9 +71,6 @@ namespace AdiePlayground.DataTests
                 .Returns(() => queryData.GetEnumerator());
         }
 
-        /// <summary>
-        /// Mocks the database context scope factory methods.
-        /// </summary>
         public void MockDbContextScopeFactory()
         {
             this.DbContextScopeMock
@@ -115,9 +86,6 @@ namespace AdiePlayground.DataTests
                 .Returns(this.DbContextScopeMock.Object);
         }
 
-        /// <summary>
-        /// Mocks the database context scope factory read only methods.
-        /// </summary>
         public void MockDbContextScopeFactoryReadOnly()
         {
             this.DbContextReadOnlyScopeMock
@@ -129,9 +97,6 @@ namespace AdiePlayground.DataTests
                 .Returns(this.DbContextReadOnlyScopeMock.Object);
         }
 
-        /// <summary>
-        /// Mocks the database set <see cref="IQueryable{TestEntity}"/> methods.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Maintainability",
             "CA1506:AvoidExcessiveClassCoupling",
@@ -155,9 +120,6 @@ namespace AdiePlayground.DataTests
                         .FirstOrDefaultAsync(e => e.Id == (int)((object[])o)[0]));
         }
 
-        /// <summary>
-        /// Mocks the database set add method.
-        /// </summary>
         public void MockDbSetAdd()
         {
             this.DbSetMock
@@ -165,9 +127,6 @@ namespace AdiePlayground.DataTests
                 .Callback(() => ++this.batchAffectedCount);
         }
 
-        /// <summary>
-        /// Mocks the database set add range method.
-        /// </summary>
         public void MockDbSetAddRange()
         {
             this.DbSetMock
@@ -175,9 +134,6 @@ namespace AdiePlayground.DataTests
                 .Callback<IEnumerable<TestEntity>>(e => this.batchAffectedCount += e.Count());
         }
 
-        /// <summary>
-        /// Mocks the database set remove method.
-        /// </summary>
         public void MockDbSetRemove()
         {
             this.DbSetMock
@@ -185,9 +141,6 @@ namespace AdiePlayground.DataTests
                 .Callback(() => ++this.batchAffectedCount);
         }
 
-        /// <summary>
-        /// Mocks the database set remove range method.
-        /// </summary>
         public void MockDbSetRemoveRange()
         {
             this.DbSetMock

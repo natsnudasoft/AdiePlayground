@@ -20,15 +20,9 @@ namespace AdiePlayground.DataTests.Services
     using Data.Services;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SearchQuery{TEntity}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SearchQueryTests
     {
-        /// <summary>
-        /// Tests the search query filter, sort and page.
-        /// </summary>
         [Test]
         public void SearchQuery_FilterSortAndPage_ReturnsCorrectEntities()
         {
@@ -54,9 +48,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
 
-        /// <summary>
-        /// Tests the search query include.
-        /// </summary>
         [Test]
         public void SearchQuery_Include_DoesNotThrow()
         {

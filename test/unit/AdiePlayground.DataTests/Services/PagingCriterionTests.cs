@@ -21,18 +21,12 @@ namespace AdiePlayground.DataTests.Services
     using Data.Services;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="PagingCriterion{TEntity}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class PagingCriterionTests
     {
         private const string ConstructorSkipCountParam = "skipCount";
         private const string ConstructorPageSizeParam = "pageSize";
 
-        /// <summary>
-        /// Tests the constructor with an invalid skip count.
-        /// </summary>
         [Test]
         public void Constructor_InvalidSkipCount_ArgumentOutOfRangeException()
         {
@@ -41,9 +35,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSkipCountParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with an invalid page size.
-        /// </summary>
         [Test]
         public void Constructor_InvalidPageSize_ArgumentOutOfRangeException()
         {
@@ -52,9 +43,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorPageSizeParam));
         }
 
-        /// <summary>
-        /// Tests the constructor.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -68,9 +56,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(criterion.PageSize, Is.EqualTo(PageSize));
         }
 
-        /// <summary>
-        /// Tests the apply method.
-        /// </summary>
         [Test]
         public void Apply_DoesNotThrow()
         {

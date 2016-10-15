@@ -18,28 +18,17 @@ namespace AdiePlayground.CommonTests.Command
 {
     using Common.Command;
 
-    /// <summary>
-    /// Provides a stub for the <see cref="RobotCommand"/> class.
-    /// </summary>
-    /// <seealso cref="RobotCommand" />
     internal sealed class RobotCommandStub : RobotCommand
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RobotCommandStub"/> class.
-        /// </summary>
-        /// <param name="robot">The <see cref="IRobot" /> that this <see cref="RobotCommand" /> will
-        /// execute on.</param>
         public RobotCommandStub(IRobot robot)
             : base(robot)
         {
         }
 
-        /// <inheritdoc/>
         public override void Execute()
         {
         }
 
-        /// <inheritdoc/>
         public override void Undo()
         {
         }

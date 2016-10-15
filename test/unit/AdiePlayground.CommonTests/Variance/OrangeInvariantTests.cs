@@ -21,17 +21,11 @@ namespace AdiePlayground.CommonTests.Variance
     using Common.Variance;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="OrangeInvariant"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class OrangeInvariantTests
     {
         private const string GetValueInputParam = "input";
 
-        /// <summary>
-        /// Tests the GetValue method with null input.
-        /// </summary>
         [Test]
         public void GetValue_NullInput_ArgumentNullException()
         {
@@ -41,9 +35,6 @@ namespace AdiePlayground.CommonTests.Variance
             Assert.That(ex.ParamName, Is.EqualTo(GetValueInputParam));
         }
 
-        /// <summary>
-        /// Tests the GetValue method with valid input.
-        /// </summary>
         [Test]
         public void GetValue_ReturnsCorrectValue()
         {

@@ -18,13 +18,9 @@ namespace AdiePlayground.CommonTests
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using Common;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="Iso3166Country"/> class.
-    /// </summary>
     [TestFixture]
     public class Iso3166CountryTests
     {
@@ -51,10 +47,6 @@ namespace AdiePlayground.CommonTests
                 new KeyValuePair<string, string>("ZZ", "Unknown")
             };
 
-        /// <summary>
-        /// Tests constructor with invalid country code.
-        /// </summary>
-        /// <param name="countryCode">The country code to test.</param>
         [Test]
         public void Constructor_InvalidCountryCode_ArgumentException(
             [ValueSource(nameof(InvalidCountryCodes))] string countryCode)
@@ -63,9 +55,6 @@ namespace AdiePlayground.CommonTests
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorCountryCodeParam));
         }
 
-        /// <summary>
-        /// Tests constructor with null country code.
-        /// </summary>
         [Test]
         public void Constructor_NullCountryCode_ArgumentNullException()
         {
@@ -73,10 +62,6 @@ namespace AdiePlayground.CommonTests
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorCountryCodeParam));
         }
 
-        /// <summary>
-        /// Tests constructor with a valid country code, and one that has region info available.
-        /// </summary>
-        /// <param name="countryCode">The country code to test.</param>
         [Test]
         public void Constructor_ValidCountryCodeValidRegionInfo_CorrectProperties(
             [ValueSource(nameof(ValidCountries))] KeyValuePair<string, string> countryCode)
@@ -94,10 +79,6 @@ namespace AdiePlayground.CommonTests
             Assert.That(regionInfo.TwoLetterISORegionName, Is.EqualTo(upperCountryCode));
         }
 
-        /// <summary>
-        /// Tests constructor with a valid country code, but one that has no region info available.
-        /// </summary>
-        /// <param name="countryCode">The country code to test.</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Performance",
             "CA1804:RemoveUnusedLocals",

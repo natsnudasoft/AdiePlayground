@@ -21,9 +21,6 @@ namespace AdiePlayground.CommonTests
     using NUnit.Framework;
     using Properties;
 
-    /// <summary>
-    /// Tests the <see cref="ResourceTypeResolver"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ResourceTypeResolverTests
     {
@@ -31,9 +28,6 @@ namespace AdiePlayground.CommonTests
         private const string ResolveResourceResourceNameParam = "resourceName";
         private const string ResourceName = "TestResource";
 
-        /// <summary>
-        /// Tests the ResolveResource method with a null resource type.
-        /// </summary>
         [Test]
         public void ResolveResource_NullResourceType_ArgumentNullException()
         {
@@ -42,9 +36,6 @@ namespace AdiePlayground.CommonTests
             Assert.That(ex.ParamName, Is.EqualTo(ResolveResourceResourceTypeParam));
         }
 
-        /// <summary>
-        /// Tests the ResolveResource method with a null resource name.
-        /// </summary>
         [Test]
         public void ResolveResource_NullResourceName_ArgumentNullException()
         {
@@ -53,9 +44,6 @@ namespace AdiePlayground.CommonTests
             Assert.That(ex.ParamName, Is.EqualTo(ResolveResourceResourceNameParam));
         }
 
-        /// <summary>
-        /// Tests the ResolveResource method with an empty resource name.
-        /// </summary>
         [Test]
         public void ResolveResource_EmptyResourceName_ArgumentException()
         {
@@ -64,9 +52,6 @@ namespace AdiePlayground.CommonTests
             Assert.That(ex.ParamName, Is.EqualTo(ResolveResourceResourceNameParam));
         }
 
-        /// <summary>
-        /// Tests the ResolveResource method with a resource that will NOT be found.
-        /// </summary>
         [Test]
         public void ResolveResource_ResourceNotFound()
         {
@@ -74,9 +59,6 @@ namespace AdiePlayground.CommonTests
                 ResourceTypeResolver.ResolveResource<string>(typeof(Resources), "InvalidResource"));
         }
 
-        /// <summary>
-        /// Tests the ResolveResource method with a resource that will be found.
-        /// </summary>
         [Test]
         public void ResolveResource_ResourceFound()
         {

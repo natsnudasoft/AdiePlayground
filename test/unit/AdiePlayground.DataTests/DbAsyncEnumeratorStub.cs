@@ -22,43 +22,30 @@ namespace AdiePlayground.DataTests
     using System.Threading;
     using System.Threading.Tasks;
 
-    /// <summary>
-    /// Stub for <see cref="DbAsyncEnumeratorStub{TEntity}"/>.
-    /// </summary>
-    /// <typeparam name="TEntity">Stub.</typeparam>
-    /// <seealso cref="IDbAsyncEnumerator{TEntity}" />
     internal class DbAsyncEnumeratorStub<TEntity> : IDbAsyncEnumerator<TEntity>
     {
         private readonly IEnumerator<TEntity> innerEnumerator;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DbAsyncEnumeratorStub{TEntity}"/> class.
-        /// </summary>
-        /// <param name="innerEnumerator">The inner enumerator.</param>
         public DbAsyncEnumeratorStub(IEnumerator<TEntity> innerEnumerator)
         {
             this.innerEnumerator = innerEnumerator;
         }
 
-        /// <inheritdoc/>
         public TEntity Current
         {
             get { return this.innerEnumerator.Current; }
         }
 
-        /// <inheritdoc/>
         object IDbAsyncEnumerator.Current
         {
             get { return this.Current; }
         }
 
-        /// <inheritdoc/>
         public Task<bool> MoveNextAsync(CancellationToken cancellationToken)
         {
             return Task.FromResult(this.innerEnumerator.MoveNext());
         }
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             this.Dispose(true);

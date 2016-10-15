@@ -30,17 +30,11 @@ namespace AdiePlayground.DataTests.Services
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="CommonModule"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class CommonModuleTests
     {
         private static IContainer container;
 
-        /// <summary>
-        /// Builds the <see cref="IContainer"/> for all tests to use.
-        /// </summary>
         [OneTimeSetUp]
         public static void BeforeAllTests()
         {
@@ -50,9 +44,6 @@ namespace AdiePlayground.DataTests.Services
             container = builder.Build();
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services in the Common namespace.
-        /// </summary>
         [Test]
         public void ModuleRegistered_CommonServicesRegistered()
         {
@@ -63,9 +54,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(guidProvider, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services in the Command namespace.
-        /// </summary>
         [Test]
         public void ModuleRegistered_CommandServicesRegistered()
         {
@@ -99,9 +87,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(commandFromFactory, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services in the Interceptor namespace.
-        /// </summary>
         [Test]
         public void ModuleRegistered_InterceptorServicesRegistered()
         {
@@ -122,9 +107,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(instrumentationInterceptor, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services in the Observer namespace.
-        /// </summary>
         [Test]
         public void ModuleRegistered_ObserverServicesRegistered()
         {
@@ -135,9 +117,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(messageBoardObserver, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services in the Strategy namespace.
-        /// </summary>
         [Test]
         public void ModuleRegistered_StrategyServicesRegistered()
         {
@@ -154,9 +133,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(sortStrategyResolver, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services in the Variance namespace.
-        /// </summary>
         [Test]
         public void ModuleRegistered_VarianceServicesRegistered()
         {

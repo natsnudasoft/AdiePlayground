@@ -19,15 +19,9 @@ namespace AdiePlayground.CommonTests
     using Common;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SystemGuidProvider"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SystemGuidProviderTests
     {
-        /// <summary>
-        /// Tests the NewGuid method.
-        /// </summary>
         [Test]
         public void NewGuid_DoesNotThrow()
         {

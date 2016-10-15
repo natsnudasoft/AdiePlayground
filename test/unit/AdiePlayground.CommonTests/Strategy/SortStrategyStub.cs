@@ -19,16 +19,10 @@ namespace AdiePlayground.CommonTests.Strategy
     using System.Collections.Generic;
     using Common.Strategy;
 
-    /// <summary>
-    /// Provides a stub for the <see cref="SortStrategy{T}"/> class.
-    /// </summary>
-    /// <seealso cref="SortStrategy{T}" />
     internal sealed class SortStrategyStub : SortStrategy<int>
     {
-        /// <inheritdoc/>
         protected override SortType SortType => SortType.Quicksort;
 
-        /// <inheritdoc/>
         protected override void Sort(IList<int> list, IComparer<int> comparer)
         {
         }

@@ -21,26 +21,17 @@ namespace AdiePlayground.CommonTests.Command
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="CommandExecutionManager"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class CommandExecutionManagerTests
     {
         private const string ExecuteCommandParam = "command";
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => new CommandExecutionManager());
         }
 
-        /// <summary>
-        /// Tests the ExecuteCommand method with a null command.
-        /// </summary>
         [Test]
         public void ExecuteCommand_NullCommand_ArgumentNullException()
         {
@@ -50,9 +41,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(ex.ParamName, Is.EqualTo(ExecuteCommandParam));
         }
 
-        /// <summary>
-        /// Tests the ExecuteCommand method.
-        /// </summary>
         [Test]
         public void ExecuteCommand_ExecutesCommand()
         {
@@ -64,9 +52,6 @@ namespace AdiePlayground.CommonTests.Command
             commandMock.Verify(c => c.Execute(), Times.Once());
         }
 
-        /// <summary>
-        /// Tests the ExecuteCommand method.
-        /// </summary>
         [Test]
         public void ExecuteCommand_ClearsUndoHistory()
         {
@@ -80,9 +65,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.Throws<InvalidOperationException>(() => commandExecutionManager.Redo());
         }
 
-        /// <summary>
-        /// Tests the Undo method when there is nothing to undo.
-        /// </summary>
         [Test]
         public void Undo_NothingToUndo_InvalidOperationException()
         {
@@ -90,9 +72,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.Throws<InvalidOperationException>(() => commandExecutionManager.Undo());
         }
 
-        /// <summary>
-        /// Tests the Undo method.
-        /// </summary>
         [Test]
         public void Undo_PerformsUndo()
         {
@@ -105,9 +84,6 @@ namespace AdiePlayground.CommonTests.Command
             commandMock.Verify(c => c.Undo(), Times.Once());
         }
 
-        /// <summary>
-        /// Tests the Redo method when there is nothing to redo.
-        /// </summary>
         [Test]
         public void Redo_NothingToRedo_InvalidOperationException()
         {
@@ -115,9 +91,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.Throws<InvalidOperationException>(() => commandExecutionManager.Redo());
         }
 
-        /// <summary>
-        /// Tests the Redo method.
-        /// </summary>
         [Test]
         public void Redo_PerformsRedo()
         {

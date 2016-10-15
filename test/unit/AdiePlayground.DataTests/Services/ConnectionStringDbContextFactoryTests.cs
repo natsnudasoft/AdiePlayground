@@ -20,18 +20,12 @@ namespace AdiePlayground.DataTests.Services
     using Data.Services;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ConnectionStringDbContextFactory"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConnectionStringDbContextFactoryTests
     {
         private const string ConstructorConnectionStringFactoryParam =
             "connectionStringFactory";
 
-        /// <summary>
-        /// Tests the constructor with a null connection string factory.
-        /// </summary>
         [Test]
         public void Constructor_NullConnectionStringFactory_ArgumentNullException()
         {
@@ -40,9 +34,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorConnectionStringFactoryParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a valid connection string factory.
-        /// </summary>
         [Test]
         public void Constructor_ConnectionStringFactory_DoesNotThrow()
         {

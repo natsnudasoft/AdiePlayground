@@ -20,15 +20,9 @@ namespace AdiePlayground.CommonTests.Extensions
     using Common.Extensions;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="InterceptionExtensions"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class InterceptionExtensionsTests
     {
-        /// <summary>
-        /// Tests the TryGetAsyncTask method with a null invocation.
-        /// </summary>
         [Test]
         public void TryGetAsyncTask_NullInvocation()
         {
@@ -38,10 +32,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(task, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetAsyncTask method with an invocation which encapsulates a method with a
-        /// void return value.
-        /// </summary>
         [Test]
         public void TryGetAsyncTask_InvocationVoidReturn()
         {
@@ -53,10 +43,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(task, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetAsyncTask method with an invocation which encapsulates a method with an
-        /// int return value.
-        /// </summary>
         [Test]
         public void TryGetAsyncTask_InvocationIntReturn()
         {
@@ -68,10 +54,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(task, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetAsyncTask method with an invocation which encapsulates a method with a
-        /// Task return value.
-        /// </summary>
         [Test]
         public void TryGetAsyncTask_InvocationTaskReturn()
         {
@@ -83,10 +65,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(task, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetAsyncTask method with an invocation which encapsulates an async method
-        /// with a void return value.
-        /// </summary>
         [Test]
         public void TryGetAsyncTask_InvocationAsyncVoidReturn()
         {
@@ -98,9 +76,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(task, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetResult with a null Task.
-        /// </summary>
         [Test]
         public void TryGetResult_NullTask()
         {
@@ -110,9 +85,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(result, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetResult with a null Task type.
-        /// </summary>
         [Test]
         public void TryGetResult_NullTaskType()
         {
@@ -124,9 +96,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(result, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetResult with a non generic task type.
-        /// </summary>
         [Test]
         public void TryGetResult_NonGenericTaskType()
         {
@@ -139,9 +108,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(result, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the TryGetResult with a generic task type.
-        /// </summary>
         [Test]
         public void TryGetResult_GenericTaskType()
         {
