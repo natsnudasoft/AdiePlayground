@@ -27,8 +27,9 @@ artifacts:
   - path: AdiePlayground_Release_Any_CPU.zip
     name: AdiePlayground_Release_Any_CPU
 deploy:
-  release: 'AdiePlayground $(APPVEYOR_REPO_TAG_NAME) (Any CPU)'
-  description: 'AdiePlayground'
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: 'AdiePlayground $(APPVEYOR_REPO_TAG_NAME)'
+  description: ''
   provider: GitHub
   auth_token:
     secure: Btb4eq03u8e4+k4WUyv4mWf0kfmzuxSCRo6u1nfOCtxlr4hrdpB5af5tVpt5q+1q
