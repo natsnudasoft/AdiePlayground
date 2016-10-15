@@ -17,7 +17,7 @@ after_build:
   - 7z a AdiePlayground_Release_Any_CPU.zip %APPVEYOR_BUILD_FOLDER%\src\AdiePlayground\bin\Release\AdiePlayground.exe.config
   - 7z a AdiePlayground_Release_Any_CPU.zip %APPVEYOR_BUILD_FOLDER%\src\AdiePlayground\bin\Release\NLog.config
 after_test:
-  - cmd: packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user "-filter:+[*]* -[Mehdime.Entity]* -[*Tests]*" -target:packages\NUnit.ConsoleRunner.3.4.1\tools\nunit3-console.exe -targetargs:test\unit\unit-tests.nunit -excludebyattribute:*.ExcludeFromCodeCoverage* -excludebyfile:*Designer.cs -output:coverage.xml
+  - cmd: packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user "-filter:+[*]* -[Mehdime.Entity]* -[*Tests]*" -target:packages\NUnit.ConsoleRunner.3.5.0\tools\nunit3-console.exe -targetargs:test\unit\unit-tests.nunit -excludebyattribute:*.ExcludeFromCodeCoverage* -excludebyfile:*Designer.cs -output:coverage.xml
   - cmd: packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
 cache:
   - packages -> **\packages.config
