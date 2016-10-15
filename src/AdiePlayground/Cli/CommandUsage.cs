@@ -40,7 +40,7 @@ namespace AdiePlayground.Cli
         /// <param name="commandMetadata">The <see cref="CommandMetadata"/> to display help text
         /// for.</param>
         /// <exception cref="ArgumentNullException"><paramref name="commandMetadata"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public static void WriteCommandHelp(CommandMetadata commandMetadata)
         {
             if (commandMetadata == null)
@@ -66,7 +66,7 @@ namespace AdiePlayground.Cli
         /// <param name="commandMetadata">The <see cref="CommandMetadata"/> to display command usage
         /// for.</param>
         /// <exception cref="ArgumentNullException"><paramref name="commandMetadata"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public static void WriteCommandUsage(CommandMetadata commandMetadata)
         {
             if (commandMetadata == null)

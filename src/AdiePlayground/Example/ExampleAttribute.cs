@@ -32,8 +32,8 @@ namespace AdiePlayground.Example
         /// </summary>
         /// <param name="name">the name of an <see cref="IExample"/> specified by this
         /// <see cref="ExampleAttribute"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="name"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="name"/> is
+        /// <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException"><paramref name="name"/> is empty.</exception>
         public ExampleAttribute(string name)
         {

@@ -33,8 +33,8 @@ namespace AdiePlayground.Cli.Convert
         /// </summary>
         /// <param name="typeConverter">The <see cref="TypeConverter"/> to use to convert an
         /// argument.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="typeConverter"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="typeConverter"/> is
+        /// <see langword="null"/>.</exception>
         public TypeConverterArgumentConverter(TypeConverter typeConverter)
         {
             if (typeConverter == null)

@@ -37,6 +37,8 @@ namespace AdiePlayground.Data.Services
         /// <param name="dbContextScopeFactory">The <see cref="IDbContextScopeFactory"/> used to
         /// create instances of <see cref="IDbContextScope"/> as they are needed by context
         /// operations.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="dbContextScopeFactory"/> is
+        /// <see langword="null"/>.</exception>
         public ContextService(IDbContextScopeFactory dbContextScopeFactory)
         {
             if (dbContextScopeFactory == null)
@@ -81,7 +83,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="id">The id to find on an entity.</param>
         /// <returns>
         /// An entity of type <typeparamref name="TEntity" /> if an entity with the specified id is
-        /// found; otherwise, <c>null</c>.
+        /// found; otherwise, <see langword="null"/>.
         /// </returns>
         public async Task<TEntity> FindAsync<TEntity>(int id)
             where TEntity : class, IModelEntity

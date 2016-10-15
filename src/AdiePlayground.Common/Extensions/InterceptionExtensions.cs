@@ -34,9 +34,9 @@ namespace AdiePlayground.Common.Extensions
         /// <param name="invocation">The invocation object to attempt a <see cref="Task"/> retrieval
         /// from.</param>
         /// <param name="task">When this method returns, contains the <see cref="Task"/> if the
-        /// retrieval was successful, or <c>null</c> if the retrieval failed.</param>
-        /// <returns><c>true</c> if <paramref name="task"/> was retrieved successfully;
-        /// otherwise, <c>false</c>.</returns>
+        /// retrieval was successful, or <see langword="null"/> if the retrieval failed.</param>
+        /// <returns><see langword="true"/> if <paramref name="task"/> was retrieved successfully;
+        /// otherwise, <see langword="false"/>.</returns>
         public static bool TryGetAsyncTask(this IInvocation invocation, out Task task)
         {
             if (invocation != null && invocation.MethodInvocationTarget.ReturnType != typeof(void))
@@ -63,10 +63,10 @@ namespace AdiePlayground.Common.Extensions
         /// <param name="task">The <see cref="Task"/> to attempt to get a result from.</param>
         /// <param name="declaredTaskType">The declared <see cref="Type"/> of the task.</param>
         /// <param name="result">When this method returns, contains the result of this
-        /// <see cref="Task"/> if the retrieval was successful, or <c>null</c> if the
+        /// <see cref="Task"/> if the retrieval was successful, or <see langword="null"/> if the
         /// retrieval failed.</param>
-        /// <returns><c>true</c> if <paramref name="result"/> was retrieved successfully;
-        /// otherwise, <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if <paramref name="result"/> was retrieved successfully;
+        /// otherwise, <see langword="false"/>.</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Design",
             "CA1007:UseGenericsWhereAppropriate",

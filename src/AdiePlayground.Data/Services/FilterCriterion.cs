@@ -37,7 +37,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="filterPredicate">The predicate to use when this
         /// <see cref="FilterCriterion{TEntity}"/> is applied.</param>
         /// <exception cref="ArgumentNullException"><paramref name="filterPredicate"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public FilterCriterion(Expression<Func<TEntity, bool>> filterPredicate)
         {
             if (filterPredicate == null)

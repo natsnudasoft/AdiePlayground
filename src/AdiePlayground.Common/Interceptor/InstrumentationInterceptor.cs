@@ -46,9 +46,9 @@ namespace AdiePlayground.Common.Interceptor
         /// to.</param>
         /// <param name="guidProvider">The <see cref="IGuidProvider"/> to use to generate
         /// an interception id.</param>
-        /// <exception cref="ArgumentNullException">Either <paramref name="invocationCounter"/>,
+        /// <exception cref="ArgumentNullException"><paramref name="invocationCounter"/>,
         /// <paramref name="invocationTimer"/>, <paramref name="registrars"/>, or
-        /// <paramref name="guidProvider"/> is <c>null</c>.</exception>
+        /// <paramref name="guidProvider"/> is <see langword="null"/>.</exception>
         public InstrumentationInterceptor(
             MethodInvocationCounter invocationCounter,
             MethodInvocationTimer invocationTimer,

@@ -47,7 +47,7 @@ namespace AdiePlayground.Example
         /// to manage execution of instances of <see cref="ICommand"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="robot"/>,
         /// <paramref name="commandFactory"/>, or <paramref name="commandExecutionManager"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public CommandExample(
             IRobot robot,
             CommandFactory commandFactory,

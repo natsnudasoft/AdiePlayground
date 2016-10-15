@@ -34,7 +34,7 @@ namespace AdiePlayground.Cli
         /// <param name="arguments">The arguments of the command described by this
         /// <see cref="ParsedCommand"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="name"/>, or
-        /// <paramref name="arguments"/> is <c>null</c>.</exception>
+        /// <paramref name="arguments"/> is <see langword="null"/>.</exception>
         public ParsedCommand(string name, IEnumerable<string> arguments)
         {
             if (name == null)

@@ -38,7 +38,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="includePropertySelector">The property selector to use when this
         /// <see cref="IncludeCriterion{TEntity}"/> is applied.</param>
         /// <exception cref="ArgumentNullException"><paramref name="includePropertySelector"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public IncludeCriterion(Expression<Func<TEntity, object>> includePropertySelector)
         {
             if (includePropertySelector == null)

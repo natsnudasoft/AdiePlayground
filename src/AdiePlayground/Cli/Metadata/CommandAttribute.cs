@@ -49,13 +49,13 @@ namespace AdiePlayground.Cli.Metadata
         /// </param>
         /// <param name="helpTextResourceName">The name of the resource that contains the help text
         /// of an <see cref="ICommand"/> specified by this <see cref="CommandAttribute"/>.</param>
-        /// <exception cref="ArgumentException"><para><paramref name="group"/> is empty.</para>
-        /// <para>-or-</para><para><paramref name="name"/> is empty.</para><para>-or-</para><para>
-        /// <paramref name="helpTextResourceName"/> is empty.</para><para>-or-</para><para>
-        /// <paramref name="name"/> contains spaces.</para></exception>
-        /// <exception cref="ArgumentNullException"><paramref name="group"/> is <c>null</c>, or
-        /// <paramref name="name"/> is <c>null</c>, or <paramref name="resourceType"/> is
-        /// <c>null</c>, or <paramref name="helpTextResourceName"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException"><para><paramref name="group"/>,
+        /// <paramref name="name"/>, or <paramref name="helpTextResourceName"/> is empty.
+        /// </para><para>-or-</para><para><paramref name="name"/> contains spaces.</para>
+        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="group"/>,
+        /// <paramref name="name"/>, <paramref name="resourceType"/>, or
+        /// <paramref name="helpTextResourceName"/> is <see langword="null"/>.</exception>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Design",
             "CA1062:Validate arguments of public methods",

@@ -46,7 +46,7 @@ namespace AdiePlayground.Cli.Commands
         /// <see cref="CommandGroupMetadataFactory"/> to use to create a collection of
         /// instances of <see cref="CommandMetadata"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="commandLoop"/>, or
-        /// <paramref name="commandGroupMetadataFactory"/> is <c>null</c>.</exception>
+        /// <paramref name="commandGroupMetadataFactory"/> is <see langword="null"/>.</exception>
         public HelpCommand(
             CommandLoop commandLoop,
             CommandGroupMetadataFactory commandGroupMetadataFactory)

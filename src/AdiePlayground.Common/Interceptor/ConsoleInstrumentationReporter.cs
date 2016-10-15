@@ -44,9 +44,9 @@ namespace AdiePlayground.Common.Interceptor
         /// provide the report time.</param>
         /// <param name="guidProvider">The <see cref="IGuidProvider"/> to use to generate a
         /// report id.</param>
-        /// <exception cref="ArgumentNullException">Either <paramref name="invocationCounter"/>,
+        /// <exception cref="ArgumentNullException"><paramref name="invocationCounter"/>,
         /// <paramref name="invocationTimer"/>, <paramref name="dateTimeProvider"/>, or
-        /// <paramref name="guidProvider"/> is <c>null</c>.</exception>
+        /// <paramref name="guidProvider"/> is <see langword="null"/>.</exception>
         public ConsoleInstrumentationReporter(
             MethodInvocationCounter invocationCounter,
             MethodInvocationTimer invocationTimer,
@@ -103,7 +103,7 @@ namespace AdiePlayground.Common.Interceptor
             var sb = new StringBuilder();
             sb.AppendFormat(
                 CultureInfo.InvariantCulture,
-                "Console Registrar Report    {0}\r\n{1:yyyy-MM-dd HH:mm:ss}",
+                "Console Registrar Report    {0}" + Environment.NewLine + "{1:yyyy-MM-dd HH:mm:ss}",
                 reportId,
                 reportTime);
             sb.AppendLine();

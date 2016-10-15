@@ -37,7 +37,7 @@ namespace AdiePlayground.Common.Strategy
         /// <param name="sortStrategies">The keyed collection of available
         /// <see cref="ISortStrategy{T}"/> types.</param>
         /// <exception cref="ArgumentNullException"><paramref name="sortStrategies"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public SortStrategyResolver(IIndex<SortType, ISortStrategy<T>> sortStrategies)
         {
             if (sortStrategies == null)
