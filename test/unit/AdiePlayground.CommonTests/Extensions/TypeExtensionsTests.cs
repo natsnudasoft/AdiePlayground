@@ -70,7 +70,7 @@ namespace AdiePlayground.CommonTests.Extensions
         }
 
         /// <summary>
-        /// Tests the GetImplicitOperator method with a base type with no implicit operator found.
+        /// Tests the GetImplicitOperator method with a base type with NO implicit operator found.
         /// </summary>
         [Test]
         public void GetImplicitOperator_NoImplicitOperatorFound()

@@ -20,11 +20,11 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 
-[assembly: AssemblyTitle("AdiePlayground.CommonTests")]
+[assembly: AssemblyTitle("AdiePlayground.DataTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlayground.CommonTests")]
+[assembly: AssemblyProduct("AdiePlayground.DataTests")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("c8de7d1c-1bf0-4f6a-9527-f60782f7f6d1")]
+[assembly: Guid("ae5ff437-bfd7-4752-802d-d967a2e55b3a")]

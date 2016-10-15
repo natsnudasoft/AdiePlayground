@@ -24,6 +24,7 @@ namespace AdiePlayground
     /// <summary>
     /// <see cref="Program"/> contains the entry point for the application.
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public static class Program
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
