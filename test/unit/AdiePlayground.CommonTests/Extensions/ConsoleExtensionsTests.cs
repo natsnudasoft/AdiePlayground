@@ -22,15 +22,9 @@ namespace AdiePlayground.CommonTests.Extensions
     using Common.Extensions;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ConsoleExtensions"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConsoleExtensionsTests
     {
-        /// <summary>
-        /// Tests the WriteColoredLine method.
-        /// </summary>
         [Test]
         public void WriteColoredLine_WritesLine()
         {
@@ -50,9 +44,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(outputString, Is.EqualTo(LineToWrite + Environment.NewLine));
         }
 
-        /// <summary>
-        /// Tests the WriteColored method.
-        /// </summary>
         [Test]
         public void WriteColored_WritesLine()
         {

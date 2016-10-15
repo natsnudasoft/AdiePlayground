@@ -38,8 +38,8 @@ namespace AdiePlayground.Data.Services
         /// <see cref="PagingCriterion{TEntity}"/> is applied.</param>
         /// <param name="pageSize">The number of entities to take when this
         /// <see cref="PagingCriterion{TEntity}"/> is applied.</param>
-        /// <exception cref="ArgumentException"><para><paramref name="skipCount"/> is less then 0.
-        /// </para><para>-or-</para><para><paramref name="pageSize"/> is less than 1.</para>
+        /// <exception cref="ArgumentOutOfRangeException"><para><paramref name="skipCount"/> is less
+        /// then 0.</para><para>-or-</para><para><paramref name="pageSize"/> is less than 1.</para>
         /// </exception>
         public PagingCriterion(int skipCount, int pageSize)
         {

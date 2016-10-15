@@ -19,15 +19,9 @@ namespace AdiePlayground.CommonTests
     using Common;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SystemDateTimeProvider"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SystemDateTimeProviderTests
     {
-        /// <summary>
-        /// Tests the Now method.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Performance",
             "CA1804:RemoveUnusedLocals",

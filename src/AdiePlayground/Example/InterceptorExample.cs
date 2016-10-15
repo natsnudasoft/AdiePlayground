@@ -43,9 +43,8 @@ namespace AdiePlayground.Example
         /// intercepted.</param>
         /// <param name="consoleInstrumentationReporter">The console instrumentation
         /// reporter.</param>
-        /// <exception cref="ArgumentNullException">Either
-        /// <paramref name="instrumentationExample"/>, or
-        /// <paramref name="consoleInstrumentationReporter"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="instrumentationExample"/>, or
+        /// <paramref name="consoleInstrumentationReporter"/> is <see langword="null"/>.</exception>
         public InterceptorExample(
             IInstrumentationExample instrumentationExample,
             ConsoleInstrumentationReporter consoleInstrumentationReporter)

@@ -40,8 +40,8 @@ namespace AdiePlayground.Cli.Commands
         /// </summary>
         /// <param name="commandLoop">The <see cref="CommandLoop"/> that this
         /// <see cref="ExitCommand"/> will cause to exit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="commandLoop"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="commandLoop"/> is
+        /// <see langword="null"/>.</exception>
         public ExitCommand(CommandLoop commandLoop)
         {
             if (commandLoop == null)

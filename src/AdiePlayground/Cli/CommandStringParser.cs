@@ -30,8 +30,8 @@ namespace AdiePlayground.Cli
         /// </summary>
         /// <param name="commandString">The command string to parse.</param>
         /// <returns>A <see cref="ParsedCommand"/> created from the parsed command string.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="commandString"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="commandString"/> is
+        /// <see langword="null"/>.</exception>
         public static ParsedCommand Parse(string commandString)
         {
             if (commandString == null)

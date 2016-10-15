@@ -36,7 +36,7 @@ namespace AdiePlayground.Cli
         /// <param name="commandFactory">The <see cref="CommandFactory"/> to use to create
         /// instances of <see cref="ICommand"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="commandFactory"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public CommandResolver(CommandFactory commandFactory)
         {
             if (commandFactory == null)
@@ -57,7 +57,7 @@ namespace AdiePlayground.Cli
         /// <see cref="ICommand"/> to resolve.</param>
         /// <returns>The created instance of <see cref="ICommand"/>.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="commandGroup"/>, or
-        /// <paramref name="parsedCommand"/> is <c>null</c>.</exception>
+        /// <paramref name="parsedCommand"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException"><paramref name="commandGroup"/> is empty.
         /// </exception>
         /// <exception cref="CommandResolveException">The arguments of

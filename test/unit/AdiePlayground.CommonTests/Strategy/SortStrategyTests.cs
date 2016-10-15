@@ -21,18 +21,12 @@ namespace AdiePlayground.CommonTests.Strategy
     using Common.Strategy;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SortStrategy{T}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SortStrategyTests
     {
         private const string SortListParam = "list";
         private const string SortComparerParam = "comparer";
 
-        /// <summary>
-        /// Tests the SortType property returns correctly.
-        /// </summary>
         [Test]
         public void SortType_CorrectSortType()
         {
@@ -40,9 +34,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(sortStrategyExplicit.SortType, Is.EqualTo(SortType.Quicksort));
         }
 
-        /// <summary>
-        /// Tests the Sort method overload with no comparer, with a null list.
-        /// </summary>
         [Test]
         public void Sort_DefaultComparerNullList_ArgumentNullException()
         {
@@ -51,9 +42,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(ex.ParamName, Is.EqualTo(SortListParam));
         }
 
-        /// <summary>
-        /// Tests the Sort method overload with no comparer.
-        /// </summary>
         [Test]
         public void Sort_DefaultComparer_DoesNotThrow()
         {
@@ -61,9 +49,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.DoesNotThrow(() => sortStrategyExplicit.Sort(new[] { 0 }));
         }
 
-        /// <summary>
-        /// Tests the Sort method with a null list.
-        /// </summary>
         [Test]
         public void Sort_NullList_ArgumentNullException()
         {
@@ -73,9 +58,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(ex.ParamName, Is.EqualTo(SortListParam));
         }
 
-        /// <summary>
-        /// Tests the Sort method with a null comparer.
-        /// </summary>
         [Test]
         public void Sort_NullComparer_ArgumentNullException()
         {
@@ -85,9 +67,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(ex.ParamName, Is.EqualTo(SortComparerParam));
         }
 
-        /// <summary>
-        /// Tests the Sort method.
-        /// </summary>
         [Test]
         public void Sort_DoesNotThrow()
         {

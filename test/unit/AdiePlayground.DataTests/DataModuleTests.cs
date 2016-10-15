@@ -24,9 +24,6 @@ namespace AdiePlayground.DataTests.Services
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="DataModule"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class DataModuleTests
     {
@@ -36,9 +33,6 @@ namespace AdiePlayground.DataTests.Services
         private const string ConstructorIConnectionStringFactoryParam =
             "connectionStringFactory";
 
-        /// <summary>
-        /// Tests the constructor with a null connection string factory.
-        /// </summary>
         [Test]
         public void Constructor_NullFuncConnectionStringFactory_ArgumentNullException()
         {
@@ -47,9 +41,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorFuncConnectionStringFactoryParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null connection string factory.
-        /// </summary>
         [Test]
         public void Constructor_NullIConnectionStringFactory_ArgumentNullException()
         {
@@ -58,18 +49,12 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorIConnectionStringFactoryParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a valid connection string factory.
-        /// </summary>
         [Test]
         public void Constructor_FuncConnectionStringFactory_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => new DataModule(() => string.Empty));
         }
 
-        /// <summary>
-        /// Tests the constructor with a valid connection string factory.
-        /// </summary>
         [Test]
         public void Constructor_IConnectionStringFactory_DoesNotThrow()
         {
@@ -77,9 +62,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.DoesNotThrow(() => new DataModule(connectionStringFactory.Object));
         }
 
-        /// <summary>
-        /// Tests the Load method registers all services.
-        /// </summary>
         [Test]
         public void ModuleRegistered_ServicesRegistered()
         {

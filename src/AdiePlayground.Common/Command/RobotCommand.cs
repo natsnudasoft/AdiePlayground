@@ -30,8 +30,8 @@ namespace AdiePlayground.Common.Command
         /// </summary>
         /// <param name="robot">The <see cref="IRobot"/> that this <see cref="RobotCommand"/> will
         /// execute on.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="robot"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="robot"/> is
+        /// <see langword="null"/>.</exception>
         protected RobotCommand(IRobot robot)
         {
             if (robot == null)

@@ -20,9 +20,6 @@ namespace AdiePlayground.CommonTests.Extensions
     using Common.Extensions;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="TypeExtensions"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class TypeExtensionsTests
     {
@@ -30,9 +27,6 @@ namespace AdiePlayground.CommonTests.Extensions
         private const string GetImplicitOperatorSourceTypeParam = "sourceType";
         private const string GetImplicitOperatorDestinationTypeParam = "destinationType";
 
-        /// <summary>
-        /// Tests the GetImplicitOperator method with a null base type.
-        /// </summary>
         [Test]
         public void GetImplicitOperator_NullBaseType_ArgumentNullException()
         {
@@ -43,9 +37,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(ex.ParamName, Is.EqualTo(GetImplicitOperatorBaseTypeParam));
         }
 
-        /// <summary>
-        /// Tests the GetImplicitOperator method with a null sourceType.
-        /// </summary>
         [Test]
         public void GetImplicitOperator_NullSourceType_ArgumentNullException()
         {
@@ -56,9 +47,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(ex.ParamName, Is.EqualTo(GetImplicitOperatorSourceTypeParam));
         }
 
-        /// <summary>
-        /// Tests the GetImplicitOperator method with a null destination type.
-        /// </summary>
         [Test]
         public void GetImplicitOperator_NullDestinationType_ArgumentNullException()
         {
@@ -69,9 +57,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(ex.ParamName, Is.EqualTo(GetImplicitOperatorDestinationTypeParam));
         }
 
-        /// <summary>
-        /// Tests the GetImplicitOperator method with a base type with NO implicit operator found.
-        /// </summary>
         [Test]
         public void GetImplicitOperator_NoImplicitOperatorFound()
         {
@@ -81,10 +66,6 @@ namespace AdiePlayground.CommonTests.Extensions
             Assert.That(implicitOperator, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the GetImplicitOperator method with a base type with an implicit operator that was
-        /// found.
-        /// </summary>
         [Test]
         public void GetImplicitOperator_ImplicitOperatorFound()
         {

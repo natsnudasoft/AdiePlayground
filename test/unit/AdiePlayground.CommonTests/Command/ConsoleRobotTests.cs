@@ -22,29 +22,20 @@ namespace AdiePlayground.CommonTests.Command
     using Common.Command;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ConsoleRobot"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConsoleRobotTests
     {
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => new ConsoleRobot());
         }
 
-        /// <summary>
-        /// Tests the Move method.
-        /// </summary>
         [Test]
         public void Move_WritesMessage()
         {
             const double MoveDistance = 20.75D;
-            const string expectedString = "Moved forwards 20.75 metres.\r\n";
+            var expectedString = "Moved forwards 20.75 metres." + Environment.NewLine;
             var robot = new ConsoleRobot();
 
             string outputString;
@@ -62,14 +53,11 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(outputString, Is.EqualTo(expectedString));
         }
 
-        /// <summary>
-        /// Tests the Turn method.
-        /// </summary>
         [Test]
         public void Turn_WritesMessage()
         {
             const double TurnAngle = -0.25D;
-            const string expectedPattern = @"^Turned left \d+\.\d{2} degrees.\r\n$";
+            var expectedPattern = @"^Turned left \d+\.\d{2} degrees." + Environment.NewLine + "$";
             var robot = new ConsoleRobot();
 
             string outputString;
@@ -87,13 +75,10 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(outputString, Does.Match(expectedPattern));
         }
 
-        /// <summary>
-        /// Tests the TurnDrillOn method.
-        /// </summary>
         [Test]
         public void TurnDrillOn_WritesMessage()
         {
-            const string expectedString = "Turned drill on.\r\n";
+            var expectedString = "Turned drill on." + Environment.NewLine;
             var robot = new ConsoleRobot();
 
             string outputString;
@@ -111,13 +96,10 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(outputString, Is.EqualTo(expectedString));
         }
 
-        /// <summary>
-        /// Tests the TurnDrillOff method.
-        /// </summary>
         [Test]
         public void TurnDrillOff_WritesMessage()
         {
-            const string expectedString = "Turned drill off.\r\n";
+            var expectedString = "Turned drill off." + Environment.NewLine;
             var robot = new ConsoleRobot();
 
             string outputString;

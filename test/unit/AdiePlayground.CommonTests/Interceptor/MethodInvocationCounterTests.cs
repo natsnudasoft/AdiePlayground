@@ -20,17 +20,11 @@ namespace AdiePlayground.CommonTests.Interceptor
     using Common.Interceptor;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="MethodInvocationCounter"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class MethodInvocationCounterTests
     {
         private const int InvocationCount = 6;
 
-        /// <summary>
-        /// Tests the IncrementInvocationCount method.
-        /// </summary>
         [Test]
         public void IncrementInvocationCount_MethodInvocationIncremented()
         {

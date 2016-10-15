@@ -24,9 +24,6 @@ namespace AdiePlayground.CommonTests.Interceptor
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="InstrumentationInterceptor"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class InstrumentationInterceptorTests
     {
@@ -45,9 +42,6 @@ namespace AdiePlayground.CommonTests.Interceptor
         private Mock<IRegistrar> registrarMock;
         private Mock<IGuidProvider> guidProviderMock;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
@@ -60,9 +54,6 @@ namespace AdiePlayground.CommonTests.Interceptor
                 .Returns(Guid);
         }
 
-        /// <summary>
-        /// Tests the constructor with a null method invocation counter.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Naming",
             "CA1702:CompoundWordsShouldBeCasedCorrectly",
@@ -79,9 +70,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorInvocationCounterParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null method invocation timer.
-        /// </summary>
         [Test]
         public void Constructor_NullInvocationTimer_ArgumentNullException()
         {
@@ -93,9 +81,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorInvocationTimerParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null date time provider.
-        /// </summary>
         [Test]
         public void Constructor_NullRegistrars_ArgumentNullException()
         {
@@ -107,9 +92,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorRegistrarsParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null GUID provider.
-        /// </summary>
         [Test]
         public void Constructor_NullGuidProvider_ArgumentNullException()
         {
@@ -121,18 +103,12 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorGuidProviderParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => this.CreateInstrumentationInterceptor());
         }
 
-        /// <summary>
-        /// Tests the Intercept method with a void return type invocation.
-        /// </summary>
         [Test]
         public void Intercept_VoidReturnInvocation()
         {
@@ -148,9 +124,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(invocationMock.Object.ReturnValue, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the Intercept method with an int return type invocation.
-        /// </summary>
         [Test]
         public void Intercept_IntReturnInvocation()
         {
@@ -166,9 +139,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(invocationMock.Object.ReturnValue, Is.EqualTo(ReturnValue));
         }
 
-        /// <summary>
-        /// Tests the Intercept method with an asynchronous void return type invocation.
-        /// </summary>
         [Test]
         public void Intercept_AsyncVoidReturnInvocation()
         {
@@ -191,10 +161,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(((Task)returnValue).Status, Is.EqualTo(TaskStatus.RanToCompletion));
         }
 
-        /// <summary>
-        /// Tests the Intercept method with an asynchronous void return type invocation that is
-        /// cancelled.
-        /// </summary>
         [Test]
         public void Intercept_AsyncVoidReturnCanceledInvocation()
         {
@@ -217,10 +183,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(((Task)returnValue).Status, Is.EqualTo(TaskStatus.Canceled));
         }
 
-        /// <summary>
-        /// Tests the Intercept method with an asynchronous void return type invocation that is
-        /// faulted.
-        /// </summary>
         [Test]
         public void Intercept_AsyncVoidReturnFaultedInvocation()
         {
@@ -243,9 +205,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(((Task)returnValue).Status, Is.EqualTo(TaskStatus.Faulted));
         }
 
-        /// <summary>
-        /// Tests the Intercept method with an asynchronous int return type invocation.
-        /// </summary>
         [Test]
         public void Intercept_AsyncIntReturnInvocation()
         {

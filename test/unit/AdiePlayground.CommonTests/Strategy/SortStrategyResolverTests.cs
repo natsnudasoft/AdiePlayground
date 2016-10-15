@@ -22,9 +22,6 @@ namespace AdiePlayground.CommonTests.Strategy
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SortStrategyResolver{T}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SortStrategyResolverTests
     {
@@ -33,9 +30,6 @@ namespace AdiePlayground.CommonTests.Strategy
 
         private Mock<IIndex<SortType, ISortStrategy<int>>> sortStrategiesMock;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
@@ -48,9 +42,6 @@ namespace AdiePlayground.CommonTests.Strategy
                 .Returns(true);
         }
 
-        /// <summary>
-        /// Tests the constructor with a null sort strategies collection.
-        /// </summary>
         [Test]
         public void Constructor_NullStrategies_ArgumentNullException()
         {
@@ -59,18 +50,12 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSortStrategiesParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => this.CreateSortStrategyResolver());
         }
 
-        /// <summary>
-        /// Tests the Resolve method with an invalid sort type.
-        /// </summary>
         [Test]
         public void Resolve_InvalidSortType_ArgumentException()
         {
@@ -81,9 +66,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(ex.ParamName, Is.EqualTo(ResolveSortTypeParam));
         }
 
-        /// <summary>
-        /// Tests the Resolve method with a sort type that can't be resolved.
-        /// </summary>
         [Test]
         public void Resolve_CannotResolve_ArgumentException()
         {
@@ -94,9 +76,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(ex.ParamName, Is.EqualTo(ResolveSortTypeParam));
         }
 
-        /// <summary>
-        /// Tests the Resolve method with a sort type that can be resolved.
-        /// </summary>
         [Test]
         public void Resolve_ValidResolve()
         {

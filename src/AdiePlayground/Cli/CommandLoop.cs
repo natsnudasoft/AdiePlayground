@@ -44,8 +44,8 @@ namespace AdiePlayground.Cli
         /// instances of <see cref="ICommand"/>.</param>
         /// <param name="commandGroupMetadataFactory">The <see cref="CommandGroupMetadataFactory"/>
         /// used to retrieve instances of <see cref="CommandMetadata"/> from a group.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="commandResolver"/> is
-        /// <c>null</c>, or <paramref name="commandGroupMetadataFactory"/> is <c>null</c>.
+        /// <exception cref="ArgumentNullException"><paramref name="commandResolver"/>, or
+        /// <paramref name="commandGroupMetadataFactory"/> is <see langword="null"/>.
         /// </exception>
         public CommandLoop(
             CommandResolver commandResolver,

@@ -20,15 +20,9 @@ namespace AdiePlayground.DataTests.Migrations
     using Data.Model;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SeedData"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SeedDataTests
     {
-        /// <summary>
-        /// Tests the constructor.
-        /// </summary>
         [Test]
         public void Constructor_LoadsSeedData()
         {

@@ -35,11 +35,11 @@ namespace AdiePlayground.Common
         /// <param name="resourceName">The name of the resource that will be resolved.</param>
         /// <returns>The value of the resource that was resolved.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="resourceType"/>, or
-        /// <paramref name="resourceName"/> is <c>null</c>.</exception>
+        /// <paramref name="resourceName"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException"><paramref name="resourceName"/> is empty.
         /// </exception>
-        /// <exception cref="InvalidOperationException"><para>The specified resource was not found.
-        /// </para></exception>
+        /// <exception cref="InvalidOperationException">The specified resource was not found.
+        /// </exception>
         /// <exception cref="InvalidCastException">The value of the resolved resource could not be
         /// cast to the type specified by <typeparamref name="T"/>.</exception>
         public static T ResolveResource<T>(Type resourceType, string resourceName)

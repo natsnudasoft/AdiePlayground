@@ -48,7 +48,8 @@ namespace AdiePlayground.Cli.Commands
         /// <see cref="ExampleMetadataCollectionFactory"/> to use to create a collection of
         /// instances of <see cref="ExampleMetadata"/>.</param>
         /// <exception cref="ArgumentNullException">
-        /// <paramref name="exampleMetadataCollectionFactory"/> is <c>null</c>.</exception>
+        /// <paramref name="exampleMetadataCollectionFactory"/> is <see langword="null"/>.
+        /// </exception>
         public ExampleListCommand(ExampleMetadataCollectionFactory exampleMetadataCollectionFactory)
         {
             if (exampleMetadataCollectionFactory == null)

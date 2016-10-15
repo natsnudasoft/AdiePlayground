@@ -33,8 +33,8 @@ namespace AdiePlayground.Common.Command
         /// Executes the specified <see cref="ICommand"/> and adds it to the undo list.
         /// </summary>
         /// <param name="command">The <see cref="ICommand"/> to execute.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="command"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="command"/> is
+        /// <see langword="null"/>.</exception>
         public void ExecuteCommand(ICommand command)
         {
             if (command == null)

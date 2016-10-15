@@ -21,17 +21,11 @@ namespace AdiePlayground.CommonTests.Command
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="RobotCommand"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class RobotCommandTests
     {
         private const string ConstructorRobotParam = "robot";
 
-        /// <summary>
-        /// Tests the constructor with a null robot.
-        /// </summary>
         [Test]
         public void Constructor_NullRobot_ArgumentNullException()
         {
@@ -39,9 +33,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorRobotParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -49,9 +40,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.DoesNotThrow(() => new RobotCommandStub(robotMock.Object));
         }
 
-        /// <summary>
-        /// Tests the Robot property.
-        /// </summary>
         [Test]
         public void Robot_GetsRobot()
         {

@@ -21,9 +21,6 @@ namespace AdiePlayground.CommonTests.Model
     using Common.Model;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="Apple"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class AppleTests
     {
@@ -37,10 +34,6 @@ namespace AdiePlayground.CommonTests.Model
                 new KeyValuePair<AppleColor, string>(AppleColor.Red, "Red")
             };
 
-        /// <summary>
-        /// Tests the constructor with an invalid quality.
-        /// </summary>
-        /// <param name="fruitQuality">The fruit quality.</param>
         [Test]
         public void Constructor_InvalidQuality_ArgumentOutOfRangeException(
             [Values(int.MinValue, int.MaxValue)] int fruitQuality)
@@ -50,9 +43,6 @@ namespace AdiePlayground.CommonTests.Model
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorQualityParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with an invalid apple colour.
-        /// </summary>
         [Test]
         public void Constructor_InvalidColor_ArgumentOutOfRangeException()
         {
@@ -62,10 +52,6 @@ namespace AdiePlayground.CommonTests.Model
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorColorParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a valid quality.
-        /// </summary>
-        /// <param name="color">The colour of the apple.</param>
         [Test]
         public void Constructor_ValidQualityAndColor_CorrectProperties(
             [ValueSource(nameof(ValidColorMappings))] KeyValuePair<AppleColor, string> color)
