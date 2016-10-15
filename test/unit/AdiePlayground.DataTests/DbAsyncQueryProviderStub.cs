@@ -22,49 +22,35 @@ namespace AdiePlayground.DataTests
     using System.Threading;
     using System.Threading.Tasks;
 
-    /// <summary>
-    /// Stub for <see cref="DbAsyncQueryProviderStub{TEntity}"/>.
-    /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <seealso cref="System.Data.Entity.Infrastructure.IDbAsyncQueryProvider" />
     internal class DbAsyncQueryProviderStub<TEntity> : IDbAsyncQueryProvider
     {
         private readonly IQueryProvider innerProvider;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DbAsyncQueryProviderStub{TEntity}"/> class.
-        /// </summary>
-        /// <param name="innerProvider">The inner provider.</param>
         internal DbAsyncQueryProviderStub(IQueryProvider innerProvider)
         {
             this.innerProvider = innerProvider;
         }
 
-        /// <inheritdoc/>
         public IQueryable CreateQuery(Expression expression)
         {
             return new DbAsyncEnumerableStub<TEntity>(expression);
         }
 
-        /// <inheritdoc/>
         public IQueryable<TElement> CreateQuery<TElement>(Expression expression)
         {
             return new DbAsyncEnumerableStub<TElement>(expression);
         }
 
-        /// <inheritdoc/>
         public object Execute(Expression expression)
         {
             return this.innerProvider.Execute(expression);
         }
 
-        /// <inheritdoc/>
         public TResult Execute<TResult>(Expression expression)
         {
             return this.innerProvider.Execute<TResult>(expression);
         }
 
-        /// <inheritdoc/>
         public Task<object> ExecuteAsync(
             Expression expression,
             CancellationToken cancellationToken)
@@ -72,7 +58,6 @@ namespace AdiePlayground.DataTests
             return Task.FromResult(this.Execute(expression));
         }
 
-        /// <inheritdoc/>
         public Task<TResult> ExecuteAsync<TResult>(
             Expression expression,
             CancellationToken cancellationToken)

@@ -19,15 +19,9 @@ namespace AdiePlaygroundTests
     using AdiePlayground;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ConnectionStringFactory"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConnectionStringFactoryTests
     {
-        /// <summary>
-        /// Tests the CreateConnectionString method.
-        /// </summary>
         [Test]
         public void CreateConnectionString_ReturnsConnectionString()
         {

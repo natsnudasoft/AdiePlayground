@@ -25,9 +25,6 @@ namespace AdiePlayground.CommonTests.Interceptor
     using NUnit.Framework;
     using static System.FormattableString;
 
-    /// <summary>
-    /// Tests the <see cref="ConsoleRegistrar"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConsoleRegistrarTests
     {
@@ -37,9 +34,6 @@ namespace AdiePlayground.CommonTests.Interceptor
 
         private Mock<IDateTimeProvider> dateTimeProviderMock;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
@@ -49,9 +43,6 @@ namespace AdiePlayground.CommonTests.Interceptor
                 .Returns(new DateTime(DateTimeTicks));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null date time provider.
-        /// </summary>
         [Test]
         public void Constructor_NullDateTimeProvider_ArgumentNullException()
         {
@@ -59,18 +50,12 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorDateTimeProviderParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => new ConsoleRegistrar(this.dateTimeProviderMock.Object));
         }
 
-        /// <summary>
-        /// Tests the Register method.
-        /// </summary>
         [Test]
         public void Register_WritesToRegister()
         {

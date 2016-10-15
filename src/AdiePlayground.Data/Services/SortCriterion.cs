@@ -43,7 +43,7 @@ namespace AdiePlayground.Data.Services
         /// <see cref="SortCriterion{TEntity, TProperty}"/> is applied.
         /// </param>
         /// <exception cref="ArgumentNullException"><paramref name="sortPropertySelector"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="sortOrder"/> specified an
         /// invalid value.</exception>
         public SortCriterion(

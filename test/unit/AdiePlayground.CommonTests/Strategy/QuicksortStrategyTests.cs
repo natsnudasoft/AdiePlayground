@@ -20,9 +20,6 @@ namespace AdiePlayground.CommonTests.Strategy
     using Common.Strategy;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="QuicksortStrategy{T}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class QuicksortStrategyTests
     {
@@ -33,9 +30,6 @@ namespace AdiePlayground.CommonTests.Strategy
             new[] { 5896756, 4971, 1565, -1167, -524677, -486, 956711, -1865690 }
         };
 
-        /// <summary>
-        /// Tests the SortType property returns correctly.
-        /// </summary>
         [Test]
         public void SortType_CorrectSortType()
         {
@@ -43,10 +37,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(sortStrategyExplicit.SortType, Is.EqualTo(SortType.Quicksort));
         }
 
-        /// <summary>
-        /// Tests the Sort method.
-        /// </summary>
-        /// <param name="list">The list to test.</param>
         [Test]
         public void Sort_SortsData([ValueSource(nameof(Lists))] IList<int> list)
         {

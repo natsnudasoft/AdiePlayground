@@ -34,6 +34,8 @@ namespace AdiePlayground.Data
         /// the specified connection string factory.
         /// </summary>
         /// <param name="connectionStringFactory">The connection string factory.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="connectionStringFactory"/> is
+        /// <see langword="null"/>.</exception>
         public DataModule(Func<string> connectionStringFactory)
         {
             if (connectionStringFactory == null)
@@ -49,6 +51,8 @@ namespace AdiePlayground.Data
         /// the specified connection string factory.
         /// </summary>
         /// <param name="connectionStringFactory">The connection string factory.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="connectionStringFactory"/> is
+        /// <see langword="null"/>.</exception>
         public DataModule(IConnectionStringFactory connectionStringFactory)
         {
             if (connectionStringFactory == null)

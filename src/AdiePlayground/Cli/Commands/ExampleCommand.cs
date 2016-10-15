@@ -43,8 +43,8 @@ namespace AdiePlayground.Cli.Commands
         /// </summary>
         /// <param name="examples">The keyed collection of available <see cref="IExample"/> types.
         /// </param>
-        /// <exception cref="ArgumentNullException"><paramref name="examples"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="examples"/> is
+        /// <see langword="null"/>.</exception>
         public ExampleCommand(IIndex<string, IExample> examples)
         {
             if (examples == null)

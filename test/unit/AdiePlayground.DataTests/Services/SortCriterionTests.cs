@@ -21,18 +21,12 @@ namespace AdiePlayground.DataTests.Services
     using Data.Services;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="SortCriterion{TEntity, TProperty}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class SortCriterionTests
     {
         private const string ConstructorSortPropertySelectorParam = "sortPropertySelector";
         private const string ConstructorSortOrderParam = "sortOrder";
 
-        /// <summary>
-        /// Tests the constructor with a null sort property selector.
-        /// </summary>
         [Test]
         public void Constructor_NullSortPropertySelector_ArgumentNullException()
         {
@@ -41,9 +35,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSortPropertySelectorParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with an invalid sort order.
-        /// </summary>
         [Test]
         public void Constructor_InvalidSortOrder_ArgumentOutOfRangeException()
         {
@@ -52,10 +43,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorSortOrderParam));
         }
 
-        /// <summary>
-        /// Tests the constructor.
-        /// </summary>
-        /// <param name="sortOrder">The sort order.</param>
         [Test]
         public void Constructor_DoesNotThrow(
             [Values(SortOrder.Ascending, SortOrder.Descending)] SortOrder sortOrder)
@@ -67,10 +54,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(criterion.SortOrder, Is.EqualTo(sortOrder));
         }
 
-        /// <summary>
-        /// Tests the apply method.
-        /// </summary>
-        /// <param name="sortOrder">The sort order.</param>
         [Test]
         public void Apply_DoesNotThrow(
             [Values(SortOrder.Ascending, SortOrder.Descending)] SortOrder sortOrder)

@@ -26,9 +26,6 @@ namespace AdiePlayground.CommonTests.Interceptor
     using NUnit.Framework;
     using static System.FormattableString;
 
-    /// <summary>
-    /// Tests the <see cref="ConsoleInstrumentationReporter"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConsoleInstrumentationReporterTests
     {
@@ -47,9 +44,6 @@ namespace AdiePlayground.CommonTests.Interceptor
         private Mock<IDateTimeProvider> dateTimeProviderMock;
         private Mock<IGuidProvider> guidProviderMock;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
@@ -69,9 +63,6 @@ namespace AdiePlayground.CommonTests.Interceptor
                 .Returns(Guid);
         }
 
-        /// <summary>
-        /// Tests the constructor with a null method invocation counter.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Naming",
             "CA1702:CompoundWordsShouldBeCasedCorrectly",
@@ -88,9 +79,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorInvocationCounterParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null method invocation timer.
-        /// </summary>
         [Test]
         public void Constructor_NullInvocationTimer_ArgumentNullException()
         {
@@ -102,9 +90,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorInvocationTimerParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null date time provider.
-        /// </summary>
         [Test]
         public void Constructor_NullDateTimeProvider_ArgumentNullException()
         {
@@ -116,9 +101,6 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorDateTimeProviderParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a null GUID provider.
-        /// </summary>
         [Test]
         public void Constructor_NullGuidProvider_ArgumentNullException()
         {
@@ -130,18 +112,12 @@ namespace AdiePlayground.CommonTests.Interceptor
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorGuidProviderParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
             Assert.DoesNotThrow(() => this.CreateConsoleInstrumentationReporter());
         }
 
-        /// <summary>
-        /// Tests the Report method.
-        /// </summary>
         [Test]
         public void Report_GeneratesReport()
         {

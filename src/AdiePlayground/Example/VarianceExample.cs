@@ -51,8 +51,9 @@ namespace AdiePlayground.Example
         /// <see cref="Banana"/>.</param>
         /// <param name="fruitContravariant">An interface with a contravariant type of
         /// <see cref="Fruit"/>.</param>
-        /// <exception cref="ArgumentNullException">Thrown when a supplied argument is null.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="orangeInvariant"/>,
+        /// <paramref name="bananaCovariant"/>, or <paramref name="fruitContravariant"/> is
+        /// <see langword="null"/>.</exception>
         public VarianceExample(
             IInvariant<Orange> orangeInvariant,
             ICovariant<Banana> bananaCovariant,

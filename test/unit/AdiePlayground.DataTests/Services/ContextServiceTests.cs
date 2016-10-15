@@ -24,9 +24,6 @@ namespace AdiePlayground.DataTests.Services
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ContextService"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ContextServiceTests
     {
@@ -35,9 +32,6 @@ namespace AdiePlayground.DataTests.Services
         private DbMockHelper dbMockHelper;
         private ContextService contextService;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
@@ -46,9 +40,6 @@ namespace AdiePlayground.DataTests.Services
                 this.dbMockHelper.DbContextScopeFactoryMock.Object);
         }
 
-        /// <summary>
-        /// Tests the constructor with a null db context scope factory.
-        /// </summary>
         [Test]
         public void Constructor_NullDbContextScopeFactory_ArgumentNullException()
         {
@@ -56,9 +47,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorDbContextScopeFactoryParam));
         }
 
-        /// <summary>
-        /// Tests the BeginTransaction method.
-        /// </summary>
         [Test]
         public void BeginTransaction_CreateTransactionAndDispose()
         {
@@ -72,9 +60,6 @@ namespace AdiePlayground.DataTests.Services
             this.dbMockHelper.DbContextScopeMock.Verify(m => m.Dispose(), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the BeginReadOnlyTransaction method.
-        /// </summary>
         [Test]
         public void BeginReadOnlyTransaction_CreateTransactionAndDispose()
         {
@@ -88,10 +73,6 @@ namespace AdiePlayground.DataTests.Services
             this.dbMockHelper.DbContextReadOnlyScopeMock.Verify(m => m.Dispose(), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the FindAsync method when given a valid id.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_ValidId_ReturnCorrectEntityAsync()
         {
@@ -106,10 +87,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entity.Id, Is.EqualTo(ValidId));
         }
 
-        /// <summary>
-        /// Tests the FindAsync method when given an invalid id.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_InvalidId_ReturnNullAsync()
         {
@@ -124,10 +101,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entity, Is.Null);
         }
 
-        /// <summary>
-        /// Tests the FindAsync method with search criteria to return all entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_Criteria_ReturnAllEntitiesAsync()
         {
@@ -144,10 +117,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
 
-        /// <summary>
-        /// Tests the FindAsync method with search criteria that should match some entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_Criteria_ReturnFoundEntitiesAsync()
         {
@@ -170,11 +139,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
 
-        /// <summary>
-        /// Tests the FindAsync method with search criteria and a selector that should match some
-        /// entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_CriteriaAndSelector_ReturnFoundEntitiesAsync()
         {
@@ -199,11 +163,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
 
-        /// <summary>
-        /// Tests the FindAsync method with search criteria and an index selector that should match
-        /// some entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_CriteriaAndIndexSelector_ReturnFoundEntitiesAsync()
         {
@@ -228,10 +187,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
 
-        /// <summary>
-        /// Tests the FindAsync method with paging criteria that should match some entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_CriteriaPaging_ReturnPagedEntitiesAsync()
         {
@@ -253,10 +208,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.EqualTo(expectedEntities));
         }
 
-        /// <summary>
-        /// Tests the FindAsync method with search criteria that should not match any entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task FindAsync_Criteria_ReturnNoEntitiesAsync()
         {
@@ -272,10 +223,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(entities, Is.Empty);
         }
 
-        /// <summary>
-        /// Tests the AddAsync method when given an entity.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task AddAsync_AddsEntityAndSavesContextAsync()
         {
@@ -293,10 +240,6 @@ namespace AdiePlayground.DataTests.Services
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the AddRangeAsync method when given a list of entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task AddRangeAsync_AddsEntitiesAndSavesContextAsync()
         {
@@ -315,10 +258,6 @@ namespace AdiePlayground.DataTests.Services
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the RemoveAsync method when given an entity.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task RemoveAsync_RemovesEntityAndSavesContextAsync()
         {
@@ -336,10 +275,6 @@ namespace AdiePlayground.DataTests.Services
                 .Verify(m => m.SaveChangesAsync(), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the RemoveRangeAsync method when given a list of entities.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task RemoveRangeAsync_RemovesEntitiesAndSavesContextAsync()
         {

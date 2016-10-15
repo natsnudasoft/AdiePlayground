@@ -20,15 +20,9 @@ namespace AdiePlayground.CommonTests.Command
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="TurnDrillOnCommand"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class TurnDrillOnCommandTests
     {
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -36,9 +30,6 @@ namespace AdiePlayground.CommonTests.Command
             Assert.DoesNotThrow(() => new TurnDrillOnCommand(robotMock.Object));
         }
 
-        /// <summary>
-        /// Tests the Execute method.
-        /// </summary>
         [Test]
         public void Execute_CallsCorrectMethod()
         {
@@ -50,9 +41,6 @@ namespace AdiePlayground.CommonTests.Command
             robotMock.Verify(c => c.TurnDrillOn(), Times.Once());
         }
 
-        /// <summary>
-        /// Tests the Undo method.
-        /// </summary>
         [Test]
         public void Undo_CallsCorrectMethod()
         {

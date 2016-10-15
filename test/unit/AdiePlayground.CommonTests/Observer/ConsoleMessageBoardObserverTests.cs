@@ -26,9 +26,6 @@ namespace AdiePlayground.CommonTests.Observer
     using NUnit.Framework;
     using static System.FormattableString;
 
-    /// <summary>
-    /// Tests the <see cref="ConsoleMessageBoardObserver"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ConsoleMessageBoardObserverTests
     {
@@ -38,9 +35,6 @@ namespace AdiePlayground.CommonTests.Observer
 
         private Mock<IGuidProvider> guidProviderMock;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
@@ -50,9 +44,6 @@ namespace AdiePlayground.CommonTests.Observer
                 .Returns(Guid);
         }
 
-        /// <summary>
-        /// Tests the constructor with a null GUID provider.
-        /// </summary>
         [Test]
         public void Constructor_NullGuidProvider_ArgumentNullException()
         {
@@ -61,9 +52,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorGuidProviderParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with valid values.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -71,9 +59,6 @@ namespace AdiePlayground.CommonTests.Observer
             this.guidProviderMock.Verify(g => g.NewGuid(), Times.Once());
         }
 
-        /// <summary>
-        /// Tests the update method with a null messages value.
-        /// </summary>
         [Test]
         public void Update_NullMessages_ArgumentNullException()
         {
@@ -84,9 +69,6 @@ namespace AdiePlayground.CommonTests.Observer
             Assert.That(ex.ParamName, Is.EqualTo(UpdateMessagesParam));
         }
 
-        /// <summary>
-        /// Tests the update method outputs the new state.
-        /// </summary>
         [Test]
         public void Update_WritesState()
         {

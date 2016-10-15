@@ -40,6 +40,8 @@ namespace AdiePlayground.Data.Services
         /// <param name="dbContextScopeFactory">The <see cref="IDbContextScopeFactory"/> used to
         /// create instances of <see cref="IDbContextScope"/> as they are needed by context
         /// operations.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="dbContextScopeFactory"/> is
+        /// <see langword="null"/>.</exception>
         internal ServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
         {
             if (dbContextScopeFactory == null)

@@ -41,7 +41,7 @@ namespace AdiePlayground.Example
         /// <param name="strategyResolver">The <see cref="SortStrategyResolver{T}"/> to use to
         /// resolve instances of <see cref="ISortStrategy{T}"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="strategyResolver"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public StrategyExample(SortStrategyResolver<string> strategyResolver)
         {
             if (strategyResolver == null)

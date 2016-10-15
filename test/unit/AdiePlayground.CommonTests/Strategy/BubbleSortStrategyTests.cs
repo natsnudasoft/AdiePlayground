@@ -20,9 +20,6 @@ namespace AdiePlayground.CommonTests.Strategy
     using Common.Strategy;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="BubbleSortStrategy{T}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class BubbleSortStrategyTests
     {
@@ -33,9 +30,6 @@ namespace AdiePlayground.CommonTests.Strategy
             new[] { 65, 41, 30, -195, 46277, 153, 408762, 44134 }
         };
 
-        /// <summary>
-        /// Tests the SortType property returns correctly.
-        /// </summary>
         [Test]
         public void SortType_CorrectSortType()
         {
@@ -43,10 +37,6 @@ namespace AdiePlayground.CommonTests.Strategy
             Assert.That(sortStrategyExplicit.SortType, Is.EqualTo(SortType.BubbleSort));
         }
 
-        /// <summary>
-        /// Tests the Sort method.
-        /// </summary>
-        /// <param name="list">The list to test.</param>
         [Test]
         public void Sort_SortsData([ValueSource(nameof(Lists))] IList<int> list)
         {

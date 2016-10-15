@@ -46,12 +46,12 @@ namespace AdiePlayground.Cli.Metadata
         /// <see cref="CommandParameterAttribute"/></param>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is less than 0.
         /// </exception>
-        /// <exception cref="ArgumentException"><para><paramref name="name"/> is empty.</para>
-        /// <para>-or-</para><para><paramref name="helpTextResourceName"/> is empty.</para>
-        /// <para>-or-</para><para><paramref name="name"/> contains spaces.</para></exception>
-        /// <exception cref="ArgumentNullException"><paramref name="name"/> is <c>null</c>, or
-        /// <paramref name="resourceType"/> is <c>null</c>, or
-        /// <paramref name="helpTextResourceName"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException"><para><paramref name="name"/>, or
+        /// <paramref name="helpTextResourceName"/> is empty.</para><para>-or-</para><para>
+        /// <paramref name="name"/> contains spaces.</para></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="name"/>,
+        /// <paramref name="resourceType"/>, or <paramref name="helpTextResourceName"/> is
+        /// <see langword="null"/>.</exception>
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Design",
             "CA1062:Validate arguments of public methods",

@@ -23,9 +23,6 @@ namespace AdiePlayground.DataTests.Services
     using Moq;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="ServiceTransaction"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class ServiceTransactionTests
     {
@@ -33,18 +30,12 @@ namespace AdiePlayground.DataTests.Services
 
         private DbMockHelper dbMockHelper;
 
-        /// <summary>
-        /// Sets up mocks before each test.
-        /// </summary>
         [SetUp]
         public void BeforeTest()
         {
             this.dbMockHelper = new DbMockHelper();
         }
 
-        /// <summary>
-        /// Tests the constructor with a null db context scope factory.
-        /// </summary>
         [Test]
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Reliability",
@@ -58,9 +49,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorDbContextScopeFactoryParam));
         }
 
-        /// <summary>
-        /// Tests proper disposal.
-        /// </summary>
         [Test]
         public void Disposal_ObjectsCorrectlyDisposed()
         {
@@ -77,10 +65,6 @@ namespace AdiePlayground.DataTests.Services
             this.dbMockHelper.DbContextScopeMock.Verify(m => m.Dispose(), Times.Once);
         }
 
-        /// <summary>
-        /// Tests the CompleteAsync method.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation.</returns>
         [Test]
         public async Task CompleteAsync_SaveChangesAsyncCalledAsync()
         {

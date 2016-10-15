@@ -32,6 +32,9 @@ namespace AdiePlayground.Common.Observer
         /// Adds a message to this <see cref="MessageBoard"/>.
         /// </summary>
         /// <param name="message">The message to add to this <see cref="MessageBoard"/>.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> is
+        /// <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public void AddMessage(string message)
         {
             ValidateMessage(message, nameof(message));
@@ -46,6 +49,9 @@ namespace AdiePlayground.Common.Observer
         /// </summary>
         /// <param name="message">The message to remove from this <see cref="MessageBoard"/>.
         /// </param>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> is
+        /// <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public void RemoveMessage(string message)
         {
             ValidateMessage(message, nameof(message));
@@ -61,8 +67,8 @@ namespace AdiePlayground.Common.Observer
         /// </summary>
         /// <param name="observer">The observer to attach to this <see cref="MessageBoard"/>.
         /// </param>
-        /// <exception cref="ArgumentNullException"><paramref name="observer"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="observer"/> is
+        /// <see langword="null"/>.</exception>
         public void Attach(IMessageBoardObserver observer)
         {
             ValidateObserver(observer, nameof(observer));
@@ -75,8 +81,8 @@ namespace AdiePlayground.Common.Observer
         /// </summary>
         /// <param name="observer">The observer to detach from this <see cref="MessageBoard"/>.
         /// </param>
-        /// <exception cref="ArgumentNullException"><paramref name="observer"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="observer"/> is
+        /// <see langword="null"/>.</exception>
         public void Detach(IMessageBoardObserver observer)
         {
             ValidateObserver(observer, nameof(observer));

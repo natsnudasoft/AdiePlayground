@@ -33,8 +33,8 @@ namespace AdiePlayground.Cli.Convert
         /// <param name="propertyInfo">The <see cref="PropertyInfo"/> that describes the property
         /// to resolve an <see cref="IArgumentConverter"/> from.</param>
         /// <returns>The resolved <see cref="IArgumentConverter"/>.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is
+        /// <see langword="null"/>.</exception>
         /// <exception cref="ArgumentConverterResolveException">An <see cref="IArgumentConverter"/>
         /// could not be resolved from <paramref name="propertyInfo"/>.</exception>
         public static IArgumentConverter Resolve(PropertyInfo propertyInfo)

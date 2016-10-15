@@ -21,17 +21,11 @@ namespace AdiePlayground.DataTests.Services
     using Data.Services;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="IncludeCriterion{TEntity}"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class IncludeCriterionTests
     {
         private const string ConstructorIncludePropertySelectorParam = "includePropertySelector";
 
-        /// <summary>
-        /// Tests the constructor with an invalid include property selector.
-        /// </summary>
         [Test]
         public void Constructor_NullIncludePropertySelector_ArgumentNullException()
         {
@@ -40,9 +34,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorIncludePropertySelectorParam));
         }
 
-        /// <summary>
-        /// Tests the constructor.
-        /// </summary>
         [Test]
         public void Constructor_DoesNotThrow()
         {
@@ -52,9 +43,6 @@ namespace AdiePlayground.DataTests.Services
             Assert.That(criterion.IncludePropertySelector, Is.Not.Null);
         }
 
-        /// <summary>
-        /// Tests the apply method.
-        /// </summary>
         [Test]
         public void Apply_DoesNotThrow()
         {

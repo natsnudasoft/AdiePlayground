@@ -17,21 +17,13 @@
 namespace AdiePlayground.CommonTests.Model
 {
     using System;
-    using Common.Model;
     using NUnit.Framework;
 
-    /// <summary>
-    /// Tests the <see cref="Fruit"/> class.
-    /// </summary>
     [TestFixture]
     public sealed class FruitTests
     {
         private const string ConstructorQualityParam = "quality";
 
-        /// <summary>
-        /// Tests the constructor with an invalid quality.
-        /// </summary>
-        /// <param name="fruitQuality">The fruit quality.</param>
         [Test]
         public void Constructor_InvalidQuality_ArgumentOutOfRangeException(
             [Values(int.MinValue, int.MaxValue)] int fruitQuality)
@@ -40,9 +32,6 @@ namespace AdiePlayground.CommonTests.Model
             Assert.That(ex.ParamName, Is.EqualTo(ConstructorQualityParam));
         }
 
-        /// <summary>
-        /// Tests the constructor with a valid quality.
-        /// </summary>
         [Test]
         public void Constructor_ValidQuality_CorrectProperties()
         {

@@ -20,9 +20,6 @@ namespace AdiePlayground.DataTests
     using System.Collections.Generic;
     using System.Linq;
 
-    /// <summary>
-    /// Provides test data.
-    /// </summary>
     public static class TestData
     {
         private static readonly IList<TestEntity> TestEntityDataInternal = new List<TestEntity>
@@ -89,15 +86,8 @@ namespace AdiePlayground.DataTests
             },
         };
 
-        /// <summary>
-        /// Gets the default test entity data.
-        /// </summary>
         public static IList<TestEntity> TestEntityData => TestEntityDataInternal;
 
-        /// <summary>
-        /// Creates a deep copy of the test entity data.
-        /// </summary>
-        /// <returns>A deep copy of the test entity data.</returns>
         public static IList<TestEntity> DeepCopyTestEntityData()
         {
             return TestEntityData.Select(e => new TestEntity

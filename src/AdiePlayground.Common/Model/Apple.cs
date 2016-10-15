@@ -29,6 +29,8 @@ namespace AdiePlayground.Common.Model
         /// </summary>
         /// <param name="color">The colour of this <see cref="Apple"/>.</param>
         /// <param name="quality">The quality of this <see cref="Apple"/>.</param>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="color"/> specified an
+        /// invalid value.</exception>
         public Apple(AppleColor color, int quality)
             : base(quality)
         {

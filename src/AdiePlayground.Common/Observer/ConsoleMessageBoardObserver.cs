@@ -34,8 +34,8 @@ namespace AdiePlayground.Common.Observer
         /// </summary>
         /// <param name="guidProvider">The <see cref="IGuidProvider"/> to use to generate the id of
         /// this <see cref="ConsoleMessageBoardObserver"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="guidProvider"/> is <c>null</c>.
-        /// </exception>
+        /// <exception cref="ArgumentNullException"><paramref name="guidProvider"/> is
+        /// <see langword="null"/>.</exception>
         public ConsoleMessageBoardObserver(IGuidProvider guidProvider)
         {
             if (guidProvider == null)

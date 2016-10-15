@@ -43,7 +43,7 @@ namespace AdiePlayground.Example
         /// <param name="observerFactory">The observer factory used to create new
         /// <see cref="IMessageBoardObserver"/> instances.</param>
         /// <exception cref="ArgumentNullException"><paramref name="messageBoard"/>, or
-        /// <paramref name="observerFactory"/> is <c>null</c>.</exception>
+        /// <paramref name="observerFactory"/> is <see langword="null"/>.</exception>
         public ObserverExample(
             MessageBoard messageBoard,
             Func<IMessageBoardObserver> observerFactory)

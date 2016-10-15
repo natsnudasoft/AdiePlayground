@@ -36,7 +36,7 @@ namespace AdiePlayground.Data.Services
         /// <param name="connectionStringFactory">The factory to create a connection string from.
         /// </param>
         /// <exception cref="ArgumentNullException"><paramref name="connectionStringFactory"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public ConnectionStringDbContextFactory(Func<string> connectionStringFactory)
         {
             if (connectionStringFactory == null)

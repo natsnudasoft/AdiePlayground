@@ -35,10 +35,10 @@ namespace AdiePlayground.Common.Extensions
         /// <param name="destinationType">The return <see cref="Type"/> of the implicit operator to
         /// find.</param>
         /// <returns>The <see cref="MethodInfo"/> describing the implicit operator found; or,
-        /// <c>null</c> if no implicit operator was found.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="baseType"/>, or
-        /// <paramref name="sourceType"/>, or <paramref name="destinationType"/> is <c>null</c>.
-        /// </exception>
+        /// <see langword="null"/> if no implicit operator was found.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="baseType"/>,
+        /// <paramref name="sourceType"/>, or <paramref name="destinationType"/> is
+        /// <see langword="null"/>.</exception>
         public static MethodInfo GetImplicitOperator(
             this Type baseType,
             Type sourceType,

@@ -16,20 +16,10 @@
 
 namespace AdiePlayground.CommonTests.Extensions
 {
-    /// <summary>
-    /// Provides a stub implementation with an implicit operator.
-    /// </summary>
     public sealed class ImplicitOperatorStub
     {
-        /// <summary>
-        /// Gets the stub value.
-        /// </summary>
         public string Value { get; private set; }
 
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="string"/> to
-        /// <see cref="ImplicitOperatorStub"/>.
-        /// </summary>
         /// <param name="value">The stub value.</param>
         /// <returns>
         /// The result of the conversion.

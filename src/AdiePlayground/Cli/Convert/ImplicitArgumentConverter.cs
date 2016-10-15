@@ -34,7 +34,7 @@ namespace AdiePlayground.Cli.Convert
         /// <param name="implicitOperator">The <see cref="MethodInfo"/> which describes the implicit
         /// operator to use to convert an argument.</param>
         /// <exception cref="ArgumentNullException"><paramref name="implicitOperator"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public ImplicitArgumentConverter(MethodInfo implicitOperator)
         {
             if (implicitOperator == null)
