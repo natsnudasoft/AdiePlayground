@@ -22,6 +22,8 @@ using System.Resources;
 [assembly: AssemblyCopyright("Copyright © Adrian John Dunstan 2016")]
 
 // Version is generated on the build server.
+#pragma warning disable MEN002 // Line is too long
 [assembly: AssemblyVersion("0.1.0.0")]
 [assembly: AssemblyFileVersion("0.1.0.0")]
 [assembly: AssemblyInformationalVersion("0.1.0.0")]
+#pragma warning restore MEN002 // Line is too long
