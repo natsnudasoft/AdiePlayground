@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfo.cs" company="natsnudasoft">
+// <copyright file="SystemGuidProviderTests.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,20 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
+namespace AdiePlaygroundTests.Common
+{
+    using AdiePlayground.Common;
+    using NUnit.Framework;
 
-[assembly: CLSCompliant(true)]
+    [TestFixture]
+    public sealed class SystemGuidProviderTests
+    {
+        [Test]
+        public void NewGuid_DoesNotThrow()
+        {
+            var guidProvider = new SystemGuidProvider();
 
-[assembly: AssemblyTitle("AdiePlaygroundTests")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlaygroundTests")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: Guid("ae5ff437-bfd7-4752-802d-d967a2e55b3a")]
+            Assert.DoesNotThrow(() => guidProvider.NewGuid());
+        }
+    }
+}

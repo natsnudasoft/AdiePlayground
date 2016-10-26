@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfo.cs" company="natsnudasoft">
+﻿// <copyright file="SortStrategyStub.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,17 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
+namespace AdiePlaygroundTests.Common.Strategy
+{
+    using System.Collections.Generic;
+    using AdiePlayground.Common.Strategy;
 
-[assembly: CLSCompliant(true)]
+    internal sealed class SortStrategyStub : SortStrategy<int>
+    {
+        protected override SortType SortType => SortType.Quicksort;
 
-[assembly: AssemblyTitle("AdiePlaygroundTests")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlaygroundTests")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: Guid("ae5ff437-bfd7-4752-802d-d967a2e55b3a")]
+        protected override void Sort(IList<int> list, IComparer<int> comparer)
+        {
+        }
+    }
+}

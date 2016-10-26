@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfo.cs" company="natsnudasoft">
+﻿// <copyright file="FruitStub.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,19 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
+namespace AdiePlaygroundTests.Common.Model
+{
+    using AdiePlayground.Common.Model;
 
-[assembly: CLSCompliant(true)]
+    public sealed class FruitStub : Fruit
+    {
+        public FruitStub(int quality)
+            : base(quality)
+        {
+        }
 
-[assembly: AssemblyTitle("AdiePlaygroundTests")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlaygroundTests")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: Guid("ae5ff437-bfd7-4752-802d-d967a2e55b3a")]
+        public override string Name => nameof(FruitStub);
+
+        public override string Color => "Red";
+    }
+}

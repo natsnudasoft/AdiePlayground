@@ -1,4 +1,4 @@
-﻿// <copyright file="AssemblyInfo.cs" company="natsnudasoft">
+﻿// <copyright file="BananaCovariantTests.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +14,23 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
+namespace AdiePlaygroundTests.Common.Variance
+{
+    using AdiePlayground.Common.Variance;
+    using NUnit.Framework;
 
-[assembly: CLSCompliant(true)]
+    [TestFixture]
+    public sealed class BananaCovariantTests
+    {
+        [Test]
+        public void Create_CreatesValidInstance()
+        {
+            const int FruitQuality = 30;
+            var bananaCovariant = new BananaCovariant();
 
-[assembly: AssemblyTitle("AdiePlaygroundTests")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlaygroundTests")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: Guid("ae5ff437-bfd7-4752-802d-d967a2e55b3a")]
+            var banana = bananaCovariant.Create(FruitQuality);
+
+            Assert.That(banana.Quality, Is.EqualTo(FruitQuality));
+        }
+    }
+}
