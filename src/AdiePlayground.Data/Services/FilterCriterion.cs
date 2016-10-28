@@ -19,6 +19,7 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Linq;
     using System.Linq.Expressions;
+    using Common;
     using Model;
 
     /// <summary>
@@ -40,10 +41,7 @@ namespace AdiePlayground.Data.Services
         /// <see langword="null"/>.</exception>
         public FilterCriterion(Expression<Func<TEntity, bool>> filterPredicate)
         {
-            if (filterPredicate == null)
-            {
-                throw new ArgumentNullException(nameof(filterPredicate));
-            }
+            ParameterValidation.IsNotNull(filterPredicate, nameof(filterPredicate));
 
             this.FilterPredicate = filterPredicate;
         }

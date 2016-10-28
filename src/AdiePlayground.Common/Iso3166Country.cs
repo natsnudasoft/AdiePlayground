@@ -38,10 +38,7 @@ namespace AdiePlayground.Common
         /// supplied.</exception>
         public Iso3166Country(string countryCode)
         {
-            if (countryCode == null)
-            {
-                throw new ArgumentNullException(nameof(countryCode));
-            }
+            ParameterValidation.IsNotNull(countryCode, nameof(countryCode));
 
             this.CountryCode = countryCode.ToUpperInvariant();
             string countryName;

@@ -20,6 +20,7 @@ namespace AdiePlayground.Cli
     using Autofac.Core;
     using Autofac.Core.Registration;
     using Autofac.Features.Metadata;
+    using Common;
     using Metadata;
 
     /// <summary>
@@ -39,10 +40,7 @@ namespace AdiePlayground.Cli
         /// <see langword="null"/>.</exception>
         public CommandResolver(CommandFactory commandFactory)
         {
-            if (commandFactory == null)
-            {
-                throw new ArgumentNullException(nameof(commandFactory));
-            }
+            ParameterValidation.IsNotNull(commandFactory, nameof(commandFactory));
 
             this.commandFactory = commandFactory;
         }
@@ -68,20 +66,9 @@ namespace AdiePlayground.Cli
             string commandGroup,
             ParsedCommand parsedCommand)
         {
-            if (commandGroup == null)
-            {
-                throw new ArgumentNullException(nameof(commandGroup));
-            }
-
-            if (commandGroup.Length == 0)
-            {
-                throw new ArgumentException("Value must not be empty.", nameof(commandGroup));
-            }
-
-            if (parsedCommand == null)
-            {
-                throw new ArgumentNullException(nameof(parsedCommand));
-            }
+            ParameterValidation.IsNotNull(commandGroup, nameof(commandGroup));
+            ParameterValidation.IsNotEmpty(commandGroup, nameof(commandGroup));
+            ParameterValidation.IsNotNull(parsedCommand, nameof(parsedCommand));
 
             var commandMeta = this.ResolveCommandMeta(commandGroup, parsedCommand);
             MatchArguments(commandMeta, parsedCommand);

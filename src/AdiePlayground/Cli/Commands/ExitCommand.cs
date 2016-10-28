@@ -18,6 +18,7 @@ namespace AdiePlayground.Cli.Commands
 {
     using System;
     using System.Threading;
+    using Common;
     using Metadata;
     using Properties;
 
@@ -44,10 +45,7 @@ namespace AdiePlayground.Cli.Commands
         /// <see langword="null"/>.</exception>
         public ExitCommand(CommandLoop commandLoop)
         {
-            if (commandLoop == null)
-            {
-                throw new ArgumentNullException(nameof(commandLoop));
-            }
+            ParameterValidation.IsNotNull(commandLoop, nameof(commandLoop));
 
             this.commandLoop = commandLoop;
         }

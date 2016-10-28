@@ -19,6 +19,7 @@ namespace AdiePlayground.Cli.Commands
     using System;
     using System.Linq;
     using System.Threading;
+    using Common;
     using Common.Extensions;
     using Metadata;
     using Properties;
@@ -51,15 +52,10 @@ namespace AdiePlayground.Cli.Commands
             CommandLoop commandLoop,
             CommandGroupMetadataFactory commandGroupMetadataFactory)
         {
-            if (commandLoop == null)
-            {
-                throw new ArgumentNullException(nameof(commandLoop));
-            }
-
-            if (commandGroupMetadataFactory == null)
-            {
-                throw new ArgumentNullException(nameof(commandGroupMetadataFactory));
-            }
+            ParameterValidation.IsNotNull(commandLoop, nameof(commandLoop));
+            ParameterValidation.IsNotNull(
+                commandGroupMetadataFactory,
+                nameof(commandGroupMetadataFactory));
 
             this.commandLoop = commandLoop;
             this.commandGroupMetadataFactory = commandGroupMetadataFactory;

@@ -55,25 +55,10 @@ namespace AdiePlayground.Common.Interceptor
             IEnumerable<IRegistrar> registrars,
             IGuidProvider guidProvider)
         {
-            if (invocationCounter == null)
-            {
-                throw new ArgumentNullException(nameof(invocationCounter));
-            }
-
-            if (invocationTimer == null)
-            {
-                throw new ArgumentNullException(nameof(invocationTimer));
-            }
-
-            if (registrars == null)
-            {
-                throw new ArgumentNullException(nameof(registrars));
-            }
-
-            if (guidProvider == null)
-            {
-                throw new ArgumentNullException(nameof(guidProvider));
-            }
+            ParameterValidation.IsNotNull(invocationCounter, nameof(invocationCounter));
+            ParameterValidation.IsNotNull(invocationTimer, nameof(invocationTimer));
+            ParameterValidation.IsNotNull(registrars, nameof(registrars));
+            ParameterValidation.IsNotNull(guidProvider, nameof(guidProvider));
 
             this.invocationCounter = invocationCounter;
             this.invocationTimer = invocationTimer;

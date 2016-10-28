@@ -20,6 +20,7 @@ namespace AdiePlayground.Cli.Commands
     using System.Globalization;
     using System.Threading;
     using Autofac.Features.Indexed;
+    using Common;
     using Common.Extensions;
     using Example;
     using Metadata;
@@ -47,10 +48,7 @@ namespace AdiePlayground.Cli.Commands
         /// <see langword="null"/>.</exception>
         public ExampleCommand(IIndex<string, IExample> examples)
         {
-            if (examples == null)
-            {
-                throw new ArgumentNullException(nameof(examples));
-            }
+            ParameterValidation.IsNotNull(examples, nameof(examples));
 
             this.examples = examples;
         }

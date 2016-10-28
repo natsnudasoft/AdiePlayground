@@ -19,6 +19,7 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using Common;
     using Model;
 
     /// <summary>
@@ -43,21 +44,8 @@ namespace AdiePlayground.Data.Services
         /// </exception>
         public PagingCriterion(int skipCount, int pageSize)
         {
-            if (skipCount < 0)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(skipCount),
-                    skipCount,
-                    "Value must be greater than or equal to 0.");
-            }
-
-            if (pageSize < 1)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(pageSize),
-                    pageSize,
-                    "Value must be greater than 0.");
-            }
+            ParameterValidation.IsGreaterThanOrEqualTo(skipCount, 0, nameof(skipCount));
+            ParameterValidation.IsGreaterThan(pageSize, 0, nameof(pageSize));
 
             this.SkipCount = skipCount;
             this.PageSize = pageSize;

@@ -50,12 +50,24 @@
       <HintPath>..\..\..\packages\Autofac.Extras.AttributeMetadata.4.0.0\lib\net45\Autofac.Extras.AttributeMetadata.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Autofac.Extras.DynamicProxy.4.1.0\lib\net45\Autofac.Extras.DynamicProxy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Autofac.Integration.Mef, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Autofac.Mef.4.0.0\lib\net45\Autofac.Integration.Mef.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Moq, Version=4.5.23.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
@@ -67,6 +79,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -104,8 +117,66 @@
     <Compile Include="Cli\Metadata\CommandRequiredMismatchStub.cs" />
     <Compile Include="Cli\CommandFactoryHelper.cs" />
     <Compile Include="Cli\ParsedCommandTests.cs" />
+    <Compile Include="Common\Command\CommandExecutionManagerTests.cs" />
+    <Compile Include="Common\Command\ConsoleRobotTests.cs" />
+    <Compile Include="Common\Command\MoveCommandTests.cs" />
+    <Compile Include="Common\Command\RobotCommandStub.cs" />
+    <Compile Include="Common\Command\RobotCommandTests.cs" />
+    <Compile Include="Common\Command\TurnCommandTests.cs" />
+    <Compile Include="Common\Command\TurnDrillOffCommandTests.cs" />
+    <Compile Include="Common\Command\TurnDrillOnCommandTests.cs" />
+    <Compile Include="Common\CommonModuleTests.cs" />
+    <Compile Include="Common\Extensions\ConsoleExtensionsTests.cs" />
+    <Compile Include="Common\Extensions\ImplicitOperatorStub.cs" />
+    <Compile Include="Common\Extensions\InterceptionExtensionsTests.cs" />
+    <Compile Include="Common\Extensions\TypeExtensionsTests.cs" />
+    <Compile Include="Common\Interceptor\ConsoleInstrumentationReporterTests.cs" />
+    <Compile Include="Common\Interceptor\ConsoleRegistrarTests.cs" />
+    <Compile Include="Common\Interceptor\InstrumentationInterceptorTests.cs" />
+    <Compile Include="Common\Interceptor\MethodInvocationCounterTests.cs" />
+    <Compile Include="Common\Interceptor\MethodInvocationTimerTests.cs" />
+    <Compile Include="Common\InvocationMockHelper.cs" />
+    <Compile Include="Common\Iso3166CountryTests.cs" />
+    <Compile Include="Common\Model\AppleTests.cs" />
+    <Compile Include="Common\Model\BananaTests.cs" />
+    <Compile Include="Common\Model\FruitStub.cs" />
+    <Compile Include="Common\Model\FruitTests.cs" />
+    <Compile Include="Common\Model\LemonTests.cs" />
+    <Compile Include="Common\Model\LimeTests.cs" />
+    <Compile Include="Common\Model\OrangeTests.cs" />
+    <Compile Include="Common\Observer\ConsoleMessageBoardObserverTests.cs" />
+    <Compile Include="Common\Observer\MessageBoardTests.cs" />
+    <Compile Include="Common\ParameterValidationTests.cs" />
+    <Compile Include="Common\ResourceTypeResolverTests.cs" />
+    <Compile Include="Common\Strategy\BubbleSortStrategyTests.cs" />
+    <Compile Include="Common\Strategy\QuicksortStrategyTests.cs" />
+    <Compile Include="Common\Strategy\SortStrategyResolverTests.cs" />
+    <Compile Include="Common\Strategy\SortStrategyStub.cs" />
+    <Compile Include="Common\Strategy\SortStrategyTests.cs" />
+    <Compile Include="Common\SystemDateTimeProviderTests.cs" />
+    <Compile Include="Common\SystemGuidProviderTests.cs" />
+    <Compile Include="Common\Variance\BananaCovariantTests.cs" />
+    <Compile Include="Common\Variance\FruitContravarianceTests.cs" />
+    <Compile Include="Common\Variance\OrangeInvariantTests.cs" />
     <Compile Include="ConnectionStringFactoryTests.cs" />
     <Compile Include="ContainerConfigurationTests.cs" />
+    <Compile Include="Data\DataModuleTests.cs" />
+    <Compile Include="Data\DbAsyncEnumerableStub.cs" />
+    <Compile Include="Data\DbAsyncEnumeratorStub.cs" />
+    <Compile Include="Data\DbAsyncQueryProviderStub.cs" />
+    <Compile Include="Data\DbMockHelper.cs" />
+    <Compile Include="Data\Migrations\SeedDataTests.cs" />
+    <Compile Include="Data\Services\ConnectionStringDbContextFactoryTests.cs" />
+    <Compile Include="Data\Services\ContextServiceTests.cs" />
+    <Compile Include="Data\Services\FilterCriterionTests.cs" />
+    <Compile Include="Data\Services\IncludeCriterionTests.cs" />
+    <Compile Include="Data\Services\PagingCriterionTests.cs" />
+    <Compile Include="Data\Services\ReadOnlyServiceTransactionTests.cs" />
+    <Compile Include="Data\Services\SearchQueryTests.cs" />
+    <Compile Include="Data\Services\ServiceTransactionTests.cs" />
+    <Compile Include="Data\Services\SortCriterionTests.cs" />
+    <Compile Include="Data\TestData.cs" />
+    <Compile Include="Data\TestEntity.cs" />
     <Compile Include="Example\CommandExampleTests.cs" />
     <Compile Include="Example\ExampleAttributeTests.cs" />
     <Compile Include="Example\InstrumentationExampleTests.cs" />
@@ -154,9 +225,17 @@
       <Project>{9F889368-3F89-4780-B213-C971E5BFB720}</Project>
       <Name>AdiePlayground.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\AdiePlayground.Data\AdiePlayground.Data.csproj">
+      <Project>{9605AE85-512A-4A2A-8D6B-10E480277359}</Project>
+      <Name>AdiePlayground.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\AdiePlayground\AdiePlayground.csproj">
       <Project>{5d45e6c3-bedc-4ad7-a396-a98cfe3a6c5c}</Project>
       <Name>AdiePlayground</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\DbContextScope-master\Mehdime.Entity\Mehdime.Entity.csproj">
+      <Project>{4830BAFD-4163-473E-B00F-65F274AC165F}</Project>
+      <Name>Mehdime.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

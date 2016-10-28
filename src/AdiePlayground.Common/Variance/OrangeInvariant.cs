@@ -16,7 +16,6 @@
 
 namespace AdiePlayground.Common.Variance
 {
-    using System;
     using Model;
 
     /// <summary>
@@ -28,10 +27,7 @@ namespace AdiePlayground.Common.Variance
         /// <inheritdoc/>
         public int GetValue(Orange input)
         {
-            if (input == null)
-            {
-                throw new ArgumentNullException(nameof(input));
-            }
+            ParameterValidation.IsNotNull(input, nameof(input));
 
             return input.Quality;
         }

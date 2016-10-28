@@ -53,25 +53,10 @@ namespace AdiePlayground.Common.Interceptor
             IDateTimeProvider dateTimeProvider,
             IGuidProvider guidProvider)
         {
-            if (invocationCounter == null)
-            {
-                throw new ArgumentNullException(nameof(invocationCounter));
-            }
-
-            if (invocationTimer == null)
-            {
-                throw new ArgumentNullException(nameof(invocationTimer));
-            }
-
-            if (dateTimeProvider == null)
-            {
-                throw new ArgumentNullException(nameof(dateTimeProvider));
-            }
-
-            if (guidProvider == null)
-            {
-                throw new ArgumentNullException(nameof(guidProvider));
-            }
+            ParameterValidation.IsNotNull(invocationCounter, nameof(invocationCounter));
+            ParameterValidation.IsNotNull(invocationTimer, nameof(invocationTimer));
+            ParameterValidation.IsNotNull(dateTimeProvider, nameof(dateTimeProvider));
+            ParameterValidation.IsNotNull(guidProvider, nameof(guidProvider));
 
             this.invocationCounter = invocationCounter;
             this.invocationTimer = invocationTimer;

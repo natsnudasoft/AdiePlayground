@@ -20,10 +20,10 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 
-[assembly: AssemblyTitle("AdiePlayground.DataTests")]
+[assembly: AssemblyTitle("AdiePlaygroundTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("AdiePlayground.DataTests")]
+[assembly: AssemblyProduct("AdiePlaygroundTests")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

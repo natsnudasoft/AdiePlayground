@@ -37,10 +37,7 @@ namespace AdiePlayground.Common.Interceptor
         /// <see langword="null"/>.</exception>
         public ConsoleRegistrar(IDateTimeProvider dateTimeProvider)
         {
-            if (dateTimeProvider == null)
-            {
-                throw new ArgumentNullException(nameof(dateTimeProvider));
-            }
+            ParameterValidation.IsNotNull(dateTimeProvider, nameof(dateTimeProvider));
 
             this.dateTimeProvider = dateTimeProvider;
         }

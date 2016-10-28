@@ -106,6 +106,8 @@
     <Compile Include="Strategy\SortType.cs" />
     <Compile Include="SystemDateTimeProvider.cs" />
     <Compile Include="SystemGuidProvider.cs" />
+    <Compile Include="ParameterValidation.cs" />
+    <Compile Include="ValidatedNotNullAttribute.cs" />
     <Compile Include="Variance\FruitContravariant.cs" />
     <Compile Include="Variance\BananaCovariant.cs" />
     <Compile Include="Variance\Covariant.cs" />

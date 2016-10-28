@@ -18,6 +18,7 @@ namespace AdiePlayground.Cli.Convert
 {
     using System;
     using System.Reflection;
+    using Common;
 
     /// <summary>
     /// Describes an <see cref="IArgumentConverter"/> which uses an implicit operator to convert
@@ -37,10 +38,7 @@ namespace AdiePlayground.Cli.Convert
         /// <see langword="null"/>.</exception>
         public ImplicitArgumentConverter(MethodInfo implicitOperator)
         {
-            if (implicitOperator == null)
-            {
-                throw new ArgumentNullException(nameof(implicitOperator));
-            }
+            ParameterValidation.IsNotNull(implicitOperator, nameof(implicitOperator));
 
             this.implicitOperator = implicitOperator;
         }

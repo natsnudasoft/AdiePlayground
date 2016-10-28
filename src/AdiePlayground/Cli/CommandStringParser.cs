@@ -17,6 +17,7 @@
 namespace AdiePlayground.Cli
 {
     using System;
+    using Common;
 
     /// <summary>
     /// Provides members to parse a command string and create instances of
@@ -34,10 +35,7 @@ namespace AdiePlayground.Cli
         /// <see langword="null"/>.</exception>
         public static ParsedCommand Parse(string commandString)
         {
-            if (commandString == null)
-            {
-                throw new ArgumentNullException(nameof(commandString));
-            }
+            ParameterValidation.IsNotNull(commandString, nameof(commandString));
 
             var commandTokens = commandString.Trim().Split(' ');
             var commandName = commandTokens[0];

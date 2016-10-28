@@ -18,6 +18,7 @@ namespace AdiePlayground.Data.Services
 {
     using System;
     using System.Threading.Tasks;
+    using Common;
     using Mehdime.Entity;
 
     /// <summary>
@@ -44,10 +45,7 @@ namespace AdiePlayground.Data.Services
         /// <see langword="null"/>.</exception>
         internal ServiceTransaction(IDbContextScopeFactory dbContextScopeFactory)
         {
-            if (dbContextScopeFactory == null)
-            {
-                throw new ArgumentNullException(nameof(dbContextScopeFactory));
-            }
+            ParameterValidation.IsNotNull(dbContextScopeFactory, nameof(dbContextScopeFactory));
 
             this.dbContextScope = dbContextScopeFactory.Create();
         }

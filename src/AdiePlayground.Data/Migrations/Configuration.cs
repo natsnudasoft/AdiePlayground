@@ -16,9 +16,9 @@
 
 namespace AdiePlayground.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Common;
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
@@ -38,10 +38,7 @@ namespace AdiePlayground.Data.Migrations
         /// <inheritdoc/>
         protected override void Seed(PlaygroundDbContext context)
         {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
+            ParameterValidation.IsNotNull(context, nameof(context));
 
             var seedData = new SeedData();
             context.UniversityCourses.AddOrUpdate(seedData.Courses.ToArray());

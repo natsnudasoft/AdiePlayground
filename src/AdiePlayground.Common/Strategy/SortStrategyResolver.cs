@@ -40,10 +40,7 @@ namespace AdiePlayground.Common.Strategy
         /// <see langword="null"/>.</exception>
         public SortStrategyResolver(IIndex<SortType, ISortStrategy<T>> sortStrategies)
         {
-            if (sortStrategies == null)
-            {
-                throw new ArgumentNullException(nameof(sortStrategies));
-            }
+            ParameterValidation.IsNotNull(sortStrategies, nameof(sortStrategies));
 
             this.sortStrategies = sortStrategies;
         }

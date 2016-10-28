@@ -17,7 +17,6 @@
 namespace AdiePlayground.Common.Model
 {
     using System;
-    using static System.FormattableString;
 
     /// <summary>
     /// Provides an abstract base class for fruit.
@@ -36,13 +35,8 @@ namespace AdiePlayground.Common.Model
         /// </para></exception>
         protected Fruit(int quality)
         {
-            if (quality < MinQuality || quality > MaxQuality)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(quality),
-                    quality,
-                    Invariant($"Value must be between {MinQuality} and {MaxQuality}."));
-            }
+            ParameterValidation
+                .IsBetweenInclusive(quality, MinQuality, MaxQuality, nameof(quality));
 
             this.Quality = quality;
         }

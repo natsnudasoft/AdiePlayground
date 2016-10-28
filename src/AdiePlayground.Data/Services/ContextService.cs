@@ -22,6 +22,7 @@ namespace AdiePlayground.Data.Services
     using System.Linq;
     using System.Linq.Expressions;
     using System.Threading.Tasks;
+    using Common;
     using Mehdime.Entity;
     using Model;
 
@@ -41,10 +42,7 @@ namespace AdiePlayground.Data.Services
         /// <see langword="null"/>.</exception>
         public ContextService(IDbContextScopeFactory dbContextScopeFactory)
         {
-            if (dbContextScopeFactory == null)
-            {
-                throw new ArgumentNullException(nameof(dbContextScopeFactory));
-            }
+            ParameterValidation.IsNotNull(dbContextScopeFactory, nameof(dbContextScopeFactory));
 
             this.DbContextScopeFactory = dbContextScopeFactory;
         }

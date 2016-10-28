@@ -19,6 +19,7 @@ namespace AdiePlayground.Example
     using System;
     using System.Collections.Generic;
     using System.Threading;
+    using Common;
     using Common.Extensions;
     using Common.Strategy;
     using Properties;
@@ -44,10 +45,7 @@ namespace AdiePlayground.Example
         /// <see langword="null"/>.</exception>
         public StrategyExample(SortStrategyResolver<string> strategyResolver)
         {
-            if (strategyResolver == null)
-            {
-                throw new ArgumentNullException(nameof(strategyResolver));
-            }
+            ParameterValidation.IsNotNull(strategyResolver, nameof(strategyResolver));
 
             this.strategyResolver = strategyResolver;
         }

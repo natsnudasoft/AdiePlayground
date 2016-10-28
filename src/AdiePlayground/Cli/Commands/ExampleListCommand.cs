@@ -19,6 +19,7 @@ namespace AdiePlayground.Cli.Commands
     using System;
     using System.Linq;
     using System.Threading;
+    using Common;
     using Example;
     using Metadata;
     using Properties;
@@ -52,10 +53,9 @@ namespace AdiePlayground.Cli.Commands
         /// </exception>
         public ExampleListCommand(ExampleMetadataCollectionFactory exampleMetadataCollectionFactory)
         {
-            if (exampleMetadataCollectionFactory == null)
-            {
-                throw new ArgumentNullException(nameof(exampleMetadataCollectionFactory));
-            }
+            ParameterValidation.IsNotNull(
+                exampleMetadataCollectionFactory,
+                nameof(exampleMetadataCollectionFactory));
 
             this.exampleMetadataCollectionFactory = exampleMetadataCollectionFactory;
         }

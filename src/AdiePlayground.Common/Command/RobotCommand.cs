@@ -34,10 +34,7 @@ namespace AdiePlayground.Common.Command
         /// <see langword="null"/>.</exception>
         protected RobotCommand(IRobot robot)
         {
-            if (robot == null)
-            {
-                throw new ArgumentNullException(nameof(robot));
-            }
+            ParameterValidation.IsNotNull(robot, nameof(robot));
 
             this.Robot = robot;
         }

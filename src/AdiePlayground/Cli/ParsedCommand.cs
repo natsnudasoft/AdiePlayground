@@ -20,6 +20,7 @@ namespace AdiePlayground.Cli
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using Common;
 
     /// <summary>
     /// Describes the details of a command that has been parsed.
@@ -37,15 +38,8 @@ namespace AdiePlayground.Cli
         /// <paramref name="arguments"/> is <see langword="null"/>.</exception>
         public ParsedCommand(string name, IEnumerable<string> arguments)
         {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (arguments == null)
-            {
-                throw new ArgumentNullException(nameof(arguments));
-            }
+            ParameterValidation.IsNotNull(name, nameof(name));
+            ParameterValidation.IsNotNull(arguments, nameof(arguments));
 
             this.Name = name;
             this.Arguments = new ReadOnlyCollection<string>(arguments.ToArray());

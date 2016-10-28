@@ -37,10 +37,7 @@ namespace AdiePlayground.Common.Command
         /// <see langword="null"/>.</exception>
         public void ExecuteCommand(ICommand command)
         {
-            if (command == null)
-            {
-                throw new ArgumentNullException(nameof(command));
-            }
+            ParameterValidation.IsNotNull(command, nameof(command));
 
             command.Execute();
             while (this.executedCommands.Last != this.previousCommand)
