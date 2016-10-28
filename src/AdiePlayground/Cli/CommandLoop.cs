@@ -19,6 +19,7 @@ namespace AdiePlayground.Cli
     using System;
     using System.Linq;
     using System.Threading;
+    using Common;
     using Common.Extensions;
     using Metadata;
     using Properties;
@@ -51,15 +52,9 @@ namespace AdiePlayground.Cli
             CommandResolver commandResolver,
             CommandGroupMetadataFactory commandGroupMetadataFactory)
         {
-            if (commandResolver == null)
-            {
-                throw new ArgumentNullException(nameof(commandResolver));
-            }
-
-            if (commandGroupMetadataFactory == null)
-            {
-                throw new ArgumentNullException(nameof(commandGroupMetadataFactory));
-            }
+            ParameterValidation.IsNotNull(commandResolver, nameof(commandResolver));
+            ParameterValidation
+                .IsNotNull(commandGroupMetadataFactory, nameof(commandGroupMetadataFactory));
 
             this.commandResolver = commandResolver;
             this.commandGroupMetadataFactory = commandGroupMetadataFactory;

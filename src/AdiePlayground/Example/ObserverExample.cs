@@ -18,6 +18,7 @@ namespace AdiePlayground.Example
 {
     using System;
     using System.Threading;
+    using Common;
     using Common.Extensions;
     using Common.Observer;
     using Properties;
@@ -48,15 +49,8 @@ namespace AdiePlayground.Example
             MessageBoard messageBoard,
             Func<IMessageBoardObserver> observerFactory)
         {
-            if (messageBoard == null)
-            {
-                throw new ArgumentNullException(nameof(messageBoard));
-            }
-
-            if (observerFactory == null)
-            {
-                throw new ArgumentNullException(nameof(observerFactory));
-            }
+            ParameterValidation.IsNotNull(messageBoard, nameof(messageBoard));
+            ParameterValidation.IsNotNull(observerFactory, nameof(observerFactory));
 
             this.messageBoard = messageBoard;
             this.observerFactory = observerFactory;

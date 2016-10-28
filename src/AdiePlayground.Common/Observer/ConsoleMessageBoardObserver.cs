@@ -38,10 +38,7 @@ namespace AdiePlayground.Common.Observer
         /// <see langword="null"/>.</exception>
         public ConsoleMessageBoardObserver(IGuidProvider guidProvider)
         {
-            if (guidProvider == null)
-            {
-                throw new ArgumentNullException(nameof(guidProvider));
-            }
+            ParameterValidation.IsNotNull(guidProvider, nameof(guidProvider));
 
             this.id = guidProvider.NewGuid();
         }
@@ -49,10 +46,7 @@ namespace AdiePlayground.Common.Observer
         /// <inheritdoc/>
         void IMessageBoardObserver.Update(IEnumerable<string> messages)
         {
-            if (messages == null)
-            {
-                throw new ArgumentNullException(nameof(messages));
-            }
+            ParameterValidation.IsNotNull(messages, nameof(messages));
 
             Console.WriteLine(
                 Invariant($"{nameof(ConsoleMessageBoardObserver)} ({this.id}) update:"));

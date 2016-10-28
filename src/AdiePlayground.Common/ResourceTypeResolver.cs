@@ -44,20 +44,9 @@ namespace AdiePlayground.Common
         /// cast to the type specified by <typeparamref name="T"/>.</exception>
         public static T ResolveResource<T>(Type resourceType, string resourceName)
         {
-            if (resourceType == null)
-            {
-                throw new ArgumentNullException(nameof(resourceType));
-            }
-
-            if (resourceName == null)
-            {
-                throw new ArgumentNullException(nameof(resourceName));
-            }
-
-            if (resourceName.Length == 0)
-            {
-                throw new ArgumentException("Value must not be empty.", nameof(resourceName));
-            }
+            ParameterValidation.IsNotNull(resourceType, nameof(resourceType));
+            ParameterValidation.IsNotNull(resourceName, nameof(resourceName));
+            ParameterValidation.IsNotEmpty(resourceName, nameof(resourceName));
 
             var propertyInfo = resourceType.GetProperty(
                 resourceName,

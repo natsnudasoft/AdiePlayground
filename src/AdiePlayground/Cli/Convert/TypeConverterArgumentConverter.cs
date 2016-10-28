@@ -18,6 +18,7 @@ namespace AdiePlayground.Cli.Convert
 {
     using System;
     using System.ComponentModel;
+    using Common;
 
     /// <summary>
     /// Describes an <see cref="IArgumentConverter"/> which uses a <see cref="TypeConverter"/> to
@@ -37,10 +38,7 @@ namespace AdiePlayground.Cli.Convert
         /// <see langword="null"/>.</exception>
         public TypeConverterArgumentConverter(TypeConverter typeConverter)
         {
-            if (typeConverter == null)
-            {
-                throw new ArgumentNullException(nameof(typeConverter));
-            }
+            ParameterValidation.IsNotNull(typeConverter, nameof(typeConverter));
 
             this.typeConverter = typeConverter;
         }

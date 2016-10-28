@@ -18,6 +18,7 @@ namespace AdiePlayground.Example
 {
     using System;
     using System.Threading;
+    using Common;
     using Common.Extensions;
     using Common.Model;
     using Common.Variance;
@@ -59,20 +60,9 @@ namespace AdiePlayground.Example
             ICovariant<Banana> bananaCovariant,
             IContravariant<Fruit> fruitContravariant)
         {
-            if (orangeInvariant == null)
-            {
-                throw new ArgumentNullException(nameof(orangeInvariant));
-            }
-
-            if (bananaCovariant == null)
-            {
-                throw new ArgumentNullException(nameof(bananaCovariant));
-            }
-
-            if (fruitContravariant == null)
-            {
-                throw new ArgumentNullException(nameof(fruitContravariant));
-            }
+            ParameterValidation.IsNotNull(orangeInvariant, nameof(orangeInvariant));
+            ParameterValidation.IsNotNull(bananaCovariant, nameof(bananaCovariant));
+            ParameterValidation.IsNotNull(fruitContravariant, nameof(fruitContravariant));
 
             this.orangeInvariantInterface = orangeInvariant;
             this.bananaCovariantInterface = bananaCovariant;

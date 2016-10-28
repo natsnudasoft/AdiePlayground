@@ -44,20 +44,9 @@ namespace AdiePlayground.Common.Extensions
             Type sourceType,
             Type destinationType)
         {
-            if (baseType == null)
-            {
-                throw new ArgumentNullException(nameof(baseType));
-            }
-
-            if (sourceType == null)
-            {
-                throw new ArgumentNullException(nameof(sourceType));
-            }
-
-            if (destinationType == null)
-            {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
+            ParameterValidation.IsNotNull(baseType, nameof(baseType));
+            ParameterValidation.IsNotNull(sourceType, nameof(sourceType));
+            ParameterValidation.IsNotNull(destinationType, nameof(destinationType));
 
             return baseType
                 .GetMethods()

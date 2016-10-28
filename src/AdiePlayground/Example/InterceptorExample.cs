@@ -19,6 +19,7 @@ namespace AdiePlayground.Example
     using System;
     using System.Threading;
     using System.Threading.Tasks;
+    using Common;
     using Common.Extensions;
     using Common.Interceptor;
     using Properties;
@@ -49,15 +50,10 @@ namespace AdiePlayground.Example
             IInstrumentationExample instrumentationExample,
             ConsoleInstrumentationReporter consoleInstrumentationReporter)
         {
-            if (instrumentationExample == null)
-            {
-                throw new ArgumentNullException(nameof(instrumentationExample));
-            }
-
-            if (consoleInstrumentationReporter == null)
-            {
-                throw new ArgumentNullException(nameof(consoleInstrumentationReporter));
-            }
+            ParameterValidation.IsNotNull(instrumentationExample, nameof(instrumentationExample));
+            ParameterValidation.IsNotNull(
+                consoleInstrumentationReporter,
+                nameof(consoleInstrumentationReporter));
 
             this.instrumentationExample = instrumentationExample;
             this.consoleInstrumentationReporter = consoleInstrumentationReporter;

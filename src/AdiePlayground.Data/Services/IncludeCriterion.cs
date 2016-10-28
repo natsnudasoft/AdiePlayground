@@ -20,6 +20,7 @@ namespace AdiePlayground.Data.Services
     using System.Data.Entity;
     using System.Linq;
     using System.Linq.Expressions;
+    using Common;
     using Model;
 
     /// <summary>
@@ -41,10 +42,7 @@ namespace AdiePlayground.Data.Services
         /// <see langword="null"/>.</exception>
         public IncludeCriterion(Expression<Func<TEntity, object>> includePropertySelector)
         {
-            if (includePropertySelector == null)
-            {
-                throw new ArgumentNullException(nameof(includePropertySelector));
-            }
+            ParameterValidation.IsNotNull(includePropertySelector, nameof(includePropertySelector));
 
             this.IncludePropertySelector = includePropertySelector;
         }

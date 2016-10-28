@@ -19,6 +19,7 @@ namespace AdiePlayground.Data.Services
     using System;
     using System.Linq;
     using System.Linq.Expressions;
+    using Common;
     using Model;
 
     /// <summary>
@@ -50,10 +51,7 @@ namespace AdiePlayground.Data.Services
             Expression<Func<TEntity, TProperty>> sortPropertySelector,
             SortOrder sortOrder)
         {
-            if (sortPropertySelector == null)
-            {
-                throw new ArgumentNullException(nameof(sortPropertySelector));
-            }
+            ParameterValidation.IsNotNull(sortPropertySelector, nameof(sortPropertySelector));
 
             switch (sortOrder)
             {

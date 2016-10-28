@@ -63,25 +63,16 @@ namespace AdiePlayground.Cli.Metadata
             Type resourceType,
             string helpTextResourceName)
         {
-            if (index < 0)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(index),
-                    "Value must be greater than or equal to 0.");
-            }
-
-            ValidateString(name, nameof(name));
-            if (name.Contains(" "))
-            {
-                throw new ArgumentException("Value cannot contain spaces.", nameof(name));
-            }
-
-            if (resourceType == null)
-            {
-                throw new ArgumentNullException(nameof(resourceType));
-            }
-
-            ValidateString(helpTextResourceName, nameof(helpTextResourceName));
+            ParameterValidation.IsGreaterThanOrEqualTo(index, 0, nameof(index));
+            ParameterValidation.IsNotNull(name, nameof(name));
+            ParameterValidation.IsNotEmpty(name, nameof(name));
+            ParameterValidation.IsFalse(
+                name.Contains(" "),
+                "Value cannot contain spaces.",
+                nameof(name));
+            ParameterValidation.IsNotNull(resourceType, nameof(resourceType));
+            ParameterValidation.IsNotNull(helpTextResourceName, nameof(helpTextResourceName));
+            ParameterValidation.IsNotEmpty(helpTextResourceName, nameof(helpTextResourceName));
 
             this.Index = index;
             this.Name = name;
@@ -139,19 +130,6 @@ namespace AdiePlayground.Cli.Metadata
                 Converter = ArgumentConverterResolver.Resolve(targetPropertyInfo),
                 PropertyInfo = targetPropertyInfo
             };
-        }
-
-        private static void ValidateString(string value, string paramName)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
-
-            if (value.Length == 0)
-            {
-                throw new ArgumentException("Value must not be empty.", paramName);
-            }
         }
     }
 }

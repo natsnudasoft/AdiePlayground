@@ -1,4 +1,4 @@
-﻿// <copyright file="OrangeInvariant.cs" company="natsnudasoft">
+﻿// <copyright file="ValidatedNotNullAttribute.cs" company="natsnudasoft">
 // Copyright (c) Adrian John Dunstan. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +14,17 @@
 // limitations under the License.
 // </copyright>
 
-namespace AdiePlayground.Common.Variance
+namespace AdiePlayground.Common
 {
-    using Model;
+    using System;
 
     /// <summary>
-    /// Example implementation of an invariant interface.
+    /// Provides a workaround attribute to CA1062 being triggered when parameter validation is
+    /// performed by an external method.
     /// </summary>
-    /// <seealso cref="ICovariant{Orange}" />
-    internal sealed class OrangeInvariant : IInvariant<Orange>
+    /// <seealso cref="Attribute" />
+    [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
+    internal sealed class ValidatedNotNullAttribute : Attribute
     {
-        /// <inheritdoc/>
-        public int GetValue(Orange input)
-        {
-            ParameterValidation.IsNotNull(input, nameof(input));
-
-            return input.Quality;
-        }
     }
 }

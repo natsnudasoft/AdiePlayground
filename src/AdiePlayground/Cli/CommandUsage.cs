@@ -19,6 +19,7 @@ namespace AdiePlayground.Cli
     using System;
     using System.Globalization;
     using System.Linq;
+    using Common;
     using Common.Extensions;
     using Metadata;
     using Properties;
@@ -43,10 +44,7 @@ namespace AdiePlayground.Cli
         /// <see langword="null"/>.</exception>
         public static void WriteCommandHelp(CommandMetadata commandMetadata)
         {
-            if (commandMetadata == null)
-            {
-                throw new ArgumentNullException(nameof(commandMetadata));
-            }
+            ParameterValidation.IsNotNull(commandMetadata, nameof(commandMetadata));
 
             WriteCommandUsage(commandMetadata);
             var parametersSeperator = commandMetadata.ParametersMetadata.Count > 0 ?
@@ -69,10 +67,7 @@ namespace AdiePlayground.Cli
         /// <see langword="null"/>.</exception>
         public static void WriteCommandUsage(CommandMetadata commandMetadata)
         {
-            if (commandMetadata == null)
-            {
-                throw new ArgumentNullException(nameof(commandMetadata));
-            }
+            ParameterValidation.IsNotNull(commandMetadata, nameof(commandMetadata));
 
             Console.WriteLine(string.Format(
                 CultureInfo.InvariantCulture,

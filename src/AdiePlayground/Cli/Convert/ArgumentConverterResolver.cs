@@ -19,6 +19,7 @@ namespace AdiePlayground.Cli.Convert
     using System;
     using System.ComponentModel;
     using System.Reflection;
+    using Common;
     using Common.Extensions;
 
     /// <summary>
@@ -40,10 +41,7 @@ namespace AdiePlayground.Cli.Convert
         public static IArgumentConverter Resolve(PropertyInfo propertyInfo)
 #pragma warning restore MEN007 // Use a single return
         {
-            if (propertyInfo == null)
-            {
-                throw new ArgumentNullException(nameof(propertyInfo));
-            }
+            ParameterValidation.IsNotNull(propertyInfo, nameof(propertyInfo));
 
             if (propertyInfo.PropertyType == typeof(string))
             {

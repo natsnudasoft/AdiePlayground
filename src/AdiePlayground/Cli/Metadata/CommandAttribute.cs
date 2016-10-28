@@ -67,19 +67,18 @@ namespace AdiePlayground.Cli.Metadata
             Type resourceType,
             string helpTextResourceName)
         {
-            ValidateString(group, nameof(group));
-            ValidateString(name, nameof(name));
-            if (name.Contains(" "))
-            {
-                throw new ArgumentException("Value cannot contain spaces.", nameof(name));
-            }
+            ParameterValidation.IsNotNull(group, nameof(group));
+            ParameterValidation.IsNotEmpty(group, nameof(group));
+            ParameterValidation.IsNotNull(name, nameof(name));
+            ParameterValidation.IsNotEmpty(name, nameof(name));
+            ParameterValidation.IsFalse(
+                name.Contains(" "),
+                "Value cannot contain spaces.",
+                nameof(name));
+            ParameterValidation.IsNotNull(resourceType, nameof(resourceType));
+            ParameterValidation.IsNotNull(helpTextResourceName, nameof(helpTextResourceName));
+            ParameterValidation.IsNotEmpty(helpTextResourceName, nameof(helpTextResourceName));
 
-            if (resourceType == null)
-            {
-                throw new ArgumentNullException(nameof(resourceType));
-            }
-
-            ValidateString(helpTextResourceName, nameof(helpTextResourceName));
             this.Group = group;
             this.Name = name;
             this.HelpText =
@@ -107,10 +106,7 @@ namespace AdiePlayground.Cli.Metadata
         /// <inheritdoc/>
         IDictionary<string, object> IMetadataProvider.GetMetadata(Type targetType)
         {
-            if (targetType == null)
-            {
-                throw new ArgumentNullException(nameof(targetType));
-            }
+            ParameterValidation.IsNotNull(targetType, nameof(targetType));
 
             var parameterMetadata = targetType
                 .GetProperties()
@@ -146,19 +142,6 @@ namespace AdiePlayground.Cli.Metadata
                 .ToDictionary(p => p.Name, p => p.GetValue(this));
             metadata.Add(nameof(CommandMetadata.ParametersMetadata), parameterMetadata);
             return metadata;
-        }
-
-        private static void ValidateString(string value, string paramName)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
-
-            if (value.Length == 0)
-            {
-                throw new ArgumentException("Value must not be empty.", paramName);
-            }
         }
     }
 }

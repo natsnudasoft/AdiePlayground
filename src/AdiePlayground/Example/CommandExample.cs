@@ -19,6 +19,7 @@ namespace AdiePlayground.Example
     using System;
     using System.Globalization;
     using System.Threading;
+    using Common;
     using Common.Command;
     using Common.Extensions;
     using Properties;
@@ -53,20 +54,9 @@ namespace AdiePlayground.Example
             CommandFactory commandFactory,
             CommandExecutionManager commandExecutionManager)
         {
-            if (robot == null)
-            {
-                throw new ArgumentNullException(nameof(robot));
-            }
-
-            if (commandFactory == null)
-            {
-                throw new ArgumentNullException(nameof(commandFactory));
-            }
-
-            if (commandExecutionManager == null)
-            {
-                throw new ArgumentNullException(nameof(commandExecutionManager));
-            }
+            ParameterValidation.IsNotNull(robot, nameof(robot));
+            ParameterValidation.IsNotNull(commandFactory, nameof(commandFactory));
+            ParameterValidation.IsNotNull(commandExecutionManager, nameof(commandExecutionManager));
 
             this.robot = robot;
             this.commandFactory = commandFactory;

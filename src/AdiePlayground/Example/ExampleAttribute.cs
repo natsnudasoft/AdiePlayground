@@ -18,6 +18,7 @@ namespace AdiePlayground.Example
 {
     using System;
     using System.ComponentModel.Composition;
+    using Common;
 
     /// <summary>
     /// Specifies the details of an <see cref="IExample"/>.
@@ -37,15 +38,8 @@ namespace AdiePlayground.Example
         /// <exception cref="ArgumentException"><paramref name="name"/> is empty.</exception>
         public ExampleAttribute(string name)
         {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (name.Length == 0)
-            {
-                throw new ArgumentException("Value cannot be empty.", nameof(name));
-            }
+            ParameterValidation.IsNotNull(name, nameof(name));
+            ParameterValidation.IsNotEmpty(name, nameof(name));
 
             this.Name = name;
         }

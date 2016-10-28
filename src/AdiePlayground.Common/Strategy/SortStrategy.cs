@@ -16,7 +16,6 @@
 
 namespace AdiePlayground.Common.Strategy
 {
-    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -38,15 +37,17 @@ namespace AdiePlayground.Common.Strategy
         /// <inheritdoc/>
         void ISortStrategy<T>.Sort(IList<T> list)
         {
-            ValidateList(list, nameof(list));
+            ParameterValidation.IsNotNull(list, nameof(list));
+
             this.Sort(list, Comparer<T>.Default);
         }
 
         /// <inheritdoc/>
         void ISortStrategy<T>.Sort(IList<T> list, IComparer<T> comparer)
         {
-            ValidateList(list, nameof(list));
-            ValidateComparer(comparer, nameof(comparer));
+            ParameterValidation.IsNotNull(list, nameof(list));
+            ParameterValidation.IsNotNull(comparer, nameof(comparer));
+
             this.Sort(list, comparer);
         }
 
@@ -58,21 +59,5 @@ namespace AdiePlayground.Common.Strategy
         /// <param name="list">The <see cref="IList{T}"/> to sort.</param>
         /// <param name="comparer">The <see cref="IComparer{T}"/> to use when sorting.</param>
         protected abstract void Sort(IList<T> list, IComparer<T> comparer);
-
-        private static void ValidateComparer(IComparer<T> comparer, string paramName)
-        {
-            if (comparer == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
-        }
-
-        private static void ValidateList(IList<T> list, string paramName)
-        {
-            if (list == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
-        }
     }
 }

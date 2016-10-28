@@ -146,6 +146,7 @@
     <Compile Include="Common\Model\OrangeTests.cs" />
     <Compile Include="Common\Observer\ConsoleMessageBoardObserverTests.cs" />
     <Compile Include="Common\Observer\MessageBoardTests.cs" />
+    <Compile Include="Common\ParameterValidationTests.cs" />
     <Compile Include="Common\ResourceTypeResolverTests.cs" />
     <Compile Include="Common\Strategy\BubbleSortStrategyTests.cs" />
     <Compile Include="Common\Strategy\QuicksortStrategyTests.cs" />

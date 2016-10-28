@@ -37,7 +37,9 @@ namespace AdiePlayground.Common.Observer
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public void AddMessage(string message)
         {
-            ValidateMessage(message, nameof(message));
+            ParameterValidation.IsNotNull(message, nameof(message));
+            ParameterValidation.IsNotEmpty(message, nameof(message));
+
             if (this.messages.Add(message))
             {
                 this.Notify();
@@ -54,7 +56,9 @@ namespace AdiePlayground.Common.Observer
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public void RemoveMessage(string message)
         {
-            ValidateMessage(message, nameof(message));
+            ParameterValidation.IsNotNull(message, nameof(message));
+            ParameterValidation.IsNotEmpty(message, nameof(message));
+
             if (this.messages.Remove(message))
             {
                 this.Notify();
@@ -71,7 +75,8 @@ namespace AdiePlayground.Common.Observer
         /// <see langword="null"/>.</exception>
         public void Attach(IMessageBoardObserver observer)
         {
-            ValidateObserver(observer, nameof(observer));
+            ParameterValidation.IsNotNull(observer, nameof(observer));
+
             this.observers.Add(observer);
         }
 
@@ -85,29 +90,9 @@ namespace AdiePlayground.Common.Observer
         /// <see langword="null"/>.</exception>
         public void Detach(IMessageBoardObserver observer)
         {
-            ValidateObserver(observer, nameof(observer));
+            ParameterValidation.IsNotNull(observer, nameof(observer));
+
             this.observers.Remove(observer);
-        }
-
-        private static void ValidateMessage(string message, string paramName)
-        {
-            if (message == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
-
-            if (message.Length == 0)
-            {
-                throw new ArgumentException("Value must not be empty.", paramName);
-            }
-        }
-
-        private static void ValidateObserver(IMessageBoardObserver observer, string paramName)
-        {
-            if (observer == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
         }
 
         private void Notify()

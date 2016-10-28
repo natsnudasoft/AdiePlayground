@@ -18,6 +18,7 @@ namespace AdiePlayground.Data.Services
 {
     using System;
     using System.Data.Entity;
+    using Common;
     using Mehdime.Entity;
 
     /// <summary>
@@ -39,10 +40,7 @@ namespace AdiePlayground.Data.Services
         /// <see langword="null"/>.</exception>
         public ConnectionStringDbContextFactory(Func<string> connectionStringFactory)
         {
-            if (connectionStringFactory == null)
-            {
-                throw new ArgumentNullException(nameof(connectionStringFactory));
-            }
+            ParameterValidation.IsNotNull(connectionStringFactory, nameof(connectionStringFactory));
 
             this.connectionStringFactory = connectionStringFactory;
         }
