@@ -65,7 +65,7 @@ namespace AdiePlaygroundTests
             var example = container.ResolveNamed<IExample>("strategy");
             var exampleMetadataCollectionFactory =
                 container.Resolve<ExampleMetadataCollectionFactory>();
-            var exampleMetadataCollection = exampleMetadataCollectionFactory();
+            var exampleMetadataCollection = exampleMetadataCollectionFactory?.Invoke();
             var instrumentationExample = container.Resolve<IInstrumentationExample>();
 
             Assert.That(example, Is.Not.Null);

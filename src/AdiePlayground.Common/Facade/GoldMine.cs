@@ -25,6 +25,7 @@ namespace AdiePlayground.Common.Facade
         "CA1702:CompoundWordsShouldBeCasedCorrectly",
         MessageId = nameof(GoldMine),
         Justification = "Not a compound word.")]
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public sealed class GoldMine
     {
         private readonly ITunnelDigger tunnelDigger;
