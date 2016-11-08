@@ -235,4 +235,10 @@
     <value>&gt; </value>
     <comment>Contains trailing space.</comment>
   </data>
+  <data name="FacadeExampleOperateMine" xml:space="preserve">
+    <value>Operating gold mine.</value>
+  </data>
+  <data name="FacadeExampleRunning" xml:space="preserve">
+    <value>Running facade example.</value>
+  </data>
 </root>

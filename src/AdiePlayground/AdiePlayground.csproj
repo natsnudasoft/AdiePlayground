@@ -140,6 +140,7 @@
     <Compile Include="Example\ExampleAttribute.cs" />
     <Compile Include="Example\ExampleMetadata.cs" />
     <Compile Include="Example\ExampleMetadataCollectionFactory.cs" />
+    <Compile Include="Example\FacadeExample.cs" />
     <Compile Include="Example\IExample.cs" />
     <Compile Include="Example\IInstrumentationExample.cs" />
     <Compile Include="Example\InstrumentationExample.cs" />

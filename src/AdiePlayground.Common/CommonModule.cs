@@ -20,6 +20,7 @@ namespace AdiePlayground.Common
     using System.Linq;
     using Autofac;
     using Command;
+    using Facade;
     using Interceptor;
     using Model;
     using Observer;
@@ -38,6 +39,7 @@ namespace AdiePlayground.Common
             base.Load(builder);
             LoadCommonNamespace(builder);
             LoadCommandNamespace(builder);
+            LoadFacadeNamespace(builder);
             LoadInterceptorNamespace(builder);
             LoadObserverNamespace(builder);
             LoadStrategyNamespace(builder);
@@ -79,6 +81,11 @@ namespace AdiePlayground.Common
                         parameters.Select((p, i) => new PositionalParameter(i, p)));
                 })
                 .AsSelf();
+        }
+
+        private static void LoadFacadeNamespace(ContainerBuilder builder)
+        {
+            builder.Register(c => new GoldMine()).AsSelf();
         }
 
         private static void LoadInterceptorNamespace(ContainerBuilder builder)

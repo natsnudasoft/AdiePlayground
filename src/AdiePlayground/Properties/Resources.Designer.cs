@@ -259,6 +259,24 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Operating gold mine..
+        /// </summary>
+        internal static string FacadeExampleOperateMine {
+            get {
+                return ResourceManager.GetString("FacadeExampleOperateMine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running facade example..
+        /// </summary>
+        internal static string FacadeExampleRunning {
+            get {
+                return ResourceManager.GetString("FacadeExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The command to display help for; leave empty to show all commands..
         /// </summary>
         internal static string HelpCommandCommandNameHelp {
