@@ -130,6 +130,10 @@
     <Compile Include="Common\Extensions\ImplicitOperatorStub.cs" />
     <Compile Include="Common\Extensions\InterceptionExtensionsTests.cs" />
     <Compile Include="Common\Extensions\TypeExtensionsTests.cs" />
+    <Compile Include="Common\Facade\ConsoleCartOperatorTests.cs" />
+    <Compile Include="Common\Facade\ConsoleGoldMinerTests.cs" />
+    <Compile Include="Common\Facade\ConsoleGoldProspectorTests.cs" />
+    <Compile Include="Common\Facade\ConsoleTunnelDiggerTests.cs" />
     <Compile Include="Common\Interceptor\ConsoleInstrumentationReporterTests.cs" />
     <Compile Include="Common\Interceptor\ConsoleRegistrarTests.cs" />
     <Compile Include="Common\Interceptor\InstrumentationInterceptorTests.cs" />
@@ -179,6 +183,7 @@
     <Compile Include="Data\TestEntity.cs" />
     <Compile Include="Example\CommandExampleTests.cs" />
     <Compile Include="Example\ExampleAttributeTests.cs" />
+    <Compile Include="Example\FacadeExampleTests.cs" />
     <Compile Include="Example\InstrumentationExampleTests.cs" />
     <Compile Include="Example\InterceptorExampleTests.cs" />
     <Compile Include="Example\ObserverExampleTests.cs" />

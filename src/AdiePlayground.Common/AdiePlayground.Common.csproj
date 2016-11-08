@@ -80,6 +80,15 @@
     <Compile Include="CommonModule.cs" />
     <Compile Include="Extensions\ConsoleExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Facade\ConsoleCartOperator.cs" />
+    <Compile Include="Facade\ConsoleGoldMiner.cs" />
+    <Compile Include="Facade\ConsoleGoldProspector.cs" />
+    <Compile Include="Facade\ConsoleTunnelDigger.cs" />
+    <Compile Include="Facade\GoldMine.cs" />
+    <Compile Include="Facade\ICartOperator.cs" />
+    <Compile Include="Facade\IGoldMiner.cs" />
+    <Compile Include="Facade\IGoldProspector.cs" />
+    <Compile Include="Facade\ITunnelDigger.cs" />
     <Compile Include="IDateTimeProvider.cs" />
     <Compile Include="IGuidProvider.cs" />
     <Compile Include="Interceptor\ConsoleRegistrar.cs" />
@@ -135,6 +144,7 @@
     </AdditionalFiles>
     <None Include="AdiePlayground.Common.snk" />
     <None Include="App.config" />
+    <None Include="Facade\README.md" />
     <None Include="Observer\README.md" />
     <None Include="packages.config" />
     <None Include="Strategy\README.md" />

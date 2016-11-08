@@ -20,6 +20,7 @@ namespace AdiePlaygroundTests.Data.Services
     using System.Linq;
     using AdiePlayground.Common;
     using AdiePlayground.Common.Command;
+    using AdiePlayground.Common.Facade;
     using AdiePlayground.Common.Interceptor;
     using AdiePlayground.Common.Model;
     using AdiePlayground.Common.Observer;
@@ -85,6 +86,14 @@ namespace AdiePlaygroundTests.Data.Services
             Assert.That(drillOffCommand, Is.Not.Null);
             Assert.That(commandFactory, Is.Not.Null);
             Assert.That(commandFromFactory, Is.Not.Null);
+        }
+
+        [Test]
+        public void ModuleRegistered_FacadeServicesRegistered()
+        {
+            var goldMine = container.Resolve<GoldMine>();
+
+            Assert.That(goldMine, Is.Not.Null);
         }
 
         [Test]
