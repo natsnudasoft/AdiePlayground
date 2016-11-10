@@ -241,4 +241,7 @@
   <data name="FacadeExampleRunning" xml:space="preserve">
     <value>Running facade example.</value>
   </data>
+  <data name="TemplateMethodExampleRunning" xml:space="preserve">
+    <value>Running template method example.</value>
+  </data>
 </root>
