@@ -25,6 +25,7 @@ namespace AdiePlayground.Common
     using Model;
     using Observer;
     using Strategy;
+    using TemplateMethod;
     using Variance;
 
     /// <summary>
@@ -43,6 +44,7 @@ namespace AdiePlayground.Common
             LoadInterceptorNamespace(builder);
             LoadObserverNamespace(builder);
             LoadStrategyNamespace(builder);
+            LoadTemplateNamespace(builder);
             LoadVarianceNamespace(builder);
         }
 
@@ -130,6 +132,13 @@ namespace AdiePlayground.Common
                 .Keyed(SortType.Quicksort, typeof(ISortStrategy<>))
                 .As(typeof(ISortStrategy<>));
             builder.RegisterGeneric(typeof(SortStrategyResolver<>)).AsSelf();
+        }
+
+        private static void LoadTemplateNamespace(ContainerBuilder builder)
+        {
+            builder.Register(c => new ConsoleArchitect()).Named<ConsoleWorker>("Architect");
+            builder.Register(c => new ConsolePlumber()).Named<ConsoleWorker>("Plumber");
+            builder.Register(c => new ConsoleShopAssistant()).Named<ConsoleWorker>("ShopAssistant");
         }
 
         private static void LoadVarianceNamespace(ContainerBuilder builder)

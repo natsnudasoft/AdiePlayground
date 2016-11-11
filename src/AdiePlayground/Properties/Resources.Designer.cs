@@ -403,6 +403,15 @@ namespace AdiePlayground.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Running template method example..
+        /// </summary>
+        internal static string TemplateMethodExampleRunning {
+            get {
+                return ResourceManager.GetString("TemplateMethodExampleRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to AdiePlayground. Type &apos;help&apos; to get started..
         /// </summary>
         internal static string WelcomeMessage {
