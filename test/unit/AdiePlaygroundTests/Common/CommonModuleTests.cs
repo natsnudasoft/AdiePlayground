@@ -25,6 +25,7 @@ namespace AdiePlaygroundTests.Data.Services
     using AdiePlayground.Common.Model;
     using AdiePlayground.Common.Observer;
     using AdiePlayground.Common.Strategy;
+    using AdiePlayground.Common.TemplateMethod;
     using AdiePlayground.Common.Variance;
     using Autofac;
     using Autofac.Features.Indexed;
@@ -140,6 +141,19 @@ namespace AdiePlaygroundTests.Data.Services
             Assert.That(sortStrategiesKeyed, Is.Not.Null);
             Assert.That(sortStrategiesKeyed[SortType.Quicksort], Is.Not.Null);
             Assert.That(sortStrategyResolver, Is.Not.Null);
+        }
+
+        [Test]
+        public void ModuleRegistered_TemplateMethodServicesRegistered()
+        {
+            var consoleWorkerNames = new[] { "Architect", "Plumber", "ShopAssistant" };
+            var consoleWorkers = container.Resolve<IIndex<string, ConsoleWorker>>();
+
+            Assert.That(consoleWorkers, Is.Not.Null);
+            foreach (var consoleWorkerName in consoleWorkerNames)
+            {
+                Assert.That(consoleWorkers[consoleWorkerName], Is.Not.Null);
+            }
         }
 
         [Test]

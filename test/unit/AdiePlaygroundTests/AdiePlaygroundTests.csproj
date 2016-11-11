@@ -159,6 +159,10 @@
     <Compile Include="Common\Strategy\SortStrategyTests.cs" />
     <Compile Include="Common\SystemDateTimeProviderTests.cs" />
     <Compile Include="Common\SystemGuidProviderTests.cs" />
+    <Compile Include="Common\TemplateMethod\ConsoleArchitectTests.cs" />
+    <Compile Include="Common\TemplateMethod\ConsolePlumberTests.cs" />
+    <Compile Include="Common\TemplateMethod\ConsoleShopAssistantTests.cs" />
+    <Compile Include="Common\TemplateMethod\ConsoleWorkerTests.cs" />
     <Compile Include="Common\Variance\BananaCovariantTests.cs" />
     <Compile Include="Common\Variance\FruitContravarianceTests.cs" />
     <Compile Include="Common\Variance\OrangeInvariantTests.cs" />
@@ -188,6 +192,7 @@
     <Compile Include="Example\InterceptorExampleTests.cs" />
     <Compile Include="Example\ObserverExampleTests.cs" />
     <Compile Include="Example\StrategyExampleTests.cs" />
+    <Compile Include="Example\TemplateMethodExampleTests.cs" />
     <Compile Include="Example\VarianceExampleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
