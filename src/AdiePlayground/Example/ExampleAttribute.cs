@@ -40,6 +40,10 @@ namespace AdiePlayground.Example
         {
             ParameterValidation.IsNotNull(name, nameof(name));
             ParameterValidation.IsNotEmpty(name, nameof(name));
+            ParameterValidation.IsFalse(
+                name.Contains(" "),
+                "Value cannot contain spaces.",
+                nameof(name));
 
             this.Name = name;
         }
