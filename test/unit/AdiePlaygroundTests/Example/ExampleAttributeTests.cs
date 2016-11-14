@@ -40,6 +40,14 @@ namespace AdiePlaygroundTests.Example
         }
 
         [Test]
+        public void Constructor_SpaceInName_ArgumentException()
+        {
+            var ex = Assert.Throws<ArgumentException>(
+                () => new ExampleAttribute("Example Name"));
+            Assert.That(ex.ParamName, Is.EqualTo(ConstructorNameParam));
+        }
+
+        [Test]
         public void Constructor_SetsValues()
         {
             var exampleAttribute = new ExampleAttribute("ExampleName");
